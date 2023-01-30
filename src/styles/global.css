@@ -1,3 +1,122 @@
 @tailwind base;
+
+@layer base {
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    @apply leading-10 bg-white dark:bg-neutral-900 text-black dark:text-white;
+  }
+  a {
+    @apply dark:text-blue-500 text-blue-600;
+  }
+
+  .Logo svg {
+    @apply fill-lime-800 dark:fill-lime-500;
+  }
+
+  .writings {
+    @apply mb-6 list-none m-0 p-0;
+  }
+  .writings-list-item {
+    @apply hover:bg-neutral-100 dark:hover:bg-neutral-800;
+  }
+
+  .writings-list-item a {
+    @apply text-black dark:text-white rounded-sm p-4;
+  }
+
+  p {
+    @apply my-4;
+    @apply text-xl;
+    line-height: inherit;
+  }
+
+  blockquote,
+  figure {
+    @apply my-4 mx-10;
+  }
+
+  hr {
+    @apply border;
+  }
+
+  h1 {
+    @apply text-4xl font-bold my-2;
+  }
+
+  h2 {
+    @apply text-2xl font-bold my-3;
+  }
+
+  h3 {
+    @apply text-lg font-bold my-4;
+  }
+
+  h4 {
+    @apply text-base font-bold my-5;
+  }
+
+  h5 {
+    @apply text-sm font-bold my-6;
+  }
+
+  h6 {
+    @apply text-xs font-bold my-10;
+  }
+
+  article,
+  aside,
+  nav,
+  section {
+  }
+
+  ul,
+  menu {
+    @apply list-disc my-1 pl-10;
+  }
+
+  ol {
+    @apply list-decimal my-4 pl-10;
+  }
+
+  ul,
+  ol {
+  }
+
+  dd {
+    @apply pl-10;
+  }
+
+  dl {
+    @apply my-4;
+  }
+
+  ul,
+  ol,
+  menu,
+  dl {
+    margin: 0;
+  }
+
+  legend {
+    @apply py-0 px-1;
+  }
+
+  fieldset {
+    @apply my-0 mx-1 pt-0 px-1 pb-2;
+  }
+
+  b,
+  strong {
+    font-weight: bold;
+  }
+
+  pre {
+    @apply p-6;
+    @apply my-4;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;

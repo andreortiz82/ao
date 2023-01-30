@@ -21,15 +21,15 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
     <main class="w-4/5 m-auto py-8">
       <Header />
       <section>
-        <ul class="border-2 mb-6">
+        <ul class="writings">
           {
             posts.map((post) => (
-              <li class="p-4 border-b-2 hover:bg-slate-100">
-                <a href={post.url} class="flex justify-between">
+              <li class="writings-list-item">
+                <a href={post.url} class="flex justify-between align-middle">
                   <span class="font-['DM_Serif_Text'] text-2xl">
                     {post.frontmatter.title}
                   </span>
-                  <time datetime={post.frontmatter.pubDate}>
+                  <time class="opacity-50" datetime={post.frontmatter.pubDate}>
                     {new Date(post.frontmatter.pubDate).toLocaleDateString(
                       "en-us",
                       {
