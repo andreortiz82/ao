@@ -2,7 +2,7 @@ export const Logo = ({ alt }) => {
   return (
     <div className="Logo" title={alt}>
       <svg width="140" viewBox="0 0 323 276">
-        <g clip-path="url(#clip0_9_6)">
+        <g clipPath="url(#clip0_9_6)">
           <path
             fillRule="evenodd"
             clipRule="evenodd"

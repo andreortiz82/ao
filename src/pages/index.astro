@@ -5,7 +5,6 @@ import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 import _ from "lodash";
 
-const greeting = ["Hello", "Hi", "Howdy", "Hey", "Welcome", "Heyo!"];
 ---
 
 <!DOCTYPE html>
@@ -18,7 +17,7 @@ const greeting = ["Hello", "Hi", "Howdy", "Hey", "Welcome", "Heyo!"];
       <Header title={SITE_TITLE} />
       <section>
         <div class="font-normal mb-3 text-2xl opacity-50">
-          {_.sample(greeting)}
+          {_.sample(["Hello", "Hi", "Howdy", "Hey", "Welcome", "Heyo!"])}
         </div>
         <h1 class="font-['DM_Serif_Text'] text-7xl mb-10">
           I'm Andre Ortiz. UI/UX Design, React, and Design Systems. Based in
