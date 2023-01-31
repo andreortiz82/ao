@@ -14,7 +14,7 @@
   }
 
   .Logo svg {
-    @apply fill-black dark:fill-lime-500;
+    @apply fill-black dark:fill-lime-500 w-9/12 md:w-28;
   }
 
   .writings {
