@@ -28,7 +28,13 @@ const {
       <Header />
       <section>
         <article>
-          
+          {
+            heroImage && (
+              <div class="mb-10">
+                <img class="w-screen" src={heroImage} alt={title} />
+              </div>
+            )
+          }
           <h1 class="font-['DM_Serif_Text'] text-7xl">{title}</h1>
           <div class="mb-10">
             {pubDate && <time>{pubDate}</time>}
@@ -40,13 +46,6 @@ const {
               )
             }
           </div>
-          {
-            heroImage && (
-              <div class="mb-10">
-                <img class="w-screen" src={heroImage} alt={title} />
-              </div>
-            )
-          }
           <slot />
         </article>
       </section>
