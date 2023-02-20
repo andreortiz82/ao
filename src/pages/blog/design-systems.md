@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPost.astro"
 title: "Design Systems"
 description: "Scaling your design decisions"
 pubDate: "January 30 2023"
-heroImage: "/photo-1.jpeg"
+heroImage: "/art/banner1.jpg"
 ---
 
 UI design has evolved. Design systems can provide many benefits, such as improved consistency, reusability, and a unified look and feel to all components. Designers save time and energy by not recreating components. These systems also provide a common language and standards for better communication between designers and developers. Ultimately, design systems can help teams create better designs faster.
