@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPost.astro"
 title: "Designers that code"
 description: "Designing in the Browser"
 pubDate: "Feb 19 2023"
-heroImage: "/photo-1.jpeg"
+heroImage: "/art/banner3.jpg"
 ---
 
 As web design and development become increasingly intertwined, designers with front-end skills are becoming more desirable than ever. With the ability to code HTML, CSS, and JavaScript, these individuals can bridge the gap between design and development and create beautiful, functional websites. Designers with front-end skills have a wide range of abilities that can be beneficial to any project. They understand the importance of aesthetics in creating an enjoyable user experience, but they also know how to make sure a website is optimized for speed and accessibility.

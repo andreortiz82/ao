@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPost.astro"
 title: "Design Tokens"
 description: "Design Tokens for the win!"
 pubDate: "Feb 10 2023"
-heroImage: "/photo-1.jpeg"
+heroImage: "/art/banner2.jpg"
 ---
 
 Design tokens are a powerful tool for developing and maintaining consistent design systems. They provide an efficient way to manage design elements across multiple projects, platforms, and devices. Design tokens can help designers create visually unified experiences that are easy to maintain and update. The most significant benefit of using design tokens is the ability to quickly and easily make changes across an entire system. By defining common values as variables, designers can ensure consistency in color, spacing, typography, animation, and more. This makes it easier to keep all designs up-to-date with minimal effort. It also allows teams to quickly iterate on ideas without having to manually adjust each element every time they want to make a change.
