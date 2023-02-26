@@ -25,7 +25,7 @@
     @apply hover:bg-neutral-100 dark:hover:bg-neutral-800;
   }
 
- .writings-list-item a {
+  .writings-list-item a {
     @apply text-black dark:text-white rounded-sm p-4;
   }
 

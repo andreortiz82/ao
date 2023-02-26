@@ -24,18 +24,14 @@ const {
   </head>
 
   <body>
-    <main class="w-1/2 m-auto py-8">
+    <main class="w-4/5 m-auto py-8">
       <Header />
       <section>
         <article>
           {
             heroImage && (
               <div class="mb-10">
-                <img
-                  class="w-screen rounded-lg shadow-sm"
-                  src={heroImage}
-                  alt={title}
-                />
+                <img class="w-screen" src={heroImage} alt={title} />
               </div>
             )
           }
