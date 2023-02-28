@@ -1,6 +1,6 @@
 export const Logo = ({ alt }) => {
   return (
-    <div className="Logo" title={alt}>
+    <div className="Logo flex align-middle md:justify-start justify-center mb-6" title={alt}>
       <svg width="100%" viewBox="0 0 323 276">
         <g clipPath="url(#clip0_9_6)">
           <path

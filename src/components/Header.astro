@@ -4,9 +4,11 @@ import { Logo } from "../components/Logo";
 import { SITE_TITLE } from "../config";
 ---
 
-<header class="flex align-middle justify-between pb-10">
-  <HeaderLink href="/"><Logo alt={SITE_TITLE} /></HeaderLink>
-  <nav class="flex gap-3 flex-row md:flex-row md:gap-5">
+<header class="flex flex-col md:flex-row align-middle justify-center md:justify-between pb-10">
+  <HeaderLink href="/">
+    <Logo alt={SITE_TITLE} />
+  </HeaderLink>
+  <nav class="flex gap-3 flex-row md:flex-row md:gap-5 justify-between">
     <HeaderLink href="/about">About</HeaderLink>
     <HeaderLink href="/shorts">Shorts</HeaderLink>
     <HeaderLink target="_blank" href="https://dribbble.com/andreortiz">
