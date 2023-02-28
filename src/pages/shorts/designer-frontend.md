@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPost.astro"
 title: "Be The Unicorn"
 description: "Bridge the gap between design and development with front-end skills and user insights."
 pubDate: "Feb 19 2023"
-heroImage: "https://picsum.photos/680/280?rainbow=1"
+heroImage: "/art/unicorn.png"
 ---
 
 As web design and development continue to evolve, designers with front-end skills are becoming more and more in-demand. These individuals have the unique ability to code HTML, CSS, and JavaScript, which allows them to bridge the gap between design and development and create beautiful, functional websites that users love. They're a valuable asset to any project, as they understand both the importance of aesthetics and how to optimize a website for speed and accessibility.

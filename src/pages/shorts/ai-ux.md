@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPost.astro"
 title: "AI & Design"
 description: "Revolutionize your designs with the power of AI - create more intuitive, personalized, and accessible experiences that your users will love!"
 pubDate: "January 30 2023"
-heroImage: "https://picsum.photos/680/280?sky=1"
+heroImage: "/art/robot.png"
 ---
 
 AI is changing the game when it comes to UI/UX design. As a designer, you might be wondering how AI will affect your job in the future. Well, the good news is that AI can actually be a great partner for designers and help us in many ways without replacing us as creatives.

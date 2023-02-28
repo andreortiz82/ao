@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPost.astro"
 title: "Faster and More Effective UX Design"
 description: "Create stunning digital experiences faster than ever before with a design system."
 pubDate: "January 30 2023"
-heroImage: "https://picsum.photos/680/280?mountain=1"
+heroImage: "/art/culture.png"
 ---
 
 UI design has come a long way, and design systems are the rage when it comes to creating amazing digital experiences. Providing improved consistency, reusability, and a unified look and feel, design systems save time and effort while enabling better communication between designers and developers. This means that teams can create beautiful, intuitive experiences faster than ever before.

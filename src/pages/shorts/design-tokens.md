@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPost.astro"
 title: "The Key to Consistency and Collaboration"
 description: "Develop consistent designs across multiple platforms with the power of design tokens."
 pubDate: "Feb 10 2023"
-heroImage: "https://picsum.photos/680/280?wind=1"
+heroImage: "/art/collab.png"
 ---
 
 Design tokens are a powerful way to develop and maintain consistent design systems that can be applied across multiple projects, platforms, and devices. They enable designers to create visually unified experiences that are easy to update and maintain, while also simplifying development by making it easier for developers to apply design principles and patterns consistently. By defining common values as variables, design tokens allow for quick and easy changes to be made across an entire system, enabling teams to iterate on ideas faster and more efficiently.

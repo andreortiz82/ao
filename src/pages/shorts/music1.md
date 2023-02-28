@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPost.astro"
 title: "Musical Experiements"
 description: "Finding inspiration in unexpected places: A journey of passion and rock n' roll."
 pubDate: "Feb 27 2023"
-heroImage: "https://picsum.photos/680/280?music=1"
+heroImage: "/art/music.png"
 ---
 
 <iframe width="100%" height="460" src="https://www.youtube.com/embed/4OJN8CB7d1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

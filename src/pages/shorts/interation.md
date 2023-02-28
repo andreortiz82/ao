@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPost.astro"
 title: "Iterate or Fail"
 description: "Great designs don't happen overnight - iterate, refine, and create a final product that you're proud of!"
 pubDate: "May 5 2021"
-heroImage: "https://picsum.photos/680/280?mountains=1"
+heroImage: "/art/iterate.png"
 ---
 
 Iterating on your designs is super important, especially if you want your final product to be amazing. The truth is, your first design probably won't be perfect, but that's okay. The key is to keep refining and improving it until it meets all of your goals and objectives. This way, you'll be able to spot any potential issues, catch design flaws, and make any necessary adjustments before it's too late.

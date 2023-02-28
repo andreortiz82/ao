@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPost.astro"
 title: "Maintain a Culture of Creativity"
 description: "Empower your team to thrive - be a great design leader and watch your team crush it."
 pubDate: "November 16 2022"
-heroImage: "https://picsum.photos/680/280?health=1"
+heroImage: "art/monster1.png"
 ---
 
 Being a good design leader is all about empowering your team to do their best work. As a leader, your job is to set clear goals and expectations, provide feedback and guidance, and create a supportive environment where your team can thrive. This means being a good listener and communicator, showing empathy and respect for your team members, and always being willing to lend a helping hand when needed.
