@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/BlogPost.astro"
 title: "AI & Design"
-description: "Revolutionize your designs with the power of AI - create more intuitive, personalized, and accessible experiences that your users will love!"
+description: "Change your mind about AI - Welcome your new partner in the creative process!"
 pubDate: "January 30 2023"
 heroImage: "/art/robot.png"
 ---
@@ -12,4 +12,4 @@ One way designers can use AI is for inspiration and idea generation. AI can anal
 
 Another way designers can use AI is for optimizing their designs. AI can analyze user behavior and provide insights on how to improve user experience. This can help designers make data-driven decisions and create designs that are more user-friendly and effective. However, AI can't replace our ability to empathize with our users and understand their needs and emotions. It's our human touch and ability to connect with our audience that makes our designs truly effective.
 
-In conclusion, designers can use AI as a partner in the design process without fearing that it will replace us as creatives. AI can help us in many ways, but it's our unique perspective and creativity that make our designs truly memorable and effective. So, let's embrace AI as a tool to enhance our creativity and make our designs even better.
+Designers - use AI as a partner in the creative process without fear. AI can help us in many ways, but it's our unique perspective and creativity that make our designs truly memorable and effective. So, let's embrace AI as a tool to enhance our knowlegde, skills, and creativity.
