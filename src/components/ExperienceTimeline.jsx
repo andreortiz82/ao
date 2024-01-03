@@ -9,18 +9,18 @@ export const ExperienceTimeline = (props) => {
             <table>
                 <tbody>
                     <tr>
-                        <th>2006</th>
+                        <th>2005</th>
                         <td>Completed a school and began interning at a New York City record
-                            label. My focus was on music production and studio recording. Completely by accident, I started working with the creative
-                            marketing team. It was during this time I learned Photoshop, Flash, and the basics of web development.</td>
+                            label. My focus was on music production and studio recording. Completely by accident, my creative work was recognized and I was invited to work with the design and
+                            marketing teams. It was during this time I learned Photoshop, Flash, and the basics of web development.</td>
                     </tr>
                     <tr>
                         <th>2007</th>
-                        <td>Relocated to Columbus, OH were I continued to learn and gain real agency
-                            experience. I worked with clients like: Procter & Gamble, Nationwide,
-                            Disney, Toyota USA, and Catepillar. As you would expect, the demand for
-                            quality was high and I spent many late evenings learning: visual design,
-                            web development, video production, and motion graphics.</td>
+                        <td>Relocated to Columbus, OH where I continued to learn and gain real agency
+                            experience. I worked with Procter & Gamble, Nationwide Insurance,
+                            Disney, Toyota USA, and Catepillar. The demand for
+                            quality was high and I spent many late evenings, in the office and at home, leving up my skills in visual design,
+                            web development, ActionScript, video production, and motion graphics.</td>
                     </tr>
                     <tr>
                         <th>2009</th>
@@ -34,24 +34,23 @@ export const ExperienceTimeline = (props) => {
                         <th>2010</th>
                         <td>The tech startup environment was potent. Everyone was hustling and trying to
                             build products to compete with Facebook, Twitter, and LinkedIn. Using the
-                            skills I learned so far, I was excited to build something new with small
-                            teams. During this time, I learned a lot about being a <i>product minded</i> designer, user
-                            experience, and how to build a business.</td>
+                            skills I learned so far, I was excited to build something new with a small
+                            teams. During this time, I became a <i>product minded</i> designer, focused on user
+                            experience and interfaces, and learned what it takes to build a business.</td>
                     </tr>
 
                     <tr>
                         <th>2012</th>
                         <td>After years of developing my skills and building strong relationships, I decided to start freelancing. I offered services for
-                            UI/X design, branding, design systems development, and front-end
+                            UI/X design, branding, design systems and documentation, and front-end
                             development. I learned the importance of communication and how to manage
-                            client expectations. I also learned how to run a business, how to lead
-                            external teams, and the joys of US tax policy.</td>
+                            client expectations, contract negotiations, and how to build a strong network.</td>
                     </tr>
 
                     <tr>
                         <th>2017 - Current</th>
                         <td>After years of successful freelancing, I decided to join a team again.
-                            An opportunity in the healthcare space presented itself, and I was eager to contribute. Today, I work with a team of talented designers, developers, and product managers to build a system that helps people live healthier lives. It's incredibly rewarding to work.</td>
+                            An opportunity in the healthcare space presented itself, and I was eager to contribute. Today, I work with a team of talented designers, developers, and product managers to build a system that helps people live healthier lives. It's incredibly rewarding to work. My primary forcus is product design, design systems, and creative mentorship.</td>
                     </tr>
 
                 </tbody>

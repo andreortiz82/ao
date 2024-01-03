@@ -23,7 +23,7 @@ const posts = (await Astro.glob("./shorts/*.{md,mdx}")).sort(
     <main >
       <Header />
       <section class={style['shorts-main']}>
-        <h1>Shorter than a blog post. Longer than a Tweet.</h1>
+        <h1>Shorter than a blog post. <br/>Longer than a Tweet.</h1>
         <ul >
           {
             posts.map((post) => (
