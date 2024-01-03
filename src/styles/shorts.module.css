@@ -1,0 +1,26 @@
+.shorts-main {
+  & ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    line-height: 1.7;
+
+    & li {
+      border-bottom: 1px solid var(--slate-4);
+      padding: 1rem 0;
+      display: flex;
+      flex-direction: column;
+      & time {
+        font-size: 1rem;
+        color: var(--slate-9);
+        line-height: 1.7;
+      }
+      & p {
+        margin: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+.about-main {
+  overflow: hidden;
+
+  & section {
+    margin-bottom: 3rem;
+  }
+}
+
+.tldr {
+  margin-bottom: 1rem;
+}
+
+.about-skill-chart {
+  position: relative;
+
+  & h5 {
+    margin-bottom: 1rem;
+  }
+
+  & .wrapper {
+    overflow: hidden;
+
+    & .bars {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+
+      & .bar-label {
+        padding: 0.5rem;
+        border-radius: 3px;
+        background: var(--chart-bar);
+        color: var(--chart-label);
+        display: inline-block;
+      }
+    }
+  }
+
+  & .keys {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+
+    & .key {
+      position: relative;
+      color: var(--chart-meter);
+      padding-left: 1rem;
+
+      &:before {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 1000px;
+        position: absolute;
+        bottom: 0;
+        border-left: 1px dashed var(--chart-meter);
+        left: 0;
+      }
+    }
+  }
+}
+
+.about-timline {
+  font-size: 1.3rem;
+  line-height: 1.7;
+
+  & table {
+    width: 100%;
+    margin-bottom: 1rem;
+    border: 1px solid var(--slate-4);
+    border-collapse: collapse;
+    border-radius: 3px;
+
+    & th,
+    & td {
+      padding: 1rem;
+      border: 1px solid var(--slate-4);
+    }
+
+    & th {
+      font-family: "DM Serif Text", serif;
+      font-weight: 700;
+      width: 200px;
+      vertical-align: top;
+      text-align: right;
+      background: var(--slate-3);
+      font-size: 1.9rem;
+    }
+  }
+}
+
+.interests,
+.personal {
+  margin-bottom: 2rem;
+
+  & article {
+    display: flex;
+    gap: 2rem;
+    flex-direction: row;
+
+    & .image {
+      flex: 0 0 auto;
+      width: 400px;
+
+      & img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.personal {
+  & article {
+    flex-direction: row-reverse;
+  }
+}

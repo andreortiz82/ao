@@ -4,29 +4,63 @@ title: "About"
 description: "Husband, Father, Creative, and Friend"
 ---
 
-{/* **TL;DR** Husband, father, creative, and friend. */}
+import { AboutChart } from "../components/AboutChart.jsx";
+import { ExperienceTimeline } from "../components/ExperienceTimeline.jsx";
 
-<div class="flex gap-6 flex-col lg:flex-row">
-  <div>
-    <img class="w-60 m-auto lg:w-5/6 rounded-full" src="/linkedin-avatar.jpg" alt="" />
+import style from "../styles/about.module.css";
+
+export const creativeData = [
+  { label: "Figma / Design Tooling", amount: "98%" },
+  { label: "UI / UX", amount: "98%" },
+  { label: "Design Systems", amount: "98%" },
+  { label: "Illustration / Branding", amount: "75%" },
+  { label: "HTML / CSS / React", amount: "75%" },
+  { label: "Node / Ruby / Python", amount: "50%" },
+  { label: "Video Production", amount: "50%" },
+  { label: "Print Design", amount: "25%" },
+];
+
+<main className={style["about-main"]}>
+
+<section class="" data-aos="fade-in">
+  <div className={style["tldr"]}>
+    
+    # Husband, Father, Creative, and Friend 
+    
+    I have been creating digital product experiences for nearly 20 years. My work has impacted multiple industries, including education, healthcare, travel, and automotive. I am a multidiciplined, product minded creative with a strong set of skills in a number of areas including client and server side development, video and music production, illustration and branding. Throughout my career, I have had the privilege of collaborating with exceptionally talented people. As a creative leader, I constantly seek opportunities to learn and provide guidance. I'm a firm believer in _doing the next right thing_.
+
+    <AboutChart data={creativeData} title="" description="" />
+
   </div>
-  <div class="">
-    <div>
+</section>
+<section class="" data-aos="fade-in">
+  <ExperienceTimeline />
+</section>
 
-    <p>I've been a UI/UX designer and front-end developer for nearly 20 years, and
-    I absolutely love creating digital experiences that make people smile.
-    Whether it's designing a website or building an app, I always aim to make
-    things easy to use and easy on the eyes. I keep up with the latest tech and
-    design trends to make sure the solutions I deliver are top-notch. Let's work
-    together to create something amazing!</p>
-        </div>
-    <div>
-        <h3 class="font-light leading-relaxed">Exciting Technology & Me.</h3>
+  <section className={style["interests"]} data-aos="fade-in">
+    ### Interests 
+    
+   <article>
 
-    <p>
-        I'm always excited about the possibilities that technology holds and where it may take us in the future. AI and AR are two amazing systems that bring unique UI/UX challenges, and I'm passionate about finding creative solutions for them. Currently, I'm exploring the <a href="http://openai.com" target="_blank">OpenAI</a> JavaScript APIs and learning as much as I can. While some of these systems are admittedly over my head, I always have fun and try to learn as much as possible.
-    </p>
-        </div>
+    <div className={style["image"]}>
+      ![img](./interests.png)
+    </div>
 
-  </div>
-</div>
+    I'm currently interested in the future of product expreiences. Machine learning, augmented reaility, and wearables are serious game changers for any industry. Pair those technologies with the evolving web, design systems, and some innovative thinking and the sky's the limit. I have been spending my time learning tools like [Ollama](https://ollama.ai/), [OpenAI](https://openai.com/), [AR.js](https://ar-js-org.github.io/AR.js-Docs/), [Run Diffusion](https://app.rundiffusion.com/), and [MidJourney](https://www.midjourney.com/home?callbackUrl=%2Fexplore) to better understand how these tools can create an exciting new future in product design. I don't have a background in machine learning or related fields but I'm excited to learn what I can. I hope to find opportunities to collaborate with others in this space.
+
+   </article>
+
+  </section>
+  <section className={style["personal"]} data-aos="fade-in">
+    ### Personal
+
+    <article>
+    <div className={style["image"]}>
+      ![img](./family.jpg)
+    </div>
+
+    I'm a proud father, loving husband, and aspire to be a good friend and neighbor. I love to spend my time working on creative projects - digital and analog. I enjoy [playing music](https://www.youtube.com/channel/UCp0yFoeapfq0CoNJje5npeA), writing, and spending time with my family. Self awareness and hard work are important virtues - personal excellence is the ultimate rebellion.
+    </article>
+
+  </section>
+</main>

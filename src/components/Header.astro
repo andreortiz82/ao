@@ -4,16 +4,13 @@ import { Logo } from "../components/Logo";
 import { SITE_TITLE } from "../config";
 ---
 
-<header class="flex flex-col md:flex-row align-middle justify-center md:justify-between pb-10">
+<header class="header">
   <HeaderLink href="/">
     <Logo alt={SITE_TITLE} />
   </HeaderLink>
-  <nav class="flex gap-3 flex-row md:flex-row md:gap-5 justify-between">
+  <nav class="header__nav">
     <HeaderLink href="/about">About</HeaderLink>
     <HeaderLink href="/shorts">Shorts</HeaderLink>
-    <HeaderLink target="_blank" href="https://dribbble.com/andreortiz">
-      Dribbble
-    </HeaderLink>
     <HeaderLink target="_blank" href="https://github.com/andreortiz82">
       Github
     </HeaderLink>

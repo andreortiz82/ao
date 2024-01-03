@@ -1,11 +1,14 @@
 ---
 layout: "../../layouts/BlogPost.astro"
-title: "Be The Unicorn"
-description: "Bridge the gap between design and development with front-end skills and user insights."
+title: "Be a Unicorn"
+description: "High value skills in a demanding world"
 pubDate: "Feb 19 2023"
-heroImage: "/art/unicorn.png"
 ---
 
-As web design and development continue to evolve, designers with front-end skills are becoming more and more in-demand. These individuals have the unique ability to code HTML, CSS, and JavaScript, which allows them to bridge the gap between design and development and create beautiful, functional websites that users love. They're a valuable asset to any project, as they understand both the importance of aesthetics and how to optimize a website for speed and accessibility.
+Being a versatile product designer who understands UI/UX, can code, and knows product strategy is super important in today's fast-paced tech industry. These designers bring a cool mix of skills to create products that look good, work well, and align with business goals.
 
-In addition to their technical skills, designers with front-end skills also have a knack for quickly prototyping ideas. This means that they can build a working version of a site in no time, which allows for testing and feedback from stakeholders. By doing this, they can help speed up the development process and make sure that any potential issues are caught early on. Furthermore, because they have a unique understanding of both visual and technical aspects of web design, they can offer valuable insights into user behavior that can help improve usability and create successful products. All in all, if you're looking for someone who can bring design and development together and provide valuable insights into user behavior, a designer with front-end skills is the way to go!
+A versatile product designer with UI/UX expertise bridges the gap between aesthetics and functionality. They create visually appealing interfaces with a smooth user experience, attracting and keeping users for higher satisfaction and engagement.
+Coding skills let designers bring their ideas to life and iterate effectively. This technical proficiency improves communication with developers, reducing misunderstandings and design-implementation gaps.
+
+Understanding product strategy empowers designers to make smart decisions that align with company goals and market demands. They find opportunities, prioritize features, and contribute to the product's vision, driving its success.
+In today's product development landscape, a designer with these three skill sets becomes an invaluable asset, driving innovation and delivering awesome products.

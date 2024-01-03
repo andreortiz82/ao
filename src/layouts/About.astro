@@ -2,7 +2,6 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-
 export interface Props {
   content: {
     title: string;
@@ -16,6 +15,7 @@ export interface Props {
 const {
   content: { title, description, pubDate, updatedDate, heroImage },
 } = Astro.props;
+
 ---
 
 <html lang="en">
@@ -24,19 +24,19 @@ const {
   </head>
 
   <body>
-    <main class="w-4/5 m-auto py-8">
+    <main>
       <Header />
       <section>
         <article>
           {
             heroImage && (
-              <div class="mb-10">
-                <img class="w-screen" src={heroImage} alt={title} />
+              <div>
+                <img src={heroImage} alt={title} />
               </div>
             )
           }
-          <h1 class="font-['DM_Serif_Text'] text-7xl">Husband, father, creative, &amp; friend.</h1>
-          <div class="mb-10">
+          <!-- <h1>Husband, father, creative, &amp; friend.</h1> -->
+          <div >
             {pubDate && <time>{pubDate}</time>}
             {
               updatedDate && (
@@ -48,8 +48,14 @@ const {
           </div>
           <slot />
         </article>
+        
       </section>
       <Footer />
     </main>
   </body>
+  <script>
+    import AOS from 'aos';
+    import 'aos/dist/aos.css';
+    AOS.init();
+  </script>
 </html>

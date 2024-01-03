@@ -5,6 +5,8 @@ import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 import _ from "lodash";
 
+const greeting = _.sample(["Hello", "Hi there", "Howdy", "Welcome", "Hola!", "Hey there", "What's up", "Yo", "Greetings", "Salutations", "Hey", "Hi", "Heyo", "Heyo!", "Hey there!", "Hey there", "Hey", "Hi", "Hi there", "Hello", "Hello there", "Hello there!", "Hello!", "Hi", "Hi there", "Hi there!", "Hi!", "Hey", "Hey there", "Hey there!", "Hey!", "Hey", "Hi", "Hi there", "Hello", "Hello there", "Hello there!", "Hello!", "Hi", "Hi there", "Hi there!", "Hi!", "Hey", "Hey there", "Hey there!", "Hey!", "Hey", "Hi", "Hi there", "Hello", "Hello there", "Hello there!", "Hello!", "Hi", "Hi there", "Hi there!", "Hi!", "Hey", "Hey there", "Hey there!", "Hey!", "Hey", "Hi", "Hi there", "Hello", "Hello there", "Hello there!", "Hello!", "Hi", "Hi there", "Hi there!", "Hi!", "Hey", "Hey there", "Hey there!", "Hey!", "Hey", "Hi", "Hi there", "Hello", "Hello there", "Hello there!", "Hello!", "Hi", "Hi there", "Hi there!", "Hi!", "Hey", "Hey there", "Hey there!", "Hey!", "Hey", "Hi", "Hi there", "Hello", "Hello there", "Hello there!", "Hello!", "Hi", "Hi there", "Hi there!", "Hi!", "Hey", "Hey there", "Hey there!", "Hey!"]);
+
 ---
 
 <!DOCTYPE html>
@@ -13,16 +15,16 @@ import _ from "lodash";
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <main class="w-4/5 m-auto py-8">
+    <main>
       <Header title={SITE_TITLE} />
       <section>
-        <div class="font-normal mb-3 text-2xl">
+        <div class="greeting">
           <span>👋</span>
-          <span class="opacity-50">{_.sample(["Hello", "Hi there", "Howdy", "Welcome"])}</span>
+          <span>{greeting}</span>
         </div>
-        <h1 class="font-['DM_Serif_Text'] text-5xl md:text-7xl mb-10">
-          I'm Andre Ortiz. Senior UI/UX Design, React, and Design Systems Lead. Based in
-          Austin, Texas and working at <a
+        <h1>
+          I'm Andre Ortiz - Seasoned product designer, front-end developer, and creative leader. Based in
+          Austin, Texas and working with <a
             href="https://www.reifyhealth.com/"
             target="_blank">Reify Health</a
           >.

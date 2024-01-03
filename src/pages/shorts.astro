@@ -2,6 +2,8 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import style from '../styles/shorts.module.css';
+
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
@@ -18,26 +20,15 @@ const posts = (await Astro.glob("./shorts/*.{md,mdx}")).sort(
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <main class="w-4/5 m-auto py-8">
+    <main >
       <Header />
-      <section>
-        <ul class="writings flex flex-wrap">
+      <section class={style['shorts-main']}>
+        <h1>Shorter than a blog post. Longer than a Tweet.</h1>
+        <ul >
           {
             posts.map((post) => (
-              <li class="writings-list-item w-full lg:w-1/3 rounded-md">
-                <a href={post.url} class="p-4 block">
-                  <div class="mb-2">
-                    <img class="rounded-md" src={post.frontmatter.heroImage} />
-                  </div>
-                  <span class="flex flex-col">
-                    <span class="font-['DM_Serif_Text'] text-2xl">
-                      {post.frontmatter.title}
-                    </span>
-                    <span class="opacity-80 leading-8">
-                      {post.frontmatter.description}
-                    </span>
-                  </span>
-                  <time class="opacity-50" datetime={post.frontmatter.pubDate}>
+              <li data-aos="fade-in">
+                <time datetime={post.frontmatter.pubDate}>
                     {new Date(post.frontmatter.pubDate).toLocaleDateString(
                       "en-us",
                       {
@@ -47,7 +38,10 @@ const posts = (await Astro.glob("./shorts/*.{md,mdx}")).sort(
                       }
                     )}
                   </time>
+                <a href={post.url} >
+                  {post.frontmatter.title}
                 </a>
+                <p>{post.frontmatter.description}</p>
               </li>
             ))
           }

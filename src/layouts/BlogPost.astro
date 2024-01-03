@@ -16,6 +16,7 @@ export interface Props {
 const {
   content: { title, description, pubDate, updatedDate, heroImage },
 } = Astro.props;
+
 ---
 
 <html lang="en">
@@ -56,4 +57,10 @@ const {
       <Footer />
     </main>
   </body>
+  <script>
+    import AOS from 'aos';
+    import 'aos/dist/aos.css';
+
+    AOS.init();
+  </script>
 </html>

@@ -1,9 +1,8 @@
 ---
 layout: "../../layouts/BlogPost.astro"
 title: "AI & Design"
-description: "Change your mind about AI - Welcome your new partner in the creative process!"
+description: "Embrace your new creative partner!"
 pubDate: "January 30 2023"
-heroImage: "/art/robot.png"
 ---
 
 AI is changing the game when it comes to UI/UX design. As a designer, you might be wondering how AI will affect your job in the future. Well, the good news is that AI can actually be a great partner for designers and help us in many ways without replacing us as creatives.
