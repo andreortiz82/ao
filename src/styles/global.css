@@ -96,6 +96,7 @@ p {
 --------------------------- */
 footer {
   font-size: 1rem;
+  margin-top: 1rem;
   color: var(--text-tertiary);
 }
 
@@ -103,5 +104,9 @@ footer {
 @media screen and (max-width: 768px) {
   body {
     padding: 1rem;
+  }
+
+  h1 {
+    font-size: 3.6rem;
   }
 }
