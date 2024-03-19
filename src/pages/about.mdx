@@ -4,20 +4,36 @@ title: "About"
 description: "Husband, Father, Creative, and Friend"
 ---
 
-import { AboutChart } from "../components/AboutChart.jsx";
+import { AboutKeywords } from "../components/AboutChart.jsx";
 import { ExperienceTimeline } from "../components/ExperienceTimeline.jsx";
 
 import style from "../styles/about.module.css";
 
 export const creativeData = [
-  { label: "Figma / Design Tooling", amount: "98%" },
-  { label: "UI / UX", amount: "98%" },
-  { label: "Design Systems", amount: "98%" },
-  { label: "Illustration / Branding", amount: "75%" },
-  { label: "HTML / CSS / React", amount: "75%" },
-  { label: "Node / Ruby / Python", amount: "50%" },
-  { label: "Video Production", amount: "50%" },
-  { label: "Print Design", amount: "25%" },
+  { label: "Product Design" },
+  { label: "UI / UX" },
+  { label: "Wireframing" },
+  { label: "Prototyping" },
+  { label: "Design Systems" },
+  { label: "Design Tokens" },
+  { label: "Front-End Development" },
+  { label: "React / Typescript" },
+  { label: "UI Components" },
+  { label: "Clojurescript" },
+  { label: "Ruby" },
+  { label: "Node" },
+  { label: "Mongo" },
+  { label: "HTML / CSS" },
+  { label: "Python" },
+  { label: "REST" },
+  { label: "Web Design" },
+  { label: "AI Agents" },
+  { label: "Ollama AI" },
+  { label: "OpenAI" },
+  { label: "Video Production" },
+  { label: "Audio Design" },
+  { label: "Branding" },
+  { label: "Illustration" },
 ];
 
 <main className={style["about-main"]}>
@@ -27,9 +43,9 @@ export const creativeData = [
     
     # Husband, Father, Creative, and Friend 
     
-    For almost two decades, I have been crafting digital product experiences that have left a mark across various industries such as education, healthcare, travel, and automotive. I am a versatile, product-focused creative professional with a robust skill set spanning client and server-side development, video and music production, as well as illustration and branding. Throughout my professional journey, I've had the privilege of collaborating with exceptionally talented individuals. As a creative leader, I am perpetually in pursuit of opportunities to expand my knowledge and offer guidance. I firmly believe in the ethos of "doing the next right thing."
+    For nearly two decades I have built product experiences across various industries such as **education, healthcare, travel, and automotive**. I am a versatile, product-focused creative professional with a robust set of skills. Throughout my professional journey, I have had the privilege of collaborating with exceptionally talented individuals.
 
-    <AboutChart data={creativeData} title="" description="" />
+    <AboutKeywords data={creativeData}  />
 
   </div>
 </section>
@@ -38,7 +54,7 @@ export const creativeData = [
 </section>
 
   <section className={style["interests"]} data-aos="fade-in">
-    ### Interests 
+    ### Current Interests 
     
    <article>
 
@@ -47,11 +63,10 @@ export const creativeData = [
     </div>
 
     <div>
-    I'm interested in **Machine Learning**, **Augmented Reality**, and **Design for Wearables** as transformative forces in a new industry.
+    I'm really excited about **AI**, and the impact it's already making. I believe **Machine Learning** and **LLMs** can enhance our creativity and empower us to innovate. 
+    Lately, I've been learning tools like [Ollama](https://ollama.ai/), [OpenAI](https://openai.com/), [Run Diffusion](https://app.rundiffusion.com/), and [MidJourney](https://www.midjourney.com/home?callbackUrl=%2Fexplore), aiming to gain a deeper understanding of how these tools will shape furture products.
 
-    Lately, I've been learning tools like [Ollama](https://ollama.ai/), [OpenAI](https://openai.com/), [AR.js](https://ar-js-org.github.io/AR.js-Docs/), [Run Diffusion](https://app.rundiffusion.com/), and [MidJourney](https://www.midjourney.com/home?callbackUrl=%2Fexplore), aiming to gain a deeper understanding of how these tools will shape furture products.
-
-    While I may not have a formal background in machine learning, data science, or related fields, I'm genuinely excited and learning more about these domains. My hope is to discover opportunities for collaboration with like-minded individuals in this exciting space.
+    While I may not have a formal background in machine learning, data science, or related fields, I'm genuinely excited and learning more about these domains. **I hope to find the intersection of design and artificial intelligence.**
     </div>
 
    </article>

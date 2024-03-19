@@ -29,3 +29,22 @@ export const AboutChart = (props) => {
     </div>
   );
 };
+
+export const AboutKeywords = (props) => {
+  const keywords = props.data
+  return (
+    <div className={style["skill-block"]}>
+    <h5>{props.title}</h5>
+    <div className={style["about-skill-keywords"]}>
+      
+      {keywords.map((keyword, i) => {
+        return (
+          <span key={i} className={style["keyword"]}>
+            {keyword.label}
+          </span>
+        );
+      })}
+    </div>
+    </div>
+  );
+}

@@ -88,6 +88,26 @@
   }
 }
 
+.skill-block {
+  h5 {
+    margin: 1rem 0;
+  }
+}
+
+.about-skill-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  & .keyword {
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    background: var(--chart-bar);
+    color: var(--chart-label);
+    display: inline-block;
+  }
+}
+
 .interests,
 .personal {
   margin-bottom: 2rem;
