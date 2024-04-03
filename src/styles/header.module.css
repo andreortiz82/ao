@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  & .logo {
+    width: 100px;
+
+    & svg {
+      width: 100%;
+    }
+  }
+
+  & .nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    & a:not(.contact-email) {
+      color: var(--text-tertiary);
+      font-weight: var(--font-weight-medium);
+      text-decoration: none;
+      transition: color 0.3s;
+
+      &:global(.active) {
+        color: var(--color-primary);
+      }
+      
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  & .contact-email {
+    border: 3px solid var(--color-primary);
+    color: var(--color-primary);
+    border-radius: var(--border-pill);
+    padding: 0.5em 1rem;  
+    font-weight: var(--font-weight-medium);  
+  }
+}

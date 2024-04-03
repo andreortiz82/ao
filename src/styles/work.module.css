@@ -1,0 +1,15 @@
+.work-main {
+    
+    & .collection {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+
+        & .item {
+            flex: 1 1 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+
+        }
+    }
+}

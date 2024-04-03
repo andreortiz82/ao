@@ -1,9 +1,29 @@
 ---
 const today = new Date();
+import FooterLink from "./FooterLink.astro";
+import style from "../styles/footer.module.css";
 ---
 
-<footer>
-  <span class="">
+<footer class={style["footer"]}>
+  <nav class={style["links"]}>
+    <div class={style["avatar"]}>
+      <img
+        src="https://2.gravatar.com/avatar/879046b0eefad5903a2a0bd69911530930cf2d8985702c0bc1a54fc2404e7d15?size=50"
+        alt="Andre Ortiz"
+        class={style["logo"]}
+      />
+    </div>
+    <FooterLink target="_blank" href="https://twitter.com/andreortiz">
+      Twitter
+    </FooterLink>
+    <FooterLink target="_blank" href="https://github.com/andreortiz82">
+      Github
+    </FooterLink>
+    <FooterLink target="_blank" href="https://www.linkedin.com/in/andreortiz/">
+      LinkedIn
+    </FooterLink>
+  </nav>
+  <div class={style["copyright"]}>
     &copy; {today.getFullYear()} Andre Ortiz. All rights reserved.
-  </span>
+  </div>
 </footer>

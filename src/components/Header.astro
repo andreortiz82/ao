@@ -2,20 +2,16 @@
 import HeaderLink from "./HeaderLink.astro";
 import { Logo } from "../components/Logo";
 import { SITE_TITLE } from "../config";
+import style from "../styles/header.module.css";
 ---
 
-<header class="header">
+<header class={style["header"]}>
   <HeaderLink href="/">
     <Logo alt={SITE_TITLE} />
   </HeaderLink>
-  <nav class="header__nav">
+  <nav class={style["nav"]}>
     <HeaderLink href="/about">About</HeaderLink>
     <HeaderLink href="/shorts">Shorts</HeaderLink>
-    <HeaderLink target="_blank" href="https://github.com/andreortiz82">
-      Github
-    </HeaderLink>
-    <HeaderLink target="_blank" href="https://www.linkedin.com/in/andreortiz/">
-      LinkedIn
-    </HeaderLink>
+    <HeaderLink class={style['contact-email']} href="mailto:hello@andreortiz.com?subject=Howdy!">hello@andreortiz.com</HeaderLink>
   </nav>
 </header>

@@ -1,0 +1,20 @@
+---
+layout: "../layouts/About.astro"
+title: "Work"
+description: "The Work"
+---
+
+import style from "../styles/work.module.css";
+
+
+<main className={style["work-main"]}>
+    <section class="" data-aos="fade-in">
+        # Work
+        
+        <section className={style["collection"]}>
+        {['Design Systems', 'Analytics Dashboard', 'Project X', 'Illustrations & Branding'].map((title, index) => {
+            return <article className={style["item"]} key={index}>{title}</article>
+        })}
+        </section>
+    </section>
+</main>

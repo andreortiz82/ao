@@ -49,6 +49,7 @@ h5 {
 
 a {
   color: var(--link);
+  text-decoration: underline;
 
   &:hover {
     color: var(--link-hover);
@@ -58,46 +59,32 @@ a {
 p {
   font-size: 1.3rem;
   line-height: 1.7;
+  margin-top: 0;
+  margin-bottom: 1em;
 }
 
-/* Header
------------------------ */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
+ul,
+ol {
+  font-size: 1.3rem;
+  list-style: disc;
+  margin-top: 0;
+  margin-bottom: 1em;
+  padding-left: 2em;
 }
 
-.header__nav {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+blockquote {
+  margin: 1em 0;
+  font-size: 1.3rem;
+  padding-left: 20px;
+  border-left: 3px solid var(--text-primary);
 }
 
-.Logo {
-  width: 120px;
-
-  & svg {
-    width: 100%;
-    fill: var(--text-primary);
-  }
-}
-
-/* Home
---------------------------- */
-.greeting {
-  font-size: 1rem;
-  margin-bottom: 0;
-  color: var(--text-tertiary);
-}
-
-/* Footer
---------------------------- */
-footer {
-  font-size: 1rem;
-  margin-top: 1rem;
-  color: var(--text-tertiary);
+pre.astro-code {
+  font-family: var(--font-family-code);
+  padding: 1rem;
+  border-radius: var(--border-2);
+  overflow: auto;
+  border: 1px solid var(--component-border);
 }
 
 /* Media Queries */

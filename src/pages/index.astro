@@ -3,116 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
-import _ from "lodash";
-
-const greeting = _.sample([
-  "Hello",
-  "Hi there",
-  "Howdy",
-  "Welcome",
-  "Hola!",
-  "Hey there",
-  "What's up",
-  "Yo",
-  "Greetings",
-  "Salutations",
-  "Hey",
-  "Hi",
-  "Heyo",
-  "Heyo!",
-  "Hey there!",
-  "Hey there",
-  "Hey",
-  "Hi",
-  "Hi there",
-  "Hello",
-  "Hello there",
-  "Hello there!",
-  "Hello!",
-  "Hi",
-  "Hi there",
-  "Hi there!",
-  "Hi!",
-  "Hey",
-  "Hey there",
-  "Hey there!",
-  "Hey!",
-  "Hey",
-  "Hi",
-  "Hi there",
-  "Hello",
-  "Hello there",
-  "Hello there!",
-  "Hello!",
-  "Hi",
-  "Hi there",
-  "Hi there!",
-  "Hi!",
-  "Hey",
-  "Hey there",
-  "Hey there!",
-  "Hey!",
-  "Hey",
-  "Hi",
-  "Hi there",
-  "Hello",
-  "Hello there",
-  "Hello there!",
-  "Hello!",
-  "Hi",
-  "Hi there",
-  "Hi there!",
-  "Hi!",
-  "Hey",
-  "Hey there",
-  "Hey there!",
-  "Hey!",
-  "Hey",
-  "Hi",
-  "Hi there",
-  "Hello",
-  "Hello there",
-  "Hello there!",
-  "Hello!",
-  "Hi",
-  "Hi there",
-  "Hi there!",
-  "Hi!",
-  "Hey",
-  "Hey there",
-  "Hey there!",
-  "Hey!",
-  "Hey",
-  "Hi",
-  "Hi there",
-  "Hello",
-  "Hello there",
-  "Hello there!",
-  "Hello!",
-  "Hi",
-  "Hi there",
-  "Hi there!",
-  "Hi!",
-  "Hey",
-  "Hey there",
-  "Hey there!",
-  "Hey!",
-  "Hey",
-  "Hi",
-  "Hi there",
-  "Hello",
-  "Hello there",
-  "Hello there!",
-  "Hello!",
-  "Hi",
-  "Hi there",
-  "Hi there!",
-  "Hi!",
-  "Hey",
-  "Hey there",
-  "Hey there!",
-  "Hey!",
-]);
+import style from "../styles/home.module.css";
 ---
 
 <!DOCTYPE html>
@@ -124,14 +15,34 @@ const greeting = _.sample([
     <main>
       <Header title={SITE_TITLE} />
       <section>
-        <div class="greeting">
-          <span>👋</span>
-          <span>{greeting}</span>
+        <div class={style["greeting"]}>
+          <span class={style["dot-animate-pulse"]}></span>
+          <span>Current Learning</span>
         </div>
         <h1>
-          Product Design, Front-End Development, Design Systems, and AI Enthusiast based in Austin, TX. 
+          Product Design, Front-End Development, Design Systems, and AI
+          Enthusiast based in Austin, TX.
         </h1>
       </section>
+
+      <!-- <section class={style["work-section"]}>
+        {
+          [
+            "Design Systems",
+            "Analytics Dashboard",
+            "Skillaboration",
+            "Illustrations & Branding",
+          ].map((work) => {
+            return (
+              <article class={style["work-block"]}>
+                <div class={style["work-card"]}>
+                  <h5>{work}</h5>
+                </div>
+              </article>
+            );
+          })
+        }
+      </section> -->
       <Footer />
     </main>
   </body>

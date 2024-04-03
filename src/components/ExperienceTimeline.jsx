@@ -11,7 +11,7 @@ export const ExperienceTimeline = (props) => {
             <th>2005</th>
             <td>
               Post-education internship at Sony Red. Initially, my primary focus was on music
-              production and studio recording. After a time and completely by accident, my personal art was reviewed, leading to an invitation to
+              production and studio recording. After a time and completely by accident, a personal project caught some attention, leading to an invitation to
               collaborate with the design and marketing teams. It was during
               this period that I gained proficiency in using Photoshop, Flash,
               and acquired fundamental skills in web development.

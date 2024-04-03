@@ -795,6 +795,11 @@ anymatch@~3.1.2:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
+ao-design-tokens@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.npmjs.org/ao-design-tokens/-/ao-design-tokens-1.0.5.tgz"
+  integrity sha512-J7vUvx8ygkBSaRN3J3ThSrvdU+lRGvQsTLji1GLM6H8pq48/djSCfxH19G8APjyLjjTQUa5I8vYpGe2jbrlgPQ==
+
 aos@^3.0.0-beta.6:
   version "3.0.0-beta.6"
   resolved "https://registry.npmjs.org/aos/-/aos-3.0.0-beta.6.tgz"

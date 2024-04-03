@@ -2,6 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import style from '../styles/shorts.module.css';
 
 export interface Props {
   content: {
@@ -25,13 +26,13 @@ const {
   </head>
 
   <body>
-    <main class="lg:w-3/5 w-11/12 m-auto py-8">
+    <main class={style["blog-main"]}>
       <Header />
       <section>
         <article>
           {
             heroImage && (
-              <div class="mb-10">
+              <div class={style["hero"]}>
                 <img
                   class="w-screen rounded-lg shadow-sm"
                   src={heroImage}

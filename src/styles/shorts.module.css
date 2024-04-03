@@ -28,6 +28,14 @@
   }
 }
 
+.blog-main {
+  & .hero {
+    & img {
+      width: 100%;
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   .shorts-main ul {
     grid-template-columns: 1fr;
