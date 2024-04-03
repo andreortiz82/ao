@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
+  flex-wrap: wrap;
 
   & .logo {
     width: 100px;
@@ -26,7 +27,6 @@
       &:global(.active) {
         color: var(--color-primary);
       }
-      
 
       &:hover {
         color: var(--color-primary);
@@ -38,7 +38,7 @@
     border: 3px solid var(--color-primary);
     color: var(--color-primary);
     border-radius: var(--border-pill);
-    padding: 0.5em 1rem;  
-    font-weight: var(--font-weight-medium);  
+    padding: 0.5em 1rem;
+    font-weight: var(--font-weight-medium);
   }
 }
