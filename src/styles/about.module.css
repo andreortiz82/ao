@@ -105,6 +105,7 @@
     background: var(--chart-bar);
     color: var(--chart-label);
     display: inline-block;
+    white-space: nowrap;
   }
 }
 

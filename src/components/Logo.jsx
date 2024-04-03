@@ -2,7 +2,7 @@ import style from "../styles/header.module.css";
 
 export const Logo2 = ({ alt }) => {
   return (
-    <div className={style['logo']} title={alt}>
+    <div className={style["logo"]} title={alt}>
       <svg viewBox="0 0 323 276">
         <path
           fillRule="evenodd"
@@ -16,25 +16,32 @@ export const Logo2 = ({ alt }) => {
 
 export const Logo = ({ alt }) => {
   return (
-    <div className={style['logo']} title={alt}>
-      <svg
-        width="153"
-        height="74"
-        viewBox="0 0 153 74"
-        fill="none"
-      >
+    <div className={style["logo"]} title={alt}>
+      <svg width="153" height="74" viewBox="0 0 153 74" fill="none">
         <path
           d="M47.4145 4L87.8291 74H7L47.4145 4Z"
           fill="var(--text-primary)"
-          fill-opacity="0.25"
+          fillOpacity="0.25"
         />
-        <circle cx="117.47" cy="39" r="35" fill="var(--text-primary)" fill-opacity="0.25" />
+        <circle
+          cx="117.47"
+          cy="39"
+          r="35"
+          fill="var(--text-primary)"
+          fillOpacity="0.25"
+        />
         <path
           d="M4.33013 67.5L40.4145 5L76.4989 67.5H4.33013Z"
           stroke="var(--text-primary)"
-          stroke-width="5"
+          strokeWidth="5"
         />
-        <circle cx="110.47" cy="35" r="32.5" stroke="var(--text-primary)" stroke-width="5" />
+        <circle
+          cx="110.47"
+          cy="35"
+          r="32.5"
+          stroke="var(--text-primary)"
+          strokeWidth="5"
+        />
       </svg>
     </div>
   );
