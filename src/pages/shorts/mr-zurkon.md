@@ -6,6 +6,8 @@ pubDate: "March 30 2024"
 # heroImage: "/art/mz-cover-image.png"
 ---
 
+## Code Assistant GPT
+
 [Mr Zurkon](https://chat.openai.com/g/g-3m6Hy3W8c-mr-zurkon) is a custom built GPT by OpenAI. I first created this GPT as a test 2 things:
 
 - How custom could I tune the GPT regarding its responses?

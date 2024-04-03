@@ -30,8 +30,31 @@
 
 .blog-main {
   & .hero {
+    margin-bottom: 1rem;
     & img {
       width: 100%;
+    }
+  }
+
+  & .dates {
+    font-family: var(--font-family-code);
+    color: var(--color-secondary);
+    margin-bottom: 1rem;
+  }
+
+  & .short-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 1px solid var(--component-border);
+    margin-bottom: 2rem;
+
+    & .title {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
     }
   }
 }
