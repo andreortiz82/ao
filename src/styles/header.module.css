@@ -42,3 +42,20 @@
     font-weight: var(--font-weight-medium);
   }
 }
+
+.logo-link {
+  text-decoration: none;
+
+  & .logo-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    & span {
+      color: var(--color-primary);
+      text-decoration: none;
+      font-size: var(--font-size-heading4);
+      font-family: var(--font-family-serif);
+    }
+  }
+}
