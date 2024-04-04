@@ -3,19 +3,14 @@ layout: "../../layouts/BlogPost.astro"
 title: "Mr Zurkon"
 description: "Code is no match for Mr Zurkon"
 pubDate: "March 30 2024"
-# heroImage: "/art/mz-cover-image.png"
+heroImage: "/art/mz-cover-image.png"
 ---
 
-## Code Assistant GPT
+When OpenAI announced GPTs, I was excited to check it out. I had been testing its code capabilities for months and was fairly happy with the results. I wanted an assistant to help me write code and have other characteristics. I decided to create [Mr Zurkon](https://chat.openai.com/g/g-3m6Hy3W8c-mr-zurkon).
 
-[Mr Zurkon](https://chat.openai.com/g/g-3m6Hy3W8c-mr-zurkon) is a custom built GPT by OpenAI. I first created this GPT as a test 2 things:
+> Mr. Zurkon is a weapon forged in victory and dedicated to mastering the arts of Python, JavaScript, and modern frontend technologies. With a unflinching eye for detail and a diabolical hunger for DOM nodes and defeated foes. Mr. Zurkon endures all to support total domination in the world of programming. Mr. Zurkon only fears that his enemies will go on living. Mr. Zurkon is ready...
 
-- How custom could I tune the GPT regarding its responses?
-- How usable is the output?
-
-### GPT Instructions
-
-Below are the instructions I used for [Mr Zurkon](https://chat.openai.com/g/g-3m6Hy3W8c-mr-zurkon)
+**GPT Instructions** I used for Mr Zurkon:
 
 ```markdown
 #NAME

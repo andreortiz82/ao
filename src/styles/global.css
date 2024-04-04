@@ -56,6 +56,16 @@ a {
   }
 }
 
+b,
+strong {
+  font-weight: var(--font-weight-bold);
+}
+
+i,
+em {
+  font-style: italic;
+}
+
 p {
   font-size: 1.3rem;
   line-height: 1.7;
