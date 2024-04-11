@@ -110,7 +110,10 @@
 }
 
 .interests {
-  margin-bottom: var(--size-base-8);
+  background: var(--grays-slate-12);
+  color: var(--grays-slate-1);
+  padding: var(--size-base-8);
+  border-radius: var(--size-border-radius-3);
 
   & article {
     display: flex;
@@ -154,8 +157,6 @@
   }
 
   .interests {
-    margin-bottom: 0;
-
     & article {
       flex-wrap: wrap;
       gap: 0;
