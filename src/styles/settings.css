@@ -10,4 +10,5 @@
   --chart-label: var(--color-inverse);
   --chart-bar: var(--color-primary);
   --chart-meter: var(--color-primary);
+  --typography-line-height-heading: 1.3;
 }

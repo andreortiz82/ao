@@ -2,19 +2,19 @@
   overflow: hidden;
 
   & section {
-    margin-bottom: 3rem;
+    margin-bottom: var(--size-base-12);
   }
 }
 
 .tldr {
-  margin-bottom: 1rem;
+  margin-bottom: var(--size-base-4);
 }
 
 .about-skill-chart {
   position: relative;
 
   & h5 {
-    margin-bottom: 1rem;
+    margin-bottom: var(--size-base-4);
   }
 
   & .wrapper {
@@ -23,11 +23,11 @@
     & .bars {
       display: flex;
       flex-direction: column;
-      gap: 0.3rem;
+      gap: var(--size-base-1);
 
       & .bar-label {
-        padding: 0.5rem;
-        border-radius: 3px;
+        padding: var(--size-base-2);
+        border-radius: var(--size-border-radius-2);
         background: var(--chart-bar);
         color: var(--chart-label);
         display: inline-block;
@@ -38,12 +38,12 @@
   & .keys {
     display: flex;
     justify-content: space-between;
-    margin-top: 1rem;
+    margin-top: var(--size-base-4);
 
     & .key {
       position: relative;
       color: var(--chart-meter);
-      padding-left: 1rem;
+      padding-left: var(--size-base-4);
 
       &:before {
         content: "";
@@ -60,20 +60,20 @@
 }
 
 .about-timline {
-  font-size: 1.3rem;
-  line-height: 1.7;
+  font-size: var(--size-base-5);
+  line-height: var(--typography-line-height-body);
 
   & table {
     width: 100%;
-    margin-bottom: 1rem;
-    border: 1px solid var(--slate-4);
+    margin-bottom: var(--size-base-4);
+    border: 1px solid var(--component-border);
     border-collapse: collapse;
-    border-radius: 3px;
+    border-radius: var(--size-border-radius-2);
 
     & th,
     & td {
-      padding: 1rem;
-      border: 1px solid var(--slate-4);
+      padding: var(--size-base-4);
+      border: 1px solid var(--component-border);
     }
 
     & th {
@@ -82,26 +82,26 @@
       width: 200px;
       vertical-align: top;
       text-align: right;
-      background: var(--slate-3);
-      font-size: 1.9rem;
+      background: var(--component-background-secondary);
+      font-size: var(--size-font-h-4);
     }
   }
 }
 
 .skill-block {
   h5 {
-    margin: 1rem 0;
+    margin: var(--size-base-4) 0;
   }
 }
 
 .about-skill-keywords {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: var(--size-base-2);
 
   & .keyword {
-    padding: 0.5rem 1rem;
-    border-radius: 100px;
+    padding: var(--size-base-2) var(--size-base-4);
+    border-radius: var(--size-border-radius-pill);
     background: var(--chart-bar);
     color: var(--chart-label);
     display: inline-block;
@@ -111,16 +111,16 @@
 
 .interests,
 .personal {
-  margin-bottom: 2rem;
+  margin-bottom: var(--size-base-8);
 
   & article {
     display: flex;
-    gap: 2rem;
+    gap: var(--size-base-8);
     flex-direction: row;
 
     & .image {
       flex: 0 0 auto;
-      width: 420px;
+      width: 300px;
 
       & img {
         width: 100%;
@@ -130,22 +130,34 @@
 }
 
 .personal {
+  margin: var(--size-base-8) auto;
+  width: 70%;
+  background: var(--color-primary);
+  color: var(--component-base);
+  border-radius: var(--size-border-radius-4);
+  padding: var(--size-base-8);
+
   & article {
-    flex-direction: row-reverse;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--size-base-8);
+
+    & .note {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
     & .image {
-      position: relative;
+      background: var(--component-background-secondary);
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+      border-radius: var(--size-border-radius-3);
 
-      &:after {
-        content: "";
-        display: block;
-        background: var(--slate-5);
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        width: 420px;
-        height: 316px;
-        z-index: -1;
+      & img {
+        width: 100%;
       }
     }
   }
@@ -159,7 +171,8 @@
       & tbody {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: var(--size-base-4);
+
         & tr {
           display: flex;
           flex-direction: column;
@@ -185,11 +198,18 @@
 
       & .image {
         width: 100%;
+        height: 240px;
+        overflow: hidden;
+        border-radius: var(--size-border-radius-3);
+        margin-bottom: var(--size-base-4);
 
         & img {
           width: 100%;
         }
       }
     }
+  }
+  .personal {
+    width: 85%;
   }
 }

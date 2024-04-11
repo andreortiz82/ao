@@ -1,15 +1,13 @@
 .work-main {
-    
-    & .collection {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
+  & .collection {
+    display: flex;
+    gap: var(--size-base-4);
+    flex-wrap: wrap;
 
-        & .item {
-            flex: 1 1 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-
-        }
+    & .item {
+      flex: 1 1 auto;
+      padding: var(--size-base-4);
+      border: 1px solid red;
     }
+  }
 }

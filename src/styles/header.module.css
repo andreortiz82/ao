@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: var(--size-base-8);
   flex-wrap: wrap;
 
   & .logo {
@@ -16,7 +16,7 @@
   & .nav {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: var(--size-base-6);
 
     & a:not(.contact-email) {
       color: var(--text-tertiary);
@@ -37,9 +37,9 @@
   & .contact-email {
     border: 3px solid var(--color-primary);
     color: var(--color-primary);
-    border-radius: var(--border-pill);
-    padding: 0.5em 1rem;
-    font-weight: var(--font-weight-medium);
+    border-radius: var(--size-border-radius-pill);
+    padding: var(--size-base-2) var(--size-base-4);
+    font-weight: var(--font-weight-bold);
   }
 }
 
@@ -49,13 +49,13 @@
   & .logo-title {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: var(--size-base-4);
 
     & span {
       color: var(--color-primary);
       text-decoration: none;
-      font-size: var(--font-size-heading4);
-      font-family: var(--font-family-serif);
+      font-size: var(--size-font-h-4);
+      font-family: var(--typography-family-serif);
     }
   }
 }
