@@ -50,7 +50,7 @@
     justify-content: space-between;
     gap: var(--size-base-4);
     border-bottom: 1px solid var(--component-border);
-    margin-bottom: var(--size-base-8);
+    margin-bottom: var(--size-base-7);
 
     & .title {
       display: flex;

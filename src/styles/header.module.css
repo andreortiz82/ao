@@ -51,11 +51,11 @@
     align-items: center;
     gap: var(--size-base-4);
 
-    & span {
+    & span.name {
       color: var(--color-primary);
-      text-decoration: none;
-      font-size: var(--size-font-h-4);
-      font-family: var(--typography-family-serif);
+      font-size: var(--size-font-h-3);
+      font-family: "DM Serif Text", serif;
+      font-weight: 700;
     }
   }
 }
