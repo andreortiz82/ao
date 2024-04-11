@@ -8,6 +8,7 @@ import { AboutKeywords } from "../components/AboutChart.jsx";
 import { ExperienceTimeline } from "../components/ExperienceTimeline.jsx";
 
 import style from "../styles/about.module.css";
+import style2 from "../styles/home.module.css";
 
 export const creativeData = [
   { label: "Product Design" },
@@ -43,7 +44,7 @@ export const creativeData = [
     
     # Husband, Father, Creative, and Friend 
     
-    For nearly two decades I have built product experiences across various industries such as **education, healthcare, travel, and automotive**. I am a versatile, product-focused creative professional with an exciting set of skills. I have had the privilege of collaborating with and learning from exceptionally talented individuals.
+    I design products and experiences across industries like **education, healthcare, travel, and automotive.** I am not just a creative professional, but a versatile and product-focused tactician, armed with a powerful set of skills. 
     
     <AboutKeywords data={creativeData}  />
 
@@ -52,36 +53,29 @@ export const creativeData = [
 <section class="" data-aos="fade-in">
   <ExperienceTimeline />
 </section>
-
   <section className={style["interests"]} data-aos="fade-in">
-    ### Current Interests 
+    <h3>Currently Learning <span class={style2["dot-animate-pulse"]}></span></h3>
     
    <article>
-
     <div className={style["image"]}>
       ![img](../../interests.png)
     </div>
-
     <div>
 
-    I am truly enthusiastic about **AI** and the significant impact it is already making. I firmly believe that **Machine Learning** and **LLMs** have the potential to boost our creativity and enable us to innovate. Recently, I have been familiarizing myself with tools such as [Ollama](https://ollama.ai/), [OpenAI](https://openai.com/), [CrewAI](https://www.crewai.io/), and [MidJourney](https://www.midjourney.com/home). My aim is to gain a deeper understanding of how these tools will influence future products.
+    **Artificial Intelligence is undoubtedly a game-changer.** Compact text-generating models like Llama2 and advanced multi-modal models like ChatGPT exhibit impressive capabilities. When these are harnessed by a team of specialized AIs, working towards a common goal in an agentic workflow, the product outcomes are transformative!
 
-    While I don't have a formal background in machine learning, data science, or similar fields, my interest is genuine. I am keen on learning as much as possible. My goal is to **discover the crossroads of design and AI**.
+    My focus has been on these tools:
 
+    - [Ollama](https://ollama.ai/) - Local, open source language models
+    - [OpenAI](https://openai.com/) - AI as a service (ChatGPT)
+    - [CrewAI](https://www.crewai.io/) - Framework for creating _agentic models_
+    - [MidJourney](https://www.midjourney.com/home) - Image creation
+
+    I'm super excited about the opportunity to learn and find **the intersection of experience design and AI!** While I may not have a formal background in machine learning, data science or related fields, my genuine curiosity and capabilities will get me there.
     </div>
 
    </article>
-
   </section>
-  <section className={style["personal"]} data-aos="fade-in">
-    <article>
-      <div className={style["image"]}>
-        <img src="../../family.jpg"/>
-      </div>
-      <div className={style["note"]}>
-        <strong>On a personal note:</strong> In my spare time, I enjoy working on creative tasks, digging in the garden, and [playing music](https://www.youtube.com/channel/UCp0yFoeapfq0CoNJje5npeA). I've been fortunate to live in a number of cities but in the end, my heart is in Texas.
-      </div>
-    </article>
 
-  </section>
+  <h1 id="current"></h1>
 </main>

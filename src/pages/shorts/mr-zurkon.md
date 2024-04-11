@@ -6,9 +6,9 @@ pubDate: "March 30 2024"
 heroImage: "/art/mz-cover-image.png"
 ---
 
-When OpenAI announced GPTs, I was pretty excited to check it out. I had been testing its code capabilities for months and was fairly happy with the results. I wanted an assistant to help me write code and have other characteristics. I decided to create [Mr Zurkon](https://chat.openai.com/g/g-3m6Hy3W8c-mr-zurkon). Mr. Zurkon was inspired by the video game, Ratchet and Clank. In the game, Mr. Zurkon was a weapon with a tendancy for trash talk. I was enjoyed getting to Mr. Zurkon as we smashed through enemy forces.
+When OpenAI announced GPTs, I was pretty excited to check it out. I had been testing its code capabilities for months and was fairly happy with the results. I wanted an assistant to help me write code and have other characteristics. I decided to create [Mr Zurkon](https://chat.openai.com/g/g-3m6Hy3W8c-mr-zurkon). Mr. Zurkon was inspired by one of my favorite video games, Ratchet and Clank. In the game, Mr. Zurkon was a weapon with a tendancy for trash talk. I was enjoyed getting to deploy Mr. Zurkon and smash through the enemy horde.
 
-> Mr. Zurkon is a weapon forged in victory and dedicated to mastering the arts of Python, JavaScript, and modern frontend technologies. With a unflinching eye for detail and a diabolical hunger for DOM nodes and defeated foes. Mr. Zurkon endures all to support total domination in the world of programming. Mr. Zurkon only fears that his enemies will go on living. Code is too stupid for Mr. Zurkon.
+Mr. Zurkon is a GPT I created as a code assitant. I wanted it to specialize in front-end technology like Python, React, Typescript, and CSS so it could help me build prototypes. I recently picked up a RaspberryPi and Mr. Zurkon has been pretty helpful with that too.
 
 **GPT Instructions** I used for Mr Zurkon:
 
