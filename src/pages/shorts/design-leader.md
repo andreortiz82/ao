@@ -1,10 +1,12 @@
 ---
 layout: "../../layouts/BlogPost.astro"
 title: "Creative Leadership"
-description: "Be a great design leader and your team will crush it."
+description: "Promote teamwork and creativity"
 pubDate: "November 16 2022"
 ---
 
-Being a good design leader is all about empowering your team to do their best work. As a leader, your job is to set clear goals and expectations, provide feedback and guidance, and create a supportive environment where your team can thrive. This means being a good listener and communicator, showing empathy and respect for your team members, and always being willing to lend a helping hand when needed.
+Creative leadership is all about sparking innovation and driving change by cultivating a culture that appreciates imagination, experimentation, and diverse ideas. Moving away from traditional leadership models that focus on control and uniformity, creative leaders promote risk-taking and consider failures as critical learning opportunities.
 
-Another key aspect of being a good design leader is fostering a culture of continuous learning and growth. This means creating opportunities for your team to learn new skills, share their expertise with one another, and take on new challenges that push them out of their comfort zones. By doing so, you'll help your team build the confidence, resilience, and problem-solving skills they need to tackle any design challenge that comes their way.
+Creative leaders have the vision to spot potential where others see hurdles, and they advocate for innovative ideas and approaches that stretch limits and defy the norm. By creating an atmosphere where team members feel valued and have the confidence to share their unique viewpoints, creative leaders promote teamwork and creativity, leading to groundbreaking solutions and significant outcomes.
+
+This style of leadership is incredibly important in sectors where innovation is vital for staying competitive, as it ensures that organizations stay nimble, flexible, and ahead of the curve when it comes to tackling challenges and seizing opportunities.

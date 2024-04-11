@@ -1,14 +1,12 @@
 ---
 layout: "../../layouts/BlogPost.astro"
 title: "Be a Unicorn"
-description: "High value skills in a demanding world"
+description: "Designers who code"
 pubDate: "Feb 19 2023"
 ---
 
-Being a versatile product designer who understands UI/UX, can code, and knows product strategy is super important in today's fast-paced tech industry. These designers bring a cool mix of skills to create products that look good, work well, and align with business goals.
+Designers who can code are like unicorns, bridging the often-wide gap between design and development. They bring a unique blend of creativity and functionality to the table, adding that extra flare to web and digital projects. By understanding the possibilities and limitations of code, you can craft designs that are not just beautiful, but also doable right from the get-go.
 
-A versatile product designer with UI/UX expertise bridges the gap between aesthetics and functionality. They create visually appealing interfaces with a smooth user experience, attracting and keeping users for higher satisfaction and engagement.
-Coding skills let designers bring their ideas to life and iterate effectively. This technical proficiency improves communication with developers, reducing misunderstandings and design-implementation gaps.
+This all-in-one approach cuts down on the ping-pong between designers and developers, making the whole production process a breeze and getting things done faster. Designers who code can directly bring their visions to life, ensuring the end product is a spitting image of the original design intent.
 
-Understanding product strategy empowers designers to make smart decisions that align with company goals and market demands. They find opportunities, prioritize features, and contribute to the product's vision, driving its success.
-In today's product development landscape, a designer with these three skill sets becomes an invaluable asset, driving innovation and delivering awesome products.
+This combination of design and code skills is like a magic potion for innovation. Designers aren't just dreaming up what could be done, they have the practical skills to experiment and bring their ideas to life.

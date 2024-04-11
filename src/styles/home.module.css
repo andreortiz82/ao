@@ -51,14 +51,16 @@
   }
 
   & .work-card {
-    padding: var(--size-base-4);
+    padding: var(--size-base-8);
     margin: var(--size-base-2);
-    height: 400px;
-    border: 1px solid var(--component-border);
-    border-radius: var(--border-2);
-
+    height: 200px;
+    border: 1px dashed var(--component-border);
+    border-radius: var(--size-border-radius-3);
+    cursor: not-allowed;
     & h4 {
       margin: 0;
+      font-weight: normal;
+      color: var(--color-placeholder);
     }
   }
 }
