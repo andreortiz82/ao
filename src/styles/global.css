@@ -16,7 +16,7 @@ h1,
 h2,
 h3 {
   font-family: "DM Serif Text", serif;
-  font-weight: 700;
+  font-weight: 400;
   margin: 0 0 var(--size-base-5) 0;
   line-height: var(--typography-line-height-heading);
 }
@@ -24,7 +24,7 @@ h3 {
 h4,
 h5 {
   font-family: inherit;
-  font-weight: 700;
+  font-weight: 400;
   line-height: var(--typography-line-height-body);
 }
 

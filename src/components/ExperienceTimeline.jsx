@@ -53,12 +53,12 @@ export const ExperienceTimeline = (props) => {
           </tr>
 
           <tr>
-            <th>2013</th>
+            <th>2012</th>
             <td>
-              I decided to freelance in order to spend more time at home with my
-              family. This allowed me to provide a range of services, including
-              UI/X design, branding, design systems, documentation, and
-              front-end development.
+              I began frelancing in order to spend more time at home with my
+              family. I provided a range of services, including UI/X design,
+              branding, design systems, documentation, and front-end
+              development.
             </td>
           </tr>
 
