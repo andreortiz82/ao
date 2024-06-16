@@ -25,17 +25,22 @@ import style from "../styles/home.module.css";
         </h1>
       </section>
 
-      <section class={style["work-section"]}>
+      <!-- <section class={style["work-section"]}>
         {
-          [0, 1, 2, 3].map((work) => {
+          [
+            "HealNow Web Design",
+            "AO Design System",
+            "Generic Analytics Dashboard",
+            "Augmented Reality Concept",
+          ].map((work) => {
             return (
               <article class={style["work-block"]}>
-                <div class={style["work-card"]} />
+                <div class={style["work-card"]}>{work}</div>
               </article>
             );
           })
         }
-      </section>
+      </section> -->
       <Footer />
     </main>
   </body>

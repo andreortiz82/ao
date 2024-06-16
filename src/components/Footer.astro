@@ -2,6 +2,14 @@
 const today = new Date();
 import FooterLink from "./FooterLink.astro";
 import style from "../styles/footer.module.css";
+import {
+  GithubLogo,
+  XLogo,
+  LinkedinLogo,
+  InstagramLogo,
+  YoutubeLogo,
+  DribbbleLogo,
+} from "@phosphor-icons/react";
 ---
 
 <footer class={style["footer"]}>
@@ -13,14 +21,28 @@ import style from "../styles/footer.module.css";
         class={style["logo"]}
       />
     </div>
-    <FooterLink target="_blank" href="https://twitter.com/andreortiz">
-      Twitter
+    <FooterLink target="_blank" href="https://x.com/andreortiz">
+      <XLogo size={24} />
     </FooterLink>
+    <FooterLink target="_blank" href="https://www.instagram.com/andreortiz/">
+      <InstagramLogo size={24} />
+    </FooterLink>
+    <FooterLink
+      target="_blank"
+      href="https://www.youtube.com/channel/UCp0yFoeapfq0CoNJje5npeA"
+    >
+      <YoutubeLogo size={24} />
+    </FooterLink>
+
+    <FooterLink target="_blank" href="https://dribbble.com/andreortiz">
+      <DribbbleLogo size={24} />
+    </FooterLink>
+
     <FooterLink target="_blank" href="https://github.com/andreortiz82">
-      Github
+      <GithubLogo size={24} />
     </FooterLink>
     <FooterLink target="_blank" href="https://www.linkedin.com/in/andreortiz/">
-      LinkedIn
+      <LinkedinLogo size={24} />
     </FooterLink>
   </nav>
   <div class={style["copyright"]}>
