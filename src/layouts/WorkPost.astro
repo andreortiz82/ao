@@ -1,0 +1,58 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import style from "../styles/shorts.module.css";
+
+export interface Props {
+  content: {
+    title: string;
+    description: string;
+  };
+}
+
+const {
+  content: { title, description },
+} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+
+  <body>
+    <Header />
+
+    <main class={style["blog-main"]}>
+      <section>
+        <article>
+          <header class={style["short-header"]}>
+            <div class={style["title"]}>
+              <a href="/">
+                <svg width="44" height="30" viewBox="0 0 44 30" fill="none">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M0.585786 16.1421C-0.195262 15.3611 -0.195262 14.0948 0.585786 13.3137L13.3137 0.585787C14.0948 -0.195262 15.3611 -0.195262 16.1421 0.585787C16.9232 1.36684 16.9232 2.63317 16.1421 3.41421L6.82843 12.7279H42C43.1046 12.7279 44 13.6234 44 14.7279C44 15.8325 43.1046 16.7279 42 16.7279H6.82843L16.1421 26.0416C16.9232 26.8227 16.9232 28.089 16.1421 28.8701C15.3611 29.6511 14.0948 29.6511 13.3137 28.8701L0.585786 16.1421Z"
+                    fill="var(--color-link)"></path>
+                </svg>
+              </a>
+              <h1>{title}</h1>
+            </div>
+          </header>
+          <slot />
+        </article>
+      </section>
+    </main>
+
+    <Footer />
+
+    <script>
+      import AOS from "aos";
+      import "aos/dist/aos.css";
+
+      AOS.init();
+    </script>
+  </body>
+</html>

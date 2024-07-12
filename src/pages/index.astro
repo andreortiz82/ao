@@ -25,22 +25,38 @@ import style from "../styles/home.module.css";
         </h1>
       </section>
 
-      <!-- <section class={style["work-section"]}>
+      <section class={style["work-section"]}>
         {
           [
-            "HealNow Web Design",
-            "AO Design System",
-            "Generic Analytics Dashboard",
-            "Augmented Reality Concept",
+            {
+              name: "K Bag",
+              thumbnail: "/work/kbag-thumbnail.png",
+              category: "Web Design",
+              link: "/work/kbag",
+            },
+            {
+              name: "Illustrations",
+              thumbnail: "/work/illustration-thumbnail.png",
+              category: "Fun",
+              link: "/work/illustration",
+            },
           ].map((work) => {
             return (
-              <article class={style["work-block"]}>
-                <div class={style["work-card"]}>{work}</div>
-              </article>
+              <a href={work.link}>
+                <article class={style["work-block"]}>
+                  <div class={style["work-thumbnail"]}>
+                    <img src={work.thumbnail} alt={work.name} />
+                  </div>
+                  <div class={style["work-card"]}>
+                    <p>{work.category}</p>
+                    <h5>{work.name}</h5>
+                  </div>
+                </article>
+              </a>
             );
           })
         }
-      </section> -->
+      </section>
       <Footer />
     </main>
   </body>
