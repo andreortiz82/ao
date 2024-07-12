@@ -47,6 +47,11 @@
   grid-template-columns: 1fr 1fr;
   gap: var(--size-base-2);
 
+  & .work-block-link {
+    text-decoration: none;
+    color: var(--text-primary);
+  }
+
   & .work-block {
     border-radius: var(--size-border-radius-3);
     border: 1px solid var(--component-border);

@@ -31,18 +31,18 @@ import style from "../styles/home.module.css";
             {
               name: "K Bag",
               thumbnail: "/work/kbag-thumbnail.png",
-              category: "Web Design",
+              category: "Design",
               link: "/work/kbag",
             },
             {
-              name: "Illustrations",
+              name: "Fun",
               thumbnail: "/work/illustration-thumbnail.png",
-              category: "Fun",
+              category: "Illustrations",
               link: "/work/illustration",
             },
           ].map((work) => {
             return (
-              <a href={work.link}>
+              <a href={work.link} class={style["work-block-link"]}>
                 <article class={style["work-block"]}>
                   <div class={style["work-thumbnail"]}>
                     <img src={work.thumbnail} alt={work.name} />
