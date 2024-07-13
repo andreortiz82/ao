@@ -9,6 +9,7 @@
     opacity: 0;
   }
 }
+
 .greeting {
   display: flex;
   align-items: center;
@@ -43,9 +44,11 @@
 }
 
 .work-section {
+  gap: var(--size-base-2);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--size-base-2);
+  grid-column-gap: var(--size-base-2);
+  grid-row-gap: var(--size-base-2);
 
   & .work-block-link {
     text-decoration: none;
@@ -60,7 +63,6 @@
   }
 
   & .work-thumbnail {
-    height: 300px;
     overflow: hidden;
 
     & img {
