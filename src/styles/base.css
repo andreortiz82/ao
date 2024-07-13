@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap");
+@import "./settings.css";
+@import "ao-design-tokens";
+
+
+
+@layer base {
+  body {
+    @apply bg-zinc-100 dark:bg-zinc-900;
+    @apply text-zinc-900 dark:text-zinc-100 font-sans text-base;
+    @apply p-12 mx-auto max-w-[1280px];
+    @apply transition duration-200;
+    @apply antialiased;
+  }
+  
+  h1 {
+    @apply text-5xl;
+    font-family: "DM Serif Text", serif;
+  }
+  
+}
