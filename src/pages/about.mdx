@@ -5,10 +5,11 @@ description: "Husband, Father, Creative, and Friend"
 ---
 
 import { AboutKeywords } from "../components/AboutChart.jsx";
-import { ExperienceTimeline } from "../components/ExperienceTimeline.jsx";
+import { Timeline } from "../components/ExperienceTimeline.jsx";
+import { Dot } from "../components/Dot.jsx";
 
-import style from "../styles/about.module.css";
-import style2 from "../styles/home.module.css";
+export const style = {};
+export const style2 = {};
 
 export const creativeData = [
   { label: "Product Design" },
@@ -17,74 +18,83 @@ export const creativeData = [
   { label: "Prototyping" },
   { label: "Design Systems" },
   { label: "Design Tokens" },
+  { label: "UI Kits" },
+  { label: "Figma" },
+  { label: "Adobe CC" },
   { label: "Front-End Development" },
   { label: "React" },
+  { label: "Javascript" },
   { label: "UI Components" },
   { label: "Clojurescript" },
   { label: "Ruby / Rails" },
+  { label: "Python" },
   { label: "Node" },
   { label: "Sqlite" },
   { label: "HTML / CSS" },
-  { label: "Python" },
+  { label: "Tailwind" },
   { label: "REST" },
   { label: "Web Design" },
-  { label: "AI Agents" },
-  { label: "Ollama AI" },
-  { label: "Anthropic" },
-  { label: "Groq" },
-  { label: "OpenAI" },
-  { label: "LangChain" },
   { label: "Video Production" },
   { label: "Sound Design" },
   { label: "Branding" },
   { label: "Illustration" },
 ];
 
-<main className={style["about-main"]}>
+<main>
 
-<section class="" data-aos="fade-in">
-  <div className={style["tldr"]}>
-    
-    # Husband, Father, Creative, and Friend 
-    
-    I design products and experiences across industries like **education, healthcare, travel, and automotive.** I am not just a creative professional, but a versatile and product-focused tactician, armed with a powerful set of skills. 
-    
-    <AboutKeywords data={creativeData}  />
-
+{" "}
+<section data-aos="fade-in">
+  <div class="flex flex-col gap-2 mb-8">
+    <h1>Husband, Father, Creative, and Friend</h1>
+    <p>
+      I design products and experiences across industries like{" "}
+      <strong>education, healthcare, travel, and automotive.</strong> I am not
+      just a creative professional, but a versatile and product-focused
+      tactician, armed with a powerful set of skills.
+    </p>
+    <AboutKeywords data={creativeData} />
   </div>
-</section>
-<section class="" data-aos="fade-in">
-  <ExperienceTimeline />
 </section>
 
 {" "}
+<section data-aos="fade-in">
+  <div class="flex gap-4">
+    <Timeline />
+  </div>
+</section>
 
-  <section id="current" className={style["interests"]} data-aos="fade-in">
-    
-   <article>
+  <section id="current" class="bgfx" data-aos="fade-in">
+    <article class="flex gap-4 p-6 lg:p-10">
+      <div class="w-6/6 lg:w-4/6 m-auto dark:bg-zinc-800/90 bg-white/90 rounded-lg p-10">
+        
+        <div class="flex gap-3 items-center mb-4">
+          <Dot />
+          <h5>Currently Learning</h5>
+        </div>
+        
+        <p>
+          <strong>AI is undoubtedly a game-changer.</strong> Compact, text-generating models like Llama2 and more capable models like GPT-4o exhibit impressive capabilities on their own. I have been exploring the potential of these models and how they can be used to build exciting new products and completely change the way we interact with technology.
+        </p>
 
-    <div className={style["image"]}>
+        <div class="my-4">
+          <strong>My focus has been on these tools:</strong>
+          <ul>
+            <li><a target="_blank" class="underline" href="https://ollama.ai/">Ollama</a> - Run local, open source models</li>
+            <li><a target="_blank" class="underline" href="https://openai.com/">OpenAI</a>, <a target="_blank" class="underline" href="https://www.anthropic.com/">Anthropic</a>, <a target="_blank" class="underline" href="https://www.groq.com/">Groq</a> - AI as a service</li>
+            <li><a target="_blank" class="underline" href="https://www.crewai.io/">CrewAI</a> - Framework for creating _agentic models_</li>
+            <li>
+            <a target="_blank" class="underline" href="https://www.langchain.com/">LangChain</a> - Some other RTCSessionDescription
+            </li>
+            <li>
+            <a target="_blank" class="underline" href="https://sdk.vercel.ai/docs/introduction">Vercel AI API</a> - Javascript library for interacting with AI services
+            </li>
+            <li><a target="_blank" class="underline" href="https://www.midjourney.com/home">MidJourney</a> - Image creation</li>
+            <li><a target="_blank" class="underline" href="https://www.suno.com">Suno</a> - Music creation</li>
+          </ul>
+        </div>
+      </div>
+    </article>
 
-      ![img](../../interests.png)
-    </div>
-    <div>
-
-    <span class={style2["dot-animate-pulse"]}></span> **Artificial Intelligence is undoubtedly a game-changer.** Compact text-generating models like Llama2 and advanced multi-modal models like ChatGPT exhibit impressive capabilities. When these are harnessed by a team of specialized AIs, working towards a common goal in an agentic workflow, the product outcomes are transformative!
-
-    My focus has been on these tools:
-
-    - [Ollama](https://ollama.ai/) - Local, open source language models
-    - [OpenAI](https://openai.com/) - AI as a service (ChatGPT)
-    - [Anthropic](https://www.anthropic.com/) - AI as a service (Claude)
-    - [Groq](https://www.groq.com/) - AI as a service
-    - [CrewAI](https://www.crewai.io/) - Framework for creating _agentic models_
-    - [LangChain](https://www.langchain.com/) - Framework for creating applications powered by _LLMs_
-    - [MidJourney](https://www.midjourney.com/home) - Image creation
-
-     I'm super excited about the opportunity to learn and find **the intersection of experience design and AI!** While I may not have a formal background in machine learning, data science or related fields, my genuine curiosity and capabilities will get me there.
-    </div>
-
-   </article>
   </section>
 
 </main>

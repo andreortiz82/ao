@@ -1,14 +1,3 @@
-@import "ao-design-tokens";
-
-:root {
-  --app-base: var(--component-base);
-  --text-primary: var(--color-primary);
-  --text-secondary: var(--color-secondary);
-  --text-tertiary: var(--color-tertiary);
-  --link: var(--color-link);
-  --link-hover: var(--color-link-hover);
-  --chart-label: var(--color-inverse);
-  --chart-bar: var(--color-primary);
-  --chart-meter: var(--color-primary);
-  --typography-line-height-heading: 1.3;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

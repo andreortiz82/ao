@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap");
+@import "./settings.css";
+@import "ao-design-tokens";
+
+@layer base {
+  body {
+    @apply bg-white dark:bg-zinc-900;
+    @apply text-zinc-900 dark:text-zinc-100 font-sans text-base;
+    @apply p-12 mx-auto max-w-[1280px];
+    @apply transition duration-200;
+    @apply antialiased;
+  }
+  
+  h1 {
+    @apply text-5xl;
+    font-family: "DM Serif Text", serif;
+  }
+
+  h2 {
+    @apply text-4xl;
+    font-family: "DM Serif Text", serif;
+  }
+
+  h3 {
+    @apply text-3xl;
+    font-family: "DM Serif Text", serif;
+  }
+
+  h4 {
+    @apply text-2xl;
+    font-family: "DM Serif Text", serif;
+  }
+
+  h5 {
+    @apply text-2xl font-bold;
+    font-family: inherit;
+  }
+
+  p {
+    @apply text-xl my-4 leading-relaxed;
+    font-family: inherit;
+  }
+  
+  ul,
+  ol {
+    @apply my-4 pl-8 flex flex-col gap-1 text-xl;
+    list-style: disc;
+    font-family: inherit;
+  }
+
+  blockquote {
+    @apply p-4 m-8 pl-8 border-l-4 border-zinc-300 dark:border-zinc-700;
+  }
+
+  pre {
+    @apply p-4 my-4 font-mono rounded overflow-auto;
+  }
+
+  .bgfx {
+    background-image: url("/bgfx.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

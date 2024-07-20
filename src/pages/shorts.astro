@@ -2,8 +2,6 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import style from '../styles/shorts.module.css';
-
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
@@ -22,13 +20,13 @@ const posts = (await Astro.glob("./shorts/*.{md,mdx}")).sort(
   <body>
     <main >
       <Header />
-      <section class={style['shorts-main']}>
+      <section>
         <h1>Shorter than a blog post. <br/>Longer than a Tweet.</h1>
-        <ul >
+        <ul class="list-none p-0 grid grid-cols-3 gap-4 text-xl leading-8">
           {
             posts.map((post) => (
-              <li data-aos="fade-in">
-                <time datetime={post.frontmatter.pubDate}>
+              <li data-aos="fade-in" class="border-l p-4 flex flex-col">
+                <time datetime={post.frontmatter.pubDate} class="opacity-50 text-sm">
                     {new Date(post.frontmatter.pubDate).toLocaleDateString(
                       "en-us",
                       {
@@ -38,7 +36,7 @@ const posts = (await Astro.glob("./shorts/*.{md,mdx}")).sort(
                       }
                     )}
                   </time>
-                <a href={post.url} >
+                <a href={post.url} class="underline text-2xl">
                   {post.frontmatter.title}
                 </a>
                 <p>{post.frontmatter.description}</p>

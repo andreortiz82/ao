@@ -15,7 +15,6 @@ export interface Props {
 const {
   content: { title, description, pubDate, updatedDate, heroImage },
 } = Astro.props;
-
 ---
 
 <html lang="en">
@@ -36,7 +35,7 @@ const {
             )
           }
           <!-- <h1>Husband, father, creative, &amp; friend.</h1> -->
-          <div >
+          <div>
             {pubDate && <time>{pubDate}</time>}
             {
               updatedDate && (
@@ -48,14 +47,13 @@ const {
           </div>
           <slot />
         </article>
-        
       </section>
       <Footer />
     </main>
+    <script>
+      import AOS from "aos";
+      import "aos/dist/aos.css";
+      AOS.init();
+    </script>
   </body>
-  <script>
-    import AOS from 'aos';
-    import 'aos/dist/aos.css';
-    AOS.init();
-  </script>
 </html>

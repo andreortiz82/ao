@@ -3,7 +3,9 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
-import style from "../styles/home.module.css";
+
+const style = {}
+
 ---
 
 <!DOCTYPE html>
@@ -14,18 +16,21 @@ import style from "../styles/home.module.css";
   <body>
     <main>
       <Header title={SITE_TITLE} />
-      <section class="padded-content">
-        <div class={style["greeting"]}>
-          <span class={style["dot-animate-pulse"]}></span>
-          <a href="/about#current">Currently Learning</a>
+      <section class="flex flex-col gap-2">
+        <div class="flex gap-2 items-center">
+          <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+          </span>
+          <a class="opacity-50" href="/about#current">Currently Learning</a>
         </div>
-        <h1>
+        <h1 class="mb-8 leading-tight">
           Senior Product Designer, Design Systems Lead, Front-End Developer, &
           AI Enthusiast based in Austin, TX.
         </h1>
       </section>
 
-      <section class={style["work-section"]}>
+      <section class="flex flex-wrap">
         {
           [
             {
@@ -42,13 +47,13 @@ import style from "../styles/home.module.css";
             },
           ].map((work) => {
             return (
-              <a href={work.link} class={style["work-block-link"]}>
-                <article class={style["work-block"]}>
-                  <div class={style["work-thumbnail"]}>
+              <a href={work.link} class="w-1/2">
+                <article class="m-2 border rounded border-zinc-300 dark:border-zinc-800">
+                  <div class="p-2">
                     <img src={work.thumbnail} alt={work.name} />
                   </div>
-                  <div class={style["work-card"]}>
-                    <p>{work.category}</p>
+                  <div class="p-4 pt-0">
+                    <p class="opacity-50">{work.category}</p>
                     <h5>{work.name}</h5>
                   </div>
                 </article>
