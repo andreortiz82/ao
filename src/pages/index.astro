@@ -22,7 +22,7 @@ const style = {}
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
             <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
           </span>
-          <a href="/about#current">Currently Learning</a>
+          <a class="opacity-50" href="/about#current">Currently Learning</a>
         </div>
         <h1 class="mb-8 leading-tight">
           Senior Product Designer, Design Systems Lead, Front-End Developer, &
@@ -48,7 +48,7 @@ const style = {}
           ].map((work) => {
             return (
               <a href={work.link} class="w-1/2">
-                <article class="m-2 border rounded border-zinc-600">
+                <article class="m-2 border rounded border-zinc-300 dark:border-zinc-800">
                   <div class="p-2">
                     <img src={work.thumbnail} alt={work.name} />
                   </div>

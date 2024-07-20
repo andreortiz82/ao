@@ -2,7 +2,6 @@
 import HeaderLink from "./HeaderLink.astro";
 import { Logo } from "../components/Logo";
 import { SITE_TITLE } from "../config";
-// import style from "../styles/header.module.css";
 ---
 
 <header class="flex justify-between items-center mb-8 flex-wrap">
@@ -13,9 +12,9 @@ import { SITE_TITLE } from "../config";
     </div>
   </a>
   <nav class="flex items-center gap-5">
-    <HeaderLink href="/about">About</HeaderLink>
-    <HeaderLink href="/shorts">Shorts</HeaderLink>
-    <HeaderLink class="rounded-full px-4 py-2 border border-zinc-900 dark:border-zinc-100 border-2" href="mailto:hello@andreortiz.com?subject=Howdy!">
+    <HeaderLink class="opacity-75 hover:opacity-100 transition" href="/about">About</HeaderLink>
+    <HeaderLink class="opacity-75 hover:opacity-100 transition" href="/shorts">Shorts</HeaderLink>
+    <HeaderLink class="rounded-full px-4 py-2 border border-zinc-900 dark:border-zinc-100 border-2 transition dark:hover:bg-zinc-700 hover:bg-zinc-200" href="mailto:hello@andreortiz.com?subject=Howdy!">
       hello@andreortiz.com
     </HeaderLink>
   </nav>
