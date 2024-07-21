@@ -4,8 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
-const style = {}
-
+const style = {};
 ---
 
 <!DOCTYPE html>
@@ -19,8 +18,11 @@ const style = {}
       <section class="flex flex-col gap-2">
         <div class="flex gap-2 items-center">
           <span class="relative flex h-3 w-3">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+            <span
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"
+            ></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500"
+            ></span>
           </span>
           <a class="opacity-50" href="/about#current">Currently Learning</a>
         </div>
@@ -47,7 +49,7 @@ const style = {}
             },
           ].map((work) => {
             return (
-              <a href={work.link} class="w-1/2">
+              <a href={work.link} class="w-full md:w-1/2">
                 <article class="m-2 border rounded border-zinc-300 dark:border-zinc-800">
                   <div class="p-2">
                     <img src={work.thumbnail} alt={work.name} />
