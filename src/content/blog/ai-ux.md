@@ -3,6 +3,8 @@ layout: "../../layouts/BlogPost.astro"
 title: "AI, design, and you"
 description: "Our new creative partner."
 pubDate: "January 30 2023"
+heroImage: "https://picsum.photos/1920/400"
+tags: ["AI", "Product Design"]
 ---
 
 The world of product design is on the brink of a thrilling transformation thanks to AI. An era of unmatched efficiency, personalization, and innovation is just around the corner! By tapping into the power of AI, designers can digest insights from massive data pools. This means we can shape our products to fit like a glove to each user's needs and even predict trends before they hit the mainstream.

@@ -1,21 +1,25 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import { Logo } from "../components/Logo";
-import { SITE_TITLE } from "../config";
+import { SITE_TITLE } from "../consts";
 ---
 
-<header class="flex justify-between items-center mb-8 flex-wrap">
+<header class="flex justify-between items-center mb-5 flex-wrap border-b pb-5">
   <a class="" href="/">
     <div class="flex items-center gap-4">
       <Logo alt={SITE_TITLE} />
-      <span class="font-serif text-3xl">Andre Ortiz</span>
+      <span class="logo text-4xl">Andre Ortiz</span>
     </div>
   </a>
   <nav class="flex items-center gap-5">
-    <HeaderLink class="opacity-75 hover:opacity-100 transition" href="/about">About</HeaderLink>
-    <HeaderLink class="opacity-75 hover:opacity-100 transition" href="/shorts">Shorts</HeaderLink>
-    <HeaderLink class="rounded-full px-4 py-2 border border-zinc-900 dark:border-zinc-100 border-2 transition dark:hover:bg-zinc-700 hover:bg-zinc-200" href="mailto:hello@andreortiz.com?subject=Howdy!">
-      hello@andreortiz.com
+    <HeaderLink class="opacity-75 hover:opacity-100 transition" href="/blog">
+      Blog
+    </HeaderLink>
+    <HeaderLink
+      class="rounded-full px-4 py-2 border-zinc-900 dark:border-zinc-500 border-2 transition dark:hover:bg-zinc-700 hover:bg-zinc-200"
+      href="mailto:hello@andreortiz.com?subject=Howdy!"
+    >
+      👋 Say hello!
     </HeaderLink>
   </nav>
 </header>

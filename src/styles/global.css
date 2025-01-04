@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap");
 @import "./settings.css";
-@import "ao-design-tokens";
 
 @layer base {
   body {
@@ -10,7 +9,11 @@
     @apply transition duration-200;
     @apply antialiased;
   }
-  
+
+  .logo {
+    font-family: "DM Serif Text", serif;
+  }
+
   h1 {
     @apply text-5xl;
     font-family: "DM Serif Text", serif;
@@ -40,7 +43,7 @@
     @apply text-xl my-4 leading-relaxed;
     font-family: inherit;
   }
-  
+
   ul,
   ol {
     @apply my-4 pl-8 flex flex-col gap-1 text-xl;
@@ -54,11 +57,5 @@
 
   pre {
     @apply p-4 my-4 font-mono rounded overflow-auto;
-  }
-
-  .bgfx {
-    background-image: url("/bgfx.png");
-    background-repeat: no-repeat;
-    background-size: cover;
   }
 }

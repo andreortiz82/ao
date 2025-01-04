@@ -3,6 +3,8 @@ layout: "../../layouts/BlogPost.astro"
 title: "Creative Leadership"
 description: "Promote teamwork and creativity"
 pubDate: "November 16 2022"
+heroImage: "https://picsum.photos/1920/400"
+tags: ["Creative Teams", "Self-Improvement"]
 ---
 
 Creative leadership is all about sparking innovation and driving change by cultivating a culture that appreciates imagination, experimentation, and diverse ideas. Moving away from traditional leadership models that focus on control and uniformity, creative leaders promote risk-taking and consider failures as critical learning opportunities.

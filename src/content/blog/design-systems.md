@@ -3,6 +3,8 @@ layout: "../../layouts/BlogPost.astro"
 title: "Design Systems"
 description: "Design decisions at scale."
 pubDate: "January 30 2023"
+heroImage: "https://picsum.photos/1920/400"
+tags: ["Figma", "UI Kits", "Design Tokens"]
 ---
 
 A design system offers plenty of perks, like boosting consistency, productivity, and scalability throughout a product's eco-system. It's essentially the go-to guide for teams, bundling design principles, reusable parts, and guidelines. This way, everyone from designers to developers are on the same page.

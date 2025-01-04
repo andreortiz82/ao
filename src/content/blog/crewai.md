@@ -3,6 +3,8 @@ layout: "../../layouts/BlogPost.astro"
 title: "CrewAI"
 description: "Building an agentic workflow"
 pubDate: "May 5 2024"
+heroImage: "https://picsum.photos/1920/400"
+tags: ["AI Agents", "Automation", "Python"]
 ---
 
 CrewAI is a framework that brings together a multiple AI agents to work as a team, like a crew! These agents have different roles, goals, and tools, and they collaborate to tackle complex tasks. It's pretty amazing how they all come together and make things happen! Check out [this project](https://github.com/andreortiz82/crew-template) to see how it all comes together.

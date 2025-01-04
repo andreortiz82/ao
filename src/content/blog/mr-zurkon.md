@@ -3,7 +3,8 @@ layout: "../../layouts/BlogPost.astro"
 title: "Mr Zurkon"
 description: "Code is no match for Mr Zurkon"
 pubDate: "March 30 2024"
-heroImage: "/art/mz-cover-image.png"
+heroImage: "https://picsum.photos/1920/400"
+tags: ["AI", "GPTs", "Code Assistant"]
 ---
 
 When OpenAI announced GPTs, I was pretty excited to check it out. I had been testing its code capabilities for months and was fairly happy with the results. I wanted an assistant to help me write code and have other characteristics. I decided to create [Mr Zurkon](https://chat.openai.com/g/g-3m6Hy3W8c-mr-zurkon). Mr. Zurkon was inspired by one of my favorite video games, Ratchet and Clank. In the game, Mr. Zurkon was a weapon with a tendancy for trash talk. I was enjoyed getting to deploy Mr. Zurkon and smash through the enemy horde.

@@ -3,6 +3,8 @@ layout: "../../layouts/BlogPost.astro"
 title: "Be a Unicorn"
 description: "Designers who code"
 pubDate: "Feb 19 2023"
+heroImage: "https://picsum.photos/1920/400"
+tags: ["Design Engineer", "Self-Improvement"]
 ---
 
 Designers who can code are like unicorns, bridging the often-wide gap between design and development. They bring a unique blend of creativity and functionality to the table, adding that extra flare to web and digital projects. By understanding the possibilities and limitations of code, you can craft designs that are not just beautiful, but also doable right from the get-go.
