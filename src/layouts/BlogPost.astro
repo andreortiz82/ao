@@ -4,11 +4,11 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
-import { ArrowLeft } from "@phosphor-icons/react";
+import { AboutKeywords } from "../components/AboutKeywords";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, tags, heroImage } = Astro.props;
 ---
 
 <html lang="en">
@@ -28,34 +28,22 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
           )
         }
 
-        <div class="px-8">
-          <header class="flex items-center justify-between">
-            <div class="flex items-center gap-4">
-              <a href="/blog">
-                <ArrowLeft size={32} />
-              </a>
-              <h1 class="mb-0">{title}</h1>
-            </div>
-            <div class="opacity-50">
-              {
-                pubDate && (
-                  <time class="opacity-80 text-sm">
-                    <FormattedDate date={pubDate} />
-                  </time>
-                )
-              }
-              {
-                updatedDate && (
-                  <span>
-                    {"|"} Updated: <time>{updatedDate}</time>
-                  </span>
-                )
-              }
-            </div>
+        <div class="px-8 flex flex-col gap-2">
+          <header class="flex flex-col gap-2">
+            <h1 class="mb-0">{title}</h1>
+            <h3 class="mb-0">{description}</h3>
+            {
+              pubDate && (
+                <time class="opacity-80 ">
+                  <FormattedDate date={pubDate} />
+                </time>
+              )
+            }
           </header>
           <!-- CONTENT -->
           <slot />
           <!-- CONTENT -->
+          <AboutKeywords tags={tags} />
         </div>
       </article>
     </main>
