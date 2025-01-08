@@ -7,59 +7,89 @@ heroImage: "https://picsum.photos/1920/400"
 tags: ["AI Agents", "Automation", "Python"]
 ---
 
-CrewAI is a framework that brings together a multiple AI agents to work as a team, like a crew! These agents have different roles, goals, and tools, and they collaborate to tackle complex tasks. It's pretty amazing how they all come together and make things happen! Check out [this project](https://github.com/andreortiz82/crew-template) to see how it all comes together.
+Check out [this project](https://github.com/andreortiz82/crew-template) to see how it all comes together.
 
-Here are the core concepts for CrewAI:
+[CrewAI](https://www.crewai.com/) is a framework that enables you to create a team of AI chatbots that can work together toward a shared goal. Each chatbot in the crew - let's call them _Agents_ - contain their own set of instructions and together, they can complete various tasks.
 
-**Agent:** Agents are autonomous AI entities with specific roles, goals, and backstories. They can be configured to use various tools and possess memory capabilities to retain information across interactions.
+---
 
-```yaml
-creative_writer:
-  role: >
-    Creative Writer
-  goal: >
-    Write a captivating {story_type} based on creative idea
-  backstory: >
-    You're a talented writer with a flair for writing {story_type}. You're known for
-    your ability to bring imaginative ideas to life through your writing, creating
-    captivating narratives that transport readers to other worlds. You always conform to this structure: {structure}.
-```
+## Core Concepts
 
-**Task:** Tasks are specific assignments given to agents. Each task has a description, expected output, and can utilize certain tools.
+Here’s the 101 on CrewAI:
 
-```yaml
-creative_writer_task:
-  description: >
-    Write a creative {story_type} based on the creative idea.
-  expected_output: >
-    A creative {genre} {story_type} based on the creative idea.
-    The story should be engaging and transport the reader to another world.
-```
+1. **Agents**: Think of these as the individuals in your team. Each agent has:
 
-**Tool:** Tools are external integrations or utilities that agents use to perform their tasks. They can be APIs, databases, web scraping tools, etc.
+   - A **role** (e.g., researcher, writer, analyst).
+   - A **goal** (what they’re supposed to achieve).
+   - A **backstory** (a little personality never hurts).
+   - **Tools** (optional, for special powers like searching the web).
+
+2. **Tasks**: These are the jobs your agents need to complete. Tasks come with:
+
+   - A detailed **description** so there’s no room for confusion.
+   - An **expected output** to set clear expectations.
+
+3. **Tools**: Sometimes, agents need a bit of help. CrewAI supports built-in tools and third-party integrations (like APIs) to give your agents superpowers.
+
+4. **Processes**: Define how your team works—whether tasks are done one at a time, all at once, or in a hierarchy of steps.
+
+---
+
+## Why You’ll Love CrewAI ❤️
+
+- **Teamwork**: No single AI agent can do it all, but together? Magic happens.
+- **Customizable**: You’re the boss. Define roles, tools, and workflows that suit your needs.
+- **Easy to Use**: Built with Python developers in mind, CrewAI is intuitive and powerful.
+
+---
+
+## Example: Building a Simple Crew 🛠️
+
+Let’s say you want to create a crew that researches the latest AI trends and writes a summary. Here’s how you’d do it:
 
 ```python
-# Importing crewAI tools
-from crewai_tools import (
-    DirectoryReadTool,
-    FileReadTool,
-    JSONSearchTool,
-    CSVSearchTool,
-    CodeDocsSearchTool,
-    GithubSearchTool,
-    WebsiteSearchTool,
-    PDFSearchTool,
-    RagTool,
-    ScrapeWebsiteTool
+from crewai import Agent, Task, Crew, Process
+from crewai_tools import SerperDevTool
+
+# Add a search tool for research
+search_tool = SerperDevTool()
+
+# Define your agents
+researcher = Agent(
+    role="Researcher",
+    goal="Find the latest trends in AI",
+    backstory="An expert at digging up fresh insights",
+    tools=[search_tool]
 )
-```
 
-**Crew:** A crew is a collection of agents working together to achieve a common goal. It is defined by the agents involved, the tasks they need to accomplish, and the process by which they operate.
+writer = Agent(
+    role="Writer",
+    goal="Turn research into an engaging article",
+    backstory="A storyteller at heart, great at simplifying complex ideas"
+)
 
-```python
+# Define the tasks
+research_task = Task(
+    description="Research AI trends and summarize findings.",
+    expected_output="A summary of the 5 biggest trends in AI.",
+    agent=researcher
+)
+
+write_task = Task(
+    description="Write an article based on the research findings.",
+    expected_output="A polished, engaging article on AI trends.",
+    agent=writer
+)
+
+# Assemble your crew
 crew = Crew(
-  agents=[writer, illustrator, narrator],
-  tasks=[write_story, create_illustration, tell_story],
-  process=Process.sequential
+    agents=[researcher, writer],
+    tasks=[research_task, write_task],
+    process=Process.sequential  # Tasks are completed one after another
 )
+
+# Kick it off
+inputs = {"topic": "AI in healthcare"}
+results = crew.kickoff(inputs=inputs)
+print(results)
 ```

@@ -4,9 +4,9 @@ title: "Musical Pursuits"
 description: "It's art, I swear."
 pubDate: "Feb 27 2023"
 heroImage: "https://picsum.photos/1920/400"
-tags: ["Music", "Fun", "Creative"]
+tags: ["Music", "Creative"]
 ---
 
-I started playing music at a young age. As a young teenager, I played bass guitar in a number of punk bands. At some point I discovered electronic music and started DJing Breaks under the name _Dre Styles_ and then eventually drum and bass under the name _Funktipuss Jones_. I produced hiphop beats with some friends from the neighborhood and also worked on dark synth projects... Creatively, I was all over the place and I loved it. I still do. If you're interested in more of my musical experiements, you can see more on my [Youtube channel](https://www.youtube.com/channel/UCp0yFoeapfq0CoNJje5npeA). Like &amp; Subscribe 😁.
+Freshman year of highschool, I joined a band and started playing **bass**. A couple years later, I started getting into the rave scene and started DJing. I DJed for a number of years - breaks, drum and bass, house. I had cool names for myself, like: _Dre Styles_, and _Funktipuss Jones_. I purchased some sequencers and samplers and helped produce some hiphop beats with some friends from the neighborhood. Creatively, I was all over the place - I had a blast and still do. If you're interested in hearing what I'm up to now, checkout my [Youtube channel](https://www.youtube.com/@aomusicandmore). Like &amp; Subscribe 😁 - as they say.
 
 <iframe width="100%" height="460" src="https://www.youtube.com/embed/t0IdeB-oETU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

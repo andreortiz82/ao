@@ -1,12 +1,21 @@
 ---
 layout: "../../layouts/BlogPost.astro"
-title: "Iterate or Fail"
-description: "Iterate, refine, repeat..."
+title: "Design Iteration"
+description: "Iterate, refine, profit!"
 pubDate: "May 5 2021"
 heroImage: "https://picsum.photos/1920/400"
 tags: ["Product Design", "Self-Improvement"]
 ---
 
-Iterating on your designs is super important, especially if you want your final product to be amazing. The truth is, your first design probably won't be perfect, but that's okay. The key is to keep refining and improving it until it meets all of your goals and objectives. This way, you'll be able to spot any potential issues, catch design flaws, and make any necessary adjustments before it's too late.
+As designers and product makers, we've all been there: staring at a blank screen, trying to come up with the perfect solution to a complex problem. But here's the thing: there's no such thing as a "perfect" solution. Even if there was, how long would it take you to get there?
 
-Iterating on your designs is even more crucial when you're working on big projects or complex designs. Without multiple iterations, it's easy to get bogged down in the details and lose sight of the big picture. By taking the time to step back and look at your design from different angles, you can ensure that it meets all the necessary requirements and provides an amazing user experience. Whether you're working on a website **(like this one)**, app, or product design, iterating is the key to success and creating a final product that you'll be proud of.
+That's where design iteration comes in – a repeatable process of improving your idea (or part of it) in relatively short but regular bursts. It's like a feedback loop that helps you refine your ideas, test them out, and make data-driven decisions about what works and what doesn't.
+
+So why should you care about short design iterations? For one thing, it saves time and resources by helping you identify and fix problems early on - try things out. It also facilitates collaboration among stakeholders, designers, and developers on your team – which is essential AND low risk. Especially for a start up without a ton of time and cash.
+
+So how do you make design iteration work for your team? Here are some tips:
+
+- **Embrace trial-and-error**: Learn what works and what doesn't. It's okay to make mistakes – it's all part of the process!
+- **Be flexible**: Adapt your workflow as needed to stay on track.
+- **Work asynchronously**: Allow other teammates to contribute to different parts of the product at the same time.
+- **Collaborate and listen**: Gather feedback from stakeholders and users to inform your design decisions. I've heard this referred to aas _Complaint Driven Development_ - which kind'a works.
