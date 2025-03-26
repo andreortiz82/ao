@@ -4,7 +4,9 @@ import { Logo } from "../components/Logo";
 import { SITE_TITLE } from "../consts";
 ---
 
-<header class="flex justify-between items-center mb-5 flex-wrap border-b pb-5">
+<header
+  class="flex justify-between items-center mb-5 flex-wrap border-b border-zinc-300 dark:border-zinc-800 pb-5"
+>
   <a class="" href="/">
     <div class="flex items-center gap-4">
       <Logo alt={SITE_TITLE} />
@@ -12,6 +14,9 @@ import { SITE_TITLE } from "../consts";
     </div>
   </a>
   <nav class="flex items-center gap-5">
+    <HeaderLink class="opacity-75 hover:opacity-100 transition" href="/work">
+      Work
+    </HeaderLink>
     <HeaderLink class="opacity-75 hover:opacity-100 transition" href="/blog">
       Blog
     </HeaderLink>

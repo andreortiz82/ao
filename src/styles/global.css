@@ -1,5 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Gloock&display=swap");
+
 @import "./settings.css";
+
+:root {
+  --sans-font: "Geist", sans-serif;
+  --serif-font: "Gloock", serif;
+}
 
 @layer base {
   body {
@@ -8,30 +14,34 @@
     @apply p-12 mx-auto max-w-[1280px];
     @apply transition duration-200;
     @apply antialiased;
+    font-family: var(--sans-font);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
   }
 
   .logo {
-    font-family: "DM Serif Text", serif;
+    font-family: var(--serif-font);
   }
 
   h1 {
     @apply text-5xl;
-    font-family: "DM Serif Text", serif;
+    font-family: var(--serif-font);
   }
 
   h2 {
     @apply text-4xl;
-    font-family: "DM Serif Text", serif;
+    font-family: var(--serif-font);
   }
 
   h3 {
     @apply text-3xl;
-    font-family: "DM Serif Text", serif;
+    font-family: var(--serif-font);
   }
 
   h4 {
     @apply text-2xl;
-    font-family: "DM Serif Text", serif;
+    font-family: var(--serif-font);
   }
 
   h5 {

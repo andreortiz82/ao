@@ -8,7 +8,8 @@ import { AboutKeywords } from "../components/AboutKeywords";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, tags, heroImage } = Astro.props;
+const post = Astro.props;
+const { title, description, pubDate, tags, heroImage } = post;
 ---
 
 <html lang="en">
@@ -32,6 +33,7 @@ const { title, description, pubDate, tags, heroImage } = Astro.props;
           <header class="flex flex-col gap-2">
             <h1 class="mb-0">{title}</h1>
             <p class="text-2xl m-0 opacity-80">{description}</p>
+
             {
               pubDate && (
                 <time class="opacity-80 ">
@@ -42,11 +44,16 @@ const { title, description, pubDate, tags, heroImage } = Astro.props;
           </header>
           <!-- CONTENT -->
           <slot />
-          <!-- CONTENT -->
-          <AboutKeywords tags={tags} />
+
+          <!-- TAGS -->
+          {tags && <AboutKeywords tags={tags} />}
         </div>
       </article>
     </main>
     <Footer />
   </body>
 </html>
+
+<!-- I want to build my UI UX web portfolio using React, AstroJS, and Tailwind. The project should support blog functionality using markdown as well as some custom pages like: About Me and My Case Studies. Some, but not all, case studies would need to be password protected. 
+
+Please help me build this project. -->

@@ -1,0 +1,89 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import { AboutKeywords } from "../components/AboutKeywords";
+import { Lock } from "@phosphor-icons/react";
+
+type Props = CollectionEntry<"work">["data"];
+
+const post = Astro.props;
+const { title, description, pubDate, tags, heroImage, password } = post;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      {
+        password === "true" && (
+          <section>
+            <div class="w-[340px] m-auto h-[70vh]" id="nonProtectedContent">
+              <div class="pt-[100px]">
+                <h5 class="mb-[20px] text-center">Enter the password.</h5>
+                <input
+                  placeholder="Password"
+                  id="passwordInput"
+                  class="mb-2 px-4 py-2 bg-white w-full border border-zinc-300 dark:border-zinc-800"
+                />
+              </div>
+              <div class="">
+                <button
+                  class="w-full rounded px-6 py-2 bg-black text-white cursor-pointer"
+                  id="loginButton"
+                >
+                  Access
+                </button>
+              </div>
+            </div>
+
+            <div id="protectedContent" style="display:none;">
+              <article class="flex flex-col gap-8">
+                {heroImage && (
+                  <div class="rounded overflow-hidden">
+                    <img src={heroImage} alt={title} />
+                  </div>
+                )}
+
+                <div class="px-8 flex flex-col gap-2">
+                  <header class="flex flex-col gap-2">
+                    <span class="flex items-center gap-4">
+                      <h1 class="mb-0">{title}</h1>
+                      {password === "true" && (
+                        <span class="flex items-center gap-2">
+                          <span class="text-gray-500">
+                            <Lock size={20} />{" "}
+                          </span>
+                          <button id="logoutButton" class="cursor-pointer">
+                            Exit
+                          </button>
+                        </span>
+                      )}
+                    </span>
+                    <p class="text-2xl m-0 opacity-80">{description}</p>
+                  </header>
+
+                  <slot />
+
+                  {tags && <AboutKeywords tags={tags} />}
+                </div>
+              </article>
+            </div>
+          </section>
+        )
+      }
+    </main>
+    <Footer />
+    <script src="../protected.js"></script>
+  </body>
+</html>
+
+<!-- I want to build my UI UX web portfolio using React, AstroJS, and Tailwind. The project should support blog functionality using markdown as well as some custom pages like: About Me and My Case Studies. Some, but not all, case studies would need to be password protected. 
+
+Please help me build this project. -->
