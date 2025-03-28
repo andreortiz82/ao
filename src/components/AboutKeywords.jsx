@@ -1,35 +1,3 @@
-// export const keywords = [
-//   { label: "Product Design" },
-//   { label: "UI / UX" },
-//   { label: "Prototyping" },
-//   { label: "Wireframing" },
-//   { label: "Design Systems" },
-//   { label: "Design Tokens" },
-//   { label: "UI Kits" },
-//   { label: "Figma" },
-//   { label: "Adobe CC" },
-//   { label: "Front-End Development" },
-//   { label: "React" },
-//   { label: "Javascript" },
-//   { label: "UI Components" },
-//   { label: "Clojurescript" },
-//   { label: "Ruby on Rails" },
-//   { label: "Python" },
-//   { label: "AI / LLM" },
-//   { label: "Ollama" },
-//   { label: "AI Agents" },
-//   { label: "Node" },
-//   { label: "SQLite" },
-//   { label: "HTML / CSS" },
-//   { label: "Tailwind" },
-//   { label: "REST" },
-//   { label: "Web Design" },
-//   { label: "Video Production" },
-//   { label: "Sound Design" },
-//   { label: "Branding" },
-//   { label: "Illustration" },
-// ];
-
 export const Tag = ({ label, size, key }) => {
   if (size === "small") {
     return (
