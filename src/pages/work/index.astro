@@ -20,27 +20,49 @@ const posts = (await getCollection("work")).sort(
   <body>
     <Header />
     <main>
-      <section class="grid grid-cols-3 gap-4 text-xl leading-8">
-        {
-          posts.map((post: any) => (
-            <article class="bg-zinc-900 rounded p-6 flex flex-col gap-2">
-              <a href={`/work/${post.id}/`}>
-                <h4>{post.data.title}</h4>
-                <p class="m-0 text-zinc-500">{post.data.description}</p>
-              </a>
+      <div class="w-[340px] m-auto h-[70vh]" id="nonProtectedContent">
+        <div class="pt-[100px]">
+          <h5 class="mb-[20px] text-center">Enter the password.</h5>
+          <input
+            placeholder="Password"
+            id="passwordInput"
+            class="mb-2 px-4 py-2 bg-white text-black w-full border border-zinc-800"
+          />
+        </div>
+        <div class="">
+          <button
+            class="w-full rounded px-6 py-2 bg-yellow-500 text-black cursor-pointer"
+            id="loginButton"
+          >
+            Access
+          </button>
+        </div>
+      </div>
 
-              {post.data.tags && (
-                <div class="list-none flex gap-1 flex-wrap">
-                  {post.data.tags.map((tag: any) => (
-                    <Tag key={tag} label={tag} size="small" />
-                  ))}
-                </div>
-              )}
-            </article>
-          ))
-        }
-      </section>
+      <div id="protectedContent" style="display:none;">
+        <section class="grid grid-cols-3 gap-4 text-xl leading-8">
+          {
+            posts.map((post: any) => (
+              <article class="bg-zinc-900 rounded p-6 flex flex-col gap-2">
+                <a href={`/work/${post.id}/`}>
+                  <h4>{post.data.title}</h4>
+                  <p class="m-0 text-zinc-500">{post.data.description}</p>
+                </a>
+
+                {post.data.tags && (
+                  <div class="list-none flex gap-1 flex-wrap">
+                    {post.data.tags.map((tag: any) => (
+                      <Tag key={tag} label={tag} size="small" />
+                    ))}
+                  </div>
+                )}
+              </article>
+            ))
+          }
+        </section>
+      </div>
     </main>
+    <script src="../../protected.js"></script>
     <Footer />
   </body>
 </html>

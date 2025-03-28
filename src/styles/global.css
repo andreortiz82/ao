@@ -50,6 +50,10 @@
     font-family: inherit;
   }
 
+  hr {
+    @apply border-zinc-800 my-10;
+  }
+
   ul,
   ol {
     @apply my-4 pl-8 flex flex-col gap-1 text-xl;
@@ -109,7 +113,7 @@
 
   & .lazer {
     display: block;
-    width: 200%;
+    width: 250%;
     height: 8px;
     background: white;
   }

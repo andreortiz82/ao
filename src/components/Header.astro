@@ -2,6 +2,7 @@
 import HeaderLink from "./HeaderLink.astro";
 import { Logo } from "../components/Logo";
 import { SITE_TITLE } from "../consts";
+import { Lock } from "@phosphor-icons/react";
 ---
 
 <header
@@ -13,12 +14,15 @@ import { SITE_TITLE } from "../consts";
       <span class="logo text-4xl">Andre Ortiz</span>
     </div>
   </a>
-  <nav class="flex items-center gap-5">
-    <HeaderLink class="opacity-75 hover:opacity-100 transition" href="/work">
-      Work
-    </HeaderLink>
+  <nav class="flex items-center gap-10">
     <HeaderLink class="opacity-75 hover:opacity-100 transition" href="/blog">
       Blog
+    </HeaderLink>
+    <HeaderLink class="opacity-75 hover:opacity-100 transition" href="/work">
+      <span class="flex items-center gap-2">
+        <Lock size={20} />{" "}
+        Work
+      </span>
     </HeaderLink>
     <HeaderLink
       class="rounded-full px-4 py-2 border-zinc-800 border-2 transition hover:bg-zinc-700"

@@ -24,10 +24,12 @@ export const Tag = ({ label, size, key }) => {
 
 export const AboutKeywords = ({ tags }) => {
   return (
-    <div className="flex flex-wrap gap-2">
-      {tags.map((tag, i) => {
-        return <Tag key={i} label={tag} />;
-      })}
-    </div>
+    <article className="p-6 bg-zinc-900 rounded">
+      <div className="flex flex-wrap gap-2 justify-center">
+        {tags.map((tag, i) => {
+          return <Tag key={i} label={tag} />;
+        })}
+      </div>
+    </article>
   );
 };
