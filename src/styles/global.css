@@ -5,13 +5,14 @@
 :root {
   --sans-font: "Geist", sans-serif;
   --serif-font: "Gloock", serif;
+  --border-color: var(--zinc-300);
 }
 
 @layer base {
   body {
-    @apply bg-white dark:bg-zinc-900;
-    @apply text-zinc-900 dark:text-zinc-100 font-sans text-base;
-    @apply p-12 mx-auto max-w-[1280px];
+    @apply bg-black;
+    @apply text-zinc-100 font-sans text-base;
+    @apply p-12;
     @apply transition duration-200;
     @apply antialiased;
     font-family: var(--sans-font);
@@ -49,11 +50,6 @@
     font-family: inherit;
   }
 
-  p {
-    @apply text-xl my-4 leading-relaxed;
-    font-family: inherit;
-  }
-
   ul,
   ol {
     @apply my-4 pl-8 flex flex-col gap-1 text-xl;
@@ -62,7 +58,7 @@
   }
 
   blockquote {
-    @apply p-4 m-8 pl-8 border-l-4 border-zinc-300 dark:border-zinc-700;
+    @apply p-4 m-8 pl-8 border-l-4 border-zinc-800;
   }
 
   pre {

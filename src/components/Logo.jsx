@@ -1,5 +1,5 @@
 export const Logo = ({ alt }) => {
-  const style = "dark:fill-zinc-100 fill-zinc-900";
+  const style = "fill-white";
 
   return (
     <div className="w-[100px]" title={alt}>

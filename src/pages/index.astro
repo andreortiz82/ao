@@ -4,8 +4,7 @@ import Header from "../components/Header.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Footer from "../components/Footer.astro";
 import { AboutKeywords } from "../components/AboutKeywords";
-import { Storyline } from "../components/Storyline";
-import { storytimeData } from "../components/data";
+import { storytimeData } from "../storydata";
 // Get all blog posts
 const posts = await Astro.glob("../content/blog/*.md");
 
@@ -24,21 +23,6 @@ const tags = [
     <main>
       <Header title={SITE_TITLE} />
       <section class="flex flex-col gap-2">
-        <!-- <div class="flex gap-2 items-center">
-          <span class="relative flex h-3 w-3">
-            <span
-              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"
-            ></span>
-            <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"
-            ></span>
-          </span>
-          <a class="underline" href="/tag/AI">Currently Learning</a>
-        </div> -->
-        <!-- <h1 class="mb-8 leading-tight">
-          Multidisciplinary creative based in Austin, TX. I'm passionate about
-          solving complex problems and shipping products.
-        </h1> -->
-
         <div>
           <section
             class="welcome-section w-full h-[140vh] bg-black text-white flex flex-col items-center justify-center"
@@ -59,16 +43,33 @@ const tags = [
           </section>
           {
             storytimeData.map((story) => (
-              <section class="flex w-full h-[150vh] content-container bg-slate-100 odd:bg-slate-50">
+              <section class="flex w-full h-[150vh] content-container odd:bg-zinc-900/80">
                 <div class="w-[80%] m-auto flex  gap-10 content-block">
                   <div class="bg-slate-50 border flex justify-center items-center rounded image w-[760px] h-[600px] drop-shadow-md">
                     <img src={story.images[0]} alt="sketch" />
                   </div>
 
                   <article class="copy w-[640px] text-2xl flex flex-col gap-5">
-                    <p class="text-3xl leading-11">{story.heading}</p>
+                    <p class="text-4xl font-bold">{story.heading}</p>
+                    <p class="text-2xl text-zinc-400">{story.caption}</p>
+
+                    <div class="tags flex gap-5">
+                      <a
+                        href={`/tag/${story.tags[0]}`}
+                        class="text-xl bg-zinc-100 text-black px-4 py-2 font-semibold rounded-full"
+                      >
+                        {story.tags[0]}
+                      </a>
+                      <a
+                        href={`/tag/${story.tags[1]}`}
+                        class="text-xl bg-zinc-100 text-black px-4 py-2 font-semibold rounded-full"
+                      >
+                        {story.tags[1]}
+                      </a>
+                    </div>
+
                     <a href={story.url} class="text-blue-500">
-                      Read More
+                      {story.action}
                     </a>
                   </article>
                 </div>
@@ -87,135 +88,6 @@ const tags = [
       <Footer />
     </main>
 
-    <script>
-      import gsap from "gsap";
-      import ScrollTrigger from "gsap/ScrollTrigger";
-
-      function random(min: number = 0, max: number = 100) {
-        return Math.random() * (max - min) + min;
-      }
-
-      // Choose random element from array
-      const arrayElement = (arr: any[]) =>
-        arr[Math.floor(Math.random() * arr.length)];
-
-      const images = gsap.utils.toArray(".image");
-      const copies = gsap.utils.toArray(".copy");
-      const lazers = gsap.utils.toArray(".lazer");
-
-      window.gsap = gsap;
-      window.ScrollTrigger = ScrollTrigger;
-
-      gsap.registerPlugin(ScrollTrigger);
-
-      gsap.to(".welcome", {
-        duration: 1,
-        y: -500,
-        scrollTrigger: {
-          trigger: ".welcome",
-          start: "bottom center",
-          end: "bottom top",
-          scrub: 1,
-          //   markers: true,
-        },
-      });
-
-      gsap.to(".welcome-me", {
-        duration: 1,
-        y: -200,
-        scrollTrigger: {
-          trigger: ".welcome-me",
-          start: "top top",
-          end: "bottom top",
-          scrub: 1,
-          //   markers: true,
-        },
-      });
-
-      gsap.fromTo(
-        ".thank-you",
-        { y: -200 },
-        {
-          duration: 2,
-          y: 0,
-          scrollTrigger: {
-            trigger: ".thank-you",
-            start: "top center",
-            end: "top 10%",
-            scrub: 1,
-            // markers: true,
-          },
-        }
-      );
-
-      // Groups
-      images.forEach((box: any) => {
-        gsap.fromTo(
-          box,
-          { y: 0 },
-          {
-            duration: 1,
-            y: -100,
-            // onStart, onUpdate, onRepeat, onComplete
-            scrollTrigger: {
-              trigger: box,
-              start: "center bottom",
-              end: "bottom top",
-              scrub: 1,
-
-              //   markers: true,
-            },
-          }
-        );
-      });
-
-      copies.forEach((box: any) => {
-        gsap.fromTo(
-          box,
-          { y: -50 },
-          {
-            y: 200,
-            duration: 1,
-            scrollTrigger: {
-              trigger: box,
-              start: "top bottom",
-              end: "bottom 10%",
-              scrub: 1,
-              //   markers: true,
-            },
-          }
-        );
-      });
-
-      lazers.forEach((box: any) => {
-        gsap.fromTo(
-          box,
-          {
-            x: -1000,
-            y: random(0, 1000),
-            boxShadow: arrayElement([
-              "0 0 10px 5px #F90E9B",
-              "0 0 10px 5px #0C8AFF",
-            ]),
-          },
-          {
-            y: random(0, 1000),
-            rotation: arrayElement([random(0, 15), random(0, -15)]),
-            boxShadow: arrayElement([
-              "0 0 10px 5px #F90E9B",
-              "0 0 10px 5px #0C8AFF",
-            ]),
-            duration: 1,
-            scrollTrigger: {
-              trigger: box,
-              start: "top bottom",
-              end: "bottom 10%",
-              scrub: 1,
-              //   markers: true,
-            },
-          }
-        );
-      });
-    </script>
+    <script src="../storytime.ts"></script>
   </body>
 </html>

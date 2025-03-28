@@ -3,6 +3,22 @@
 
 const TEMP_PASS = "xxx";
 
+const errorMessages = [
+  "Incorrect! Contact me and I'll help you out.",
+  "Wrong password, pal. Contact me and I'll help you out.",
+  "Not quite right.",
+  "Nope, try again.",
+  "Contact me and I'll help you out.",
+  "You're not getting in that way.",
+  "That was close... but no.",
+];
+
+const getErrorMessage = () => {
+  const index = Math.floor(Math.random() * errorMessages.length);
+
+  return errorMessages[index];
+};
+
 document.addEventListener("DOMContentLoaded", function () {
   //setloading
   function checkAuth() {
@@ -26,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.setItem("userToken", TEMP_PASS);
       checkAuth();
     } else {
-      alert("Invalid password");
+      alert(getErrorMessage());
     }
   });
 

@@ -4,7 +4,7 @@ title: "Design Iteration"
 description: "Iterate, refine, profit!"
 pubDate: "May 5 2021"
 heroImage: "https://picsum.photos/1920/400"
-tags: ["Product Design", "Self-Improvement"]
+tags: ["Product Design", "UX"]
 ---
 
 As designers and product makers, we've all been there: staring at a blank screen, trying to come up with the perfect solution to a complex problem. But here's the thing: there's no such thing as a "perfect" solution. Even if there was, how long would it take you to get there?
