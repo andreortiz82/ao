@@ -9,9 +9,22 @@ import {
   YoutubeLogo,
   DribbbleLogo,
 } from "@phosphor-icons/react";
+import ImageMarquee from "./ImageMarquee";
 
 const linkStyle = "opacity-50 hover:opacity-100 transition";
 ---
+
+<ImageMarquee>
+  {
+    [...Array(10)].map((_, idx) => {
+      return (
+        <div class="mr-5 h-[40px] bg-zinc-900 text-white flex justify-center items-center p-4 rounded">
+          L{idx}
+        </div>
+      );
+    })
+  }
+</ImageMarquee>
 
 <footer
   class="flex justify-between flex-wrap border-t border-zinc-800 mt-5 pt-5"
@@ -69,6 +82,7 @@ const linkStyle = "opacity-50 hover:opacity-100 transition";
       <YoutubeLogo size={24} />
     </FooterLink>
   </nav>
+
   <div class="opacity-50">
     &copy; {today.getFullYear()} Andre Ortiz. All rights reserved.
   </div>

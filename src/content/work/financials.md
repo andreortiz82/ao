@@ -5,6 +5,7 @@ description: "Financial accounting for clinical trials."
 pubDate: "2025"
 heroImage: "https://picsum.photos/1920/400"
 tags: ["Product Design", "Healthcare"]
+role: ["Product Design", "User Research", "Front-end"]
 password: "true"
 ---
 

@@ -118,3 +118,24 @@
     background: white;
   }
 }
+
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 50%;
+  margin: 40px auto;
+}
+
+.marquee-content {
+  display: flex;
+  animation: marquee 20s linear infinite; /* Adjust duration based on content length and desired speed */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  } /* Adjust based on content length */
+}
