@@ -24,8 +24,8 @@ export const Tag = ({ label, size, key }) => {
 
 export const AboutKeywords = ({ tags }) => {
   return (
-    <article className="p-6 bg-zinc-900 rounded">
-      <div className="flex flex-wrap gap-2 justify-center">
+    <article className="p-6 bg-zinc-900 rounded my-[20px]">
+      <div className="flex flex-wrap gap-4 justify-center">
         {tags.map((tag, i) => {
           return <Tag key={i} label={tag} />;
         })}

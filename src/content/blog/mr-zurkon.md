@@ -4,7 +4,7 @@ title: "Mr Zurkon"
 description: "Code is no match for Mr Zurkon"
 pubDate: "March 30 2024"
 heroImage: "/art/mz-cover-image.png"
-tags: ["AI", "GPTs", "Code Assistant"]
+tags: ["AI", "GPTs", "Code Assistant", "Python"]
 ---
 
 When OpenAI announced GPTs, I was pretty interested to check it out. I had been testing its code capabilities for months and was fairly impressed. I wanted to create an assistant to help me write code. I decided to create [Mr Zurkon](https://chat.openai.com/g/g-3m6Hy3W8c-mr-zurkon). Mr. Zurkon was inspired by a game I used to play. In the game, Mr. Zurkon was a weapon with a tendancy for destruction and some serious trash talk. I always made sure I had enough ammo to deploy Mr. Zurkon and smash through the enemy horde.

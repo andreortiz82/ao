@@ -34,7 +34,9 @@ const { title, description, pubDate, tags, heroImage } = post;
             <h1 class="mb-0">{title}</h1>
             <p class="text-2xl m-0 opacity-80">{description}</p>
           </header>
-          <slot />
+          <div class="ao-md-content-container">
+            <slot />
+          </div>
           {tags && <AboutKeywords tags={tags} />}
         </div>
       </article>

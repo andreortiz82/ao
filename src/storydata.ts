@@ -1,14 +1,12 @@
 export const storytimeData = [
   {
-    heading:
-      "Sometimes we have seconds to get those ideas out before something steals our focus.",
-    caption: "Paper, pencil, and Balsamiq are great options.",
+    heading: "Get those ideas out before something steals your focus.",
+    caption:
+      "Learn how I, and you, can use low-fidelity artifacts to tell a compelling story.",
     action: "See more",
     url: "/blog/lofi-wins",
-    tags: ["Lofi", "Wireframes"],
-    images: [
-      "https://cdn.dribbble.com/userupload/32743625/file/original-012b920f3976f786822e87e2eaaeb512.png?resize=2048x1456&vertical=center",
-    ],
+    tags: ["Lofi", "Wireframes", "Product Design"],
+    images: ["/art/lofi-thumb.png"],
   },
   {
     heading:

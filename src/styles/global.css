@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Gloock&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Gloock:wght@100..900&display=swap");
 
 @import "./settings.css";
 
@@ -28,21 +28,25 @@
   h1 {
     @apply text-5xl;
     font-family: var(--serif-font);
+    font-weight: 800;
   }
 
   h2 {
     @apply text-4xl;
     font-family: var(--serif-font);
+    font-weight: 800;
   }
 
   h3 {
     @apply text-3xl;
     font-family: var(--serif-font);
+    font-weight: 800;
   }
 
   h4 {
     @apply text-2xl;
     font-family: var(--serif-font);
+    font-weight: 800;
   }
 
   h5 {
@@ -68,13 +72,51 @@
   pre {
     @apply p-4 my-4 font-mono rounded overflow-auto;
   }
+
+  main,
+  header.ao,
+  footer.ao {
+    @apply w-4/5 mx-auto;
+  }
 }
 
 /* Fun Story */
+.ao-md-content-container {
+  @apply text-2xl;
+
+  & h1,
+  & h2,
+  & h3,
+  & h4,
+  & h5 {
+    @apply mb-5;
+  }
+
+  & p,
+  & ul {
+    @apply mb-8;
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  & a {
+    @apply text-primary underline;
+  }
+}
+
 .content-container {
   &:nth-child(odd) {
     & .content-block {
       flex-direction: row-reverse;
+    }
+  }
+
+  & .image {
+    border-radius: 10px;
+    overflow: hidden;
+    height: min-content;
+    & img {
+      width: 100%;
     }
   }
 }

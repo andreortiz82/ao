@@ -47,7 +47,7 @@ gsap.fromTo(
   { y: -200 },
   {
     duration: 2,
-    y: 0,
+    y: 200,
     scrollTrigger: {
       trigger: ".thank-you",
       start: "top center",
@@ -65,15 +65,14 @@ images.forEach((box: any) => {
     { y: 0 },
     {
       duration: 1,
-      y: -100,
-      // onStart, onUpdate, onRepeat, onComplete
+      y: -50,
       scrollTrigger: {
         trigger: box,
+        // start: "center bottom",
         start: "center bottom",
         end: "bottom top",
         scrub: 1,
-
-        //   markers: true,
+        // markers: true,
       },
     }
   );

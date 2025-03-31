@@ -31,10 +31,9 @@ const { posts } = Astro.props;
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
+    <Header title={SITE_TITLE} />
     <main>
-      <Header title={SITE_TITLE} />
-
-      <h3 class="mb-4">Posts tagged with <i>{tag}</i></h3>
+      <h1 class="mb-5">Posts tagged with <i>{tag}</i></h1>
       <section class="grid grid-cols-3 gap-4 text-xl leading-8">
         {
           posts.map((post: any) => (
@@ -54,7 +53,7 @@ const { posts } = Astro.props;
           ))
         }
       </section>
-      <Footer />
     </main>
+    <Footer />
   </body>
 </html>
