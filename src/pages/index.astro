@@ -46,7 +46,9 @@ const tags = [
               <section class="flex w-full h-[100vh] content-container ">
                 <div class="flex gap-10 content-block">
                   <div class="flex image drop-shadow-md w-1/2">
-                    <img src={story.images[0]} alt="sketch" />
+                    <a href={story.url}>
+                      <img src={story.images[0]} alt="sketch" />
+                    </a>
                   </div>
 
                   <article class="copy w-1/2 text-2xl flex flex-col gap-5">

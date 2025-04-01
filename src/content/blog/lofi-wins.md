@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/BlogPost.astro"
-title: "Lofi for the win!"
-description: "The art of low-fidelity storytelling, iteration, and improving"
+title: "Low-fidelity Storytelling."
+description: "Learn how I, and you, can use low-fidelity artifacts to tell a compelling story."
 pubDate: "2024"
 heroImage: "/art/lofi-cover.png"
 tags: ["Lofi", "Wireframes", "Product Design", "UI Kits"]
