@@ -20,7 +20,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 gsap.to(".welcome", {
   duration: 1,
-  y: -500,
+  y: 100,
   scrollTrigger: {
     trigger: ".welcome",
     start: "bottom center",

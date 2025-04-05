@@ -44,17 +44,17 @@ const posts = (await getCollection("work")).sort(
           {
             posts.map((post: any) => (
               <article class="bg-zinc-900 rounded p-6 flex flex-col gap-2">
-                <div>
-                  <img
-                    src={post.data.heroImage}
-                    alt={post.data.title}
-                    class="rounded-lg mb-2"
-                    loading="lazy"
-                    width="100%"
-                    height="auto"
-                  />
-                </div>
                 <a href={`/work/${post.id}/`}>
+                  <div>
+                    <img
+                      src={post.data.heroImage}
+                      alt={post.data.title}
+                      class="rounded-lg mb-2"
+                      loading="lazy"
+                      width="100%"
+                      height="auto"
+                    />
+                  </div>
                   <h4>{post.data.title}</h4>
                   <p class="m-0 text-zinc-500">{post.data.description}</p>
                 </a>

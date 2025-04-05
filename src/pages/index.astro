@@ -20,26 +20,28 @@ const tags = [
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <main>
+    <main class="ao-homepage">
       <Header title={SITE_TITLE} />
       <section class="flex flex-col gap-2">
         <div>
           <section
-            class="welcome-section w-full h-[140vh] bg-black text-white flex flex-col items-center justify-center"
+            class="welcome-section w-full h-[100vh] text-white flex flex-col items-center justify-start"
           >
-            <div class="welcome-container">
-              <h1 class="font-black text-8xl welcome">Blah blah...</h1>
+            <div class="welcome-container w-2/3">
+              <h1 class="font-black text-7xl welcome text-center">
+                Creative Direction, Strategy & Design Systems.
+              </h1>
             </div>
-            <div class="image-container">
-              <img class="welcome-me" src="/me-photo-1.png" alt="me1" />
-            </div>
-            <div class="lazer-container">
+            <!-- <div class="image-container">
+              <img class="welcome-me" src="/me-photo-3.png" alt="me" />
+            </div> -->
+            <!-- <div class="lazer-container">
               <span class="lazer"></span>
               <span class="lazer"></span>
               <span class="lazer"></span>
               <span class="lazer"></span>
               <span class="lazer"></span>
-            </div>
+            </div> -->
           </section>
           {
             storytimeData.map((story) => (
@@ -75,7 +77,7 @@ const tags = [
             ))
           }
           <section
-            class="foo w-full h-screen bg-black text-white flex flex-col items-center justify-center"
+            class="foo w-full h-screen text-white flex flex-col items-center justify-center"
           >
             <h1 class="font-black text-8xl thank-you">Thank you</h1>
           </section>

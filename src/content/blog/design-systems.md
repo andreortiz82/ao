@@ -18,13 +18,43 @@ tags:
 
 ## UI Design
 
-- Creating a style for the UI
-- Defining some values
+There are a number of things I like to consider when designing interfaces:
 
-## Teams
+- **User needs and goals** - Begin with understanding who will use your interface and what they want to accomplish.
+- **Information architecture** - Plan how information will be organized and structured
+- **Visual hierarchy** - Design elements to naturally guide users' attention
+- **Consistency** - Use consistent patterns, components, colors, and typography throughout to create a cohesive experience
+- **Accessibility** - Ensure your design works for people with different abilities by considering color contrast, text size
+- **Feedback Mechanisms** - Make it clear what elements are interactive and provide appropriate feedback when users take actions
+- **Simplicity** - Eliminate unnecessary elements and reduce cognitive load
 
-- Creating components
-- UI Kits
+<div class="w-full m-auto my-[40px] p-3 bg-zinc-50 rounded">
+<img src="/art/ui-login.png" alt="login"/>
+</div>
+
+<!-- <div class="w-full m-auto my-[40px] p-3 bg-zinc-50 rounded">
+<img src="/art/ui-stfin.png" alt="fin"/>
+</div> -->
+
+<div class="w-full m-auto my-[40px] p-3 bg-zinc-50 rounded">
+<img src="/art/ui-xtrem.png" alt="xtrem"/>
+</div>
+
+<div class="w-full m-auto my-[40px] p-3 bg-zinc-50 rounded">
+<img src="/art/ui-kongo.png" alt="kongo"/>
+</div>
+
+## Design at Scale
+
+As my projects grows, I like to start componentizing elements I know will be reused. Since I'm using Figma, creating components and variants have become a big part of my workflow. This is especially helpful when I'm working with other designers. It doesn't take long before you've got a UI Kit of Figma components you can share with the team and improve over time.
+
+<div class="w-full m-auto my-[40px] p-3 bg-zinc-50 rounded">
+<img src="/art/ui-kit1.png" alt="uikit"/>
+</div>
+
+<div class="w-full m-auto my-[40px] p-3 bg-zinc-50 rounded">
+<img src="/art/ui-kitfull.png" alt="fin"/>
+</div>
 
 ## Design to Code
 

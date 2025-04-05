@@ -17,6 +17,7 @@ tags: ["Branding", "Style Tiles", "Swag", "Illustration"]
 
 <div class="w-full m-auto my-[40px] p-3 bg-zinc-50 rounded">
 <img src="/art/brand-wtd.png" alt="wake"/>
+
 </div>
 <div class="w-full m-auto my-[40px] p-3 bg-zinc-50 rounded">
 <img src="/art/brand-nt.png" alt="neat"/>
@@ -35,16 +36,17 @@ tags: ["Branding", "Style Tiles", "Swag", "Illustration"]
 
 <div class="w-full m-auto my-[40px] p-3 bg-zinc-50 rounded">
 <img src="/art/brand-btc.png" alt="btc"/>
+
 </div>
 
 <div class="w-full m-auto my-[40px] p-3 bg-zinc-50 rounded">
-<img src="/art/illustration-01.png" alt="btc"/>
+<img src="/art/illustration-01.png" alt="ill-1"/>
 </div>
 
 <div class="w-full m-auto my-[40px] p-3 bg-zinc-50 rounded">
-<img src="/art/illustration-tiles.png" alt="btc"/>
+<img src="/art/illustration-tiles.png" alt="ill-2"/>
 </div>
 
 <div class="w-full m-auto my-[40px] p-3 bg-zinc-50 rounded">
-<img src="/art/illustration-wiz.png" alt="btc"/>
+<img src="/art/illustration-wiz.png" alt="ill-3"/>
 </div>
