@@ -20,70 +20,59 @@ const tags = [
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <main class="ao-homepage">
+    <main>
       <Header title={SITE_TITLE} />
-      <section class="flex flex-col gap-2">
-        <div>
-          <section
-            class="welcome-section w-full h-[100vh] text-white flex flex-col items-center justify-start"
-          >
-            <div class="welcome-container w-2/3">
-              <h1 class="font-black text-7xl welcome text-center">
-                Creative Direction, Strategy & Design Systems.
-              </h1>
-            </div>
-            <!-- <div class="image-container">
-              <img class="welcome-me" src="/me-photo-3.png" alt="me" />
-            </div> -->
-            <!-- <div class="lazer-container">
-              <span class="lazer"></span>
-              <span class="lazer"></span>
-              <span class="lazer"></span>
-              <span class="lazer"></span>
-              <span class="lazer"></span>
-            </div> -->
-          </section>
-          {
-            storytimeData.map((story) => (
-              <section class="flex w-full h-[100vh] content-container ">
-                <div class="flex gap-10 content-block">
-                  <div class="flex image drop-shadow-md w-1/2">
-                    <a href={story.url}>
-                      <img src={story.images[0]} alt="sketch" />
-                    </a>
+      <section class="flex flex-col">
+        <section
+          class="welcome-section w-full h-[100vh] flex flex-col items-center justify-start"
+        >
+          <div class="welcome-container grow h-full">
+            <h1 class="welcome">
+              I help teams design <br />& ship products.
+            </h1>
+          </div>
+        </section>
+        {
+          storytimeData.map((story) => (
+            <section class="flex w-full h-[80vh] content-container ">
+              <div class="flex gap-10 content-block">
+                <div class="flex image drop-shadow-md w-1/2">
+                  <a href={story.url}>
+                    <img src={story.images[0]} alt="sketch" />
+                  </a>
+                </div>
+
+                <article class="copy w-1/2 flex flex-col gap-6">
+                  <h2 class="!m-0">{story.heading}</h2>
+                  <p class="!text-2xl text-white/50">{story.caption}</p>
+
+                  <div class="tags flex gap-5">
+                    {story.tags.map((tag) => (
+                      <a
+                        href={`/tag/${tag}`}
+                        class="bg-tag text-tag-label hover:bg-tag-primary hover:text-base px-4 py-2 font-semibold rounded-full text-nowrap"
+                      >
+                        {tag}
+                      </a>
+                    ))}
                   </div>
 
-                  <article class="copy w-1/2 text-2xl flex flex-col gap-5">
-                    <p class="text-4xl font-bold">{story.heading}</p>
-                    <p class="text-2xl text-zinc-400">{story.caption}</p>
-
-                    <div class="tags flex gap-5">
-                      {story.tags.map((tag) => (
-                        <a
-                          href={`/tag/${tag}`}
-                          class="text-xl bg-zinc-100 text-black px-4 py-2 font-semibold rounded-full"
-                        >
-                          {tag}
-                        </a>
-                      ))}
-                    </div>
-
-                    <a href={story.url} class="text-blue-500">
+                  <span>
+                    <a
+                      href={story.url}
+                      class="text-primary text-2xl hover:underline"
+                    >
                       {story.action}
                     </a>
-                  </article>
-                </div>
-              </section>
-            ))
-          }
-          <section
-            class="foo w-full h-screen text-white flex flex-col items-center justify-center"
-          >
-            <h1 class="font-black text-8xl thank-you">Thank you</h1>
-          </section>
+                  </span>
+                </article>
+              </div>
+            </section>
+          ))
+        }
+        <div class="mb-[40px]">
+          <AboutKeywords tags={tags} />
         </div>
-
-        <AboutKeywords tags={tags} />
       </section>
       <Footer />
     </main>

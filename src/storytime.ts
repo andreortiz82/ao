@@ -11,36 +11,28 @@ const arrayElement = (arr: any[]) =>
 
 const images = gsap.utils.toArray(".image");
 const copies = gsap.utils.toArray(".copy");
-const lazers = gsap.utils.toArray(".lazer");
 
 window.gsap = gsap;
 window.ScrollTrigger = ScrollTrigger;
 
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.to(".welcome", {
-  duration: 1,
-  y: 100,
-  scrollTrigger: {
-    trigger: ".welcome",
-    start: "bottom center",
-    end: "bottom top",
-    scrub: 1,
-    //   markers: true,
-  },
-});
-
-gsap.to(".welcome-me", {
-  duration: 1,
-  y: -200,
-  scrollTrigger: {
-    trigger: ".welcome-me",
-    start: "top top",
-    end: "bottom top",
-    scrub: 1,
-    //   markers: true,
-  },
-});
+gsap.fromTo(
+  ".welcome",
+  { y: 0 },
+  {
+    duration: 1,
+    y: -100,
+    opacity: 0,
+    scrollTrigger: {
+      trigger: ".welcome",
+      start: "bottom center",
+      end: "bottom top",
+      scrub: 1,
+      // markers: true,
+    },
+  }
+);
 
 gsap.fromTo(
   ".thank-you",
@@ -65,12 +57,11 @@ images.forEach((box: any) => {
     { y: 0 },
     {
       duration: 1,
-      y: -50,
+      y: -25,
       scrollTrigger: {
         trigger: box,
-        // start: "center bottom",
         start: "center bottom",
-        end: "bottom top",
+        end: "bottom bottom",
         scrub: 1,
         // markers: true,
       },
@@ -84,30 +75,6 @@ copies.forEach((box: any) => {
     { y: -50 },
     {
       y: 200,
-      duration: 1,
-      scrollTrigger: {
-        trigger: box,
-        start: "top bottom",
-        end: "bottom 10%",
-        scrub: 1,
-        //   markers: true,
-      },
-    }
-  );
-});
-
-lazers.forEach((box: any) => {
-  gsap.fromTo(
-    box,
-    {
-      x: -1000,
-      y: random(0, 300),
-      boxShadow: arrayElement(["0 0 10px 5px #F90E9B", "0 0 10px 5px #0C8AFF"]),
-    },
-    {
-      y: random(0, 800),
-      rotation: arrayElement([random(0, 15), random(0, -15)]),
-      boxShadow: arrayElement(["0 0 10px 5px #F90E9B", "0 0 10px 5px #0C8AFF"]),
       duration: 1,
       scrollTrigger: {
         trigger: box,

@@ -18,25 +18,27 @@ const posts = (await getCollection("blog")).sort(
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <Header />
     <main>
+      <Header />
       <section class="grid grid-cols-3 gap-4 text-xl leading-8">
         {
           posts.map((post: any) => (
-            <article class="bg-zinc-900 rounded p-6 flex flex-col gap-2">
-              <a href={`/blog/${post.id}/`}>
+            <article class="rounded p-6 flex flex-col gap-4 transition">
+              <a class="flex flex-col gap-2" href={`/blog/${post.id}/`}>
                 <div>
                   <img
                     src={post.data.heroImage}
                     alt={post.data.title}
-                    class="rounded-lg mb-2"
+                    class="rounded-lg mb-2 min-h-[100px] bg-black/10"
                     loading="lazy"
                     width="100%"
                     height="auto"
                   />
                 </div>
-                <h4>{post.data.title}</h4>
-                <p class="m-0 text-zinc-500">{post.data.description}</p>
+                <h4 class="!m-0">{post.data.title}</h4>
+                <p class="m-0 text-zinc-500 !leading-[28px]">
+                  {post.data.description}
+                </p>
               </a>
               {post.data.tags && (
                 <div class="list-none flex gap-1 flex-wrap">
@@ -49,7 +51,7 @@ const posts = (await getCollection("blog")).sort(
           ))
         }
       </section>
+      <Footer />
     </main>
-    <Footer />
   </body>
 </html>

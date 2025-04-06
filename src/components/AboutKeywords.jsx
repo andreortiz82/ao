@@ -4,7 +4,7 @@ export const Tag = ({ label, size, key }) => {
       <a
         key={key}
         href={`/tag/${label}`}
-        className="bg-zinc-100 text-black px-4 py-1 font-semibold rounded-full text-sm text-nowrap"
+        className="bg-tag text-tag-label hover:bg-tag-primary hover:text-base px-4 py-1 font-semibold rounded-full text-sm text-nowrap"
       >
         {label}
       </a>
@@ -14,7 +14,7 @@ export const Tag = ({ label, size, key }) => {
       <a
         key={key}
         href={`/tag/${label}`}
-        className="bg-zinc-100 text-black px-4 py-2 font-semibold rounded-full text-nowrap"
+        className="bg-tag text-tag-label hover:bg-tag-primary hover:text-base px-4 py-2 font-semibold rounded-full text-nowrap"
       >
         {label}
       </a>
@@ -24,7 +24,7 @@ export const Tag = ({ label, size, key }) => {
 
 export const AboutKeywords = ({ tags }) => {
   return (
-    <article className="p-6 bg-zinc-900 rounded my-[20px]">
+    <article className="relative z-10">
       <div className="flex flex-wrap gap-4 justify-center">
         {tags.map((tag, i) => {
           return <Tag key={i} label={tag} />;

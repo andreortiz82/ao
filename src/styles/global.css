@@ -1,14 +1,180 @@
-@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Gloock:wght@100..900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Gloock:wght@400&display=swap");
 @import "./settings.css";
 
-:root {
-  --sans-font: "Geist", sans-serif;
-  --serif-font: "Gloock", serif;
-  --border-color: var(--zinc-300);
+@layer ao {
+  body {
+    background: var(--color-base);
+    color: var(--color-text-color);
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .logo {
+    font-family: var(--font-serif);
+    margin: 1.5rem 0;
+  }
+
+  .logo {
+    margin: 0;
+  }
+
+  h1 {
+    font-size: var(--text-7xl);
+    line-height: var(--tw-leading, var(--text-7xl--line-height));
+  }
+  h2 {
+    font-size: var(--text-6xl);
+    line-height: var(--tw-leading, var(--text-6xl--line-height));
+  }
+  h3 {
+    font-size: var(--text-5xl);
+    line-height: var(--tw-leading, var(--text-5xl--line-height));
+  }
+  h4 {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
+  h5 {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
+
+  p {
+    font-size: inherit;
+    line-height: 40px;
+
+    & a {
+      color: var(--color-primary);
+      text-decoration: underline;
+    }
+  }
+
+  ul,
+  ol {
+    list-style: disc;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem 0;
+    padding-left: 2rem;
+  }
+
+  blockquote {
+    padding: 1rem;
+    margin: 2rem 0;
+    padding-left: 2rem;
+    border-left: 4px solid var(--color-primary);
+    background: rgba(255, 218, 3, 0.1);
+    border-radius: 0.5rem;
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+    font-family: inherit;
+  }
+
+  pre {
+    padding: 1rem;
+    margin: 2rem 0;
+    font-family: var(--font-mono);
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+    background: rgba(255, 218, 3, 0.1);
+    border-radius: 0.5rem;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-width: 100%;
+    max-height: 100%;
+    box-sizing: border-box;
+
+    & code {
+      font-size: inherit;
+      line-height: inherit;
+      background: transparent;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  hr {
+    border: 1px solid var(--color-base-secondary);
+    margin: 2rem 0;
+  }
+
+  main {
+    margin: 0 auto;
+    max-width: 1400px;
+    padding: 2rem 0;
+  }
+
+  .welcome-container {
+    background: url("me-photo-1.png") no-repeat center center;
+    background-size: 100%;
+    width: 100%;
+    position: relative;
+
+    & .welcome {
+      font-size: var(--text-9xl);
+      line-height: 9rem;
+      z-index: 5;
+      margin: 24px auto;
+      text-align: center;
+      position: relative;
+    }
+  }
+
+  .content-container {
+    &:nth-child(odd) {
+      & .content-block {
+        flex-direction: row-reverse;
+      }
+    }
+
+    & .image {
+      border-radius: 10px;
+      overflow: hidden;
+      height: min-content;
+      box-shadow: 0 50px 70px -10px rgba(0, 0, 0, 0.5);
+      & img {
+        width: 100%;
+      }
+    }
+  }
+
+  .ao-md-content-container {
+    font-size: var(--text-2xl);
+    line-height: 40px;
+
+    & h1,
+    & h2,
+    & h3,
+    & h4,
+    & h5 {
+      margin-bottom: 1.5rem;
+    }
+
+    & p,
+    & ul {
+      margin-bottom: 2rem;
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+    }
+
+    & a {
+      color: var(--color-primary);
+      text-decoration: underline;
+    }
+  }
 }
 
-@layer base {
+/* @layer base {
   body {
     @apply text-zinc-100 font-sans text-base;
     @apply p-12;
@@ -21,18 +187,13 @@
     background: #080808;
   }
 
-  /* .ao-homepage {
-    background: url("me-photo-3.png") no-repeat center center;
-    background-size: cover;
-    background-attachment: fixed;
-  } */
-
   .logo {
     font-family: var(--serif-font);
   }
 
   h1 {
-    @apply text-5xl;
+    font-size: var(--text-5xl);
+    line-height: var(--tw-leading, var(--text-5xl--line-height));
     font-family: var(--serif-font);
     font-weight: 800;
   }
@@ -85,10 +246,10 @@
     @apply w-4/5 mx-auto;
     max-width: 1400px;
   }
-}
+} */
 
 /* Fun Story */
-.ao-md-content-container {
+/* .ao-md-content-container {
   @apply text-2xl;
 
   & h1,
@@ -137,25 +298,4 @@
 .welcome-container {
   z-index: 10;
   position: relative;
-}
-
-.marquee-container {
-  overflow: hidden;
-  white-space: nowrap;
-  width: 50%;
-  margin: 40px auto;
-}
-
-.marquee-content {
-  display: flex;
-  animation: marquee 20s linear infinite; /* Adjust duration based on content length and desired speed */
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  } /* Adjust based on content length */
-}
+} */

@@ -18,8 +18,8 @@ const { title, description, pubDate, tags, heroImage } = post;
   </head>
 
   <body>
-    <Header />
     <main>
+      <Header />
       <article class="flex flex-col gap-8">
         {
           heroImage && (
@@ -37,11 +37,17 @@ const { title, description, pubDate, tags, heroImage } = post;
           <div class="ao-md-content-container">
             <slot />
           </div>
-          {tags && <AboutKeywords tags={tags} />}
+          {
+            tags && (
+              <div class="my-[40px]">
+                <AboutKeywords tags={tags} />
+              </div>
+            )
+          }
         </div>
       </article>
+      <Footer />
     </main>
-    <Footer />
   </body>
 </html>
 

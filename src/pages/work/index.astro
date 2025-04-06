@@ -18,8 +18,9 @@ const posts = (await getCollection("work")).sort(
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <Header />
     <main>
+      <Header />
+
       <div class="w-[340px] m-auto h-[70vh]" id="nonProtectedContent">
         <div class="pt-[100px]">
           <h5 class="mb-[20px] text-center">Enter the password.</h5>
@@ -31,7 +32,7 @@ const posts = (await getCollection("work")).sort(
         </div>
         <div class="">
           <button
-            class="w-full rounded px-6 py-2 bg-yellow-500 text-black cursor-pointer"
+            class="w-full rounded px-6 py-2 bg-primary font-bold text-black cursor-pointer"
             id="loginButton"
           >
             Access
@@ -71,8 +72,8 @@ const posts = (await getCollection("work")).sort(
           }
         </section>
       </div>
+      <Footer />
     </main>
     <script src="../../protected.js"></script>
-    <Footer />
   </body>
 </html>

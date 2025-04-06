@@ -10,7 +10,8 @@ export const storytimeData = [
   },
   {
     heading: "Brands, Illustrations, & Swag.",
-    caption: "Creating brands and illustrations that people will love.",
+    caption:
+      "Take a look at my creative brands and illustrations that I'm sure you'll love.",
     url: "/blog/identity-exercises",
     action: "See more",
     tags: ["Branding", "Illustration", "Fun"],
@@ -18,7 +19,8 @@ export const storytimeData = [
   },
   {
     heading: "UI, Design Systems, Tooling, & Teams.",
-    caption: "Develop wonderful experiences at scale.",
+    caption:
+      "Discover how I have developed wonderful experiences that serve teams and customers.",
     action: "See more",
     url: "/blog/design-systems",
     tags: ["Product Teams", "Design Systems", "Product Design"],
@@ -26,7 +28,8 @@ export const storytimeData = [
   },
   {
     heading: "Front-end Development & Prototyping.",
-    caption: "Bringing ideas to life.",
+    caption:
+      "Learn how I bridge the gaps between product, design, and engineering teams.",
     action: "See more",
     url: "/blog/prototyping",
     tags: ["Front-end", "Prototyping"],
