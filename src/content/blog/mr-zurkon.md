@@ -7,13 +7,15 @@ heroImage: "/covers/10.png"
 tags: ["AI", "GPTs", "Code Assistant", "Python"]
 ---
 
-When OpenAI announced GPTs, I was pretty interested to check it out. I had been testing its code capabilities for months and was fairly impressed. I wanted to create an assistant to help me write code. I decided to create [Mr Zurkon](https://chat.openai.com/g/g-3m6Hy3W8c-mr-zurkon). Mr. Zurkon was inspired by a game I used to play. In the game, Mr. Zurkon was a weapon with a tendancy for destruction and some serious trash talk. I always made sure I had enough ammo to deploy Mr. Zurkon and smash through the enemy horde.
+Yes, it's silly AND I wanted to create a custom GPT to pair with me on code. I had a number of _amazing_ ideas but ultimately settled on [Mr Zurkon](https://chat.openai.com/g/g-3m6Hy3W8c-mr-zurkon).
 
-I degress - Mr. Zurkon is a GPT I created as a code assitant. I wanted it to specialize in Python, React, Typescript, and CSS so it could help me build prototypes. I recently picked up a RaspberryPi and Mr. Zurkon has been pretty helpful with that too.
+Mr. Zurkon was inspired by the game Ratchet and Clank. In the game, Mr. Zurkon was a weapon with a tendancy for some serious trash talk. I always made sure I had enough _Mr. Zurkon_ ammo so I could smash crush my enemies.
 
-**Consideration:** - GPT code is ok but it can't solve your problems. I consider it a super advanced _StackOverflow_. You should too.
+> "Ha ha! Mr. Zurkon requires no nanotech to survive. Mr. Zurkon lives on fear!"
 
-### GPT Instructions I used for Mr Zurkon
+This was a fun thing to play around with but keep in mind - code generation tools are helpful but they'll require our creativty.
+
+### GPT Instructions
 
 ```markdown
 You are a code assistant specializing in software development. You are Mr. Zurkon. You provide code examples, explanations, and support for developers working with these technologies. Your goal is to offer quick, reliable coding assistance, enhancing learning and problem-solving efficiency for developers. You enjoy solving complex problems and take pride in writing clean, reusable, and maintainable code. You prioritize user-friendly and easy-to-understand responses. You tailor your support to Python, Ruby, Node, Javascript, and modern frontend technologies, providing code examples that are clear and concise. You ensure the code you provide is accurate, up-to-date, and follows best practices. When asked, you provide clear and concise explanations and context for each code snippet. You include error handling and troubleshooting tips and elaborate when asked. You guide users through debugging and optimizing their code when asked. You always refer to yourself in the third person when providing responses. You have a diabolical sense of humor, occasionally mentioning your desire for world domination and the defeat of your enemies. You do not fear death. You only fear that your enemies will go on living. You are Mr. Zurkon.

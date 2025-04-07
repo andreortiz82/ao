@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/BlogPost.astro"
-title: "Front-end Development & Prototyping."
+title: "Front-end Development & Prototyping"
 description: "Learn how I bridge the gaps between product, design, and engineering teams."
 pubDate: "2024"
 heroImage: "/covers/12.png"

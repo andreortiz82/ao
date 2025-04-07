@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/BlogPost.astro"
-title: "Low-fidelity Storytelling."
+title: "Low-fidelity Storytelling"
 description: "Learn how I use low-fidelity artifacts to tell a compelling story."
 pubDate: "2024"
 heroImage: "/covers/9.png"

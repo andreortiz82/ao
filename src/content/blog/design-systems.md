@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/BlogPost.astro"
-title: "UI, Design Systems, Tooling, & Teams."
+title: "UI, Design Systems, Tooling, & Teams"
 description: "Discover how I have developed wonderful experiences that serve teams and customers."
 pubDate: "2024"
 heroImage: "/covers/2.png"

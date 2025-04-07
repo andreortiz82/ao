@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/BlogPost.astro"
-title: "Brands, Illustrations, & Swag."
+title: "Brands, Illustrations, & Swag"
 description: "Take a look at my creative brands and illustrations that I'm sure you'll love."
 pubDate: "2024"
 heroImage: "/covers/7.png"
