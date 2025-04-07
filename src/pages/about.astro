@@ -1,0 +1,122 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Footer from "../components/Footer.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <main>
+      <Header title={SITE_TITLE} />
+
+      <section class="flex flex-col gap-8">
+        <div class="rounded overflow-hidden">
+          <img src="/family.png" alt="family" />
+        </div>
+
+        <div class="px-8 flex flex-col gap-5">
+          <header class="flex flex-col gap-5">
+            <h1 class="!mb-0">About Me</h1>
+            <p class="!text-3xl m-0 opacity-45">
+              Husband, Father, Creative, and Friend.
+            </p>
+            <span class="bg-primary w-1/4 h-[4px]"></span>
+          </header>
+
+          <div class="ao-md-content-container">
+            <p>
+              Product Design Leader for B2B, SaaS, and B2C tech organisations.
+              Proven track record in building and leading high-performing teams,
+              to create beautiful products that meet business goals. I want to
+              create the best products through collaborative methods while
+              nurturing and scaling a dynamic team culture.
+            </p>
+
+            <hr />
+
+            <div>
+              <h2>Current</h2>
+              <p>
+                Senior Product Designer & Design Systems Lead @ <a
+                  target="_blank"
+                  href="http://reifyhealth.com">ReifyHealth</a
+                >
+              </p>
+
+              <h3>Past</h3>
+              <ul>
+                <li>Founder & Lead Design Consultant @ 100 Proof</li>
+                <li>Senior Designer @ Thinktiv</li>
+                <li>Design Engineer @ Ecommerce</li>
+                <li>Multimedia Designer @ Mills James</li>
+                <li>Graphic Designer @ Moist Music (Sony)</li>
+              </ul>
+            </div>
+
+            <hr />
+
+            <div>
+              <h2>Testimonials</h2>
+
+              <section class="grid grid-cols-2 gap-5">
+                <blockquote class="!text-xl !m-0">
+                  <span
+                    >I've worked on several projects with Andre. I've found his
+                    work to be excellent - detail oriented, creative, and
+                    thoughtful. His attitude is great, his work is on time, and
+                    he's dependable. I would highly recommend working with Andre
+                    on a creative project.</span
+                  >
+                  <cite class="block">
+                    — <a href="https://www.jonkolko.com/">Jon Kolko</a></cite
+                  >
+                </blockquote>
+
+                <blockquote class="!text-xl !m-0">
+                  <span
+                    >Andre is a rock star in every way but his ego. His work is
+                    world-class, he's quick, and perhaps most importantly, a
+                    pleasure to work with. I recommend Andrei without
+                    reservation.</span
+                  >
+                  <cite class="block">
+                    — <a href="https://www.linkedin.com/in/patrickduncan/"
+                      >Patrick Duncan</a
+                    >
+                  </cite>
+                </blockquote>
+
+                <blockquote class="!text-xl !m-0">
+                  <span
+                    >Working with Andre was an absolute pleasure. He has this
+                    rare ability to translate vague concepts into stunning
+                    visual realities. I wouldn't hesitate to recommend Andre to
+                    anyone seeking a designer.</span
+                  >
+                  <cite class="block"> — Robert H. </cite>
+                </blockquote>
+
+                <blockquote class="!text-xl !m-0">
+                  <span
+                    >Andre's design work transformed our outdated website into a
+                    sleek, intuitive platform that perfectly captures our brand
+                    . He understood our vision and translated it into visual
+                    elements that exceeded all expectations. I wholeheartedly
+                    recommend Andre.</span
+                  >
+                  <cite class="block"> — Theresa M. </cite>
+                </blockquote>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+      <Footer />
+    </main>
+  </body>
+</html>
