@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Gloock:wght@400&display=swap");
 @import "./settings.css";
-
 @layer ao {
   body {
     background: var(--color-base);
@@ -26,6 +25,7 @@
     font-size: var(--text-7xl);
     line-height: var(--tw-leading, var(--text-7xl--line-height));
   }
+
   h2 {
     font-size: var(--text-6xl);
     line-height: var(--tw-leading, var(--text-6xl--line-height));
@@ -61,7 +61,6 @@
     line-height: var(--tw-leading, var(--text-xl--line-height));
     display: flex;
     flex-direction: column;
-    gap: 1rem;
     margin: 1rem 0;
     padding-left: 2rem;
   }
@@ -113,8 +112,8 @@
 
   main {
     margin: 0 auto;
-    max-width: 1400px;
-    padding: 2rem 0;
+    max-width: 1280px;
+    padding: 1rem;
   }
 
   .welcome-container {
@@ -184,128 +183,54 @@
   }
 }
 
-/* @layer base {
-  body {
-    @apply text-zinc-100 font-sans text-base;
-    @apply p-12;
-    @apply transition duration-200;
-    @apply antialiased;
-    font-family: var(--sans-font);
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    background: #080808;
-  }
-
-  .logo {
-    font-family: var(--serif-font);
-  }
-
+/* MD */
+@media (max-width: 48rem) {
   h1 {
     font-size: var(--text-5xl);
     line-height: var(--tw-leading, var(--text-5xl--line-height));
-    font-family: var(--serif-font);
-    font-weight: 800;
   }
 
   h2 {
-    @apply text-4xl;
-    font-family: var(--serif-font);
-    font-weight: 800;
+    font-size: var(--text-5xl);
+    line-height: var(--tw-leading, var(--text-5xl--line-height));
   }
-
   h3 {
-    @apply text-3xl;
-    font-family: var(--serif-font);
-    font-weight: 800;
+    font-size: var(--text-5xl);
+    line-height: var(--tw-leading, var(--text-5xl--line-height));
   }
-
   h4 {
-    @apply text-2xl;
-    font-family: var(--serif-font);
-    font-weight: 800;
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
   }
-
   h5 {
-    @apply text-2xl font-bold;
-    font-family: inherit;
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
 
-  hr {
-    @apply border-zinc-800 my-10;
+  .welcome-section {
+    height: 50vh;
   }
 
-  ul,
-  ol {
-    @apply my-4 pl-8 flex flex-col gap-1 text-xl;
-    list-style: disc;
-    font-family: inherit;
+  .welcome-container {
+    background: none;
+    position: relative;
+
+    & .welcome {
+      font-size: var(--text-7xl);
+      z-index: 5;
+      margin: 24px auto;
+      text-align: left;
+      position: relative;
+    }
   }
 
-  blockquote {
-    @apply p-4 m-8 pl-8 border-l-4 border-zinc-800;
+  .content-container,
+  .welcome-keywords {
+    display: none;
   }
 
-  pre {
-    @apply p-4 my-4 font-mono rounded overflow-auto;
-  }
-
-  main,
   header.ao,
   footer.ao {
-    @apply w-4/5 mx-auto;
-    max-width: 1400px;
-  }
-} */
-
-/* Fun Story */
-/* .ao-md-content-container {
-  @apply text-2xl;
-
-  & h1,
-  & h2,
-  & h3,
-  & h4,
-  & h5 {
-    @apply mb-5;
-  }
-
-  & p,
-  & ul {
-    @apply mb-8;
-    font-family: inherit;
-    font-size: inherit;
-  }
-
-  & a {
-    @apply text-primary underline;
+    gap: 1rem;
   }
 }
-
-.content-container {
-  &:nth-child(odd) {
-    & .content-block {
-      flex-direction: row-reverse;
-    }
-  }
-
-  & .image {
-    border-radius: 10px;
-    overflow: hidden;
-    height: min-content;
-    & img {
-      width: 100%;
-    }
-  }
-}
-
-.welcome-section {
-  position: relative;
-  background: url("me-photo-1.png") no-repeat center center;
-  background-size: 100%;
-}
-
-.welcome-container {
-  z-index: 10;
-  position: relative;
-} */

@@ -3,6 +3,11 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Footer from "../components/Footer.astro";
+import { AboutKeywords } from "../components/AboutKeywords";
+const posts = await Astro.glob("../content/blog/*.md");
+const tags = [
+  ...new Set(posts.map((post) => post.frontmatter.tags).flat()),
+].sort((a, b) => a.localeCompare(b));
 ---
 
 <!doctype html>
@@ -32,8 +37,8 @@ import Footer from "../components/Footer.astro";
             <p>
               Family man with <a href="/blog/music1">creative hobbies</a> and not
               enough time. I live in Austin, Texas with my wife, daughter, and dogo.
-              I dream of building a creative community space where people can come
-              together to learn, create, and share ideas.
+              I dream of building a creative space where I, and others, can come
+              together to learn, create, make noise, and share ideas.
             </p>
 
             <hr />
@@ -72,7 +77,7 @@ import Footer from "../components/Footer.astro";
             <div>
               <h2>Testimonials</h2>
 
-              <section class="grid grid-cols-2 gap-5">
+              <section class="grid grid-cols-1 lg:grid-cols-2 gap-5">
                 <blockquote class="!text-xl !m-0">
                   <span
                     >I've worked on several projects with Andre. I've found his
@@ -124,7 +129,11 @@ import Footer from "../components/Footer.astro";
             </div>
           </div>
         </div>
+        <div class="mb-[40px]">
+          <AboutKeywords tags={tags} />
+        </div>
       </section>
+
       <Footer />
     </main>
   </body>

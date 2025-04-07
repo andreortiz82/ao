@@ -20,7 +20,7 @@ const posts = (await getCollection("blog")).sort(
   <body>
     <main>
       <Header />
-      <section class="grid grid-cols-3 gap-4 text-xl leading-8">
+      <section class="grid lg:grid-cols-3 grid-cols-1 gap-4 text-xl leading-8">
         {
           posts.map((post: any) => (
             <article class="rounded p-6 flex flex-col gap-4 transition">

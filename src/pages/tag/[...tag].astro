@@ -34,7 +34,7 @@ const { posts } = Astro.props;
     <main>
       <Header title={SITE_TITLE} />
       <h1 class="mb-5">Ideas tagged with <i class="text-primary">{tag}</i></h1>
-      <section class="grid grid-cols-3 gap-4 text-xl leading-8">
+      <section class="grid grid-cols-1 lg:grid-cols-3 gap-4 text-xl leading-8">
         {
           posts.map((post: any) => (
             <article class="rounded p-6 flex flex-col gap-4 transition">
