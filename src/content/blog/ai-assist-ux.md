@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/BlogPost.astro"
-title: "AI behind the curtain"
+title: "AI Behind the Curtain"
 description: "AI improved customer experiences"
 pubDate: "Dec 18 2024"
 heroImage: "/covers/1.png"
