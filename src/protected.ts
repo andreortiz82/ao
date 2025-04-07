@@ -1,7 +1,7 @@
 // @ts-ignore
 // @ts-nocheck
 
-const TEMP_PASS = "xxx";
+const TEMP_PASS = "AO!25";
 
 const errorMessages = [
   "Incorrect! Contact me and I'll help you out.",

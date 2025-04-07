@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPost.astro"
 title: "AI and Product Design"
 description: "Embrace your new creative tools"
 pubDate: "December 13 2024"
-heroImage: "https://picsum.photos/1920/400"
+heroImage: "/covers/3.png"
 tags: ["AI", "Product Design", "Self-Improvement"]
 ---
 

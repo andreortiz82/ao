@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPost.astro"
 title: "Components."
 description: "Building components in React."
 pubDate: "2024"
-heroImage: "https://picsum.photos/1920/400"
+heroImage: "/covers/4.png"
 tags: ["Tailwind", "Front-end", "React", "Design Systems"]
 ---
 

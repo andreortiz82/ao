@@ -1,9 +1,9 @@
 ---
 layout: "../../layouts/BlogPost.astro"
 title: "Low-fidelity Storytelling."
-description: "Learn how I, and you, can use low-fidelity artifacts to tell a compelling story."
+description: "Learn how I use low-fidelity artifacts to tell a compelling story."
 pubDate: "2024"
-heroImage: "/art/lofi-cover.png"
+heroImage: "/covers/9.png"
 tags: ["Lofi", "Wireframes", "Product Design", "UI Kits"]
 ---
 

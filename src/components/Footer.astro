@@ -8,6 +8,7 @@ import {
   InstagramLogo,
   YoutubeLogo,
   DribbbleLogo,
+  House,
 } from "@phosphor-icons/react";
 // import ImageMarquee from "./ImageMarquee";
 
@@ -15,8 +16,17 @@ const linkStyle = "opacity-50 hover:opacity-100 transition";
 ---
 
 <footer
-  class="ao flex justify-between flex-wrap border-t border-base-secondary mt-5 pt-5"
+  class="ao flex justify-between flex-wrap border-t border-base-secondary mt-5 pt-5 relative"
 >
+  <button
+    title="Home"
+    aria-label="Home"
+    type="button"
+    onclick="window.location.href='/'"
+    class="absolute -top-[20px] left-1/2 bg-base p-3 inline-block cursor-pointer hover:text-primary"
+  >
+    <House />
+  </button>
   <nav class="flex gap-4 items-center">
     <a href="/">
       <img src="/avatar.png" alt="Andre Ortiz" class="rounded-full w-10 h-10" />
@@ -72,10 +82,10 @@ const linkStyle = "opacity-50 hover:opacity-100 transition";
   </nav>
 
   <div>
-    <span class="opacity-50">&copy; {today.getFullYear()} Andre Ortiz. </span>
+    <span class="opacity-45">&copy; {today.getFullYear()} Andre Ortiz</span>
     <span class="flex gap-2 items-center">
       <span><img src="/american-flag.png" /></span>
-      <span class="opacity-50">Made in the U.S.A.</span>
+      <span class="opacity-45">Made in the USA</span>
     </span>
   </div>
 </footer>

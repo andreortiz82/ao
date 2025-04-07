@@ -7,7 +7,8 @@
     "build": "astro build",
     "build:prod": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "ktb": "astro preferences disable devToolbar"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.2.1",

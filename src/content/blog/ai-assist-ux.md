@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPost.astro"
 title: "Behind the scenes UX"
 description: "AI Assisted UX nobody will see"
 pubDate: "Dec 18 2024"
-heroImage: "https://picsum.photos/1920/400"
+heroImage: "/covers/1.png"
 tags: ["AI", "Automation", "Healthcare"]
 ---
 

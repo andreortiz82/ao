@@ -3,7 +3,7 @@ layout: "../../layouts/WorkPost.astro"
 title: "Visit Window Calculator"
 description: "Reducing schedule deviations for clinical trials."
 pubDate: "2025"
-heroImage: "https://picsum.photos/1920/400"
+heroImage: "/covers/18.png"
 tags: ["Product Design", "Healthcare"]
 password: "true"
 ---

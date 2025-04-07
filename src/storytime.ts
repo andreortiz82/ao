@@ -19,15 +19,15 @@ gsap.registerPlugin(ScrollTrigger);
 
 gsap.fromTo(
   ".welcome",
-  { y: 0 },
+  { y: "5%" },
   {
     duration: 1,
     y: -100,
     opacity: 0,
     scrollTrigger: {
       trigger: ".welcome",
-      start: "bottom center",
-      end: "bottom top",
+      start: "bottom top",
+      end: "center top",
       scrub: 1,
       // markers: true,
     },

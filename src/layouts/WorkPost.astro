@@ -27,9 +27,10 @@ const { title, description, pubDate, tags, heroImage, password } = post;
               <div class="pt-[100px]">
                 <h5 class="mb-[20px] text-center">Enter the password.</h5>
                 <input
+                  type="password"
                   placeholder="Password"
                   id="passwordInput"
-                  class="mb-2 px-4 py-2 bg-white w-full border border-zinc-800"
+                  class="mb-2 px-4 py-2 bg-white text-black w-full border border-base-secondary rounded"
                 />
               </div>
               <div class="">
@@ -50,13 +51,13 @@ const { title, description, pubDate, tags, heroImage, password } = post;
                   </div>
                 )}
 
-                <div class="px-8 flex flex-col gap-2">
-                  <header class="flex flex-col gap-2">
-                    <span class="flex items-center gap-4">
-                      <h1 class="mb-0">{title}</h1>
+                <div class="px-8 flex flex-col gap-5">
+                  <header class="flex flex-col gap-5">
+                    <span class="flex items-center gap-5">
+                      <h1 class="!mb-0">{title}</h1>
                       {password === "true" && (
-                        <span class="flex items-center gap-2">
-                          <span class="text-gray-500">
+                        <span class="flex items-center gap-2 opacity-45 hover:opacity-100">
+                          <span>
                             <Lock size={20} />{" "}
                           </span>
                           <button id="logoutButton" class="cursor-pointer">
@@ -65,14 +66,19 @@ const { title, description, pubDate, tags, heroImage, password } = post;
                         </span>
                       )}
                     </span>
-                    <p class="text-2xl m-0 opacity-80">{description}</p>
+
+                    <p class="!text-3xl m-0 opacity-45">{description}</p>
+                    <span class="bg-primary w-1/4 h-[4px]" />
                   </header>
 
                   <div class="ao-md-content-container">
                     <slot />
                   </div>
-
-                  {tags && <AboutKeywords tags={tags} />}
+                  {tags && (
+                    <div class="my-[40px]">
+                      <AboutKeywords tags={tags} />
+                    </div>
+                  )}
                 </div>
               </article>
             </div>

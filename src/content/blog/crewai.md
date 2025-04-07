@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPost.astro"
 title: "CrewAI"
 description: "Building an agentic workflow"
 pubDate: "May 5 2024"
-heroImage: "https://picsum.photos/1920/400"
+heroImage: "/covers/5.png"
 tags: ["AI Agents", "Automation", "Python"]
 ---
 

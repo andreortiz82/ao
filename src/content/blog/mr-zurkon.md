@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPost.astro"
 title: "Mr Zurkon"
 description: "Code is no match for Mr Zurkon"
 pubDate: "March 30 2024"
-heroImage: "/art/mz-cover-image.png"
+heroImage: "/covers/10.png"
 tags: ["AI", "GPTs", "Code Assistant", "Python"]
 ---
 

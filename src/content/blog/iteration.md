@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPost.astro"
 title: "Design Iteration"
 description: "Iterate, refine, profit!"
 pubDate: "May 5 2021"
-heroImage: "https://picsum.photos/1920/400"
+heroImage: "/covers/8.png"
 tags: ["Product Design", "UX"]
 ---
 

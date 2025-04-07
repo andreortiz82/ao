@@ -3,7 +3,7 @@ layout: "../../layouts/WorkPost.astro"
 title: "Design Systems"
 description: "Creating consistent, high quality outcomes at scale."
 pubDate: "2025"
-heroImage: "https://picsum.photos/1920/400"
+heroImage: "/covers/19.png"
 tags: ["Design Systems", "Healthcare"]
 password: "true"
 ---
