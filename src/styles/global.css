@@ -117,7 +117,7 @@
   }
 
   .welcome-container {
-    background: url("/me-photo-1.png") no-repeat center center;
+    background: url("/me-photo-1.png") no-repeat center bottom;
     background-size: 100%;
     width: 100%;
     position: relative;
@@ -133,6 +133,8 @@
   }
 
   .content-container {
+    /* background: rebeccapurple; */
+
     &:nth-child(odd) {
       & .content-block {
         flex-direction: row-reverse;

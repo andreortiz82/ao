@@ -24,9 +24,10 @@ const tags = [
       <Header title={SITE_TITLE} />
       <section class="flex flex-col">
         <section
-          class="welcome-section w-full h-[100vh] flex flex-col items-center justify-start"
+          class="welcome-section w-full h-[980px] flex flex-col items-center justify-start"
         >
           <div class="welcome-container grow h-full">
+            <!-- dont break word -->
             <h1 class="welcome">
               I help teams <span class="border-b-4 border-b-primary"
                 >design <br />& ship</span
@@ -36,7 +37,7 @@ const tags = [
         </section>
         {
           storytimeData.map((story) => (
-            <section class="flex w-full h-[80vh] content-container ">
+            <section class="flex w-full h-[700px] mb-[10px] content-container">
               <div class="flex gap-10 content-block">
                 <div class="flex image drop-shadow-md w-1/2">
                   <a href={story.url}>
@@ -72,7 +73,7 @@ const tags = [
             </section>
           ))
         }
-        <div class="welcome-keywords mb-[40px]">
+        <div class="welcome-keywords my-[40px]">
           <AboutKeywords tags={tags} />
         </div>
       </section>
