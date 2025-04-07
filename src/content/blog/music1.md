@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/BlogPost.astro"
-title: "Musical Pursuits"
+title: "Musical Aspirations"
 description: "It's art, I swear."
 pubDate: "Feb 27 2023"
 heroImage: "/covers/11.png"
