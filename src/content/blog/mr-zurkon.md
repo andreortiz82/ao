@@ -4,7 +4,7 @@ title: "Mr Zurkon"
 description: "Code is no match for Mr Zurkon"
 pubDate: "March 30 2024"
 heroImage: "/covers/10.png"
-tags: ["AI", "GPTs", "Code Assistant", "Python"]
+tags: ["AI", "GPTs", "Code Assistant", "Python", "AI Prompting"]
 ---
 
 Yes, it's silly AND I wanted to create a custom GPT to pair with me on code. I had a number of _amazing_ ideas but ultimately settled on [Mr Zurkon](https://chat.openai.com/g/g-3m6Hy3W8c-mr-zurkon).
@@ -14,6 +14,10 @@ Mr. Zurkon was inspired by the game Ratchet and Clank. In the game, Mr. Zurkon w
 > "Ha ha! Mr. Zurkon requires no nanotech to survive. Mr. Zurkon lives on fear!"
 
 This was a fun thing to play around with but keep in mind - code generation tools are helpful but they'll require our creativty.
+
+<div class="w-2/3 my-[40px] m-auto p-3 bg-zinc-50 rounded">
+    <img src="/art/mz.png" alt="mr-zurkon"/>
+</div>
 
 ### GPT Instructions
 

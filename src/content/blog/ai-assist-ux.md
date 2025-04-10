@@ -7,9 +7,9 @@ heroImage: "/covers/1.png"
 tags: ["AI", "Automation", "Healthcare"]
 ---
 
-I've been thinking about how AI processes running on the background could improve customer experiences on the real world. I work on a healthcare product and think about this often. For example, some healthcare workers are busy calling and re-calling patients, coordinating calendars, performing data entry tasks, managing day to day site operations, and of course caring for the health of other people.
+I've been thinking about how AI processes running in the background could improve customer experiences on the real world. I currently work on a healthcare product and think about this often. For example, some healthcare workers are busy calling and re-calling patients, coordinating calendars, performing data entry tasks, managing day to day site operations, and of course caring for the health of other people. What or how can AI improve or even eliminate tasks that could be automated?
 
-Over the last couple years, LLMs like: ChatGPT, Claude, Llama 3, and others have really grown in popularity. Now I'm thinking, "What if the _data entry_ part of the job was even easier?". When I say _easier_, I don't mean "Add a chat bot" - instead, let's create less friction between the human and the machine.
+Over the last couple years, LLMs have grown in capability. Vision models can interpret images better than before, voice models are more powerful, and [agents can work together](/blog/crewai/) to complete pre-defined tasks. Now I'm thinking, "What if the _data entry_ part of the job was even easier?". When I say _easier_, I don't mean "Add a chat bot" - instead, let's create less friction between the human and the software.
 
 ### Thinking out loud
 

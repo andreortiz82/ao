@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/BlogPost.astro"
 title: "CrewAI"
-description: "AI Agents"
+description: "An Agentic Framework"
 pubDate: "May 5 2024"
 heroImage: "/covers/5.png"
 tags: ["AI Agents", "Automation", "Python"]
@@ -22,11 +22,11 @@ Here’s the 101 on CrewAI:
    - A **role** (e.g., researcher, writer, analyst).
    - A **goal** (what they’re supposed to achieve).
    - A **backstory** (a little personality never hurts).
-   - **Tools** (optional, for special powers like searching the web).
+   - **Tools** (optional, for special powers like searching the web and RAG).
 
 2. **Tasks**: These are the jobs your agents need to complete. Tasks come with:
 
-   - A detailed **description** so there’s no room for confusion.
+   - A detailed **description** so there's no room for confusion.
    - An **expected output** to set clear expectations.
 
 3. **Tools**: Sometimes, agents need a bit of help. CrewAI supports built-in tools and third-party integrations (like APIs) to give your agents superpowers.
@@ -35,7 +35,7 @@ Here’s the 101 on CrewAI:
 
 ### Example:
 
-Let’s say you want to create a crew that researches the latest AI trends and writes a summary. Here’s how you’d do it:
+Let’s say you want to create a crew that researches the latest _"economic news"_ and writes a summary. Here’s how you’d do it:
 
 ```python
 from crewai import Agent, Task, Crew, Process

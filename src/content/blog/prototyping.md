@@ -26,13 +26,13 @@ if (skills.includes("code")) {
 }
 ```
 
-But seriously, being able to work across the disciplines and contribute to the products we design is incredibly rewarding. Don't missunderstand, I'm not a _"full stack"_ guy but I know enough about the development, front and back, to be supportive in most engineering conversations - and isn't that what it's all about - supporting our teams.
+But seriously, being able to work across the disciplines and contribute to the products we design is incredibly rewarding. Don't missunderstand, I'm not a _"full stack"_ guy but I know enough about the development, front and back, to be supportive in most engineering conversations - and isn't that what it's all about? Supporting our teams.
 
-I've seen all manner of development tools and have had to learn a lot of languages, frameworks, and build systems just to keep up. Here are a few: **_HTML, CSS, Javascript, Ruby, Python, PHP, C#, ClojureScript, Webpack, Vite, React, Vue, Angular, Style Dictionary, Tailwind_,**, and so many others.
+As the industry has evolved, so have I. I have learned a lot of languages, frameworks, and build systems. Here are a few: **_HTML, CSS, Javascript, Ruby, Python, PHP, C#, ClojureScript, Webpack, Vite, React, Vue, Angular, Style Dictionary, Tailwind_,**, and so many others.
 
 ## Developing Imagination
 
-Today, I find myself using [React](https://react.dev/), [Vite](https://vite.dev/), and [Tailwind](https://tailwindcss.com/) when I want to quickly prototype something. This combo is a great way to showcase simple ideas, communicate interactions, and create an artifact that could eventually become production code.
+Today, I find myself using [React](https://react.dev/), [Vite](https://vite.dev/), and [Tailwind](https://tailwindcss.com/) when I want to quickly prototype something. This combo is a great way to showcase simple ideas, communicate interactions, and create an artifact that could eventually become production code. I dive a bit deeper on this topic [here](/blog/components/).
 
 Checkout my current starter project, [react-vite-template](https://github.com/andreortiz82/react-vite-template), if you're interested.
 
