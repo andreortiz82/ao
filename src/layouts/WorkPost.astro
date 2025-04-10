@@ -9,7 +9,7 @@ import { Lock } from "@phosphor-icons/react";
 type Props = CollectionEntry<"work">["data"];
 
 const post = Astro.props;
-const { title, description, pubDate, tags, heroImage, password } = post;
+const { title, description, role, team, tags, heroImage, password } = post;
 ---
 
 <html lang="en">
@@ -20,71 +20,98 @@ const { title, description, pubDate, tags, heroImage, password } = post;
   <body>
     <main>
       <Header />
-      {
-        password === "true" && (
-          <section>
-            <div class="w-[340px] m-auto h-[70vh]" id="nonProtectedContent">
-              <div class="pt-[100px]">
-                <h5 class="mb-[20px] text-center">Enter the password.</h5>
-                <input
-                  type="password"
-                  placeholder="Password"
-                  id="passwordInput"
-                  class="mb-2 px-4 py-2 bg-white text-black w-full border border-base-secondary rounded"
-                />
-              </div>
-              <div class="">
-                <button
-                  class="w-full rounded px-6 py-2 bg-yellow-500 text-black cursor-pointer"
-                  id="loginButton"
-                >
-                  Access
-                </button>
-              </div>
-            </div>
+      <section>
+        <div class="w-[340px] m-auto h-[70vh]" id="nonProtectedContent">
+          <div class="pt-[100px]">
+            <h5 class="mb-[20px] text-center">Enter the password.</h5>
+            <input
+              type="password"
+              placeholder="Password"
+              id="passwordInput"
+              class="mb-2 px-4 py-2 bg-white text-black w-full border border-base-secondary rounded"
+            />
+          </div>
+          <div class="">
+            <button
+              class="w-full rounded px-6 py-2 bg-yellow-500 text-black cursor-pointer"
+              id="loginButton"
+            >
+              Access
+            </button>
+          </div>
+        </div>
 
-            <div id="protectedContent" style="display:none;">
-              <article class="flex flex-col gap-8">
-                {heroImage && (
-                  <div class="rounded overflow-hidden">
-                    <img src={heroImage} alt={title} />
-                  </div>
-                )}
-
-                <div class="px-8 flex flex-col gap-5">
-                  <header class="flex flex-col gap-5">
-                    <span class="flex items-center gap-5">
-                      <h1 class="!mb-0">{title}</h1>
-                      {password === "true" && (
-                        <span class="flex items-center gap-2 opacity-45 hover:opacity-100">
-                          <span>
-                            <Lock size={20} />{" "}
-                          </span>
-                          <button id="logoutButton" class="cursor-pointer">
-                            Exit
-                          </button>
-                        </span>
-                      )}
-                    </span>
-
-                    <p class="!text-3xl m-0 opacity-45">{description}</p>
-                    <span class="bg-primary w-1/4 h-[4px]" />
-                  </header>
-
-                  <div class="ao-md-content-container">
-                    <slot />
-                  </div>
-                  {tags && (
-                    <div class="my-[40px]">
-                      <AboutKeywords tags={tags} />
-                    </div>
-                  )}
+        <div id="protectedContent" style="display:none;">
+          <article class="flex flex-col gap-8">
+            {
+              heroImage && (
+                <div class="rounded overflow-hidden">
+                  <img src={heroImage} alt={title} />
                 </div>
-              </article>
+              )
+            }
+            <div class="px-8 flex flex-col gap-5">
+              <header class="flex flex-col gap-5">
+                <span class="flex items-center gap-5">
+                  <h1 class="!mb-0">{title}</h1>
+                  {
+                    password === "true" && (
+                      <span class="flex items-center gap-2 opacity-45 hover:opacity-100">
+                        <span>
+                          <Lock size={20} />{" "}
+                        </span>
+                        <button id="logoutButton" class="cursor-pointer">
+                          Exit
+                        </button>
+                      </span>
+                    )
+                  }
+                </span>
+
+                <p class="!text-3xl m-0 opacity-45">{description}</p>
+                <span class="bg-primary w-1/4 h-[4px]"></span>
+              </header>
+
+              <div class="ao-md-content-container">
+                <div class="flex gap-5">
+                  <article>
+                    <h4>Role</h4>
+                    <ul>
+                      {
+                        role &&
+                          role.map((r) => {
+                            return <li>{r}</li>;
+                          })
+                      }
+                    </ul>
+                  </article>
+                  <article>
+                    <h4>Team</h4>
+                    <ul>
+                      {
+                        team &&
+                          team.map((r) => {
+                            return <li>{r}</li>;
+                          })
+                      }
+                    </ul>
+                  </article>
+                </div>
+
+                <hr />
+                <slot />
+              </div>
+              {
+                tags && (
+                  <div class="my-[40px]">
+                    <AboutKeywords tags={tags} />
+                  </div>
+                )
+              }
             </div>
-          </section>
-        )
-      }
+          </article>
+        </div>
+      </section>
       <Footer />
     </main>
     <script src="../protected.js"></script>

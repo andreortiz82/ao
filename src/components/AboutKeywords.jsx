@@ -4,7 +4,7 @@ export const Tag = ({ label, size, key }) => {
       <a
         key={key}
         href={`/tag/${label}`}
-        className="bg-tag text-tag-label hover:bg-tag-primary hover:text-base px-4 py-1 font-semibold rounded-full text-sm text-nowrap"
+        className="flex items-center justify-center bg-tag text-tag-label hover:bg-tag-primary hover:text-base px-4 py-1 font-semibold rounded-full text-sm text-nowrap"
       >
         {label}
       </a>
@@ -14,7 +14,7 @@ export const Tag = ({ label, size, key }) => {
       <a
         key={key}
         href={`/tag/${label}`}
-        className="bg-tag text-tag-label hover:bg-tag-primary hover:text-base px-4 py-2 font-semibold rounded-full text-nowrap"
+        className="flex items-center justify-center bg-tag text-tag-label hover:bg-tag-primary hover:text-base px-4 py-2 font-semibold rounded-full text-nowrap"
       >
         {label}
       </a>
