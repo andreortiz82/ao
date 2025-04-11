@@ -28,10 +28,10 @@ There are a number of things I like to consider when designing interfaces:
 - **Feedback Mechanisms** - Make it clear what elements are interactive and provide appropriate feedback when users take actions
 - **Simplicity** - Eliminate unnecessary elements and reduce cognitive load
 
-## The Team Trifecta
+## The Trifecta
 
-There are some trios that will forever remain iconic. When it comes to a product teams, the `lead designer`, `product manager`, and `lead engineer` should operate as that **Trifecta**.
-I have found that when the 3 disciplines work well together the outcomes are 10x improved.
+There are some trios that will forever remain iconic. When it comes to a product teams, the `lead designer`, `product manager`, and `lead engineer` should operate as a unit... a **Trifecta**, if you will.
+When these 3 disciplines work well together and have tight communication and trust, the outcomes are 10x improved.
 
 <div class="w-full m-auto my-[40px] p-3 bg-zinc-50 rounded">
 <img src="/art/iconic-trios.png" alt="iconic-trios"/>

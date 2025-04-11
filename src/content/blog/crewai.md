@@ -7,11 +7,11 @@ heroImage: "/covers/5.png"
 tags: ["AI Agents", "Automation", "Python"]
 ---
 
-Check out [this project](https://github.com/andreortiz82/crew-template) to see how it all comes together.
-
 [CrewAI](https://www.crewai.com/) is a framework that enables you to create a team of AI chatbots that can work together toward a shared goal. Each chatbot in the crew, called _Agents_, contain their own set of instructions and together, they can complete specified tasks.
 
----
+<div class="w-full m-auto my-[40px] p-3 bg-zinc-50 rounded flex items-center justify-center">
+<img src="/art/ai-agents.png" alt="agents"/>
+</div>
 
 ### Core Concepts
 
@@ -83,3 +83,5 @@ inputs = {"topic": "economic news"}
 results = crew.kickoff(inputs=inputs)
 print(results)
 ```
+
+Check out [this project](https://github.com/andreortiz82/crew-template) to see how it all comes together.
