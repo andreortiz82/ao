@@ -19,7 +19,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 gsap.fromTo(
   ".welcome",
-  { y: "5%" },
+  { y: 50 },
   {
     duration: 1,
     y: -100,
