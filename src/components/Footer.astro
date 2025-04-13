@@ -4,14 +4,11 @@ import FooterLink from "./FooterLink.astro";
 import {
   GithubLogo,
   XLogo,
-  LinkedinLogo,
   InstagramLogo,
   YoutubeLogo,
   DribbbleLogo,
   House,
-  DownloadSimple,
 } from "@phosphor-icons/react";
-// import ImageMarquee from "./ImageMarquee";
 
 const linkStyle = "opacity-50 hover:opacity-100 transition";
 ---
@@ -24,23 +21,11 @@ const linkStyle = "opacity-50 hover:opacity-100 transition";
     aria-label="Home"
     type="button"
     onclick="window.location.href='/'"
-    class="absolute -top-[20px] left-1/2 bg-base p-3 inline-block cursor-pointer hover:text-primary"
+    class="absolute -top-[20px] left-1/2 bg-base p-3 inline-block cursor-pointer hover:bg-primary hover:text-base rounded-full"
   >
     <House />
   </button>
   <nav class="flex gap-4 items-center">
-    <!-- <a href="/">
-      <img src="/avatar.png" alt="Andre Ortiz" class="rounded-full w-10 h-10" />
-    </a> -->
-
-    <!-- <FooterLink
-      class={linkStyle}
-      target="_blank"
-      href="https://www.linkedin.com/in/andreortiz/"
-    >
-      <LinkedinLogo size={24} />
-    </FooterLink> -->
-
     <FooterLink
       class={linkStyle}
       target="_blank"

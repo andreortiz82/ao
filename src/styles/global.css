@@ -68,7 +68,7 @@
   blockquote {
     padding: 3rem;
     margin: 2rem 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: var(--color-base-secondary);
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
     font-family: Georgia, "Times New Roman", Times, serif;
@@ -102,12 +102,13 @@
       background: transparent;
       padding: 0;
       margin: 0;
-      color: aquamarine;
+      color: var(--color-text-color);
     }
   }
 
   code {
-    color: aquamarine;
+    background: var(--color-text-color);
+    color: var(--color-base-secondary);
   }
 
   hr {
@@ -122,7 +123,6 @@
   }
 
   .welcome-container {
-    /* background: url("/me-photo-1.png") no-repeat center bottom; */
     background-size: 100%;
     width: 100%;
     position: relative;
@@ -138,8 +138,6 @@
   }
 
   .content-container {
-    /* background: rebeccapurple; */
-
     &:nth-child(odd) {
       & .content-block {
         flex-direction: row-reverse;
@@ -150,7 +148,8 @@
       border-radius: 10px;
       overflow: hidden;
       height: min-content;
-      box-shadow: 0 50px 70px -10px rgba(0, 0, 0, 0.5);
+      /* rgba(200, 199, 193, 1) */
+      box-shadow: 0 50px 70px -10px rgba(112, 111, 108, 0.5);
       & img {
         width: 100%;
       }
