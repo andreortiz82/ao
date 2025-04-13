@@ -14,6 +14,7 @@
   --color-text-color: var(--sand-12);
   --color-base: var(--sand-3);
   --color-base-secondary: var(--sand-7);
+  --color-base-tertiary: var(--sand-5);
   --color-tag: var(--color-base-secondary);
   --color-tag-label: var(--sand-12);
   --color-tag-label-hover: var(--amber-12);

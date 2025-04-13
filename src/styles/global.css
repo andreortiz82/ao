@@ -48,7 +48,7 @@
     line-height: 40px;
 
     & a {
-      color: var(--color-primary);
+      color: var(--color-text-color);
       text-decoration: underline;
     }
   }
@@ -74,6 +74,7 @@
     font-family: Georgia, "Times New Roman", Times, serif;
     font-style: italic;
     border-radius: 8px;
+
     & p {
       margin: 0;
       font-size: inherit;
@@ -148,10 +149,15 @@
       border-radius: 10px;
       overflow: hidden;
       height: min-content;
-      /* rgba(200, 199, 193, 1) */
-      box-shadow: 0 50px 70px -10px rgba(112, 111, 108, 0.5);
+      box-shadow: 0 20px 10px -20px rgba(112, 111, 108, 0.5);
+      transition: all 0.3s ease-in-out;
+
       & img {
         width: 100%;
+      }
+
+      &:hover {
+        box-shadow: 0 50px 70px -10px rgba(112, 111, 108, 0.5);
       }
     }
   }
@@ -177,7 +183,7 @@
     }
 
     & a {
-      color: var(--color-primary);
+      color: var(--color-text-color);
       text-decoration: underline;
     }
 

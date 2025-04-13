@@ -54,10 +54,10 @@ gsap.fromTo(
 images.forEach((box: any) => {
   gsap.fromTo(
     box,
-    { y: 25 },
+    { y: 35 },
     {
       duration: 1,
-      y: -25,
+      y: 0,
       scrollTrigger: {
         trigger: box,
         start: "center bottom",
@@ -72,9 +72,9 @@ images.forEach((box: any) => {
 copies.forEach((box: any) => {
   gsap.fromTo(
     box,
-    { y: 50 },
+    { y: 0 },
     {
-      y: 150,
+      y: 80,
       duration: 1,
       scrollTrigger: {
         trigger: box,
