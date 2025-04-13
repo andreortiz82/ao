@@ -224,14 +224,16 @@
     & .welcome {
       font-size: var(--text-7xl);
       z-index: 5;
-      margin: 24px auto;
+      margin: 0 auto 50px auto;
       text-align: left;
       position: relative;
+      line-height: 5.5rem;
     }
   }
 
   .content-container,
-  .welcome-keywords {
+  .welcome-keywords,
+  .arrow {
     display: none;
   }
 

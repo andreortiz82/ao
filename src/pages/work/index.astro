@@ -23,16 +23,18 @@ const posts = (await getCollection("work")).sort(
 
       <div class="w-[340px] m-auto h-[70vh]" id="nonProtectedContent">
         <div class="pt-[100px]">
-          <h5 class="mb-[20px] text-center">Enter the password.</h5>
+          <h5 class="mb-[20px] text-center flex items-center justify-center">
+            Enter the Password
+          </h5>
           <input
             placeholder="Password"
             id="passwordInput"
-            class="mb-2 px-4 py-2 bg-white text-black w-full border border-zinc-800"
+            class="mb-2 px-4 py-2 bg-white w-full border rounded border-base-secondary"
           />
         </div>
         <div class="">
           <button
-            class="w-full rounded px-6 py-2 bg-primary font-bold text-black cursor-pointer"
+            class="w-full px-6 py-2 cursor-pointer bg-base-secondary transition hover:bg-primary hover:text-tag-label-hover hover:border-primary font-semibold"
             id="loginButton"
           >
             Access

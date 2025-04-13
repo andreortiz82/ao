@@ -17,7 +17,7 @@ import { Lock } from "@phosphor-icons/react";
       </div>
     </div>
   </a>
-  <nav class="flex items-center gap-4">
+  <nav class="flex md:items-center gap-4 flex-wrap flex-col md:flex-row">
     <HeaderLink class="transition font-semibold" href="/blog">
       Creative Ideas
     </HeaderLink>
@@ -30,9 +30,9 @@ import { Lock } from "@phosphor-icons/react";
         Portfolio
       </span>
     </HeaderLink>
-
+    <!-- hover:text-tag-label-hover -->
     <HeaderLink
-      class="bg-base-secondary transition hover:bg-primary hover:text-base hover:border-primary font-semibold"
+      class="bg-base-secondary transition hover:bg-primary hover:text-tag-label-hover hover:border-primary font-semibold"
       href="mailto:hello@andreortiz.com?subject=Howdy!"
     >
       👋 hello@andreortiz.com
