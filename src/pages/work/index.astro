@@ -6,6 +6,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 import { Tag } from "../../components/AboutKeywords";
+import { Lock } from "@phosphor-icons/react";
 
 const posts = (await getCollection("work")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -21,24 +22,34 @@ const posts = (await getCollection("work")).sort(
     <main>
       <Header />
 
-      <div class="w-[340px] m-auto h-[70vh]" id="nonProtectedContent">
-        <div class="pt-[100px]">
-          <h5 class="mb-[20px] text-center flex items-center justify-center">
-            Enter the Password
-          </h5>
+      <div
+        class="w-[340px] m-auto my-[100px] p-[40px] rounded-md"
+        id="nonProtectedContent"
+      >
+        <div class="">
+          <div
+            class="p-5 flex items-center text-base-secondary justify-center gap-2"
+          >
+            <Lock size={40} />
+          </div>
           <input
-            placeholder="Password"
+            placeholder="Enter the password"
             id="passwordInput"
-            class="mb-2 px-4 py-2 bg-white w-full border rounded border-base-secondary"
+            class="mb-2 text-center px-4 py-2 w-full border rounded-md border-base-secondary"
           />
         </div>
-        <div class="">
+        <div class="flex flex-col gap-3">
           <button
-            class="w-full px-6 py-2 cursor-pointer bg-base-secondary transition hover:bg-primary hover:text-tag-label-hover hover:border-primary font-semibold"
+            class="w-full px-6 py-2 cursor-pointer rounded-md bg-base-secondary transition hover:bg-primary hover:text-tag-label-hover hover:border-primary font-semibold"
             id="loginButton"
           >
-            Access
+            Continue
           </button>
+          <a
+            class="underline w-full text-center"
+            href="mailto:hello@andreortiz.com?subject=Howdy!"
+            >Contact me for access
+          </a>
         </div>
       </div>
 

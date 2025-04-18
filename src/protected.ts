@@ -19,23 +19,31 @@ const getErrorMessage = () => {
   return errorMessages[index];
 };
 
-document.addEventListener("DOMContentLoaded", function () {
-  //setloading
-  function checkAuth() {
-    const token = localStorage.getItem("userToken");
-    if (token) {
-      document.getElementById("protectedContent").style.display = "block";
-      document.getElementById("nonProtectedContent").style.display = "none";
-    } else {
-      document.getElementById("protectedContent").style.display = "none";
-      document.getElementById("nonProtectedContent").style.display = "block";
+function checkAuth() {
+  const token = localStorage.getItem("userToken");
+  const protectedContent = document.getElementById("protectedContent");
+  const nonProtectedContent = document.getElementById("nonProtectedContent");
+  if (token) {
+    if (protectedContent) {
+      protectedContent.style.display = "block";
+    }
+    if (nonProtectedContent) {
+      nonProtectedContent.style.display = "none";
+    }
+  } else {
+    if (protectedContent) {
+      protectedContent.style.display = "none";
+    }
+    if (nonProtectedContent) {
+      nonProtectedContent.style.display = "block";
     }
   }
+}
 
+document.addEventListener("DOMContentLoaded", function () {
   // Initial check
   checkAuth();
 
-  // Get the value from passwordInput and compare it to fakeToken
   document.getElementById("loginButton").addEventListener("click", function () {
     const password = document.getElementById("passwordInput").value;
     if (password === TEMP_PASS) {
@@ -45,14 +53,12 @@ document.addEventListener("DOMContentLoaded", function () {
       alert(getErrorMessage());
     }
   });
+});
 
-  // Simulate login
-
-  // Simulate logout
-  document
-    .getElementById("logoutButton")
-    .addEventListener("click", function () {
-      localStorage.removeItem("userToken");
-      checkAuth();
-    });
+// Simulate logout
+document.getElementById("logoutButton").addEventListener("click", function () {
+  localStorage.removeItem("userToken");
+  checkAuth();
+  // Redirect to the main page
+  window.location.href = "/work";
 });

@@ -21,27 +21,7 @@ const { title, description, role, team, tags, heroImage, password } = post;
     <main>
       <Header />
       <section>
-        <div class="w-[340px] m-auto h-[70vh]" id="nonProtectedContent">
-          <div class="pt-[100px]">
-            <h5 class="mb-[20px] text-center">Enter the password.</h5>
-            <input
-              type="password"
-              placeholder="Password"
-              id="passwordInput"
-              class="mb-2 px-4 py-2 bg-white text-black w-full border border-base-secondary rounded"
-            />
-          </div>
-          <div class="">
-            <button
-              class="w-full rounded px-6 py-2 bg-yellow-500 text-black cursor-pointer"
-              id="loginButton"
-            >
-              Access
-            </button>
-          </div>
-        </div>
-
-        <div id="protectedContent" style="display:none;">
+        <div>
           <article class="flex flex-col gap-8">
             {
               heroImage && (
