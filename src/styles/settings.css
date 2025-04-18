@@ -1,23 +1,15 @@
 @import "tailwindcss";
-
-:root {
-  --sand-3: rgba(243, 243, 242, 1);
-  --sand-5: rgba(233, 233, 230, 1);
-  --sand-7: rgba(219, 219, 215, 1);
-  --sand-12: rgba(27, 27, 24, 1);
-  --amber-9: rgba(255, 178, 36, 1);
-  --amber-12: rgba(78, 32, 9, 1);
-}
+@import "ao-design-tokens";
 
 @theme {
   --color-primary: var(--amber-9);
-  --color-text-color: var(--sand-12);
-  --color-base: var(--sand-3);
-  --color-base-secondary: var(--sand-7);
-  --color-base-tertiary: var(--sand-5);
+  --color-text-color: var(--gray-12);
+  --color-base: var(--gray-3);
+  --color-base-secondary: var(--gray-7);
+  --color-base-tertiary: var(--gray-5);
   --color-tag: var(--color-base-secondary);
-  --color-tag-label: var(--sand-12);
-  --color-tag-label-hover: var(--amber-12);
+  --color-tag-label: var(--gray-12);
+  --color-tag-label-hover: var(--amber-1);
   --color-tag-primary: var(--color-primary);
   --font-sans: "Geist", sans-serif;
   --font-serif: "Gloock", serif;

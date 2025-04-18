@@ -20,6 +20,7 @@
     "@tailwindcss/vite": "^4.0.16",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
+    "ao-design-tokens": "^2.0.10",
     "aos": "^2.3.4",
     "astro": "^5.5.4",
     "canvas-confetti": "^1.9.3",

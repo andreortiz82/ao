@@ -149,15 +149,11 @@
       border-radius: 10px;
       overflow: hidden;
       height: min-content;
-      box-shadow: 0 20px 10px -20px rgba(112, 111, 108, 0.5);
+      box-shadow: 0 20px 10px -20px rgba(0, 0, 0, 0.5);
       transition: all 0.3s ease-in-out;
 
       & img {
         width: 100%;
-      }
-
-      &:hover {
-        box-shadow: 0 50px 70px -10px rgba(112, 111, 108, 0.5);
       }
     }
   }
