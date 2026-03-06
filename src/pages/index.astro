@@ -1,18 +1,9 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Footer from "../components/Footer.astro";
-import { AboutKeywords } from "../components/AboutKeywords";
-import { storytimeData } from "../storydata";
-import { ArrowDown } from "@phosphor-icons/react";
-// Get all blog posts
-const posts = await Astro.glob("../content/blog/*.md");
-
-// Extract unique tags
-const tags = [
-  ...new Set(posts.map((post) => post.frontmatter.tags).flat()),
-].sort((a, b) => a.localeCompare(b)); // Sort alphabetically
+import BioBlock from "../components/BioBlock.astro";
+import NavLinks from "../components/NavLinks.astro";
 ---
 
 <!doctype html>
@@ -21,72 +12,34 @@ const tags = [
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <main>
-      <Header title={SITE_TITLE} />
-      <section class="flex flex-col">
-        <section
-          class="welcome-section w-full h-[70vh] flex flex-col items-center justify-start"
-        >
-          <div class="welcome-container grow h-full">
-            <!-- <h1 class="welcome">
-              Digital <span class="border-b-4 border-b-primary">Product</span> &
-              Experience <span class="border-b-4 border-b-primary"
-                >Designer</span
-              >
-            </h1> -->
-            <h1 class="welcome">
-              I help teams <span class="border-b-4 border-b-primary"
-                >design</span
-              > & <span class="border-b-4 border-b-primary">ship</span> products
-            </h1>
-            <span
-              class="arrow text-base-secondary animate-bounce flex justify-center items-start w-full text-center my-[140px]"
-              ><ArrowDown size={56} /></span
-            >
+    <main class="flex justify-center items-center min-h-screen">
+      <section class="flex flex-col sm:flex-row gap-5">
+        <aside class="min-w-100">
+          <BioBlock />
+        </aside>
+        <article class="flex flex-col gap-5 grow w-full">
+          <p class="lead">
+            I've spent 20+ years leading design at companies that needed more
+            than static design artifacts — they needed a function that could
+            scale. I build the teams, systems, and operating conditions that
+            help product teams ship consistently.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-5">
+            <p class="min-w-1/2">
+              I've built design systems used across hundreds of engineers,
+              helped shape design orgs through hypergrowth, and created the
+              infrastructure that lets teams stop reinventing the wheel.
+            </p>
+            <p class="min-w-1/2">
+              The best design leaders make themselves redundant. I build trust
+              across disciplines and create environments where product teams
+              have the clarity and confidence to do their best work.
+            </p>
           </div>
-        </section>
-        {
-          storytimeData.map((story) => (
-            <section class="rounded-md p-5 transition flex w-full mb-[10vh] content-container">
-              <div class="flex gap-10 content-block ">
-                <div class="flex image w-1/2">
-                  <a href={story.url}>
-                    <img src={story.images[0]} alt="sketch" />
-                  </a>
-                </div>
 
-                <article class="copy w-1/2 flex flex-col gap-5">
-                  <h2 class="!m-0">{story.heading}</h2>
-                  <p class="!text-2xl opacity-50">{story.caption}</p>
-
-                  <div class="tags flex gap-4">
-                    {story.tags.map((tag) => (
-                      <a
-                        href={`/tag/${tag}`}
-                        class="flex items-center justify-center bg-tag text-tag-label hover:text-tag-label-hover hover:bg-tag-primary hover:text-base px-4 py-2 font-semibold rounded-full text-nowrap"
-                      >
-                        {tag}
-                      </a>
-                    ))}
-                  </div>
-
-                  <span>
-                    <a href={story.url} class="text-2xl underline">
-                      {story.action}
-                    </a>
-                  </span>
-                </article>
-              </div>
-            </section>
-          ))
-        }
-        <div class="welcome-keywords my-[40px]">
-          <AboutKeywords tags={tags} />
-        </div>
+          <NavLinks />
+        </article>
       </section>
-      <Footer />
     </main>
-
-    <script src="../storytime.ts"></script>
   </body>
 </html>

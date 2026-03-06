@@ -45,11 +45,16 @@
 
   p {
     font-size: inherit;
-    line-height: 40px;
+    line-height: var(--leading-loose);
 
     & a {
       color: var(--color-text-color);
       text-decoration: underline;
+    }
+
+    &.lead {
+      font-size: var(--text-2xl);
+      line-height: var(--leading-normal);
     }
   }
 
@@ -119,23 +124,8 @@
 
   main {
     margin: 0 auto;
-    max-width: 1280px;
+    max-width: 1200px;
     padding: 1rem;
-  }
-
-  .welcome-container {
-    background-size: 100%;
-    width: 100%;
-    position: relative;
-
-    & .welcome {
-      font-size: var(--text-9xl);
-      line-height: 9rem;
-      z-index: 5;
-      margin: 24px auto;
-      text-align: center;
-      position: relative;
-    }
   }
 
   .content-container {
@@ -213,30 +203,6 @@
   h5 {
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
-  }
-
-  .welcome-section {
-    height: 50vh;
-  }
-
-  .welcome-container {
-    background: none;
-    position: relative;
-
-    & .welcome {
-      font-size: var(--text-7xl);
-      z-index: 5;
-      margin: 0 auto 50px auto;
-      text-align: left;
-      position: relative;
-      line-height: 5.5rem;
-    }
-  }
-
-  .content-container,
-  .welcome-keywords,
-  .arrow {
-    display: none;
   }
 
   header.ao,

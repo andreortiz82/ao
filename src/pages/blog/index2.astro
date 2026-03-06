@@ -1,0 +1,71 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+import { Tag } from "../../components/AboutKeywords";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+// Write a function that generates random colors for this style: background: linear-gradient(to left, HEX_COLOR_1, HEX_COLOR_2);
+// Change direction of the gradient to be random as well, using one of the following: to left, to right, to top, to bottom, diagonal.
+// Include a fallback color in case the gradient fails to load, using the CSS variable --color-base-secondary as the fallback.
+// Modify the gradient positions to be random as well, using percentages for the color stops (e.g., 0%, 50%, 100%).
+// The function should return a string that can be used directly in the style attribute of an HTML element.
+
+function getRandomGradient() {
+  const color1 = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  const color2 = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  const directions = [
+    "to left",
+    "to right",
+    "to top",
+    "to bottom",
+    "to top left",
+    "to top right",
+    "to bottom left",
+    "to bottom right",
+  ];
+  const direction = directions[Math.floor(Math.random() * directions.length)];
+  return `background: var(--color-base-secondary); background: linear-gradient(${direction}, ${color1}, ${color2});`;
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <main>
+      <Header />
+      <section class="grid lg:grid-cols-3 grid-cols-1 gap-4 text-xl leading-8">
+        {
+          posts.map((post: any) => (
+            <article class="rounded p-5 flex flex-col gap-4 transition">
+              <a class="flex flex-col gap-5" href={`/blog/${post.id}/`}>
+                <div class="h-10 w-10 rounded-lg" style={getRandomGradient()} />
+                <h4 class="!m-0 !text-2xl">{post.data.title}</h4>
+                <p class="m-0 text-zinc-500 !leading-[28px]">
+                  {post.data.description}
+                </p>
+              </a>
+              {post.data.tags && (
+                <div class="list-none flex gap-1 flex-wrap">
+                  {post.data.tags.map((tag: any) => (
+                    <Tag key={tag} label={tag} size="small" />
+                  ))}
+                </div>
+              )}
+            </article>
+          ))
+        }
+      </section>
+      <Footer />
+    </main>
+  </body>
+</html>

@@ -11,22 +11,21 @@
     "ktb": "astro preferences disable devToolbar"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.2.1",
-    "@astrojs/react": "^4.2.1",
-    "@astrojs/rss": "^4.0.11",
-    "@astrojs/sitemap": "^3.2.1",
+    "@astrojs/mdx": "^4.3.13",
+    "@astrojs/react": "^4.4.2",
+    "@astrojs/rss": "^4.0.15",
+    "@astrojs/sitemap": "^3.7.0",
     "@gsap/react": "^2.1.2",
-    "@phosphor-icons/react": "^2.1.7",
-    "@tailwindcss/vite": "^4.0.16",
-    "@types/react": "^19.0.2",
-    "@types/react-dom": "^19.0.2",
-    "ao-design-tokens": "^2.0.10",
+    "@phosphor-icons/react": "^2.1.10",
+    "@tailwindcss/vite": "^4.2.1",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
     "aos": "^2.3.4",
-    "astro": "^5.5.4",
-    "canvas-confetti": "^1.9.3",
-    "gsap": "^3.12.7",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "tailwindcss": "^4.0.16"
+    "astro": "^5.18.0",
+    "canvas-confetti": "^1.9.4",
+    "gsap": "^3.14.2",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "tailwindcss": "^4.2.1"
   }
 }

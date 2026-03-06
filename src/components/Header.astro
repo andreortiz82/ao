@@ -1,30 +1,11 @@
 ---
+import BioBlock from "./BioBlock.astro";
 import HeaderLink from "./HeaderLink.astro";
-import { Lock } from "@phosphor-icons/react";
 ---
 
-<header
-  class="ao flex justify-between items-center mb-5 flex-wrap border-b border-base-secondary pb-5"
->
-  <a class="" href="/">
-    <div class="flex items-center gap-4">
-      <img src="/avatar.png" alt="Andre Ortiz" class="rounded-full w-20 h-20" />
-      <div class="flex flex-col">
-        <span class="logo text-4xl">Andre Ortiz</span>
-        <span class="text-sm opacity-45">
-          Product Design, Strategy & Systems.
-        </span>
-      </div>
-    </div>
-  </a>
+<header class="ao flex justify-between items-center mb-5 flex-wrap">
+  <BioBlock />
   <nav class="flex md:items-center gap-4 flex-wrap flex-col md:flex-row">
-    <HeaderLink class="transition font-semibold" href="/blog">
-      Creative Ideas
-    </HeaderLink>
-    <HeaderLink class="transition font-semibold" href="/about">
-      About
-    </HeaderLink>
-    <!-- hover:text-tag-label-hover -->
     <HeaderLink
       class="bg-base-secondary transition hover:bg-primary hover:text-tag-label-hover hover:border-primary font-semibold"
       href="mailto:hello@andreortiz.com?subject=Howdy!"
