@@ -1,18 +1,21 @@
 @import "tailwindcss";
-@import "ao-design-tokens";
 
 @theme {
-  --color-primary: var(--amber-9);
-  --color-text-color: var(--gray-12);
-  --color-base: var(--gray-3);
-  --color-base-secondary: var(--gray-7);
-  --color-base-tertiary: var(--gray-5);
+  --color-primary: var(--color-amber-500);
+  --color-text-color: var(--color-zinc-50);
+  --color-base: var(--color-zinc-900);
+  --color-base-secondary: var(--color-zinc-700);
+  --color-base-tertiary: var(--color-zinc-600);
   --color-tag: var(--color-base-secondary);
-  --color-tag-label: var(--gray-12);
-  --color-tag-label-hover: var(--amber-1);
+  --color-tag-label: var(--color-zinc-400);
+  --color-tag-label-hover: var(--color-amber-100);
   --color-tag-primary: var(--color-primary);
-  --font-sans: "Geist", sans-serif;
-  --font-serif: "Gloock", serif;
+  --font-sans:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-serif:
+    Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia,
+    serif;
   --font-mono:
     ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
