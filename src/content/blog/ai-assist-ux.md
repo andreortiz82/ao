@@ -7,16 +7,24 @@ heroImage: "/covers/1.png"
 tags: ["AI", "Automation", "Healthcare"]
 ---
 
-I've been thinking about how AI processes running in the background could improve customer experiences on the real world. I currently work on a healthcare product and think about this often. For example, some healthcare workers are busy calling and re-calling patients, coordinating calendars, performing data entry tasks, managing day to day site operations, and of course caring for the health of other people. What or how can AI improve or even eliminate tasks that could be automated?
+Healthcare is one of those industries where the gap between "what technology can do" and "what workers actually experience day-to-day" is almost embarrassingly wide. I work on a healthcare product, and I spend a lot of time watching people perform tasks that feel like they were designed to exhaust them — calling and re-calling patients, juggling calendars, doing data entry at the end of a long shift. It's not that the tools are broken. It's that they weren't designed with the whole human in mind.
 
-Over the last couple years, LLMs have grown in capability. Vision models can interpret images better than before, voice models are more powerful, and [agents can work together](/blog/crewai/) to complete pre-defined tasks. Now I'm thinking, "What if the _data entry_ part of the job was even easier?". When I say _easier_, I don't mean "Add a chat bot" - instead, let's create less friction between the human and the software.
+So I've been thinking: what if AI didn't show up as a chatbot you have to babysit? What if it just... handled things?
+
+Over the last couple of years, LLMs have gotten genuinely capable. Vision models can read and interpret images with surprising accuracy. Voice models are good enough to be useful in real workflows. And [agents can work together](/blog/crewai/) to knock out multi-step tasks without constant hand-holding. That changes what's possible — not in a theoretical, TED talk kind of way, but in a "we could actually ship this" kind of way.
+
+The question I keep coming back to isn't "can AI do this?" It's "where is the friction, and can AI absorb it?"
 
 ### Thinking out loud
 
-Here are some thoughts on how AI (behind the scenes) can improve the experience for some healthcare workers:
+Here are a few places where AI working quietly in the background could genuinely make healthcare workers' lives better:
 
-- Creating patient forms and questionnaires that could be printed and distributed.
-- Communications between site and patient.
-- Multi-calendar schedule coordination and visit prep.
-- Identifing health characteristics for a given population.
-- Vision models can ingest paper forms, extracting relevant information and persisting it to a patient's record. This means, a clinican could snap a photo of a completed patient form and the system could do the rest.
+- Generating patient forms and questionnaires that get printed and distributed — no more copy-pasting templates
+- Drafting communications between sites and patients based on visit context
+- Coordinating across multiple calendars to find available appointment windows without the back-and-forth
+- Surfacing health characteristics for a given patient population so coordinators can be proactive instead of reactive
+- Using vision models to ingest paper forms — a clinician snaps a photo of a completed form, and the system extracts and persists the relevant information automatically
+
+That last one is my favorite. Paper forms aren't going anywhere in clinical settings. But if snapping a photo is the only thing a coordinator has to do, you've just saved them 10 minutes per patient — multiplied across a site's entire census. That adds up fast.
+
+None of this requires a robot or a total system overhaul. It requires good design and AI doing the boring parts so humans can focus on the parts that actually matter.
