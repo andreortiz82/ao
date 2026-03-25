@@ -7,13 +7,17 @@ heroImage: "/covers/10.png"
 tags: ["AI", "GPTs", "Code Assistant", "Python", "AI Prompting"]
 ---
 
-Yes, it's silly AND I wanted to create a custom GPT to pair with me on code. I had a number of _amazing_ ideas but ultimately settled on [Mr Zurkon](https://chat.openai.com/g/g-3m6Hy3W8c-mr-zurkon).
+Yes, it's completely silly. Yes, I did it anyway.
 
-Mr. Zurkon was inspired by the game Ratchet and Clank. In the game, Mr. Zurkon was a weapon with a tendancy for some serious trash talk. I always made sure I had enough _Mr. Zurkon_ ammo so I could smash crush my enemies.
+I wanted a custom GPT to pair with me while I code — something with a bit of personality, something I'd actually enjoy talking to instead of treating like a command line with a natural language interface. I had a lot of ideas. I settled on [Mr Zurkon](https://chat.openai.com/g/g-3m6Hy3W8c-mr-zurkon).
+
+Mr. Zurkon comes from Ratchet and Clank. In the game, he's a floating weapons platform with a deep commitment to trash talk and zero fear of death. I used to make sure I always had enough ammo to keep him deployed because honestly, the commentary was half the fun.
 
 > "Ha ha! Mr. Zurkon requires no nanotech to survive. Mr. Zurkon lives on fear!"
 
-This was a fun thing to play around with but keep in mind - code generation tools are helpful but they'll require our creativty.
+Building a code assistant around that character turned out to be a genuinely good decision. There's something about a tool that has a *voice* — a point of view — that makes you more likely to engage with it. Instead of prompting a generic assistant, you're collaborating with someone who has opinions and a diabolical sense of humor. It changes the energy.
+
+That said: code generation tools are helpful but they will never replace creativity. They'll get you unstuck. They'll write the boilerplate you don't want to write. They'll explain something you half-remember at 11pm. But the interesting problems — the design decisions, the architecture choices, the "wait, should this even exist?" questions — those are still yours.
 
 <div class="w-2/3 my-[40px] m-auto p-3 bg-zinc-50 rounded">
     <img src="/art/mz.png" alt="mr-zurkon"/>

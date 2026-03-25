@@ -7,26 +7,29 @@ heroImage: "/covers/9.png"
 tags: ["Lofi", "Wireframes", "Product Design", "UI Kits"]
 ---
 
-When it comes to visualizing an idea, it's easy to get caught up in the details. We might find ourselves diving headfirst into high-fidelity mocks, complete with intricate typography and perfectly rounded corners. This isn't nessecarily a bad thing. Especially if you have a [design system](/tag/Design%20Systems) you're comfortable with. However, consider this: slow it down, don't worry about aesthetics. Allow your ideas to take shape.
+There's a trap I've fallen into more times than I'd like to admit: jumping straight to high-fidelity mocks before the idea is actually ready for them. You spend hours getting the typography perfect, obsessing over corner radius, tweaking the color palette — and then someone in the review asks a question about the core flow that you haven't really answered yet. All that polish was just noise.
+
+Low-fidelity work forces you to slow down and think. No aesthetics to hide behind. No beautiful gradients to distract from a fundamentally broken interaction. Just the idea, stripped to its bones. When I'm using lo-fi, I'm not designing — I'm *thinking out loud in a visual medium*. There's a real difference.
+
+If you have a mature [design system](/tag/Design%20Systems) you can move fast in high-fidelity and that's great. But when the idea is still forming? Slow it down.
 
 <hr/>
 
 ## Drop app
 
-I once had a simple idea for mobile app: **Drop geo-location based messages for others when they are in an area.**
+A few years back I had a simple idea for a mobile app: **Drop geo-location based messages for others when they're in an area.**
 
 🌩 Brain Storm:
 
 - As I travel around a city, I receive a notification.
 - I grab my phone and see this notification: _"New Drop! from Pinky"_.
 - I tap the notification to open it, I see a photo of a group of people and a message: _"We're hanging out if folks are around."_
-- I happen to be nearby which is way I received the dropped message.
+- I happen to be nearby which is why I received the dropped message.
 - I stop in and see my friends.
 
 ### As I travel around a city, I receive a notification.
 
-I thought more about this some more and realized, I wouldn't want to get notifications when I'm driving around town.
-**For a better user experience, the user must be traveling at a walking speed to receieve a Drop notification.**
+The more I thought about it, the more edge cases surfaced. First one: I definitely wouldn't want notifications pinging me while I'm driving around town. So — **the user must be traveling at a walking speed to receive a Drop notification.** One constraint, and suddenly the use case snaps into focus.
 
 <div class="w-full my-[40px] p-3 bg-zinc-50 rounded">
         <img src="/art/lofi-1.png" alt="lofi-1"/>
@@ -34,21 +37,22 @@ I thought more about this some more and realized, I wouldn't want to get notific
 
 ### _"New Drop!"_ - I tap the notification to open it...
 
-At first I assumed we would have a _friends list_ of some kind and you could choose who sees the Drop. Then I thought, _could I drop a public message?_
-For example:
+My first instinct was a friends-list model — you choose who can see your Drops. Then I started asking "what if?" questions and things got more interesting. What if Drops could be public?
 
-- **What if I go to a restaurant and the bathrooms are gross?**
-  - I could drop a public message warning others.
-- **What if create some street art and want others to come find it?**
-  - I could drop a photo for others to find... like hide and seek.
+- **What if I go to a restaurant and the bathrooms are genuinely terrible?**
+  - Drop a public warning. Do the community a service.
+- **What if I create some street art and want others to come find it?**
+  - Drop a photo. Like hide and seek, but for adults who are into street art.
 
 <div class="w-full my-[40px] p-3 bg-zinc-50 rounded">
 <img src="/art/lofi-2.png" alt="lofi-2"/>
 </div>
 
-### I happen to be nearby which is way I received the dropped message.
+### I happen to be nearby which is why I received the dropped message.
 
-The experience I wanted was to know more about the area I was in. To know if I have friendly people nearby in case I wanted to catch up. I really felt the idea of geo-location based messages had a lot of potential.
+The core feeling I was after was simple: *know more about the space around you.* Know if friends are nearby. Know if there's something worth stopping for. Geo-location as a layer of social context — less about broadcasting yourself and more about discovery.
+
+The idea had legs. Whether it would have had users is a different question entirely — but that's what lo-fi is for. Work out the idea before you invest in the execution.
 
 <div class="w-full my-[40px] p-3 bg-zinc-50 rounded">
 <img src="/art/lofi-3.png" alt="lofi-3"/>

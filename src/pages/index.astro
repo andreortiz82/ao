@@ -1,9 +1,41 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import BioBlock from "../components/BioBlock.astro";
-import NavLinks from "../components/NavLinks.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { getCollection } from "astro:content";
+
+const recentPosts = (await getCollection("blog"))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+
+const selectedWork = [
+  {
+    slug: "design-system",
+    title: "Enterprise Design System",
+    description: "Built a token-based design system used by 200+ engineers across 6 product teams.",
+    tags: ["Design Systems", "Tokens", "React"],
+    cover: "/covers/1.png",
+  },
+  {
+    slug: "miso-and-stone",
+    title: "Miso & Stone",
+    description: "Brand identity and digital experience for a modern Japanese-inspired restaurant.",
+    tags: ["Brand", "UX", "Web Design"],
+    cover: "/covers/2.png",
+  },
+  {
+    slug: "pulsebook",
+    title: "PulseBook",
+    description: "Healthcare scheduling app redesign that reduced drop-off by 40% in user testing.",
+    tags: ["Product Design", "UX Research", "Healthcare"],
+    cover: "/covers/3.png",
+  },
+];
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+}
 ---
 
 <!doctype html>
@@ -11,35 +43,172 @@ import NavLinks from "../components/NavLinks.astro";
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body>
-    <main class="flex justify-center items-center min-h-screen">
-      <section class="flex flex-col sm:flex-row gap-5">
-        <aside class="min-w-100">
-          <BioBlock />
-        </aside>
-        <article class="flex flex-col gap-5 grow w-full">
-          <p class="lead">
-            I've spent 20+ years leading design at companies that needed more
-            than static design artifacts - they needed a function that could
-            scale. I build the teams, systems, and operating conditions that
-            help product teams ship consistently.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-5">
-            <p class="min-w-1/2">
-              I've built design systems used across hundreds of engineers,
-              helped shape design orgs through hypergrowth, and created the
-              infrastructure that lets teams stop reinventing the wheel.
-            </p>
-            <p class="min-w-1/2">
-              The best design leaders make themselves redundant. I build trust
-              across disciplines and create environments where product teams
-              have the clarity and confidence to do their best work.
-            </p>
-          </div>
+  <body style="background: #FAFAF8;">
+    <Header />
 
-          <NavLinks />
-        </article>
+    <main class="max-w-6xl mx-auto px-6">
+
+      <!-- ===== HERO ===== -->
+      <section class="py-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
+        <div class="flex flex-col gap-6">
+          <span class="animate-fade-up text-xs font-semibold uppercase tracking-widest text-[#6B6B64]">
+            Product Design Leader
+          </span>
+          <h1
+            class="animate-fade-up-delay-1 m-0"
+            style="font-family: 'Fraunces', serif; font-size: clamp(3rem, 6vw, 6rem); line-height: 1.05; color: #1A1A18;"
+          >
+            Design that scales.<br /><em>Teams that ship.</em>
+          </h1>
+          <p class="animate-fade-up-delay-2 text-[#6B6B64] text-lg leading-relaxed max-w-md m-0">
+            20+ years leading design at companies that needed more than artifacts — they needed a function that could scale. I build teams, systems, and the operating conditions that help product orgs ship consistently.
+          </p>
+          <div class="animate-fade-up-delay-3 flex flex-wrap gap-3 mt-2">
+            <a
+              href="/work"
+              class="inline-flex items-center gap-1 px-5 py-2.5 rounded-full text-sm font-semibold no-underline transition-all duration-150"
+              style="background: #FF5C35; color: #FFFFFF;"
+              onmouseover="this.style.background='#E54A25'"
+              onmouseout="this.style.background='#FF5C35'"
+            >
+              View my work →
+            </a>
+            <a
+              href="/blog"
+              class="inline-flex items-center gap-1 px-5 py-2.5 rounded-full text-sm font-semibold no-underline transition-all duration-150 border"
+              style="color: #1A1A18; border-color: #E8E6E1; background: transparent;"
+              onmouseover="this.style.borderColor='#1A1A18'"
+              onmouseout="this.style.borderColor='#E8E6E1'"
+            >
+              Read the blog →
+            </a>
+          </div>
+        </div>
+
+        <!-- Avatar side -->
+        <div class="animate-fade-up-delay-2 flex justify-center md:justify-end">
+          <div class="relative">
+            <div
+              class="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden"
+              style="border: 3px solid #FF5C35; box-shadow: 8px 8px 0 #FF5C35;"
+            >
+              <img
+                src="/avatar.png"
+                alt="Andre Ortiz"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <!-- Floating badge -->
+            <div
+              class="absolute -bottom-4 -left-4 px-4 py-2 rounded-full text-sm font-semibold shadow-lg"
+              style="background: #FFFFFF; color: #1A1A18; border: 1px solid #E8E6E1; font-family: 'Fraunces', serif;"
+            >
+              20+ years ✦
+            </div>
+          </div>
+        </div>
       </section>
+
+      <!-- ===== SELECTED WORK ===== -->
+      <section class="py-16 border-t border-[#E8E6E1]">
+        <div class="animate-fade-up flex items-end justify-between mb-10">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-widest text-[#6B6B64] m-0 mb-2">Selected Work</p>
+            <h2 class="m-0" style="font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 2.75rem); color: #1A1A18;">
+              Things I've built
+            </h2>
+          </div>
+          <a href="/work" class="text-sm text-[#6B6B64] no-underline hover:text-[#FF5C35] transition-colors hidden sm:block">
+            All work →
+          </a>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          {selectedWork.map((item, i) => (
+            <article
+              class={`animate-fade-up-delay-${i + 1} group rounded-2xl overflow-hidden transition-all duration-200`}
+              style="background: #FFFFFF; border: 1px solid #E8E6E1; cursor: pointer;"
+              onmouseover="this.style.transform='translateY(-4px) scale(1.02)'; this.style.boxShadow='0 16px 48px rgba(0,0,0,0.10)'"
+              onmouseout="this.style.transform='none'; this.style.boxShadow='none'"
+            >
+              <a href={`/work/${item.slug}`} class="no-underline block">
+                <div class="overflow-hidden" style="aspect-ratio: 16/9;">
+                  <img
+                    src={item.cover}
+                    alt={item.title}
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="p-6 flex flex-col gap-3">
+                  <h3 class="m-0 text-xl" style="font-family: 'Fraunces', serif; color: #1A1A18;">
+                    {item.title}
+                  </h3>
+                  <p class="m-0 text-sm leading-relaxed" style="color: #6B6B64;">{item.description}</p>
+                  <div class="flex flex-wrap gap-1.5 mt-1">
+                    {item.tags.map(tag => (
+                      <span class="ao-tag">{tag}</span>
+                    ))}
+                  </div>
+                  <span class="text-sm font-semibold mt-1" style="color: #FF5C35;">Case Study →</span>
+                </div>
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <!-- ===== RECENT WRITING ===== -->
+      <section class="py-16 border-t border-[#E8E6E1]">
+        <div class="animate-fade-up flex items-end justify-between mb-10">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-widest text-[#6B6B64] m-0 mb-2">From the Blog</p>
+            <h2 class="m-0" style="font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 2.75rem); color: #1A1A18;">
+              Recent writing
+            </h2>
+          </div>
+          <a href="/blog" class="text-sm text-[#6B6B64] no-underline hover:text-[#FF5C35] transition-colors hidden sm:block">
+            All posts →
+          </a>
+        </div>
+
+        <div class="flex flex-col gap-4">
+          {recentPosts.map((post, i) => (
+            <a
+              href={`/blog/${post.id}/`}
+              class={`animate-fade-up-delay-${i + 1} group flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-xl no-underline transition-all duration-150`}
+              style="background: #FFFFFF; border: 1px solid #E8E6E1;"
+              onmouseover="this.style.borderColor='#FF5C35'; this.style.transform='translateX(4px)'"
+              onmouseout="this.style.borderColor='#E8E6E1'; this.style.transform='none'"
+            >
+              <div class="flex flex-col gap-1.5">
+                <span class="font-semibold text-[#1A1A18] text-base" style="font-family: 'Fraunces', serif;">
+                  {post.data.title}
+                </span>
+                {post.data.tags && (
+                  <div class="flex flex-wrap gap-1.5">
+                    {post.data.tags.slice(0, 3).map((tag: string) => (
+                      <span class="ao-tag">{tag}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
+              <span class="text-sm text-[#6B6B64] whitespace-nowrap">
+                {formatDate(post.data.pubDate)}
+              </span>
+            </a>
+          ))}
+        </div>
+
+        <div class="mt-6 sm:hidden">
+          <a href="/blog" class="text-sm text-[#6B6B64] no-underline hover:text-[#FF5C35] transition-colors">
+            All posts →
+          </a>
+        </div>
+      </section>
+
     </main>
+
+    <Footer />
   </body>
 </html>

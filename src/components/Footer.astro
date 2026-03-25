@@ -1,81 +1,27 @@
 ---
-const today = new Date();
-import FooterLink from "./FooterLink.astro";
-import {
-  GithubLogo,
-  XLogo,
-  InstagramLogo,
-  YoutubeLogo,
-  DribbbleLogo,
-  House,
-} from "@phosphor-icons/react";
-
-const linkStyle = "opacity-50 hover:opacity-100 transition";
+const currentYear = new Date().getFullYear();
 ---
 
-<footer
-  class="ao flex justify-between flex-wrap border-t border-base-secondary mt-5 pt-5 relative"
->
-  <button
-    title="Home"
-    aria-label="Home"
-    type="button"
-    onclick="window.location.href='/'"
-    class="absolute -top-[20px] left-1/2 bg-base p-3 inline-block cursor-pointer hover:bg-primary hover:text-base rounded-full"
-  >
-    <House />
-  </button>
-  <nav class="flex gap-4 items-center">
-    <FooterLink
-      class={linkStyle}
-      target="_blank"
-      href="https://dribbble.com/andreortiz"
-    >
-      <DribbbleLogo size={24} />
-    </FooterLink>
-
-    <FooterLink
-      class={linkStyle}
-      target="_blank"
-      href="https://github.com/andreortiz82"
-    >
-      <GithubLogo size={24} />
-    </FooterLink>
-
-    <FooterLink
-      class={linkStyle}
-      target="_blank"
-      href="https://x.com/andreortiz"
-    >
-      <XLogo size={24} />
-    </FooterLink>
-
-    <FooterLink
-      class={linkStyle}
-      target="_blank"
-      href="https://www.instagram.com/andreortiz/"
-    >
-      <InstagramLogo size={24} />
-    </FooterLink>
-
-    <FooterLink
-      class={linkStyle}
-      target="_blank"
-      href="https://www.youtube.com/channel/UCp0yFoeapfq0CoNJje5npeA"
-    >
-      <YoutubeLogo size={24} />
-    </FooterLink>
-  </nav>
-
-  <div>
-    <span class="opacity-50">&copy; {today.getFullYear()} Andre Ortiz</span>
-    <span class="flex gap-2 items-center">
-      <a
-        href="https://youtu.be/Cnchea6LHN0?si=AvW-N1Zw8LgP0GxX"
-        ,
-        target="_blank"><img src="/american-flag.png" /></a
-      >
-      <span class="opacity-50">Made in the USA</span>
+<footer class="border-t border-[#E8E6E1] mt-20">
+  <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <span class="text-sm text-[#6B6B64]">
+      Andre Ortiz &copy; {currentYear}
     </span>
+    <div class="flex items-center gap-6">
+      <a
+        href="mailto:hello@andreortiz.com"
+        class="text-sm text-[#6B6B64] no-underline hover:text-[#FF5C35] transition-colors duration-150"
+      >
+        hello@andreortiz.com
+      </a>
+      <a
+        href="https://linkedin.com/in/andreortiz"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-sm text-[#6B6B64] no-underline hover:text-[#FF5C35] transition-colors duration-150"
+      >
+        LinkedIn
+      </a>
+    </div>
   </div>
 </footer>

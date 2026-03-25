@@ -1,16 +1,129 @@
 ---
-import BioBlock from "./BioBlock.astro";
-import HeaderLink from "./HeaderLink.astro";
+const pathname = Astro.url.pathname;
+
+function isActive(href: string) {
+  if (href === '/') return pathname === '/';
+  return pathname.startsWith(href);
+}
 ---
 
-<header class="ao flex justify-between items-center mb-5 flex-wrap">
-  <BioBlock />
-  <nav class="flex md:items-center gap-4 flex-wrap flex-col md:flex-row">
-    <HeaderLink
-      class="bg-base-secondary transition hover:bg-primary hover:text-tag-label-hover hover:border-primary font-semibold"
-      href="mailto:hello@andreortiz.com?subject=Howdy!"
+<header
+  id="site-header"
+  class="sticky top-0 z-50 w-full border-b border-[#E8E6E1] bg-[#FAFAF8]/80 backdrop-blur-md transition-all"
+>
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <!-- Logo -->
+    <a
+      href="/"
+      class="font-display text-xl font-semibold text-[#1A1A18] no-underline hover:text-[#FF5C35] transition-colors duration-150"
+      style="font-family: 'Fraunces', serif;"
     >
-      👋 hello@andreortiz.com
-    </HeaderLink>
-  </nav>
+      Andre Ortiz
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-8">
+      <a
+        href="/work"
+        class:list={[
+          "text-sm font-medium no-underline transition-colors duration-150 pb-0.5",
+          isActive('/work')
+            ? "text-[#FF5C35] border-b-2 border-[#FF5C35]"
+            : "text-[#6B6B64] hover:text-[#1A1A18]"
+        ]}
+      >Work</a>
+      <a
+        href="/blog"
+        class:list={[
+          "text-sm font-medium no-underline transition-colors duration-150 pb-0.5",
+          isActive('/blog')
+            ? "text-[#FF5C35] border-b-2 border-[#FF5C35]"
+            : "text-[#6B6B64] hover:text-[#1A1A18]"
+        ]}
+      >Blog</a>
+      <a
+        href="/about"
+        class:list={[
+          "text-sm font-medium no-underline transition-colors duration-150 pb-0.5",
+          isActive('/about')
+            ? "text-[#FF5C35] border-b-2 border-[#FF5C35]"
+            : "text-[#6B6B64] hover:text-[#1A1A18]"
+        ]}
+      >About</a>
+    </nav>
+
+    <!-- Mobile hamburger -->
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden p-2 text-[#6B6B64] hover:text-[#1A1A18] transition-colors"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+    >
+      <span id="hamburger-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="17" y2="6"/>
+          <line x1="3" y1="10" x2="17" y2="10"/>
+          <line x1="3" y1="14" x2="17" y2="14"/>
+        </svg>
+      </span>
+      <span id="close-icon" class="hidden">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="4" y1="4" x2="16" y2="16"/>
+          <line x1="16" y1="4" x2="4" y2="16"/>
+        </svg>
+      </span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden border-t border-[#E8E6E1] bg-[#FAFAF8]"
+  >
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-4">
+      <a
+        href="/work"
+        class:list={[
+          "text-base font-medium no-underline transition-colors",
+          isActive('/work') ? "text-[#FF5C35]" : "text-[#1A1A18]"
+        ]}
+      >Work</a>
+      <a
+        href="/blog"
+        class:list={[
+          "text-base font-medium no-underline transition-colors",
+          isActive('/blog') ? "text-[#FF5C35]" : "text-[#1A1A18]"
+        ]}
+      >Blog</a>
+      <a
+        href="/about"
+        class:list={[
+          "text-base font-medium no-underline transition-colors",
+          isActive('/about') ? "text-[#FF5C35]" : "text-[#1A1A18]"
+        ]}
+      >About</a>
+    </nav>
+  </div>
 </header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const hamburger = document.getElementById('hamburger-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  btn?.addEventListener('click', () => {
+    const isOpen = !menu?.classList.contains('hidden');
+    if (isOpen) {
+      menu?.classList.add('hidden');
+      hamburger?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+      btn.setAttribute('aria-expanded', 'false');
+    } else {
+      menu?.classList.remove('hidden');
+      hamburger?.classList.add('hidden');
+      closeIcon?.classList.remove('hidden');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+</script>

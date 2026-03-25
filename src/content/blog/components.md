@@ -9,13 +9,13 @@ tags: ["Tailwind", "Front-end", "React", "Design Systems", "Storybook"]
 
 ## Atomic Patterns
 
-I'm a fan of the [Atomic Design Principals](https://atomicdesign.bradfrost.com/) by Brad Frost. In my experience working on design systems, I've found this method is great for organization and for communicating component concepts with engineering product and teams. In short, _Atomic_ design is a mental model for thinking about user interfaces as both a cohesive whole and a collection of parts.
+Brad Frost's [Atomic Design Principles](https://atomicdesign.bradfrost.com/) changed how I think about building interfaces — and more importantly, how I *talk* about building interfaces with engineers and product managers. The mental model is simple: UIs are made of small, reusable parts that compose into larger, more complex ones. Atoms become molecules, molecules become organisms. It sounds abstract until you're in a sprint planning meeting and someone asks "can we just swap out the card header?" and you can answer with actual confidence instead of "let me check with engineering."
 
 <div class="w-full m-auto my-[40px] p-3 bg-zinc-50 rounded">
 <img src="/art/atomic-design.png" alt="atomic"/>
 </div>
 
-In my past experience, I've used UI component libraries like [Ant Design](https://ant.design/) and [JoyUI](https://mui.com/joy-ui/getting-started/?srsltid=AfmBOoqxoUgnfhsUSfosl1lHxUM1eXHTmwOx8vSVU4_f1pF3FN04Z_EE) to serve as my Atoms. This enables me to prototype my ideas faster since I don't have to develop components like Buttons and Inputs from scratch.
+In practice, I lean on third-party component libraries like [Ant Design](https://ant.design/) and [JoyUI](https://mui.com/joy-ui/getting-started/?srsltid=AfmBOoqxoUgnfhsUSfosl1lHxUM1eXHTmwOx8vSVU4_f1pF3FN04Z_EE) as my atoms. Not because I'm lazy — well, sometimes because I'm lazy — but because using battle-tested primitives lets me focus my energy on the parts that are actually specific to the product I'm designing. Buttons and inputs are a solved problem. Let's solve the interesting problems.
 
 ```js
 
@@ -54,10 +54,10 @@ const AwesomeMolecule = (props) => {
 
 ```
 
-So now you have a bunch of code as a result of your prototyping. If you're working with a team (or working solo), abstracting your functionality into a reuseable component is a solid next step. The next level maneuver would be to incorporate a gallery using a tool like [Storybook](https://storybook.js.org/).
+Once you've prototyped your way into a working set of components, the next move is to abstract them properly — pull out the business logic, make them composable, give them sensible props. And if you really want to level up, you document them in [Storybook](https://storybook.js.org/). Storybook is one of those tools that feels like overkill until you're onboarding a new engineer and you can just say "here's the component library, see how it works" instead of spending 45 minutes on a call.
 
 <div class="w-full m-auto my-[40px] p-3 bg-zinc-50 rounded">
 <img src="/art/storybook.png" alt="storybook"/>
 </div>
 
-Working in this manner has improved how I collaborate with my teams - Design can realize a vision, product can verify that business objectives are being met, and engineering develop with confidence.
+Working this way has made me a better collaborator. Design can make decisions with confidence because the components are real. Product can verify that business objectives are being met at the component level. Engineering can build with the assurance that the pieces fit together. Everyone's working from the same source of truth. It sounds idealistic, but I've seen it work — and I've also seen what happens when you skip this step. It's not pretty.

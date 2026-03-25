@@ -18,20 +18,23 @@ tags:
 
 ## UI Design
 
-There are a number of things I like to consider when designing interfaces:
+Good UI design is mostly invisible. When it's working, users don't think about the interface — they just accomplish what they came to do. When it's not working, every confused click and abandoned flow is a little indictment.
 
-- **User needs and goals** - Begin with understanding who will use your interface and what they want to accomplish.
-- **Information architecture** - Plan how information will be organized and structured
-- **Visual hierarchy** - Design elements to naturally guide users' attention
-- **Consistency** - Use consistent patterns, components, colors, and typography throughout to create a cohesive experience
-- **Accessibility** - Ensure your design works for people with different abilities by considering color contrast, text size
-- **Feedback Mechanisms** - Make it clear what elements are interactive and provide appropriate feedback when users take actions
-- **Simplicity** - Eliminate unnecessary elements and reduce cognitive load
+Here's what I keep in mind when I'm designing interfaces:
+
+- **User needs and goals** — Start here. Every decision should trace back to what someone is actually trying to accomplish.
+- **Information architecture** — How information is organized determines how hard users have to think. Make it easy.
+- **Visual hierarchy** — Guide attention without being obnoxious about it. Size, weight, contrast, spacing — these are your tools.
+- **Consistency** — Patterns, components, colors, type. When things behave the way users expect, they stop noticing the design and start trusting the product.
+- **Accessibility** — Color contrast, text size, keyboard navigation. These aren't nice-to-haves. They're table stakes.
+- **Feedback Mechanisms** — Interactive elements should feel interactive. If a user does something, the interface should respond.
+- **Simplicity** — Every unnecessary element is a question users have to answer. Cut ruthlessly.
 
 ## The Trifecta
 
-There are some trios that will forever remain iconic. When it comes to a product teams, the `lead designer`, `product manager`, and `lead engineer` should operate as a unit... a **Trifecta**, if you will.
-When these 3 disciplines work well together and have tight communication and trust, the outcomes are 10x improved.
+There are some trios that will forever remain iconic. When it comes to a product teams, the `lead designer`, `product manager`, and `lead engineer` should operate as a unit — a **Trifecta**, if you will.
+
+I've been on teams where this worked well, and teams where it didn't. The difference is almost entirely trust and communication. When these three disciplines are genuinely aligned, the whole team runs faster. Decisions happen in conversation, not in long email chains. Trade-offs get made with full information. The output is — and I'll stand by this — 10x better.
 
 <div class="w-full m-auto my-[40px] p-3 bg-zinc-50 rounded">
 <img src="/art/iconic-trios.png" alt="iconic-trios"/>
@@ -39,7 +42,7 @@ When these 3 disciplines work well together and have tight communication and tru
 
 ## Design at Scale
 
-As my projects grows, I like to start componentizing elements I know will be reused. Since I'm using Figma, creating components and variants have become a big part of my workflow. This is especially helpful when I'm working with other designers. It doesn't take long before you've got a UI Kit of Figma components you can share with the team and improve over time. [Learn more](/blog/prototyping/) about my process.
+Once a project starts growing, I get aggressive about componentizing. In Figma, this means creating components and variants early — before things get messy — and being opinionated about naming. A UI Kit doesn't have to be fancy to be useful. It just has to be consistent and shared. [Learn more](/blog/prototyping/) about my process.
 
 <div class="w-full m-auto my-[40px] p-3 bg-zinc-50 rounded">
 <img src="/art/ui-login.png" alt="login"/>
@@ -63,7 +66,7 @@ As my projects grows, I like to start componentizing elements I know will be reu
 
 ## Level Up: Design to Code
 
-Figma's plugin ecosystem is great. One plugin I've had some success with is [Export/Import Variables](https://www.figma.com/community/plugin/1256972111705530093/export-import-variables). I use this plugin to export my Figma variables to a JSON file:
+Figma's plugin ecosystem is where a lot of my workflow lives now. One I keep coming back to is [Export/Import Variables](https://www.figma.com/community/plugin/1256972111705530093/export-import-variables). I use it to export my Figma variables to JSON — which sounds dry but is actually kind of magical when you see what you can do with it downstream.
 
 ```json
 // Example output color
@@ -93,7 +96,7 @@ Figma's plugin ecosystem is great. One plugin I've had some success with is [Exp
 
 ### Style Dictionary
 
-Once I have the artifacts I want to tokenize, I use the [Style Dictionary](https://amzn.github.io/style-dictionary) library to convert my JSON into a format I can use during development. In the example below, I create 2 files: a `tokens.css` file with all my variables and a custom `tailwind` config.
+Once I have that JSON, I run it through [Style Dictionary](https://amzn.github.io/style-dictionary) to generate actual usable code — CSS variables, Tailwind config, whatever the project needs. This is the part that makes engineers' eyes light up a little when you explain it: your design tokens live in Figma, they export to JSON, and Style Dictionary transforms them into production-ready code. The source of truth stays in the design tool, and the code stays in sync.
 
 ```javascript
 // Example Style Dictionary manifest
@@ -139,3 +142,5 @@ Once I have the artifacts I want to tokenize, I use the [Style Dictionary](https
   }
 }
 ```
+
+It's the kind of setup that takes a few hours to get right and then saves you hours every week. Totally worth it.

@@ -26,15 +26,17 @@ if (skills.includes("code")) {
 }
 ```
 
-But seriously, being able to work across the disciplines and contribute to the products we design is incredibly rewarding. Don't missunderstand, I'm not a _"full stack"_ guy but I know enough about the development, front and back, to be supportive in most engineering conversations - and isn't that what it's all about? Supporting our teams.
+Okay, but seriously — the ability to cross the boundary between design and development is one of the most valuable things I've built over my career. Not because I want to be a full-stack engineer (I don't; I've met full-stack engineers and they have my respect and my sympathy), but because being able to *participate* in engineering conversations makes me a better designer and a better teammate.
 
-As the industry has evolved, so have I. I have learned a lot of languages, frameworks, and build systems. Here are a few: **_HTML, CSS, Javascript, Ruby, Python, PHP, C#, ClojureScript, Webpack, Vite, React, Vue, Angular, Style Dictionary, Tailwind_,**, and so many others.
+I know enough to ask the right questions. I know enough to prototype my own ideas instead of waiting. I know enough to understand when something is genuinely hard versus when someone just doesn't want to do it. That last one is more useful than it sounds.
+
+Over the years I've picked up a lot: **HTML, CSS, Javascript, Ruby, Python, PHP, C#, ClojureScript, Webpack, Vite, React, Vue, Angular, Style Dictionary, Tailwind**, and plenty of others I've since mostly forgotten. The point was never to master all of them — the point was to stay curious and keep the door open.
 
 ## Developing Imagination
 
-Today, I find myself using [React](https://react.dev/), [Vite](https://vite.dev/), and [Tailwind](https://tailwindcss.com/) when I want to quickly prototype something. This combo is a great way to showcase simple ideas, communicate interactions, and create an artifact that could eventually become production code. I dive a bit deeper on this topic [here](/blog/components/).
+My current go-to for prototyping is [React](https://react.dev/) + [Vite](https://vite.dev/) + [Tailwind](https://tailwindcss.com/). It's a fast setup, the output is real code (not a prototype that has to be thrown away), and it's flexible enough to grow into something production-worthy if the idea earns it. I dig deeper on this in my [components post](/blog/components/).
 
-Checkout my current starter project, [react-vite-template](https://github.com/andreortiz82/react-vite-template), if you're interested.
+If you want a head start, I made a starter: [react-vite-template](https://github.com/andreortiz82/react-vite-template).
 
 ### A Quick Overview
 
@@ -42,12 +44,12 @@ Checkout my current starter project, [react-vite-template](https://github.com/an
 <img src="/art/react-vite-starter.png" alt="react-vite-starter"/>
 </div>
 
-This project needed to support a number of qualities:
+When I built this template, I had a few specific requirements:
 
-- React/Typescript was a the language of choice
-- Customizations had to be simple
-- Prototyping had to be fast
-- It needed to be deployable, destroyable, and password protected
+- React/Typescript as the language of choice
+- Simple customization — no configuration rabbit holes
+- Fast to spin up, fast to prototype in
+- Deployable, destroyable, and password-protectable (for sharing work-in-progress without it being fully public)
 
 #### What's in it?
 
@@ -59,7 +61,7 @@ This project needed to support a number of qualities:
 - [AO Design Tokens](https://github.com/andreortiz82/ao-design-tokens)
 - [Ant Design 5](https://ant.design/components/overview/)
 
-I used a custom component called `AuthenticationWrapper` to check for a session when certain pages were requested.
+The password protection piece was handled with a custom `AuthenticationWrapper` component — nothing fancy, just session storage and a clean login screen. Good enough for prototype sharing, not good enough for anything important.
 
 ```javascript
 const AuthenticationWrapper = (props: any) => {
@@ -92,7 +94,7 @@ const AuthenticationWrapper = (props: any) => {
 };
 ```
 
-Additionally, I used the React `useContext` hook to share global state across my routes.
+Global state lives in a React context — clean, composable, and easy to extend as the prototype grows:
 
 ```javascript
 // AppContext.tsx
@@ -131,4 +133,4 @@ const Action = ({ count, incrementCount }: any) => {
 };
 ```
 
-Once I had the all necessary elements, I had to ensure that I could deploy it. Vercel has been a faily reliable platform for hosting projects like these. Again, if you're interested in these details, check out my starter template, [react-vite-template](https://github.com/andreortiz82/react-vite-template), on Github.
+For deployment, Vercel has been rock solid. Push to main, it deploys. That's the entire workflow. If you want to dig in, the [react-vite-template](https://github.com/andreortiz82/react-vite-template) is all there on GitHub.

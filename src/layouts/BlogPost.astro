@@ -3,12 +3,15 @@ import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { AboutKeywords } from "../components/AboutKeywords";
 
 type Props = CollectionEntry<"blog">["data"];
 
 const post = Astro.props;
 const { title, description, pubDate, tags, heroImage } = post;
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
 ---
 
 <html lang="en">
@@ -16,42 +19,62 @@ const { title, description, pubDate, tags, heroImage } = post;
     <BaseHead title={title} description={description} />
   </head>
 
-  <body>
-    <main>
-      <Header />
-      <article class="flex flex-col gap-8">
-        {
-          heroImage && (
-            <div class="rounded overflow-hidden">
-              <img src={heroImage} alt={title} />
-            </div>
-          )
-        }
+  <body style="background: #FAFAF8;">
+    <Header />
+    <main class="max-w-6xl mx-auto px-6 py-12">
 
-        <div class="px-8 flex flex-col gap-5">
-          <header class="flex flex-col">
-            <span class="leading-snug text-6xl font-serif">{title}</span>
-            <p class="!text-xl m-0 opacity-45">{description}</p>
-            <hr />
-          </header>
+      <!-- Breadcrumb -->
+      <nav class="animate-fade-up mb-8">
+        <a
+          href="/blog"
+          class="inline-flex items-center gap-1 text-sm no-underline transition-colors duration-150"
+          style="color: #6B6B64;"
+          onmouseover="this.style.color='#FF5C35'"
+          onmouseout="this.style.color='#6B6B64'"
+        >
+          ← All posts
+        </a>
+      </nav>
 
-          <div class="ao-md-content-container">
-            <slot />
-          </div>
-          {
-            tags && (
-              <div class="my-[40px]">
-                <AboutKeywords tags={tags} />
-              </div>
-            )
-          }
+      <article class="max-w-3xl">
+
+        <!-- Tags + Date -->
+        <div class="animate-fade-up-delay-1 flex flex-wrap items-center gap-3 mb-5">
+          {tags && tags.map((tag: string) => (
+            <span class="ao-tag">{tag}</span>
+          ))}
+          {pubDate && (
+            <span class="text-sm" style="color: #6B6B64;">{formatDate(pubDate)}</span>
+          )}
         </div>
+
+        <!-- Title -->
+        <h1
+          class="animate-fade-up-delay-1 m-0 mb-4"
+          style="font-family: 'Fraunces', serif; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; color: #1A1A18;"
+        >
+          {title}
+        </h1>
+        {description && (
+          <p class="animate-fade-up-delay-2 m-0 mb-8 text-xl leading-relaxed" style="color: #6B6B64;">
+            {description}
+          </p>
+        )}
+
+        <!-- Hero image -->
+        {heroImage && (
+          <div class="animate-fade-up-delay-2 rounded-2xl overflow-hidden mb-10" style="border: 1px solid #E8E6E1;">
+            <img src={heroImage} alt={title} class="w-full object-cover" />
+          </div>
+        )}
+
+        <!-- Content -->
+        <div class="animate-fade-up-delay-3 ao-md-content-container">
+          <slot />
+        </div>
+
       </article>
-      <Footer />
     </main>
+    <Footer />
   </body>
 </html>
-
-<!-- I want to build my UI UX web portfolio using React, AstroJS, and Tailwind. The project should support blog functionality using markdown as well as some custom pages like: About Me and My Case Studies. Some, but not all, case studies would need to be password protected. 
-
-Please help me build this project. -->

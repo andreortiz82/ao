@@ -1,0 +1,95 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const skills = [
+  "Design Systems",
+  "UX Strategy",
+  "Team Leadership",
+  "Front-end",
+  "Prototyping",
+  "Product Thinking",
+  "AI/Design",
+  "Brand",
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="About — Andre Ortiz" description="Product designer, team builder, and systems thinker based in Austin, TX." />
+  </head>
+  <body style="background: #FAFAF8;">
+    <Header />
+
+    <main class="max-w-6xl mx-auto px-6 py-20">
+
+      <div class="max-w-3xl">
+        <!-- Heading -->
+        <p class="animate-fade-up text-xs font-semibold uppercase tracking-widest text-[#6B6B64] mb-4">About</p>
+        <h1
+          class="animate-fade-up-delay-1 m-0 mb-8"
+          style="font-family: 'Fraunces', serif; font-size: clamp(3rem, 6vw, 5rem); line-height: 1.05; color: #1A1A18;"
+        >
+          Hey, I'm Andre.
+        </h1>
+
+        <!-- Bio paragraphs -->
+        <div class="animate-fade-up-delay-2 flex flex-col gap-6 text-lg leading-relaxed text-[#1A1A18]">
+          <p class="m-0">
+            I'm a product design leader with 20+ years of experience building the things most companies don't know they need until they're scaling: design systems, cross-functional teams, and the operating conditions that let good work happen consistently. I've worked across early-stage startups and established enterprises — and I've learned that the biggest design problems are rarely about pixels.
+          </p>
+          <p class="m-0">
+            What I actually do is help product organizations get unstuck. That means building systems that engineers can ship with confidence, establishing design ops that scale beyond the founding designer, and creating environments where product, engineering, and design share a language. I've built design systems adopted by hundreds of engineers, shaped design orgs through hypergrowth, and shipped products used by millions of people.
+          </p>
+          <p class="m-0">
+            My design philosophy is pretty simple: <em style="font-family: 'Fraunces', serif;">the best design leaders make themselves redundant.</em> If your team needs you in the room for every decision, you've built dependency — not a function. My job is to instill the taste, the systems, and the confidence that let great teams do great work without a bottleneck in the way.
+          </p>
+          <p class="m-0">
+            When I'm not thinking about component libraries and interaction patterns, I'm in Austin, TX with my wife and daughter, probably arguing about the best tacos or tinkering with whatever side project has my attention this week. If any of this resonates — let's talk.
+          </p>
+        </div>
+
+        <!-- Skills -->
+        <div class="animate-fade-up-delay-3 mt-14">
+          <p class="text-xs font-semibold uppercase tracking-widest text-[#6B6B64] mb-4">Specialties</p>
+          <div class="flex flex-wrap gap-2">
+            {skills.map(skill => (
+              <span
+                class="px-4 py-2 rounded-full text-sm font-medium transition-all duration-150 cursor-default"
+                style="background: #EEECEA; color: #5A5A54;"
+                onmouseover="this.style.background='#FF5C35'; this.style.color='#FFFFFF'"
+                onmouseout="this.style.background='#EEECEA'; this.style.color='#5A5A54'"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="animate-fade-up-delay-4 mt-14 p-8 rounded-2xl" style="background: #FFF0EC; border: 1px solid #FFD5C8;">
+          <p class="m-0 text-lg font-semibold mb-2" style="font-family: 'Fraunces', serif; color: #1A1A18;">
+            Let's work together.
+          </p>
+          <p class="m-0 text-[#6B6B64] mb-5">
+            I'm always open to interesting conversations about design, teams, and systems. Drop me a line.
+          </p>
+          <a
+            href="mailto:hello@andreortiz.com"
+            class="inline-flex items-center gap-1 px-5 py-2.5 rounded-full text-sm font-semibold no-underline transition-all duration-150"
+            style="background: #FF5C35; color: #FFFFFF;"
+            onmouseover="this.style.background='#E54A25'"
+            onmouseout="this.style.background='#FF5C35'"
+          >
+            Say hello →
+          </a>
+        </div>
+      </div>
+
+    </main>
+
+    <Footer />
+  </body>
+</html>
