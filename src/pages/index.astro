@@ -9,29 +9,9 @@ const recentPosts = (await getCollection("blog"))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
 
-const selectedWork = [
-  {
-    slug: "design-system",
-    title: "Enterprise Design System",
-    description: "Built a token-based design system used by 200+ engineers across 6 product teams.",
-    tags: ["Design Systems", "Tokens", "React"],
-    cover: "/covers/1.png",
-  },
-  {
-    slug: "miso-and-stone",
-    title: "Miso & Stone",
-    description: "Brand identity and digital experience for a modern Japanese-inspired restaurant.",
-    tags: ["Brand", "UX", "Web Design"],
-    cover: "/covers/2.png",
-  },
-  {
-    slug: "pulsebook",
-    title: "PulseBook",
-    description: "Healthcare scheduling app redesign that reduced drop-off by 40% in user testing.",
-    tags: ["Product Design", "UX Research", "Healthcare"],
-    cover: "/covers/3.png",
-  },
-];
+const selectedWork = (await getCollection("work"))
+  .sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf())
+  .slice(0, 3);
 
 function formatDate(date: Date) {
   return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
@@ -123,7 +103,7 @@ function formatDate(date: Date) {
           </a>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-6">
+        <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-6">
           {selectedWork.map((item, i) => (
             <article
               class={`animate-fade-up-delay-${i + 1} group rounded-2xl overflow-hidden transition-all duration-200`}
@@ -131,25 +111,29 @@ function formatDate(date: Date) {
               onmouseover="this.style.transform='translateY(-4px) scale(1.02)'; this.style.boxShadow='0 16px 48px rgba(0,0,0,0.10)'"
               onmouseout="this.style.transform='none'; this.style.boxShadow='none'"
             >
-              <a href={`/work/${item.slug}`} class="no-underline block">
-                <div class="overflow-hidden" style="aspect-ratio: 16/9;">
-                  <img
-                    src={item.cover}
-                    alt={item.title}
-                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                </div>
+              <a href={`/work/${item.id}`} class="no-underline block">
+                {item.data.heroImage && (
+                  <div class="overflow-hidden" style="aspect-ratio: 16/9;">
+                    <img
+                      src={item.data.heroImage}
+                      alt={item.data.title}
+                      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
                 <div class="p-6 flex flex-col gap-3">
                   <h3 class="m-0 text-xl" style="font-family: 'Fraunces', serif; color: #1A1A18;">
-                    {item.title}
+                    {item.data.title}
                   </h3>
-                  <p class="m-0 text-sm leading-relaxed" style="color: #6B6B64;">{item.description}</p>
-                  <div class="flex flex-wrap gap-1.5 mt-1">
-                    {item.tags.map(tag => (
-                      <span class="ao-tag">{tag}</span>
-                    ))}
-                  </div>
+                  <p class="m-0 text-sm leading-relaxed" style="color: #6B6B64;">{item.data.description}</p>
+                  {item.data.tags && (
+                    <div class="flex flex-wrap gap-1.5 mt-1">
+                      {item.data.tags.map((tag: string) => (
+                        <span class="ao-tag">{tag}</span>
+                      ))}
+                    </div>
+                  )}
                   <span class="text-sm font-semibold mt-1" style="color: #FF5C35;">Case Study →</span>
                 </div>
               </a>

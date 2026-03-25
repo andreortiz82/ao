@@ -1,11 +1,4 @@
-<svg width="100" height="50" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
-  <path
-    fillRule="evenodd"
-    clipRule="evenodd"
-    d="M54.4282 47.1362L27.2141 0L0 47.1362H54.4282ZM76.3394 47.321C89.4068 47.321 99.9999 36.7279 99.9999 23.6605C99.9999 10.5932 89.4068 0 76.3394 0C63.2721 0 52.6789 10.5932 52.6789 23.6605C52.6789 36.7279 63.2721 47.321 76.3394 47.321Z"
-    fill="#000"
-  />
-  <style>
-    @media (prefers-color-scheme:dark){:root{filter:invert(100%)}}
-  </style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#FF5C35"/>
+  <text x="16" y="22" text-anchor="middle" font-family="serif" font-size="16" font-weight="bold" fill="white">AO</text>
 </svg>
