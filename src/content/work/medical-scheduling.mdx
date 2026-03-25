@@ -1,0 +1,65 @@
+---
+title: "PulseBook"
+description: "A patient scheduling platform that replaced phone tag with a calm, clear booking experience."
+pubDate: "2023-11-10"
+heroImage: "/covers/6.png"
+tags: ["Healthcare UX", "SaaS", "Scheduling", "Accessibility", "Design Systems"]
+role: ["Lead Product Designer", "UX Researcher"]
+team: ["2 designers", "4 engineers", "1 PM", "3 clinical stakeholders"]
+---
+
+import MedicalSchedulingDemo from '../../components/demos/MedicalSchedulingDemo.jsx'
+
+## The Situation
+
+Independent medical practices are quietly drowning in phone calls. Not because patients want to call — most would rather not — but because the alternative, booking online, has never felt trustworthy enough to actually use.
+
+PulseBook came to us with a real problem: they had an online scheduling tool, but patients weren't finishing their bookings. The data was damning. A 52% abandonment rate midway through the flow. Receptionists fielding three or more hours of scheduling calls every single day — rescheduling, confirming, playing phone tag with people who'd already submitted forms online. The platform existed. People just didn't trust it.
+
+## What We Heard
+
+We started by talking to people. Eight patient phone interviews and five front desk staff sessions over two weeks. I wasn't sure what we'd find — I half expected the problem to be a UI issue, some confusing button or a broken form.
+
+It wasn't.
+
+The core insight came from a patient interview about fifteen minutes in: *"I always call to confirm anyway. Just to make sure it went through."* That sentence unlocked everything. Patients weren't abandoning the flow because they couldn't figure it out. They were abandoning it because they didn't believe it would work. The confirmation email felt hollow. There was no real sense that a human on the other end had "received" the booking. So they'd pick up the phone just to be sure — and in doing so, they were creating the exact phone volume the platform was supposed to eliminate.
+
+On the staff side, the picture was equally telling. Every front desk coordinator we spoke with had invented some version of a personal workaround — a shared Google Sheet, a sticky note system, a second calendar they maintained themselves. The software was technically in use. It just wasn't trusted enough to be the only source of truth.
+
+## The Design Approach
+
+Armed with that insight, the design direction became clear: the product's job wasn't just to accept bookings. It was to *confirm* them in a way that felt undeniably real.
+
+We rebuilt the booking flow around three principles:
+
+**Reduce friction ruthlessly.** Four steps maximum. Provider selection, date and time, patient details, confirmation. No account creation required to start, no hidden steps, no progress lost if you navigated away.
+
+**Make availability obvious.** A full calendar view — not a dropdown, not a text field. Available days visually distinct from unavailable ones. Time slots as large, tappable options. No ambiguity about what was actually open.
+
+**Make confirmation feel final.** Instant on-screen confirmation with a booking reference code. A confirmation SMS sent within 30 seconds. A summary card you could screenshot. We designed the success state to feel like a receipt, not a form acknowledgment.
+
+## Accessibility as a Requirement, Not a Checkbox
+
+Early in the process, our PM connected us with a patient advocate who has low vision. That partnership changed the project. We ran three usability sessions with her, and she surfaced issues we'd walked past a hundred times — tap targets that were technically "big enough" but not actually comfortable to hit, contrast ratios that passed automated checks but failed in bright sunlight, focus states that disappeared against certain backgrounds.
+
+We rebuilt the mobile experience with accessibility as the primary constraint. Large tap targets throughout, not just on "important" buttons. High-contrast mode support. Every form field labeled properly, not just aria-described. WCAG 2.1 AA across the board, verified manually — not just through automated tooling.
+
+## The Outcome
+
+The numbers moved significantly. Scheduling phone call volume dropped 71% in the first 90 days after launch. Booking completion rate went from 48% to 89%. Front desk staff reported reclaiming an average of 2.5 hours per day that had previously been eaten up by scheduling calls.
+
+More importantly, the calls that remained were different. Not "did my appointment go through?" calls. Actual clinical questions, care coordination, things that actually needed a human.
+
+## What I'd Do Differently
+
+Healthcare clients are slow. That's not a criticism — there are real reasons for it: compliance review, stakeholder alignment across clinical and administrative teams, an institutional skepticism toward change that's been earned by years of bad software decisions. But I underestimated it at the start. I scoped the project timeline too tightly and had to have an uncomfortable conversation with the client about slipping the launch by six weeks.
+
+The stakeholder alignment work was brutal. Getting clinical staff, administrative leads, and the technical team to agree on even basic interaction patterns required more rounds of review than I'd planned for. In hindsight, I should have run a structured alignment workshop in week one — not week four.
+
+But the outcome was worth the friction. This is the kind of project that reminds me why healthcare UX matters. Real people, real stress, real improvement in their day. That's the job.
+
+---
+
+*Try the prototype below — it's a working model of the four-step booking flow.*
+
+<MedicalSchedulingDemo client:load />
