@@ -10,11 +10,18 @@ const recentPosts = (await getCollection("blog"))
   .slice(0, 3);
 
 const selectedWork = (await getCollection("work"))
-  .sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf())
+  .sort(
+    (a, b) =>
+      new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),
+  )
   .slice(0, 3);
 
 function formatDate(date: Date) {
-  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
 }
 ---
 
@@ -23,43 +30,37 @@ function formatDate(date: Date) {
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body style="background: #FAFAF8;">
+  <body>
     <Header />
 
     <main class="max-w-6xl mx-auto px-6">
-
       <!-- ===== HERO ===== -->
       <section class="py-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
         <div class="flex flex-col gap-6">
-          <span class="animate-fade-up text-xs font-semibold uppercase tracking-widest text-[#6B6B64]">
+          <span
+            class="animate-fade-up text-xs font-semibold uppercase tracking-widest text-text-secondary"
+          >
             Product Design Leader
           </span>
-          <h1
-            class="animate-fade-up-delay-1 m-0"
-            style="font-family: 'Fraunces', serif; font-size: clamp(3rem, 6vw, 6rem); line-height: 1.05; color: #1A1A18;"
-          >
-            Design that scales.<br /><em>Teams that ship.</em>
+          <h1 class="animate-fade-up-delay-1 m-0">
+            Creative & <em>Ready to go</em>
           </h1>
-          <p class="animate-fade-up-delay-2 text-[#6B6B64] text-lg leading-relaxed max-w-md m-0">
-            20+ years leading design at companies that needed more than artifacts — they needed a function that could scale. I build teams, systems, and the operating conditions that help product orgs ship consistently.
+          <p
+            class="animate-fade-up-delay-2 text-text-secondary text-lg leading-relaxed max-w-md m-0"
+          >
+            I'm a multidisciplined designer with 20 years of experience
+            delivering creative solutions for complex industries. I work closely
+            with stakeholders to gain alignment on organizational goals and user
+            needs. Whether leading a team or owning a product vision, I bring
+            the technical range, collaborative mindset, and enthusiasm to get it
+            right.
           </p>
+
           <div class="animate-fade-up-delay-3 flex flex-wrap gap-3 mt-2">
-            <a
-              href="/work"
-              class="inline-flex items-center gap-1 px-5 py-2.5 rounded-full text-sm font-semibold no-underline transition-all duration-150"
-              style="background: #FF5C35; color: #FFFFFF;"
-              onmouseover="this.style.background='#E54A25'"
-              onmouseout="this.style.background='#FF5C35'"
-            >
+            <a href="/work" class="btn-primary">
               View my work →
             </a>
-            <a
-              href="/blog"
-              class="inline-flex items-center gap-1 px-5 py-2.5 rounded-full text-sm font-semibold no-underline transition-all duration-150 border"
-              style="color: #1A1A18; border-color: #E8E6E1; background: transparent;"
-              onmouseover="this.style.borderColor='#1A1A18'"
-              onmouseout="this.style.borderColor='#E8E6E1'"
-            >
+            <a href="/blog" class="btn-secondary">
               Read the blog →
             </a>
           </div>
@@ -68,10 +69,7 @@ function formatDate(date: Date) {
         <!-- Avatar side -->
         <div class="animate-fade-up-delay-2 flex justify-center md:justify-end">
           <div class="relative">
-            <div
-              class="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden"
-              style="border: 3px solid #FF5C35; box-shadow: 8px 8px 0 #FF5C35;"
-            >
+            <div class="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden">
               <img
                 src="/avatar.png"
                 alt="Andre Ortiz"
@@ -80,8 +78,7 @@ function formatDate(date: Date) {
             </div>
             <!-- Floating badge -->
             <div
-              class="absolute -bottom-4 -left-4 px-4 py-2 rounded-full text-sm font-semibold shadow-lg"
-              style="background: #FFFFFF; color: #1A1A18; border: 1px solid #E8E6E1; font-family: 'Fraunces', serif;"
+              class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 px-4 py-2 rounded-full text-sm font-semibold shadow-lg bg-surface text-text-primary border border-border-color font-display"
             >
               20+ years ✦
             </div>
@@ -90,107 +87,125 @@ function formatDate(date: Date) {
       </section>
 
       <!-- ===== SELECTED WORK ===== -->
-      <section class="py-16 border-t border-[#E8E6E1]">
+      <section class="py-16 border-t border-border-color">
         <div class="animate-fade-up flex items-end justify-between mb-10">
           <div>
-            <p class="text-xs font-semibold uppercase tracking-widest text-[#6B6B64] m-0 mb-2">Selected Work</p>
-            <h2 class="m-0" style="font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 2.75rem); color: #1A1A18;">
+            <p
+              class="text-xs font-semibold uppercase tracking-widest text-text-secondary m-0 mb-2"
+            >
+              Selected Work
+            </p>
+            <h2 class="m-0">
               Things I've built
             </h2>
           </div>
-          <a href="/work" class="text-sm text-[#6B6B64] no-underline hover:text-[#FF5C35] transition-colors hidden sm:block">
+          <a
+            href="/work"
+            class="text-sm text-text-secondary no-underline hover:text-accent transition-colors hidden sm:block"
+          >
             All work →
           </a>
         </div>
 
         <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-6">
-          {selectedWork.map((item, i) => (
-            <article
-              class={`animate-fade-up-delay-${i + 1} group rounded-2xl overflow-hidden transition-all duration-200`}
-              style="background: #FFFFFF; border: 1px solid #E8E6E1; cursor: pointer;"
-              onmouseover="this.style.transform='translateY(-4px) scale(1.02)'; this.style.boxShadow='0 16px 48px rgba(0,0,0,0.10)'"
-              onmouseout="this.style.transform='none'; this.style.boxShadow='none'"
-            >
-              <a href={`/work/${item.id}`} class="no-underline block">
-                {item.data.heroImage && (
-                  <div class="overflow-hidden" style="aspect-ratio: 16/9;">
-                    <img
-                      src={item.data.heroImage}
-                      alt={item.data.title}
-                      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                  </div>
-                )}
-                <div class="p-6 flex flex-col gap-3">
-                  <h3 class="m-0 text-xl" style="font-family: 'Fraunces', serif; color: #1A1A18;">
-                    {item.data.title}
-                  </h3>
-                  <p class="m-0 text-sm leading-relaxed" style="color: #6B6B64;">{item.data.description}</p>
-                  {item.data.tags && (
-                    <div class="flex flex-wrap gap-1.5 mt-1">
-                      {item.data.tags.map((tag: string) => (
-                        <span class="ao-tag">{tag}</span>
-                      ))}
+          {
+            selectedWork.map((item, i) => (
+              <article
+                class={`animate-fade-up-delay-${i + 1} group rounded-2xl overflow-hidden bg-surface border border-border-color cursor-pointer card-lift`}
+              >
+                <a href={`/work/${item.id}`} class="no-underline block">
+                  {item.data.heroImage && (
+                    <div class="overflow-hidden aspect-video">
+                      <img
+                        src={item.data.heroImage}
+                        alt={item.data.title}
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
+                      />
                     </div>
                   )}
-                  <span class="text-sm font-semibold mt-1" style="color: #FF5C35;">Case Study →</span>
-                </div>
-              </a>
-            </article>
-          ))}
+                  <div class="p-6 flex flex-col gap-3">
+                    <h3 class="m-0 text-xl">
+                      {item.data.title}
+                    </h3>
+                    <p class="m-0 text-sm leading-relaxed text-text-secondary">
+                      {item.data.description}
+                    </p>
+                    {item.data.tags && (
+                      <div class="flex flex-wrap gap-1.5 mt-1">
+                        {item.data.tags.map((tag: string) => (
+                          <span class="ao-tag">{tag}</span>
+                        ))}
+                      </div>
+                    )}
+                    <span class="text-sm font-semibold mt-1 text-accent">
+                      Case Study →
+                    </span>
+                  </div>
+                </a>
+              </article>
+            ))
+          }
         </div>
       </section>
 
       <!-- ===== RECENT WRITING ===== -->
-      <section class="py-16 border-t border-[#E8E6E1]">
+      <section class="py-16 border-t border-border-color">
         <div class="animate-fade-up flex items-end justify-between mb-10">
           <div>
-            <p class="text-xs font-semibold uppercase tracking-widest text-[#6B6B64] m-0 mb-2">From the Blog</p>
-            <h2 class="m-0" style="font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 2.75rem); color: #1A1A18;">
+            <p
+              class="text-xs font-semibold uppercase tracking-widest text-text-secondary m-0 mb-2"
+            >
+              From the Blog
+            </p>
+            <h2 class="m-0">
               Recent writing
             </h2>
           </div>
-          <a href="/blog" class="text-sm text-[#6B6B64] no-underline hover:text-[#FF5C35] transition-colors hidden sm:block">
+          <a
+            href="/blog"
+            class="text-sm text-text-secondary no-underline hover:text-accent transition-colors hidden sm:block"
+          >
             All posts →
           </a>
         </div>
 
         <div class="flex flex-col gap-4">
-          {recentPosts.map((post, i) => (
-            <a
-              href={`/blog/${post.id}/`}
-              class={`animate-fade-up-delay-${i + 1} group flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-xl no-underline transition-all duration-150`}
-              style="background: #FFFFFF; border: 1px solid #E8E6E1;"
-              onmouseover="this.style.borderColor='#FF5C35'; this.style.transform='translateX(4px)'"
-              onmouseout="this.style.borderColor='#E8E6E1'; this.style.transform='none'"
-            >
-              <div class="flex flex-col gap-1.5">
-                <span class="font-semibold text-[#1A1A18] text-base" style="font-family: 'Fraunces', serif;">
-                  {post.data.title}
+          {
+            recentPosts.map((post, i) => (
+              <a
+                href={`/blog/${post.id}/`}
+                class={`animate-fade-up-delay-${i + 1} group flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-xl no-underline bg-surface border border-border-color post-row`}
+              >
+                <div class="flex flex-col gap-1.5">
+                  <span class="font-semibold text-text-primary font-display">
+                    {post.data.title}
+                  </span>
+                  {post.data.tags && (
+                    <div class="flex flex-wrap gap-1.5">
+                      {post.data.tags.slice(0, 3).map((tag: string) => (
+                        <span class="ao-tag">{tag}</span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <span class="text-sm text-text-secondary whitespace-nowrap">
+                  {formatDate(post.data.pubDate)}
                 </span>
-                {post.data.tags && (
-                  <div class="flex flex-wrap gap-1.5">
-                    {post.data.tags.slice(0, 3).map((tag: string) => (
-                      <span class="ao-tag">{tag}</span>
-                    ))}
-                  </div>
-                )}
-              </div>
-              <span class="text-sm text-[#6B6B64] whitespace-nowrap">
-                {formatDate(post.data.pubDate)}
-              </span>
-            </a>
-          ))}
+              </a>
+            ))
+          }
         </div>
 
         <div class="mt-6 sm:hidden">
-          <a href="/blog" class="text-sm text-[#6B6B64] no-underline hover:text-[#FF5C35] transition-colors">
+          <a
+            href="/blog"
+            class="text-sm text-text-secondary no-underline hover:text-accent transition-colors"
+          >
             All posts →
           </a>
         </div>
       </section>
-
     </main>
 
     <Footer />

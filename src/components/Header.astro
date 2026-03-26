@@ -9,14 +9,13 @@ function isActive(href: string) {
 
 <header
   id="site-header"
-  class="sticky top-0 z-50 w-full border-b border-[#E8E6E1] bg-[#FAFAF8]/80 backdrop-blur-md transition-all"
+  class="sticky top-0 z-50 w-full border-b border-border-color bg-base/80 backdrop-blur-md transition-all"
 >
   <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
     <!-- Logo -->
     <a
       href="/"
-      class="font-display text-xl font-semibold text-[#1A1A18] no-underline hover:text-[#FF5C35] transition-colors duration-150"
-      style="font-family: 'Fraunces', serif;"
+      class="font-display text-xl font-semibold text-text-primary no-underline hover:text-accent transition-colors duration-150"
     >
       Andre Ortiz
     </a>
@@ -28,8 +27,8 @@ function isActive(href: string) {
         class:list={[
           "text-sm font-medium no-underline transition-colors duration-150 pb-0.5",
           isActive('/work')
-            ? "text-[#FF5C35] border-b-2 border-[#FF5C35]"
-            : "text-[#6B6B64] hover:text-[#1A1A18]"
+            ? "text-accent border-b-2 border-accent"
+            : "text-text-secondary hover:text-text-primary"
         ]}
       >Work</a>
       <a
@@ -37,8 +36,8 @@ function isActive(href: string) {
         class:list={[
           "text-sm font-medium no-underline transition-colors duration-150 pb-0.5",
           isActive('/blog')
-            ? "text-[#FF5C35] border-b-2 border-[#FF5C35]"
-            : "text-[#6B6B64] hover:text-[#1A1A18]"
+            ? "text-accent border-b-2 border-accent"
+            : "text-text-secondary hover:text-text-primary"
         ]}
       >Blog</a>
       <a
@@ -46,8 +45,8 @@ function isActive(href: string) {
         class:list={[
           "text-sm font-medium no-underline transition-colors duration-150 pb-0.5",
           isActive('/about')
-            ? "text-[#FF5C35] border-b-2 border-[#FF5C35]"
-            : "text-[#6B6B64] hover:text-[#1A1A18]"
+            ? "text-accent border-b-2 border-accent"
+            : "text-text-secondary hover:text-text-primary"
         ]}
       >About</a>
     </nav>
@@ -55,7 +54,7 @@ function isActive(href: string) {
     <!-- Mobile hamburger -->
     <button
       id="mobile-menu-btn"
-      class="md:hidden p-2 text-[#6B6B64] hover:text-[#1A1A18] transition-colors"
+      class="md:hidden p-2 text-text-secondary hover:text-text-primary transition-colors"
       aria-label="Toggle menu"
       aria-expanded="false"
     >
@@ -78,28 +77,28 @@ function isActive(href: string) {
   <!-- Mobile menu -->
   <div
     id="mobile-menu"
-    class="hidden md:hidden border-t border-[#E8E6E1] bg-[#FAFAF8]"
+    class="hidden md:hidden border-t border-border-color bg-base"
   >
     <nav class="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-4">
       <a
         href="/work"
         class:list={[
           "text-base font-medium no-underline transition-colors",
-          isActive('/work') ? "text-[#FF5C35]" : "text-[#1A1A18]"
+          isActive('/work') ? "text-accent" : "text-text-primary"
         ]}
       >Work</a>
       <a
         href="/blog"
         class:list={[
           "text-base font-medium no-underline transition-colors",
-          isActive('/blog') ? "text-[#FF5C35]" : "text-[#1A1A18]"
+          isActive('/blog') ? "text-accent" : "text-text-primary"
         ]}
       >Blog</a>
       <a
         href="/about"
         class:list={[
           "text-base font-medium no-underline transition-colors",
-          isActive('/about') ? "text-[#FF5C35]" : "text-[#1A1A18]"
+          isActive('/about') ? "text-accent" : "text-text-primary"
         ]}
       >About</a>
     </nav>

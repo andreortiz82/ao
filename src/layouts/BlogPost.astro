@@ -19,7 +19,7 @@ function formatDate(date: Date) {
     <BaseHead title={title} description={description} />
   </head>
 
-  <body style="background: #FAFAF8;">
+  <body>
     <Header />
     <main class="max-w-6xl mx-auto px-6 py-12">
 
@@ -27,10 +27,7 @@ function formatDate(date: Date) {
       <nav class="animate-fade-up mb-8">
         <a
           href="/blog"
-          class="inline-flex items-center gap-1 text-sm no-underline transition-colors duration-150"
-          style="color: #6B6B64;"
-          onmouseover="this.style.color='#FF5C35'"
-          onmouseout="this.style.color='#6B6B64'"
+          class="inline-flex items-center gap-1 text-sm no-underline transition-colors duration-150 text-text-secondary hover:text-accent"
         >
           ← All posts
         </a>
@@ -44,26 +41,23 @@ function formatDate(date: Date) {
             <span class="ao-tag">{tag}</span>
           ))}
           {pubDate && (
-            <span class="text-sm" style="color: #6B6B64;">{formatDate(pubDate)}</span>
+            <span class="text-sm text-text-secondary">{formatDate(pubDate)}</span>
           )}
         </div>
 
         <!-- Title -->
-        <h1
-          class="animate-fade-up-delay-1 m-0 mb-4"
-          style="font-family: 'Fraunces', serif; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; color: #1A1A18;"
-        >
+        <h1 class="animate-fade-up-delay-1 m-0 mb-4">
           {title}
         </h1>
         {description && (
-          <p class="animate-fade-up-delay-2 m-0 mb-8 text-xl leading-relaxed" style="color: #6B6B64;">
+          <p class="animate-fade-up-delay-2 m-0 mb-8 text-xl leading-relaxed text-text-secondary">
             {description}
           </p>
         )}
 
         <!-- Hero image -->
         {heroImage && (
-          <div class="animate-fade-up-delay-2 rounded-2xl overflow-hidden mb-10" style="border: 1px solid #E8E6E1;">
+          <div class="animate-fade-up-delay-2 rounded-2xl overflow-hidden mb-10 border border-border-color">
             <img src={heroImage} alt={title} class="w-full object-cover" />
           </div>
         )}

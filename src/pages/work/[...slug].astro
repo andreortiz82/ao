@@ -27,7 +27,7 @@ const { title, description, heroImage, tags } = entry.data;
   <head>
     <BaseHead title={`${title} — Andre Ortiz`} description={description} />
   </head>
-  <body style="background: #FAFAF8;">
+  <body>
     <Header />
 
     <main class="max-w-6xl mx-auto px-6 py-12">
@@ -36,10 +36,7 @@ const { title, description, heroImage, tags } = entry.data;
       <nav class="animate-fade-up mb-8">
         <a
           href="/work"
-          class="inline-flex items-center gap-1 text-sm no-underline transition-colors duration-150"
-          style="color: #6B6B64;"
-          onmouseover="this.style.color='#FF5C35'"
-          onmouseout="this.style.color='#6B6B64'"
+          class="inline-flex items-center gap-1 text-sm no-underline transition-colors duration-150 text-text-secondary hover:text-accent"
         >
           ← Back to Work
         </a>
@@ -47,12 +44,11 @@ const { title, description, heroImage, tags } = entry.data;
 
       <!-- Hero image -->
       {heroImage && (
-        <div class="animate-fade-up-delay-1 rounded-2xl overflow-hidden mb-10" style="border: 1px solid #E8E6E1;">
+        <div class="animate-fade-up-delay-1 rounded-2xl overflow-hidden mb-10 border border-border-color">
           <img
             src={heroImage}
             alt={title}
-            class="w-full object-cover"
-            style="max-height: 500px;"
+            class="w-full object-cover max-h-125"
           />
         </div>
       )}
@@ -66,10 +62,10 @@ const { title, description, heroImage, tags } = entry.data;
             ))}
           </div>
         )}
-        <h1 class="m-0 mb-4" style="font-family: 'Fraunces', serif; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; color: #1A1A18;">
+        <h1 class="m-0 mb-4">
           {title}
         </h1>
-        <p class="m-0 text-xl leading-relaxed" style="color: #6B6B64;">
+        <p class="m-0 text-xl leading-relaxed text-text-secondary">
           {description}
         </p>
       </div>

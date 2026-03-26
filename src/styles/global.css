@@ -96,8 +96,8 @@
     font-family: var(--font-mono);
     font-size: 0.9rem;
     line-height: 1.6;
-    background: #1A1A18;
-    color: #FAFAF8;
+    background: var(--color-text-primary);
+    color: var(--color-base);
     border-radius: 0.75rem;
     overflow: auto;
     white-space: pre-wrap;
@@ -187,6 +187,51 @@
 
   .link-slide:hover::after {
     width: 100%;
+  }
+
+  /* ========== BUTTONS ========== */
+  .btn-primary {
+    @apply inline-flex items-center gap-1 px-5 py-2.5 rounded-full text-sm font-semibold no-underline transition-all duration-150;
+    background: var(--color-accent);
+    color: white;
+    &:hover { background: var(--color-accent-hover); }
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-1 px-5 py-2.5 rounded-full text-sm font-semibold no-underline transition-all duration-150 border;
+    color: var(--color-text-primary);
+    border-color: var(--color-border-color);
+    background: transparent;
+    &:hover { border-color: var(--color-text-primary); }
+  }
+
+  /* ========== CARD HOVER ========== */
+  .card-lift {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    &:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: var(--shadow-card-hover);
+    }
+  }
+
+  /* ========== BLOG POST ROW HOVER ========== */
+  .post-row {
+    transition: border-color 0.15s ease, transform 0.15s ease;
+    &:hover {
+      border-color: var(--color-accent);
+      transform: translateX(4px);
+    }
+  }
+
+  /* ========== SKILL TAG (interactive) ========== */
+  .skill-tag {
+    @apply inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-150 cursor-default;
+    background: var(--color-tag-bg);
+    color: var(--color-tag-text);
+    &:hover {
+      background: var(--color-accent);
+      color: white;
+    }
   }
 
   /* ========== TAGS ========== */
