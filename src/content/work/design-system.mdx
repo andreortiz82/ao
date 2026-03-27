@@ -1,5 +1,5 @@
 ---
-title: "Apex Design System"
+title: "Design System"
 description: "A scalable, accessible component library used by 200+ engineers across 4 product teams."
 pubDate: "2024-01-15"
 heroImage: "/covers/4.png"
@@ -9,64 +9,40 @@ team: ["3 designers", "2 front-end engineers"]
 ---
 
 import DesignSystemDemo from '../../components/demos/DesignSystemDemo.jsx'
+import DesignAuditPlaceholder from '../../components/placeholders/DesignAuditPlaceholder.jsx'
+import DesignImpactPlaceholder from '../../components/placeholders/DesignImpactPlaceholder.jsx'
 
 ## The Problem
 
 Four product teams. Four codebases. Zero shared UI language.
 
-When I joined Apex, the inconsistency was obvious almost immediately — not just visually, but functionally. The marketing team's buttons were subtly different from the dashboard's. The onboarding flow used a homegrown modal while the settings page used a third-party one. Three separate implementations of a date picker, each with different keyboard behavior. And every sprint, designers were rebuilding the same components from scratch in Figma, handing them off, and watching engineers interpret them differently.
+The inconsistency wasn't just visual — it was expensive. Buttons that looked slightly different across products. Three separate date picker implementations, each with different keyboard behavior. Designers rebuilding the same components from scratch every sprint. Engineers interpreting handoffs differently depending on which team they were on.
 
-The real cost wasn't aesthetic. It was velocity. Each new feature required re-solving solved problems. Bug fixes landed in one place but not another. And as the company scaled toward its Series B, the four product teams were drifting further apart — not together.
+The real cost was velocity. Every new feature required re-solving solved problems. Bug fixes landed in one codebase but not another. As the company scaled toward its Series B, the teams were drifting further apart.
 
-Something had to change.
+<DesignAuditPlaceholder client:load />
 
 ## The Approach
 
-I'd built design systems before, and I'd seen the failure mode: a team locks themselves in a room, emerges six months later with a "system," and wonders why no one adopts it. That wasn't going to happen here.
+I'd seen the failure mode before: a team locks themselves away, emerges six months later with a "system," and wonders why nobody uses it. We went the other direction.
 
-We started with an audit — not a Figma audit, a *real* one. We scraped every deployed UI across all four products, catalogued every component variant, and mapped the divergence. The result was a shared picture of the problem that engineers and designers could both see. That shared understanding was the foundation for everything that followed.
+We started with a real audit — not a Figma audit, a deployed one. We scraped every UI across all four products, catalogued every component variant, and made the divergence visible to engineers and designers together. That shared picture was the foundation.
 
-From there, we established three design principles:
+From there, three principles shaped everything: predictable over clever, accessible by default, and engineer-first documentation. We built in the open from day one. Storybook was our source of truth, published internally at every merge. Weekly office hours, no agenda — any team could bring a problem and we'd work it out together.
 
-1. **Predictable over clever.** Components should behave the way users expect. No surprises.
-2. **Accessible by default.** WCAG 2.1 AA isn't a checkbox — it's a constraint that makes everything better.
-3. **Engineer-first documentation.** The system doesn't exist until someone can build with it confidently.
-
-We built in the open from day one. Storybook was our source of truth, published internally at every merge. Engineers were invited to contribute, comment, and critique. We held weekly office hours — drop-in, no agenda — where any team could bring a design problem and we'd work it out together. This wasn't a gift we were giving teams. It was infrastructure we were building *with* them.
-
-## Key Decisions
-
-**Token-based theming.** Instead of hardcoded hex values, every color, spacing unit, and type size lived as a design token. This made it possible to ship three distinct themes — default, dark, and a high-contrast accessibility mode — without touching component code.
-
-**React + Figma parity.** Every component had to exist in both Figma (with auto-layout, variants, and interaction states) and React (with matching props). If a property existed in code, it existed in Figma. We kept them in sync with a token export pipeline that ran on every release.
-
-**Versioned releases with changelogs.** We treated the system like a public library. Semantic versioning, automated changelogs, deprecation notices with migration guides. Teams could upgrade on their own schedule without fear.
-
-**Accessibility baked in, not bolted on.** Every component was built with keyboard navigation, ARIA roles, and screen reader testing from the start. We partnered with two engineers who had lived experience with assistive tech, and their feedback reshaped several core components before they ever shipped.
-
-## Outcome
-
-Eighteen months after we started, the numbers were clear:
-
-- **40% reduction** in design-to-dev handoff time across all four teams
-- **200+ engineers** actively using the system, with 94% satisfaction on our internal survey
-- **3 themes** shipped and in production (default, dark, high-contrast)
-- **Zero** accessibility regressions in the six months following full adoption
-
-But the outcome I'm most proud of isn't a metric. It's that the system became a shared language. Designers stopped writing spec docs and started linking to components. Engineers stopped asking "what does hover state look like?" and started asking "should we add a new token for this?" The conversation shifted from *what to build* to *how to extend what exists.*
-
-## Reflection
-
-What worked: building in the open, treating engineers as customers, and relentless documentation.
-
-What was hard: getting buy-in from teams who felt the system constrained them. The answer — always — was to listen, understand the real need, and find a way to support it within the system. Edge cases became contributions, not carve-outs.
-
-What I'd do differently: start the governance model earlier. We figured out contribution guidelines, versioning policies, and deprecation processes mostly reactively. A design system is infrastructure, and infrastructure needs governance from the start.
-
-The system is still evolving. That's the point.
-
----
-
-*Want to explore the actual components? The demo below is a live, interactive version of the Apex Design System component library — browse components, inspect tokens, and copy the code.*
+Token-based theming meant colors, spacing, and type sizes lived as design tokens, not hardcoded values. Three themes shipped — default, dark, high-contrast — without touching component code. Every component existed in both Figma and React, with matching props, kept in sync by an automated token pipeline.
 
 <DesignSystemDemo client:load />
+
+## The Outcome
+
+Eighteen months after we started:
+
+- 40% reduction in design-to-dev handoff time across all four teams
+- 200+ engineers actively using the system, 94% satisfaction
+- Three themes in production
+- Zero accessibility regressions in the six months after full adoption
+
+The system became a shared language. Designers stopped writing spec docs and started linking to components. Engineers stopped asking "what does hover state look like?" and started asking "should we add a new token for this?"
+
+<DesignImpactPlaceholder client:load />

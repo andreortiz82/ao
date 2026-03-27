@@ -15,7 +15,7 @@ It sounds like something from a sci-fi movie, and honestly, the first time I ran
 <img src="/art/ai-agents.png" alt="agents"/>
 </div>
 
-### Core Concepts
+### Core concepts
 
 Here's the 101 on CrewAI:
 

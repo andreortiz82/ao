@@ -7,7 +7,7 @@ heroImage: "/covers/4.png"
 tags: ["Tailwind", "Front-end", "React", "Design Systems", "Storybook"]
 ---
 
-## Atomic Patterns
+## Atomic patterns
 
 Brad Frost's [Atomic Design Principles](https://atomicdesign.bradfrost.com/) changed how I think about building interfaces — and more importantly, how I *talk* about building interfaces with engineers and product managers. The mental model is simple: UIs are made of small, reusable parts that compose into larger, more complex ones. Atoms become molecules, molecules become organisms. It sounds abstract until you're in a sprint planning meeting and someone asks "can we just swap out the card header?" and you can answer with actual confidence instead of "let me check with engineering."
 

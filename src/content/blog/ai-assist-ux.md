@@ -7,7 +7,7 @@ heroImage: "/covers/1.png"
 tags: ["AI", "Automation", "Healthcare"]
 ---
 
-Healthcare is one of those industries where the gap between "what technology can do" and "what workers actually experience day-to-day" is almost embarrassingly wide. I work on a healthcare product, and I spend a lot of time watching people perform tasks that feel like they were designed to exhaust them — calling and re-calling patients, juggling calendars, doing data entry at the end of a long shift. It's not that the tools are broken. It's that they weren't designed with the whole human in mind.
+Healthcare is one of those industries where the gap between what technology can do and what workers actually experience day-to-day is almost embarrassingly wide. I work on a healthcare product, and I spend a lot of time watching people perform tasks that feel like they were designed to exhaust them — calling and re-calling patients, juggling calendars, doing data entry at the end of a long shift. It's not that the tools are broken. It's that they weren't designed with the whole human in mind.
 
 So I've been thinking: what if AI didn't show up as a chatbot you have to babysit? What if it just... handled things?
 

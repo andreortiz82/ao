@@ -32,13 +32,13 @@ I know enough to ask the right questions. I know enough to prototype my own idea
 
 Over the years I've picked up a lot: **HTML, CSS, Javascript, Ruby, Python, PHP, C#, ClojureScript, Webpack, Vite, React, Vue, Angular, Style Dictionary, Tailwind**, and plenty of others I've since mostly forgotten. The point was never to master all of them — the point was to stay curious and keep the door open.
 
-## Developing Imagination
+## Developing imagination
 
 My current go-to for prototyping is [React](https://react.dev/) + [Vite](https://vite.dev/) + [Tailwind](https://tailwindcss.com/). It's a fast setup, the output is real code (not a prototype that has to be thrown away), and it's flexible enough to grow into something production-worthy if the idea earns it. I dig deeper on this in my [components post](/blog/components/).
 
 If you want a head start, I made a starter: [react-vite-template](https://github.com/andreortiz82/react-vite-template).
 
-### A Quick Overview
+### A quick overview
 
 <div class="w-full m-auto my-[40px] p-3 bg-zinc-50 rounded">
 <img src="/art/react-vite-starter.png" alt="react-vite-starter"/>

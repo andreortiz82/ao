@@ -1,5 +1,5 @@
 ---
-title: "Miso & Stone"
+title: "Ordering"
 description: "A restaurant website and online ordering experience designed to feel as good as the food tastes."
 pubDate: "2023-08-20"
 heroImage: "/covers/5.png"
@@ -9,69 +9,39 @@ team: ["1 designer (me)", "1 back-end engineer"]
 ---
 
 import RestaurantDemo from '../../components/demos/RestaurantDemo.jsx'
-
-## The Client
-
-Miso & Stone is a Japanese-American fusion restaurant tucked into the South Lamar corridor in Austin. The food is genuinely exceptional — the chef had spent a decade in Tokyo before bringing that sensibility to Texas, and it showed in every dish. The problem was, you'd never know any of that from their website.
-
-When they reached out, their online presence was a Squarespace template from 2018. Muted grays. A PDF menu buried three clicks deep. Online ordering routed through a third-party platform on a completely different domain — different fonts, different colors, a checkout flow that felt like it was designed for a different restaurant entirely. Customers were calling the restaurant to place orders because the website was too confusing. Staff were spending 20 minutes a day answering "where's the menu?" messages on Instagram.
-
-The restaurant deserved better. And they knew it.
+import OrderingBrandPlaceholder from '../../components/placeholders/OrderingBrandPlaceholder.jsx'
+import OrderingResultsPlaceholder from '../../components/placeholders/OrderingResultsPlaceholder.jsx'
 
 ## The Problem
 
-Restaurants are sensory experiences. People choose where to eat based on how the food makes them *feel* before they even take a bite — the photography, the atmosphere, the story. Miso & Stone had all of that. The food photography alone was stunning. They just had no way to translate it into a digital experience.
+The restaurant had a website. Customers just couldn't use it.
 
-Three specific pain points drove the redesign:
+A template from 2018, a PDF menu buried three clicks deep, and an ordering flow that handed users off to a third-party platform on a completely different domain — different fonts, different colors, a checkout that felt like a different restaurant entirely. Customers were calling to place orders. Staff spent 20 minutes a day answering "where's the menu?" messages on Instagram.
 
-**The menu was invisible.** A PDF linked from a secondary nav item, two clicks deep. On mobile, it didn't even render. People were bouncing off the site and going to Yelp just to see what was on the menu.
+The food was genuinely exceptional. The digital presence communicated none of that.
 
-**Online ordering felt like a bait-and-switch.** The "Order Online" button handed users off to an unbranded third-party platform. The jarring context switch — from the restaurant's warm aesthetic to some generic checkout flow — killed conversion. Customers felt uncertain. Was this the right place? Is this secure?
+My rule with restaurant work: start with the food, not the wireframes. The client had a stunning photography library that nobody was using. We sat down and went through every image together — identifying the shots that made you lean forward. Those images became the foundation. Every layout decision flowed from them.
 
-**The site communicated nothing.** Nothing about the chef's story. Nothing about the sourcing. Nothing about what made this restaurant different from the dozen other Japanese fusion spots in Austin. It was just... a table with a reservation form and a phone number.
+<OrderingBrandPlaceholder client:load />
 
 ## The Approach
 
-My rule with restaurant work: start with the food. Not the typography, not the wireframes — the *food photography*.
+The navigation practically designed itself: Menu, Reserve, Order Online, About. Four items. Everything a customer needs to make a decision, one tap away.
 
-Miso & Stone's photographer had given them an incredible asset library, and nobody was using it. We started by going through every image together — the chef and I, sitting at a table with laptops open — identifying the shots that made you feel something. The ones that made you lean forward. The ones that made your mouth water before you could consciously register why.
+No PDF. The menu lives on the page — tabbed by category, each item with name, description, and price. The hero rotates through featured dishes with full-bleed photography and a persistent Order Now button. Not aggressive. Tasteful. But always there, because the moment someone decides they want food is unpredictable and friction at that moment is revenue left on the table.
 
-Those images became the foundation of the design. Every layout decision flowed from them. How much negative space? Enough to let a dish breathe. How big should the hero be? Full-bleed. Always. The food deserved that much real estate.
+The biggest win was pulling ordering back onto the restaurant's own domain. Same branding, same fonts, same colors. Cart persists as you browse. Checkout feels like part of the same experience — because it is.
 
-From there, the navigation practically designed itself: **Menu, Reserve, Order Online, About.** That's it. No buried sub-pages. No PDF in sight. Everything a customer needs to make a decision — what's on the menu, how to book a table, how to order — one tap away, always.
+<RestaurantDemo client:load />
 
-## Key Decisions
-
-**The hero as a craving machine.** The homepage hero rotates through featured dishes with full-bleed photography and minimal copy. Just the dish name and a persistent "Order Now" button. The goal wasn't to explain the restaurant — it was to make you hungry before you even scrolled.
-
-**Inline menu with category tabs.** No PDF. Full stop. The menu is built directly into the page — tabbed by category, each item with its name, description, and price. It loads instantly. It works on mobile. You can read it without downloading anything. This sounds obvious, but it was genuinely the single most impactful change for users.
-
-**Integrated ordering flow.** We rebuilt the ordering experience to live on the restaurant's domain, with the restaurant's branding, fonts, and colors. The handoff from browsing to ordering is seamless. The cart persists as you browse the menu. The checkout feels like part of the same experience — because it is.
-
-**Persistent CTA.** The "Order Now" button never disappears. It lives in the nav, in the hero, and on every menu item. Not aggressively — tastefully. But it's always there, because the moment someone decides they want food is unpredictable, and friction at that moment is revenue left on the table.
-
-## Outcome
+## The Outcome
 
 Within 60 days of launch:
 
-- **3x increase in online orders** — the biggest single-month revenue driver in the restaurant's four-year history
-- **45% increase in average session time** — people were spending time with the menu, exploring, making decisions
-- **Zero support tickets** about "how do I see the menu" — that entire category of friction just disappeared
+- 3× increase in online orders — the biggest single-month revenue driver in the restaurant's four-year history
+- 45% increase in average session time
+- Zero support contacts about the menu
 
-The owner texted me on a Saturday morning about six weeks after launch: *"We've been slammed. In the best way."*
+The owner texted on a Saturday morning about six weeks after launch: "We've been slammed. In the best way."
 
-## Reflection
-
-The hardest part of this project was the client — and I mean that in the nicest possible way. The chef and owner, Marco, had incredibly strong opinions about his restaurant's identity. He knew exactly what Miso & Stone felt like inside, and he was terrified that a website redesign would sand that down into something generic.
-
-He was right to be protective. That kind of clear, opinionated ownership is actually a gift on a project like this. It meant every decision had a north star: *does this feel like Miso & Stone, or does it feel like some other restaurant?*
-
-The moments where we disagreed — and there were several — were almost always me trying to push something modern and him asking me to make it feel more like his restaurant. He was usually right. I learned to treat his instincts as a constraint that improved the work, not an obstacle to route around.
-
-Good clients make you better. Marco made me better.
-
----
-
-*The demo below is a fully interactive version of the Miso & Stone website — browse the menu, add items to your cart, and experience the integrated ordering flow we built.*
-
-<RestaurantDemo client:load />
+<OrderingResultsPlaceholder client:load />

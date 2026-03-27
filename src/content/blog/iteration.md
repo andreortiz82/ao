@@ -9,7 +9,7 @@ tags: ["Product Design", "UX"]
 
 Back in 2012, I stumbled on a video that I still think about. It completely reframed how I approach interaction design — not by teaching me a new methodology, but by giving language to something I'd been feeling but couldn't articulate. If you work in product design and you haven't seen this, do yourself a favor and watch it now.
 
-### What is _Juice_?
+### What is *juice*?
 
 > Juice is when an interactive experience feels alive and responds to everything you do; Cascading actions and responses for minimal user input.
 
