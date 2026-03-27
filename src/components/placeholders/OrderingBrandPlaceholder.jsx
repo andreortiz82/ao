@@ -76,9 +76,8 @@ export default function OrderingBrandPlaceholder() {
         {PALETTE.map((color) => {
           const isActive = activeId === color.id
           return (
+            <div key={color.id} role="listitem">
             <button
-              key={color.id}
-              role="listitem"
               onClick={() => setActiveId(isActive ? null : color.id)}
               aria-pressed={isActive}
               aria-label={`${color.name}: ${color.hex}. Click for details.`}
@@ -103,6 +102,7 @@ export default function OrderingBrandPlaceholder() {
                 {color.hex}
               </span>
             </button>
+            </div>
           )
         })}
       </div>

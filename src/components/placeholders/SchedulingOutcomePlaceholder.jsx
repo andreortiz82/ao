@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 const METRICS = [
   {
     label: 'Booking completion',
-    before: { value: 52, display: '52%' },
+    before: { value: 48, display: '48%' },
     after: { value: 89, display: '89%' },
   },
   {

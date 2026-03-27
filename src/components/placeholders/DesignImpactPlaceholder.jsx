@@ -36,10 +36,10 @@ function StatCard({ stat, started, index }) {
   return (
     <div
       style={{
-        background: '#fff',
+        background: '#1A1A1A',
         borderRadius: '16px',
         padding: '32px 28px',
-        border: '1px solid #E0E7FF',
+        border: '1px solid #2E2E2E',
         display: 'flex',
         flexDirection: 'column',
         gap: '4px',
@@ -51,17 +51,17 @@ function StatCard({ stat, started, index }) {
           fontSize: '52px',
           fontWeight: 700,
           lineHeight: 1,
-          color: '#6366F1',
-          fontFamily: 'DM Serif Display, serif',
+          color: '#0077BC',
+          fontFamily: 'Archivo Black, sans-serif',
           letterSpacing: '-0.02em',
         }}
       >
         {count}{stat.suffix}
       </div>
-      <div style={{ fontSize: '16px', fontWeight: 600, color: '#1E1B4B', marginTop: '4px' }}>
+      <div style={{ fontSize: '16px', fontWeight: 600, color: '#F0F0F0', marginTop: '4px' }}>
         {stat.label}
       </div>
-      <div style={{ fontSize: '13px', color: '#6B7280' }}>
+      <div style={{ fontSize: '13px', color: '#888888' }}>
         {stat.sublabel}
       </div>
     </div>
@@ -90,11 +90,12 @@ export default function DesignImpactPlaceholder() {
     <div
       id="design-impact-root"
       style={{
-        background: 'linear-gradient(135deg, #EEF2FF 0%, #F5F3FF 100%)',
+        background: '#111111',
         borderRadius: '16px',
         padding: '40px 32px',
         margin: '2rem 0',
         fontFamily: 'DM Sans, sans-serif',
+        border: '1px solid #2E2E2E',
       }}
       role="region"
       aria-label="Design system impact metrics"
@@ -106,10 +107,10 @@ export default function DesignImpactPlaceholder() {
         }
       `}</style>
       <div style={{ marginBottom: '28px' }}>
-        <div style={{ color: '#6366F1', fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '6px' }}>
+        <div style={{ color: '#0077BC', fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '6px' }}>
           Outcomes
         </div>
-        <h3 style={{ color: '#1E1B4B', fontSize: '22px', fontWeight: 700, margin: 0 }}>
+        <h3 style={{ color: '#F0F0F0', fontSize: '22px', fontWeight: 700, margin: 0, fontFamily: 'Archivo Black, sans-serif' }}>
           18 months after we started
         </h3>
       </div>

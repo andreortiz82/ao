@@ -9,13 +9,15 @@ function isActive(href: string) {
 
 <header
   id="site-header"
-  class="sticky top-0 z-50 w-full border-b border-border-color bg-base/80 backdrop-blur-md transition-all"
+  class="sticky top-0 z-50 w-full border-b border-border-color bg-base transition-all"
+  style="background-color: #111111; border-bottom: 1px solid #2E2E2E;"
 >
-  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+  <div class="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
     <!-- Logo -->
     <a
       href="/"
-      class="font-display text-xl font-semibold text-text-primary no-underline hover:text-accent transition-colors duration-150"
+      class="no-underline"
+      style="font-family: 'Archivo Black', sans-serif; font-size: 1rem; color: #F0F0F0; letter-spacing: -0.01em;"
     >
       Andre Ortiz
     </a>
@@ -25,27 +27,27 @@ function isActive(href: string) {
       <a
         href="/work"
         class:list={[
-          "text-sm font-medium no-underline transition-colors duration-150 pb-0.5",
+          "text-sm font-medium no-underline transition-colors duration-150",
           isActive('/work')
-            ? "text-accent border-b-2 border-accent"
+            ? "text-accent"
             : "text-text-secondary hover:text-text-primary"
         ]}
       >Work</a>
       <a
         href="/blog"
         class:list={[
-          "text-sm font-medium no-underline transition-colors duration-150 pb-0.5",
+          "text-sm font-medium no-underline transition-colors duration-150",
           isActive('/blog')
-            ? "text-accent border-b-2 border-accent"
+            ? "text-accent"
             : "text-text-secondary hover:text-text-primary"
         ]}
       >Blog</a>
       <a
         href="/about"
         class:list={[
-          "text-sm font-medium no-underline transition-colors duration-150 pb-0.5",
+          "text-sm font-medium no-underline transition-colors duration-150",
           isActive('/about')
-            ? "text-accent border-b-2 border-accent"
+            ? "text-accent"
             : "text-text-secondary hover:text-text-primary"
         ]}
       >About</a>
@@ -77,7 +79,8 @@ function isActive(href: string) {
   <!-- Mobile menu -->
   <div
     id="mobile-menu"
-    class="hidden md:hidden border-t border-border-color bg-base"
+    class="hidden md:hidden"
+    style="border-top: 1px solid #2E2E2E; background: #111111;"
   >
     <nav class="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-4">
       <a

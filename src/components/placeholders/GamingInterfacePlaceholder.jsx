@@ -177,7 +177,6 @@ function Minimap({ active, onClick }) {
         alignItems: 'center',
         justifyContent: 'center',
       }}
-      aria-label="Minimap — click to see design rationale"
     >
       <svg width="60" height="60" viewBox="0 0 60 60" aria-hidden="true">
         <circle cx="30" cy="30" r="28" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="1"/>

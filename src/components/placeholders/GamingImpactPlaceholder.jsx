@@ -32,7 +32,6 @@ function useCounter(target, duration, started) {
 function StatCard({ stat, started, index }) {
   const rawCount = useCounter(stat.value, 1600, started)
 
-  // Format the display value from the raw counter
   const display = () => {
     if (stat.suffix === '×') return `${(rawCount / 100).toFixed(1)}×`
     if (stat.suffix === '/5') return `${(rawCount / 10).toFixed(1)}/5`
@@ -42,8 +41,8 @@ function StatCard({ stat, started, index }) {
   return (
     <div
       style={{
-        background: '#141428',
-        border: '1px solid #1e1e30',
+        background: '#1A1A1A',
+        border: '1px solid #2E2E2E',
         borderRadius: '16px',
         padding: '32px 28px',
         animation: `fadeUp 0.5s ease-out ${index * 0.12}s both`,
@@ -61,7 +60,7 @@ function StatCard({ stat, started, index }) {
           width: '80px',
           height: '80px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(0,119,188,0.15) 0%, transparent 70%)',
           pointerEvents: 'none',
         }}
       />
@@ -70,8 +69,8 @@ function StatCard({ stat, started, index }) {
           fontSize: '52px',
           fontWeight: 700,
           lineHeight: 1,
-          color: '#A5B4FC',
-          fontFamily: 'DM Serif Display, serif',
+          color: '#7AB8D9',
+          fontFamily: 'Archivo Black, sans-serif',
           letterSpacing: '-0.02em',
           marginBottom: '8px',
         }}
@@ -79,10 +78,10 @@ function StatCard({ stat, started, index }) {
       >
         {display()}
       </div>
-      <div style={{ fontSize: '15px', fontWeight: 600, color: '#E2E8F0', marginBottom: '4px' }}>
+      <div style={{ fontSize: '15px', fontWeight: 600, color: '#F0F0F0', marginBottom: '4px' }}>
         {stat.label}
       </div>
-      <div style={{ fontSize: '12px', color: '#475569' }}>
+      <div style={{ fontSize: '12px', color: '#888888' }}>
         {stat.sublabel}
       </div>
     </div>
@@ -116,6 +115,7 @@ export default function GamingImpactPlaceholder() {
         padding: '40px 32px',
         margin: '2rem 0',
         fontFamily: 'DM Sans, sans-serif',
+        border: '1px solid #1e1e30',
       }}
       role="region"
       aria-label="Gaming platform impact metrics"
@@ -128,10 +128,10 @@ export default function GamingImpactPlaceholder() {
       `}</style>
 
       <div style={{ marginBottom: '28px' }}>
-        <div style={{ color: '#6366F1', fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '6px' }}>
+        <div style={{ color: '#0077BC', fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '6px' }}>
           60-day results
         </div>
-        <h3 style={{ color: '#fff', fontSize: '22px', fontWeight: 700, margin: 0 }}>
+        <h3 style={{ color: '#F0F0F0', fontSize: '22px', fontWeight: 700, margin: 0, fontFamily: 'Archivo Black, sans-serif' }}>
           Players don't quit games. They quit friction.
         </h3>
       </div>

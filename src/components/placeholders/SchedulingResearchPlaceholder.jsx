@@ -64,9 +64,8 @@ export default function SchedulingResearchPlaceholder() {
         {INSIGHTS.map((insight) => {
           const isExpanded = expandedId === insight.id
           return (
+            <div key={insight.id} role="listitem">
             <button
-              key={insight.id}
-              role="listitem"
               onClick={() => setExpandedId(isExpanded ? null : insight.id)}
               aria-pressed={isExpanded}
               aria-label={`Research insight: ${insight.keyInsight}. Click to ${isExpanded ? 'collapse' : 'expand'}.`}
@@ -145,6 +144,7 @@ export default function SchedulingResearchPlaceholder() {
                 </div>
               )}
             </button>
+            </div>
           )
         })}
       </div>

@@ -50,18 +50,19 @@ export default function GamingDiscoveryPlaceholder() {
         padding: '36px 32px',
         margin: '2rem 0',
         fontFamily: 'DM Sans, sans-serif',
+        border: '1px solid #1e1e30',
       }}
       role="region"
       aria-label="Player journey map"
     >
       <div style={{ marginBottom: '32px' }}>
-        <div style={{ color: '#6366F1', fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '6px' }}>
+        <div style={{ color: '#0077BC', fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '6px' }}>
           Player journey
         </div>
-        <h3 style={{ color: '#fff', fontSize: '20px', fontWeight: 700, margin: 0 }}>
+        <h3 style={{ color: '#F0F0F0', fontSize: '20px', fontWeight: 700, margin: 0, fontFamily: 'Archivo Black, sans-serif' }}>
           Where players dropped off
         </h3>
-        <p style={{ color: '#94A3B8', fontSize: '14px', margin: '6px 0 0' }}>
+        <p style={{ color: '#888888', fontSize: '14px', margin: '6px 0 0' }}>
           Click a stage to see the pain point and design opportunity.
         </p>
       </div>
@@ -103,14 +104,14 @@ export default function GamingDiscoveryPlaceholder() {
                     width: '56px',
                     height: '56px',
                     borderRadius: '50%',
-                    background: isActive ? '#6366F1' : '#1e1e30',
-                    border: `2px solid ${isActive ? '#6366F1' : '#2d2d45'}`,
+                    background: isActive ? '#0077BC' : '#1A1A1A',
+                    border: `2px solid ${isActive ? '#0077BC' : '#2E2E2E'}`,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     fontSize: '22px',
                     transition: 'background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease',
-                    boxShadow: isActive ? '0 0 0 4px rgba(99,102,241,0.3)' : 'none',
+                    boxShadow: isActive ? '0 0 0 4px rgba(0,119,188,0.25)' : 'none',
                   }}
                   aria-hidden="true"
                 >
@@ -120,7 +121,7 @@ export default function GamingDiscoveryPlaceholder() {
                   style={{
                     fontSize: '12px',
                     fontWeight: isActive ? 700 : 500,
-                    color: isActive ? '#A5B4FC' : '#64748B',
+                    color: isActive ? '#7AB8D9' : '#888888',
                     whiteSpace: 'nowrap',
                     transition: 'color 0.2s ease',
                   }}
@@ -135,7 +136,7 @@ export default function GamingDiscoveryPlaceholder() {
                   style={{
                     width: '40px',
                     height: '2px',
-                    background: 'linear-gradient(to right, #2d2d45, #2d2d45)',
+                    background: '#2E2E2E',
                     flexShrink: 0,
                     margin: '0 4px',
                     marginBottom: '20px',
@@ -152,10 +153,10 @@ export default function GamingDiscoveryPlaceholder() {
         style={{
           marginTop: '24px',
           minHeight: '120px',
-          background: '#141428',
+          background: '#1A1A1A',
           borderRadius: '12px',
           padding: '24px',
-          border: '1px solid #1e1e30',
+          border: '1px solid #2E2E2E',
           transition: 'opacity 0.2s ease',
         }}
         role="status"
@@ -167,21 +168,21 @@ export default function GamingDiscoveryPlaceholder() {
               <div style={{ fontSize: '11px', fontWeight: 700, color: '#EF4444', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>
                 Pain point
               </div>
-              <p style={{ color: '#CBD5E1', fontSize: '14px', lineHeight: 1.7, margin: 0 }}>
+              <p style={{ color: '#888888', fontSize: '14px', lineHeight: 1.7, margin: 0 }}>
                 {active.painPoint}
               </p>
             </div>
             <div>
-              <div style={{ fontSize: '11px', fontWeight: 700, color: '#6366F1', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>
+              <div style={{ fontSize: '11px', fontWeight: 700, color: '#0077BC', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>
                 Design opportunity
               </div>
-              <p style={{ color: '#CBD5E1', fontSize: '14px', lineHeight: 1.7, margin: 0 }}>
+              <p style={{ color: '#888888', fontSize: '14px', lineHeight: 1.7, margin: 0 }}>
                 {active.opportunity}
               </p>
             </div>
           </div>
         ) : (
-          <p style={{ color: '#475569', fontSize: '14px', margin: 0 }}>
+          <p style={{ color: '#444444', fontSize: '14px', margin: 0 }}>
             Select a stage above.
           </p>
         )}
