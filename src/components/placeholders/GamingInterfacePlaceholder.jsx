@@ -38,8 +38,8 @@ function HealthBar({ active, onClick }) {
         position: 'absolute',
         bottom: '24px',
         left: '24px',
-        background: active ? 'rgba(99,102,241,0.2)' : 'rgba(255,255,255,0.06)',
-        border: `2px solid ${active ? '#6366F1' : 'rgba(255,255,255,0.1)'}`,
+        background: active ? 'rgba(0,119,188,0.2)' : 'rgba(255,255,255,0.06)',
+        border: `2px solid ${active ? '#0077BC' : 'rgba(255,255,255,0.1)'}`,
         borderRadius: '12px',
         padding: '10px 14px',
         cursor: 'pointer',
@@ -47,11 +47,11 @@ function HealthBar({ active, onClick }) {
         minWidth: '140px',
       }}
     >
-      <div style={{ fontSize: '10px', color: '#94A3B8', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '6px', textAlign: 'left' }}>HP</div>
+      <div style={{ fontSize: '10px', color: '#7AB8D9', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '6px', textAlign: 'left' }}>HP</div>
       <div style={{ height: '8px', background: 'rgba(255,255,255,0.1)', borderRadius: '999px', overflow: 'hidden' }}>
         <div style={{ height: '100%', width: '72%', background: 'linear-gradient(to right, #22C55E, #4ADE80)', borderRadius: '999px' }} />
       </div>
-      <div style={{ fontSize: '11px', color: '#94A3B8', marginTop: '4px', textAlign: 'left' }}>720 / 1000</div>
+      <div style={{ fontSize: '11px', color: '#888888', marginTop: '4px', textAlign: 'left' }}>720 / 1000</div>
     </button>
   )
 }
@@ -73,8 +73,8 @@ function Cooldowns({ active, onClick }) {
         bottom: '24px',
         left: '50%',
         transform: 'translateX(-50%)',
-        background: active ? 'rgba(99,102,241,0.2)' : 'rgba(255,255,255,0.06)',
-        border: `2px solid ${active ? '#6366F1' : 'rgba(255,255,255,0.1)'}`,
+        background: active ? 'rgba(0,119,188,0.2)' : 'rgba(255,255,255,0.06)',
+        border: `2px solid ${active ? '#0077BC' : 'rgba(255,255,255,0.1)'}`,
         borderRadius: '12px',
         padding: '10px 16px',
         cursor: 'pointer',
@@ -86,7 +86,7 @@ function Cooldowns({ active, onClick }) {
       {abilities.map((a) => (
         <div key={a.key} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px' }}>
           <div style={{ fontSize: '18px', opacity: a.pct === 0 ? 0.3 : 1 }} aria-hidden="true">{a.icon}</div>
-          <div style={{ fontSize: '9px', color: a.pct === 0 ? '#EF4444' : '#94A3B8', fontWeight: 700 }}>{a.key}</div>
+          <div style={{ fontSize: '9px', color: a.pct === 0 ? '#EF4444' : '#7AB8D9', fontWeight: 700 }}>{a.key}</div>
         </div>
       ))}
     </button>
@@ -104,15 +104,15 @@ function MatchTimer({ active, onClick }) {
         top: '16px',
         left: '50%',
         transform: 'translateX(-50%)',
-        background: active ? 'rgba(99,102,241,0.2)' : 'rgba(0,0,0,0.4)',
-        border: `2px solid ${active ? '#6366F1' : 'rgba(255,255,255,0.08)'}`,
+        background: active ? 'rgba(0,119,188,0.2)' : 'rgba(0,0,0,0.5)',
+        border: `2px solid ${active ? '#0077BC' : 'rgba(255,255,255,0.08)'}`,
         borderRadius: '999px',
         padding: '6px 18px',
         cursor: 'pointer',
         transition: 'all 0.2s ease',
       }}
     >
-      <span style={{ color: '#fff', fontSize: '14px', fontWeight: 700, fontFamily: 'JetBrains Mono, monospace', letterSpacing: '0.05em' }}>
+      <span style={{ color: '#F0F0F0', fontSize: '14px', fontWeight: 700, fontFamily: 'JetBrains Mono, monospace', letterSpacing: '0.05em' }}>
         12:47
       </span>
     </button>
@@ -134,8 +134,8 @@ function KillFeed({ active, onClick }) {
         position: 'absolute',
         top: '12px',
         right: '16px',
-        background: active ? 'rgba(99,102,241,0.2)' : 'transparent',
-        border: `2px solid ${active ? '#6366F1' : 'transparent'}`,
+        background: active ? 'rgba(0,119,188,0.2)' : 'transparent',
+        border: `2px solid ${active ? '#0077BC' : 'transparent'}`,
         borderRadius: '10px',
         padding: '6px 8px',
         cursor: 'pointer',
@@ -148,7 +148,7 @@ function KillFeed({ active, onClick }) {
       {events.map((e, i) => (
         <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '6px', opacity: 1 - i * 0.3 }}>
           <span style={{ fontSize: '10px' }} aria-hidden="true">{e.icon}</span>
-          <span style={{ fontSize: '10px', color: '#CBD5E1', whiteSpace: 'nowrap', fontFamily: 'JetBrains Mono, monospace' }}>{e.text}</span>
+          <span style={{ fontSize: '10px', color: '#7AB8D9', whiteSpace: 'nowrap', fontFamily: 'JetBrains Mono, monospace' }}>{e.text}</span>
         </div>
       ))}
     </button>
@@ -167,8 +167,8 @@ function Minimap({ active, onClick }) {
         right: '24px',
         width: '80px',
         height: '80px',
-        background: active ? 'rgba(99,102,241,0.2)' : 'rgba(0,0,0,0.5)',
-        border: `2px solid ${active ? '#6366F1' : 'rgba(255,255,255,0.1)'}`,
+        background: active ? 'rgba(0,119,188,0.2)' : 'rgba(0,0,0,0.6)',
+        border: `2px solid ${active ? '#0077BC' : 'rgba(255,255,255,0.1)'}`,
         borderRadius: '50%',
         cursor: 'pointer',
         overflow: 'hidden',
@@ -183,7 +183,7 @@ function Minimap({ active, onClick }) {
         <rect x="10" y="15" width="20" height="12" rx="2" fill="rgba(255,255,255,0.06)"/>
         <rect x="35" y="25" width="15" height="18" rx="2" fill="rgba(255,255,255,0.06)"/>
         <path d="M10 35 Q25 28 40 38" stroke="rgba(255,255,255,0.1)" strokeWidth="1" fill="none"/>
-        <circle cx="30" cy="30" r="3" fill="#6366F1"/>
+        <circle cx="30" cy="30" r="3" fill="#0077BC"/>
         <circle cx="20" cy="38" r="2" fill="#EF4444" opacity="0.8"/>
         <circle cx="42" cy="22" r="2" fill="#EF4444" opacity="0.8"/>
       </svg>
@@ -207,13 +207,13 @@ export default function GamingInterfacePlaceholder() {
       aria-label="Interactive game HUD mockup"
     >
       <div style={{ marginBottom: '16px' }}>
-        <div style={{ color: '#6366F1', fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '6px' }}>
+        <div style={{ color: '#0077BC', fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '6px' }}>
           HUD redesign
         </div>
-        <h3 style={{ color: '#111827', fontSize: '20px', fontWeight: 700, margin: 0 }}>
+        <h3 style={{ color: '#F0F0F0', fontSize: '20px', fontWeight: 700, margin: 0, fontFamily: 'Archivo Black, sans-serif' }}>
           Three elements. Everything else, contextual.
         </h3>
-        <p style={{ color: '#6B7280', fontSize: '14px', margin: '6px 0 0' }}>
+        <p style={{ color: '#888888', fontSize: '14px', margin: '6px 0 0' }}>
           Click any HUD element to see the design rationale.
         </p>
       </div>
@@ -254,26 +254,26 @@ export default function GamingInterfacePlaceholder() {
       <div
         style={{
           marginTop: '12px',
-          background: '#141428',
+          background: '#1A1A1A',
           borderRadius: '12px',
           padding: '20px 24px',
           minHeight: '72px',
-          border: '1px solid #1e1e30',
+          border: '1px solid #2E2E2E',
         }}
         role="status"
         aria-live="polite"
       >
         {active ? (
           <div>
-            <div style={{ fontSize: '11px', fontWeight: 700, color: '#6366F1', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>
+            <div style={{ fontSize: '11px', fontWeight: 700, color: '#0077BC', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>
               {active.label}
             </div>
-            <p style={{ color: '#CBD5E1', fontSize: '14px', lineHeight: 1.7, margin: 0 }}>
+            <p style={{ color: '#888888', fontSize: '14px', lineHeight: 1.7, margin: 0 }}>
               {active.rationale}
             </p>
           </div>
         ) : (
-          <p style={{ color: '#475569', fontSize: '14px', margin: 0 }}>
+          <p style={{ color: '#444444', fontSize: '14px', margin: 0 }}>
             Click any element to see the design rationale.
           </p>
         )}

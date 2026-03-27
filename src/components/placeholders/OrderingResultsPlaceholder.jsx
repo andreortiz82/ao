@@ -60,10 +60,10 @@ export default function OrderingResultsPlaceholder() {
       `}</style>
 
       <div style={{ marginBottom: '20px' }}>
-        <div style={{ color: '#6366F1', fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '6px' }}>
+        <div style={{ color: '#0077BC', fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '6px' }}>
           60 days post-launch
         </div>
-        <h3 style={{ color: '#111827', fontSize: '20px', fontWeight: 700, margin: 0 }}>
+        <h3 style={{ color: '#F0F0F0', fontSize: '20px', fontWeight: 700, margin: 0, fontFamily: 'Archivo Black, sans-serif' }}>
           The numbers
         </h3>
       </div>
@@ -79,8 +79,8 @@ export default function OrderingResultsPlaceholder() {
           <div
             key={m.label}
             style={{
-              background: '#fff',
-              border: '1px solid #E0E7FF',
+              background: '#1A1A1A',
+              border: '1px solid #2E2E2E',
               borderRadius: '16px',
               padding: '28px 24px',
               animation: visible ? `fadeUpCard 0.5s ease-out ${m.delay}ms both` : 'none',
@@ -94,8 +94,8 @@ export default function OrderingResultsPlaceholder() {
               style={{
                 fontSize: '48px',
                 fontWeight: 700,
-                color: '#6366F1',
-                fontFamily: 'DM Serif Display, serif',
+                color: '#0077BC',
+                fontFamily: 'Archivo Black, sans-serif',
                 lineHeight: 1,
                 letterSpacing: '-0.02em',
                 marginBottom: '4px',
@@ -103,10 +103,10 @@ export default function OrderingResultsPlaceholder() {
             >
               {m.metric}
             </div>
-            <div style={{ fontSize: '15px', fontWeight: 600, color: '#1E1B4B', marginBottom: '8px' }}>
+            <div style={{ fontSize: '15px', fontWeight: 600, color: '#F0F0F0', marginBottom: '8px' }}>
               {m.label}
             </div>
-            <div style={{ fontSize: '13px', color: '#6B7280', lineHeight: 1.6 }}>
+            <div style={{ fontSize: '13px', color: '#888888', lineHeight: 1.6 }}>
               {m.detail}
             </div>
           </div>

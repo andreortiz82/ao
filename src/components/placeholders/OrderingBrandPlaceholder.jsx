@@ -45,8 +45,8 @@ export default function OrderingBrandPlaceholder() {
   return (
     <div
       style={{
-        background: '#fff',
-        border: '1px solid #E5E7EB',
+        background: '#111111',
+        border: '1px solid #2E2E2E',
         borderRadius: '16px',
         padding: '36px 32px',
         margin: '2rem 0',
@@ -56,13 +56,13 @@ export default function OrderingBrandPlaceholder() {
       aria-label="Visual identity explorer"
     >
       <div style={{ marginBottom: '28px' }}>
-        <div style={{ color: '#6366F1', fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '6px' }}>
+        <div style={{ color: '#0077BC', fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '6px' }}>
           Visual identity
         </div>
-        <h3 style={{ color: '#111827', fontSize: '20px', fontWeight: 700, margin: 0 }}>
+        <h3 style={{ color: '#F0F0F0', fontSize: '20px', fontWeight: 700, margin: 0, fontFamily: 'Archivo Black, sans-serif' }}>
           The palette
         </h3>
-        <p style={{ color: '#6B7280', fontSize: '14px', margin: '6px 0 0' }}>
+        <p style={{ color: '#888888', fontSize: '14px', margin: '6px 0 0' }}>
           Click any swatch to learn its role.
         </p>
       </div>
@@ -76,8 +76,9 @@ export default function OrderingBrandPlaceholder() {
         {PALETTE.map((color) => {
           const isActive = activeId === color.id
           return (
-            <div key={color.id} role="listitem">
             <button
+              key={color.id}
+              role="listitem"
               onClick={() => setActiveId(isActive ? null : color.id)}
               aria-pressed={isActive}
               aria-label={`${color.name}: ${color.hex}. Click for details.`}
@@ -86,7 +87,7 @@ export default function OrderingBrandPlaceholder() {
                 height: '80px',
                 borderRadius: '12px',
                 background: color.hex,
-                border: `3px solid ${isActive ? '#6366F1' : 'transparent'}`,
+                border: `3px solid ${isActive ? '#0077BC' : 'rgba(255,255,255,0.1)'}`,
                 cursor: 'pointer',
                 display: 'flex',
                 flexDirection: 'column',
@@ -94,7 +95,7 @@ export default function OrderingBrandPlaceholder() {
                 justifyContent: 'flex-end',
                 padding: '8px',
                 transition: 'border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease',
-                boxShadow: isActive ? '0 0 0 4px rgba(99,102,241,0.25)' : '0 2px 8px rgba(0,0,0,0.1)',
+                boxShadow: isActive ? '0 0 0 4px rgba(0,119,188,0.25)' : '0 2px 8px rgba(0,0,0,0.4)',
                 transform: isActive ? 'scale(1.08)' : 'scale(1)',
               }}
             >
@@ -102,7 +103,6 @@ export default function OrderingBrandPlaceholder() {
                 {color.hex}
               </span>
             </button>
-            </div>
           )
         })}
       </div>
@@ -111,13 +111,14 @@ export default function OrderingBrandPlaceholder() {
       <div
         style={{
           minHeight: '72px',
-          background: active ? active.hex : '#F9FAFB',
+          background: active ? active.hex : '#1A1A1A',
           borderRadius: '12px',
           padding: '20px 24px',
           transition: 'background 0.3s ease',
           display: 'flex',
           alignItems: 'center',
           gap: '16px',
+          border: active ? 'none' : '1px solid #2E2E2E',
         }}
         role="status"
         aria-live="polite"
@@ -134,13 +135,13 @@ export default function OrderingBrandPlaceholder() {
             </div>
           </>
         ) : (
-          <span style={{ color: '#9CA3AF', fontSize: '14px' }}>Select a swatch above.</span>
+          <span style={{ color: '#444444', fontSize: '14px' }}>Select a swatch above.</span>
         )}
       </div>
 
       {/* Typography preview */}
-      <div style={{ marginTop: '32px', paddingTop: '32px', borderTop: '1px solid #F3F4F6' }}>
-        <div style={{ color: '#6B7280', fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '16px' }}>
+      <div style={{ marginTop: '32px', paddingTop: '32px', borderTop: '1px solid #2E2E2E' }}>
+        <div style={{ color: '#888888', fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '16px' }}>
           Typography
         </div>
         <div
@@ -150,7 +151,7 @@ export default function OrderingBrandPlaceholder() {
             padding: '28px 28px',
           }}
         >
-          <div style={{ fontFamily: 'DM Serif Display, serif', fontSize: '32px', color: '#3D2B1F', lineHeight: 1.2, marginBottom: '12px' }}>
+          <div style={{ fontFamily: 'Archivo Black, sans-serif', fontSize: '32px', color: '#3D2B1F', lineHeight: 1.2, marginBottom: '12px' }}>
             Casa del Fuego
           </div>
           <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '15px', color: '#6B5C52', lineHeight: 1.7, marginBottom: '16px' }}>
