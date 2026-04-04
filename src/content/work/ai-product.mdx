@@ -1,0 +1,51 @@
+---
+title: "ClinicalOS — AI Assistant"
+description: "An AI-powered assistant that lets clinicians ask questions about their studies and get answers with direct citations."
+pubDate: "2024-06-01"
+heroImage: "/covers/5.png"
+tags: ["AI/ML", "Clinical Research", "Generative UI", "Conversational UI"]
+role: ["Lead Designer", "Front-end Development", "Brand"]
+team: ["2 designers", "4 engineers", "1 PM", "1 ML engineer"]
+duration: "8 months"
+summary: "Clinical documentation is dense, fragmented, and hard to navigate under pressure. We built an AI assistant that answers questions about a study and shows its work."
+solutions:
+  - title: "AI assistant"
+    summary: "Ask a question about your study in plain language. The assistant responds with a direct answer and cites the exact source — protocol section, visit record, or data entry — so you can verify before you act."
+  - title: "Generative UI responses"
+    summary: "Some questions deserve more than a text answer. The assistant generates inline UI widgets — status cards, visit tables, progress summaries — tailored to the question, rendered directly in the conversation."
+impact:
+  summary: "Coordinators and monitors who previously spent hours navigating dense documentation found answers in seconds. The citation model built trust — staff weren't just taking the AI's word for it."
+  metrics:
+    - value: "4 min"
+      label: "Average time to find protocol answers (down from 23 min)"
+    - value: "89%"
+      label: "Answer accuracy rate on internal benchmark"
+    - value: "3x"
+      label: "Increase in protocol documentation engagement"
+    - value: "76%"
+      label: "Of users reported higher confidence in study decisions"
+---
+
+## The Problem
+
+Clinical research documentation is enormous. A single study protocol can run hundreds of pages. Add amendments, site-specific procedures, regulatory guidance, and visit records, and you have a documentation landscape that's nearly impossible to navigate quickly.
+
+The people who need to navigate it fastest — coordinators managing visits, monitors reviewing data, investigators making decisions — are also the most time-constrained. The standard answer was "read the protocol." Nobody had time to read the protocol.
+
+The result was a predictable pattern: questions went unanswered, decisions got made on incomplete information, and errors that could have been caught upstream surfaced downstream where they were expensive to fix.
+
+## The Approach
+
+The insight that shaped the product: the information existed. It was in the system. The problem was retrieval — getting the right piece of information to the right person at the right moment, in a form they could act on.
+
+Large language models are good at this. But clinical research has a trust problem with AI — and for good reason. A coordinator who gets a wrong answer from an AI assistant and acts on it can create a protocol deviation. The answer wasn't just accurate AI. It was verifiable AI.
+
+Every response the assistant generates includes a citation: the exact document, section, or record the answer came from. Coordinators can check the source in one click. The assistant doesn't just answer — it shows its work.
+
+## Key Decisions
+
+**Citation-first responses.** Every factual claim the assistant makes is linked to a source. This wasn't an afterthought — it was the core design constraint. An assistant without citations is an assistant you can't trust.
+
+**Generative UI.** Some questions are better answered with structured data than prose. "What visits are coming up?" shouldn't return a paragraph — it should return a list. The assistant detects when a structured response is more useful and generates the appropriate UI widget inline.
+
+**Scoped to study context.** The assistant knows which study you're working in. It doesn't answer in generalities — it answers about your participants, your protocol, your data. Context-aware responses are more useful and less likely to be misapplied.

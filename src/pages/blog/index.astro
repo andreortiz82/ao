@@ -19,67 +19,53 @@ function formatDate(date: Date) {
   <head>
     <BaseHead title={`Blog — ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
   </head>
-  <body style="background: #FAFAF8;">
+  <body>
     <Header />
 
     <main class="max-w-6xl mx-auto px-6 py-20">
 
-      <!-- Header -->
-      <div class="mb-14 max-w-2xl">
-        <p class="animate-fade-up text-xs font-semibold uppercase tracking-widest text-[#6B6B64] mb-4">Writing</p>
+      <!-- Page header -->
+      <div class="mb-16 max-w-2xl">
+        <p class="animate-fade-up text-xs font-medium uppercase tracking-widest text-[#6B6B64] m-0 mb-3">Writing</p>
         <h1
-          class="animate-fade-up-delay-1 m-0"
-          style="font-family: 'Fraunces', serif; font-size: clamp(3rem, 6vw, 5rem); line-height: 1.05; color: #1A1A18;"
+          class="animate-fade-up-delay-1 m-0 mb-5 font-display font-normal text-[#1A1A18]"
+          style="font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1;"
         >
           Thinking out loud.
         </h1>
+        <p class="animate-fade-up-delay-2 text-base leading-relaxed text-[#6B6B64] m-0">
+          Thoughts on design systems, AI-native workflows, and building products that hold up.
+        </p>
       </div>
 
-      <!-- Grid -->
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Post listing -->
+      <div class="flex flex-col border border-[#E2E0DB]">
         {posts.map((post: any, i: number) => (
-          <article
-            class={`animate-fade-up-delay-${Math.min(i + 1, 4)} group rounded-2xl overflow-hidden transition-all duration-200 flex flex-col`}
-            style="background: #FFFFFF; border: 1px solid #E8E6E1;"
-            onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 16px 48px rgba(0,0,0,0.08)'"
-            onmouseout="this.style.transform='none'; this.style.boxShadow='none'"
+          <a
+            href={`/blog/${post.id}/`}
+            class={`animate-fade-up-delay-${Math.min(i + 1, 4)} group flex flex-col sm:flex-row sm:items-start justify-between gap-4 px-6 py-5 no-underline transition-colors duration-150 hover:bg-[#F4F3EF] bg-[#FAFAF8] ${i > 0 ? 'border-t border-[#E2E0DB]' : ''}`}
           >
-            <a href={`/blog/${post.id}/`} class="no-underline flex flex-col h-full">
-              {post.data.heroImage && (
-                <div class="overflow-hidden" style="aspect-ratio: 16/9;">
-                  <img
-                    src={post.data.heroImage}
-                    alt={post.data.title}
-                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    loading="lazy"
-                  />
+            <div class="flex flex-col gap-1.5 flex-1">
+              <span class="font-medium text-[#1A1A18] text-sm font-display group-hover:underline">
+                {post.data.title}
+              </span>
+              {post.data.description && (
+                <span class="text-sm text-[#6B6B64] leading-relaxed line-clamp-2 max-w-xl">
+                  {post.data.description}
+                </span>
+              )}
+              {post.data.tags && (
+                <div class="flex flex-wrap gap-1.5 mt-1">
+                  {post.data.tags.slice(0, 3).map((tag: string) => (
+                    <span class="ao-tag">{tag}</span>
+                  ))}
                 </div>
               )}
-              <div class="p-6 flex flex-col gap-3 flex-1">
-                <h2
-                  class="m-0 text-xl leading-snug"
-                  style="font-family: 'Fraunces', serif; color: #1A1A18;"
-                >
-                  {post.data.title}
-                </h2>
-                {post.data.description && (
-                  <p class="m-0 text-sm leading-relaxed line-clamp-2" style="color: #6B6B64;">
-                    {post.data.description}
-                  </p>
-                )}
-                {post.data.tags && (
-                  <div class="flex flex-wrap gap-1.5 mt-auto pt-3">
-                    {post.data.tags.slice(0, 3).map((tag: string) => (
-                      <span class="ao-tag">{tag}</span>
-                    ))}
-                  </div>
-                )}
-                <span class="text-xs text-[#6B6B64] mt-1">
-                  {formatDate(post.data.pubDate)}
-                </span>
-              </div>
-            </a>
-          </article>
+            </div>
+            <span class="text-xs text-[#6B6B64] whitespace-nowrap pt-0.5">
+              {formatDate(post.data.pubDate)}
+            </span>
+          </a>
         ))}
       </div>
 

@@ -19,21 +19,13 @@ function formatDate(date: Date) {
     <BaseHead title={title} description={description} />
   </head>
 
-  <body style="background: #FAFAF8;">
+  <body>
     <Header />
     <main class="max-w-6xl mx-auto px-6 py-12">
 
       <!-- Breadcrumb -->
       <nav class="animate-fade-up mb-8">
-        <a
-          href="/blog"
-          class="inline-flex items-center gap-1 text-sm no-underline transition-colors duration-150"
-          style="color: #6B6B64;"
-          onmouseover="this.style.color='#FF5C35'"
-          onmouseout="this.style.color='#6B6B64'"
-        >
-          ← All posts
-        </a>
+        <a href="/blog" class="ao-link-muted">← All posts</a>
       </nav>
 
       <article class="max-w-3xl">
@@ -44,26 +36,23 @@ function formatDate(date: Date) {
             <span class="ao-tag">{tag}</span>
           ))}
           {pubDate && (
-            <span class="text-sm" style="color: #6B6B64;">{formatDate(pubDate)}</span>
+            <span class="text-sm text-[#6B6B64]">{formatDate(pubDate)}</span>
           )}
         </div>
 
         <!-- Title -->
-        <h1
-          class="animate-fade-up-delay-1 m-0 mb-4"
-          style="font-family: 'Fraunces', serif; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; color: #1A1A18;"
-        >
+        <h1 class="animate-fade-up-delay-1 m-0 mb-4 font-display font-normal text-[#1A1A18]" style="font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1;">
           {title}
         </h1>
         {description && (
-          <p class="animate-fade-up-delay-2 m-0 mb-8 text-xl leading-relaxed" style="color: #6B6B64;">
+          <p class="animate-fade-up-delay-2 m-0 mb-8 text-xl leading-relaxed text-[#6B6B64]">
             {description}
           </p>
         )}
 
         <!-- Hero image -->
         {heroImage && (
-          <div class="animate-fade-up-delay-2 rounded-2xl overflow-hidden mb-10" style="border: 1px solid #E8E6E1;">
+          <div class="animate-fade-up-delay-2 overflow-hidden mb-10 border border-[#E2E0DB]">
             <img src={heroImage} alt={title} class="w-full object-cover" />
           </div>
         )}

@@ -1,65 +1,51 @@
 ---
-title: "PulseBook"
-description: "A patient scheduling platform that replaced phone tag with a calm, clear booking experience."
+title: "ClinicalOS — Scheduling"
+description: "A visit scheduling platform that eliminated deviation risk for clinical research sites managing complex study protocols."
 pubDate: "2023-11-10"
 heroImage: "/covers/6.png"
-tags: ["Healthcare UX", "SaaS", "Scheduling", "Accessibility", "Design Systems"]
-role: ["Lead Product Designer", "UX Researcher"]
+tags: ["Healthcare UX", "SaaS", "Clinical Research", "Scheduling"]
+role: ["Lead Designer", "Front-end Development"]
 team: ["2 designers", "4 engineers", "1 PM", "3 clinical stakeholders"]
+duration: "14 months"
+summary: "Participant schedule deviations were putting studies at risk. We built a scheduling system that made the right visit, at the right time, impossible to miss."
+solutions:
+  - title: "Visit calculator"
+    summary: "Enter a participant's enrollment date and the system calculates the full visit schedule — every window, every deadline, every deviation risk — based on the protocol's fixed clinical timeline."
+  - title: "Visit node map"
+    summary: "A visual map of the study's branching visit structure. See how visits connect, where decision points occur, and how deviations at one node ripple through the rest of the schedule."
+impact:
+  summary: "Schedule deviation rates dropped significantly. Sites that had been managing visits in spreadsheets moved to a single, protocol-aware system — and coordinators got time back."
+  metrics:
+    - value: "78%"
+      label: "Reduction in schedule deviations"
+    - value: "3.2 hrs"
+      label: "Per-site time saved weekly"
+    - value: "12"
+      label: "Study protocols supported at launch"
+    - value: "98%"
+      label: "Coordinator adoption rate at 90 days"
 ---
 
-import MedicalSchedulingDemo from '../../components/demos/MedicalSchedulingDemo.jsx'
+## The Problem
 
-## The Situation
+Clinical research visits aren't flexible. Every participant visit happens within a defined protocol window — miss it, and you have a schedule deviation. Enough deviations and the study data is compromised. Enough compromised data and the study fails.
 
-Independent medical practices are quietly drowning in phone calls. Not because patients want to call — most would rather not — but because the alternative, booking online, has never felt trustworthy enough to actually use.
+The sites managing these schedules were doing it in spreadsheets. Manually calculating visit windows from enrollment dates. Tracking deviations in separate logs. Cross-referencing protocol amendments by hand. It worked — barely — until it didn't.
 
-PulseBook came to us with a real problem: they had an online scheduling tool, but patients weren't finishing their bookings. The data was damning. A 52% abandonment rate midway through the flow. Receptionists fielding three or more hours of scheduling calls every single day — rescheduling, confirming, playing phone tag with people who'd already submitted forms online. The platform existed. People just didn't trust it.
+The cost wasn't just operational. A missed visit window that creates a protocol deviation can trigger a regulatory finding. In clinical research, that's existential.
 
-## What We Heard
+## The Approach
 
-We started by talking to people. Eight patient phone interviews and five front desk staff sessions over two weeks. I wasn't sure what we'd find — I half expected the problem to be a UI issue, some confusing button or a broken form.
+We spent the first six weeks embedded with clinical coordinators at three different sites. The patterns were immediate and consistent: everyone had a personal system for tracking visits, no two systems looked alike, and the cognitive load of managing a single participant across a multi-visit study was enormous.
 
-It wasn't.
+The insight that shaped everything: the protocol schedule is fixed and knowable. Every visit date, every window, every deadline can be calculated deterministically from a single anchor — the enrollment date. The coordinators weren't doing complex work. They were doing repetitive arithmetic, by hand, under pressure.
 
-The core insight came from a patient interview about fifteen minutes in: *"I always call to confirm anyway. Just to make sure it went through."* That sentence unlocked everything. Patients weren't abandoning the flow because they couldn't figure it out. They were abandoning it because they didn't believe it would work. The confirmation email felt hollow. There was no real sense that a human on the other end had "received" the booking. So they'd pick up the phone just to be sure — and in doing so, they were creating the exact phone volume the platform was supposed to eliminate.
+If we could make that arithmetic invisible, we could give them their attention back.
 
-On the staff side, the picture was equally telling. Every front desk coordinator we spoke with had invented some version of a personal workaround — a shared Google Sheet, a sticky note system, a second calendar they maintained themselves. The software was technically in use. It just wasn't trusted enough to be the only source of truth.
+## Key Decisions
 
-## The Design Approach
+**Protocol-aware scheduling engine.** The system ingests a study protocol and generates a complete visit calendar for every enrolled participant. No manual date math. No spreadsheet formulas. The schedule is always current, always correct, always tied to the protocol version in effect.
 
-Armed with that insight, the design direction became clear: the product's job wasn't just to accept bookings. It was to *confirm* them in a way that felt undeniably real.
+**Deviation risk surfacing.** Rather than flagging deviations after they happen, the system surfaces upcoming windows that are at risk — too close to a holiday, conflicting with another participant, outside a site's operating hours. Coordinators can act before a deviation occurs.
 
-We rebuilt the booking flow around three principles:
-
-**Reduce friction ruthlessly.** Four steps maximum. Provider selection, date and time, patient details, confirmation. No account creation required to start, no hidden steps, no progress lost if you navigated away.
-
-**Make availability obvious.** A full calendar view — not a dropdown, not a text field. Available days visually distinct from unavailable ones. Time slots as large, tappable options. No ambiguity about what was actually open.
-
-**Make confirmation feel final.** Instant on-screen confirmation with a booking reference code. A confirmation SMS sent within 30 seconds. A summary card you could screenshot. We designed the success state to feel like a receipt, not a form acknowledgment.
-
-## Accessibility as a Requirement, Not a Checkbox
-
-Early in the process, our PM connected us with a patient advocate who has low vision. That partnership changed the project. We ran three usability sessions with her, and she surfaced issues we'd walked past a hundred times — tap targets that were technically "big enough" but not actually comfortable to hit, contrast ratios that passed automated checks but failed in bright sunlight, focus states that disappeared against certain backgrounds.
-
-We rebuilt the mobile experience with accessibility as the primary constraint. Large tap targets throughout, not just on "important" buttons. High-contrast mode support. Every form field labeled properly, not just aria-described. WCAG 2.1 AA across the board, verified manually — not just through automated tooling.
-
-## The Outcome
-
-The numbers moved significantly. Scheduling phone call volume dropped 71% in the first 90 days after launch. Booking completion rate went from 48% to 89%. Front desk staff reported reclaiming an average of 2.5 hours per day that had previously been eaten up by scheduling calls.
-
-More importantly, the calls that remained were different. Not "did my appointment go through?" calls. Actual clinical questions, care coordination, things that actually needed a human.
-
-## What I'd Do Differently
-
-Healthcare clients are slow. That's not a criticism — there are real reasons for it: compliance review, stakeholder alignment across clinical and administrative teams, an institutional skepticism toward change that's been earned by years of bad software decisions. But I underestimated it at the start. I scoped the project timeline too tightly and had to have an uncomfortable conversation with the client about slipping the launch by six weeks.
-
-The stakeholder alignment work was brutal. Getting clinical staff, administrative leads, and the technical team to agree on even basic interaction patterns required more rounds of review than I'd planned for. In hindsight, I should have run a structured alignment workshop in week one — not week four.
-
-But the outcome was worth the friction. This is the kind of project that reminds me why healthcare UX matters. Real people, real stress, real improvement in their day. That's the job.
-
----
-
-*Try the prototype below — it's a working model of the four-step booking flow.*
-
-<MedicalSchedulingDemo client:load />
+**Branching protocol support.** Some studies have conditional visits — if a participant responds a certain way, they go down a different branch. The node map makes branching logic visible and navigable, even for complex multi-arm studies.

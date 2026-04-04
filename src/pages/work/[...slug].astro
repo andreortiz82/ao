@@ -19,7 +19,7 @@ interface Props {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
-const { title, description, heroImage, tags } = entry.data;
+const { title, description, heroImage, tags, role, team, duration, summary, solutions, impact } = entry.data;
 ---
 
 <!doctype html>
@@ -27,57 +27,125 @@ const { title, description, heroImage, tags } = entry.data;
   <head>
     <BaseHead title={`${title} — Andre Ortiz`} description={description} />
   </head>
-  <body style="background: #FAFAF8;">
+  <body>
     <Header />
 
     <main class="max-w-6xl mx-auto px-6 py-12">
 
       <!-- Breadcrumb -->
-      <nav class="animate-fade-up mb-8">
-        <a
-          href="/work"
-          class="inline-flex items-center gap-1 text-sm no-underline transition-colors duration-150"
-          style="color: #6B6B64;"
-          onmouseover="this.style.color='#FF5C35'"
-          onmouseout="this.style.color='#6B6B64'"
-        >
-          ← Back to Work
-        </a>
+      <nav class="animate-fade-up mb-10">
+        <a href="/work" class="ao-link-muted">← Back to Work</a>
       </nav>
 
-      <!-- Hero image -->
-      {heroImage && (
-        <div class="animate-fade-up-delay-1 rounded-2xl overflow-hidden mb-10" style="border: 1px solid #E8E6E1;">
-          <img
-            src={heroImage}
-            alt={title}
-            class="w-full object-cover"
-            style="max-height: 500px;"
-          />
-        </div>
-      )}
-
-      <!-- Title + tags -->
-      <div class="animate-fade-up-delay-2 max-w-3xl mb-10">
+      <!-- ===== HERO BLOCK ===== -->
+      <div class="animate-fade-up-delay-1 rounded-2xl p-10 md:p-14 mb-12" style="background: #FEF9EC; border: 1px solid #E8DDB5;">
         {tags && (
-          <div class="flex flex-wrap gap-1.5 mb-4">
+          <div class="flex flex-wrap gap-1.5 mb-6">
             {tags.map((tag: string) => (
               <span class="ao-tag">{tag}</span>
             ))}
           </div>
         )}
-        <h1 class="m-0 mb-4" style="font-family: 'Fraunces', serif; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; color: #1A1A18;">
+        <h1 class="m-0 mb-5 font-display font-normal text-[#1A1A18]" style="font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.1;">
           {title}
         </h1>
-        <p class="m-0 text-xl leading-relaxed" style="color: #6B6B64;">
-          {description}
+        <p class="m-0 text-lg leading-relaxed text-[#6B6B64] max-w-2xl">
+          {summary || description}
         </p>
       </div>
 
-      <!-- Content -->
-      <div class="animate-fade-up-delay-3 max-w-3xl ao-md-content-container overflow-x-auto">
-        <Content />
+      <!-- ===== METADATA ROW ===== -->
+      <div class="animate-fade-up-delay-2 grid grid-cols-1 sm:grid-cols-3 gap-8 mb-14 pb-14 border-b border-[#E2E0DB]">
+        {team && team.length > 0 && (
+          <div>
+            <p class="m-0 mb-3 text-xs font-medium uppercase tracking-widest text-[#6B6B64]">Team</p>
+            <ul class="m-0 p-0 list-none flex flex-col gap-1">
+              {team.map((member: string) => (
+                <li class="text-sm text-[#1A1A18]">{member}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {role && role.length > 0 && (
+          <div>
+            <p class="m-0 mb-3 text-xs font-medium uppercase tracking-widest text-[#6B6B64]">My Role</p>
+            <ul class="m-0 p-0 list-none flex flex-col gap-1">
+              {role.map((r: string) => (
+                <li class="text-sm text-[#1A1A18]">{r}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {duration && (
+          <div>
+            <p class="m-0 mb-3 text-xs font-medium uppercase tracking-widest text-[#6B6B64]">Duration</p>
+            <p class="m-0 text-sm text-[#1A1A18]">{duration}</p>
+          </div>
+        )}
       </div>
+
+      <!-- ===== PROBLEM (MDX CONTENT) ===== -->
+      <div class="animate-fade-up-delay-3 mb-14">
+        <div class="max-w-3xl ao-md-content-container overflow-x-auto">
+          <Content />
+        </div>
+      </div>
+
+      <!-- ===== SOLUTIONS ===== -->
+      {solutions && solutions.length > 0 && (
+        <>
+          <div class="border-t border-[#E2E0DB] mb-14" />
+          <div class="mb-14">
+            <h2 class="m-0 mb-12 font-display font-normal text-[#1A1A18]" style="font-size: clamp(1.5rem, 2.5vw, 2rem);">
+              Solutions
+            </h2>
+            <div class="flex flex-col gap-16">
+              {solutions.map((solution, i) => (
+                <div class={`grid md:grid-cols-2 gap-10 items-center ${i % 2 === 1 ? 'md:[direction:rtl]' : ''}`}>
+                  <div class={i % 2 === 1 ? 'md:[direction:ltr]' : ''}>
+                    <h3 class="m-0 mb-4 font-display font-normal text-[#1A1A18]" style="font-size: clamp(1.25rem, 2vw, 1.5rem);">
+                      {solution.title}
+                    </h3>
+                    <p class="m-0 text-base leading-relaxed text-[#6B6B64]">
+                      {solution.summary}
+                    </p>
+                  </div>
+                  <div class={`rounded-2xl flex items-center justify-center ${i % 2 === 1 ? 'md:[direction:ltr]' : ''}`}
+                       style="background: #FEF9EC; border: 1px solid #E8DDB5; min-height: 280px;">
+                    <span class="text-sm text-[#6B6B64]">Interaction block</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </>
+      )}
+
+      <!-- ===== IMPACT ===== -->
+      {impact && (
+        <>
+          <div class="border-t border-[#E2E0DB] mb-14" />
+          <div class="mb-14 text-center">
+            <h2 class="m-0 mb-5 font-display font-normal text-[#1A1A18]" style="font-size: clamp(1.5rem, 2.5vw, 2rem);">
+              Impact
+            </h2>
+            <p class="m-0 mb-12 text-base leading-relaxed text-[#6B6B64] max-w-xl mx-auto">
+              {impact.summary}
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {impact.metrics.map((metric) => (
+                <div class="rounded-2xl p-6 flex flex-col items-center gap-2"
+                     style="background: #FEF9EC; border: 1px solid #E8DDB5;">
+                  <span class="font-display font-bold text-[#1A1A18]" style="font-size: clamp(1.75rem, 3vw, 2.5rem);">
+                    {metric.value}
+                  </span>
+                  <span class="text-xs text-[#6B6B64] text-center leading-snug">{metric.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </>
+      )}
 
     </main>
 

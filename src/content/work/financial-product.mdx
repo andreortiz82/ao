@@ -1,0 +1,51 @@
+---
+title: "ClinicalOS — Financials"
+description: "A budgeting and billing tool that eliminated inaccurate invoicing for clinical research sites."
+pubDate: "2023-06-01"
+heroImage: "/covers/4.png"
+tags: ["Healthcare UX", "SaaS", "Clinical Research", "Finance"]
+role: ["Lead Designer", "Front-end Development"]
+team: ["2 designers", "3 engineers", "1 PM", "2 finance stakeholders"]
+duration: "10 months"
+summary: "Clinical sites were leaving money on the table — or overbilling sponsors — because visit activity tracking was a manual mess. We built a tool that made accurate billing automatic."
+solutions:
+  - title: "Budget matrix"
+    summary: "A visual grid mapping every billable activity against every study visit. See at a glance what's been completed, what's pending, and what's been invoiced — across the full life of a study."
+  - title: "Accounts payable and invoicing"
+    summary: "Automated invoice generation based on completed visit activities. Reconcile sponsor payments, flag discrepancies, and maintain a full audit trail — all in one place."
+impact:
+  summary: "Sites that were manually reconciling billing in spreadsheets moved to automated invoice generation. Billing accuracy improved dramatically. Disputes with sponsors dropped."
+  metrics:
+    - value: "94%"
+      label: "Billing accuracy rate post-launch"
+    - value: "60%"
+      label: "Reduction in billing disputes with sponsors"
+    - value: "8 hrs"
+      label: "Monthly time saved per site on reconciliation"
+    - value: "100%"
+      label: "Audit trail coverage for all invoiced activities"
+---
+
+## The Problem
+
+Clinical research sites get paid per visit activity. A lab draw here, a questionnaire there, a physical exam — each one has a negotiated rate in the study budget. The problem: tracking which activities happened in which visit, then matching them to the right line item in a budget, was entirely manual.
+
+Sites were using spreadsheets. Finance coordinators were cross-referencing paper visit logs, budget documents, and invoicing templates by hand. The result was predictable: missed billable activities, double-billed items, invoices that didn't match the protocol, and weeks of back-and-forth with sponsors to resolve discrepancies.
+
+The financial risk was real. Underbilling meant leaving money on the table. Overbilling meant sponsor audits and relationship damage. Either way, the site lost.
+
+## The Approach
+
+We interviewed finance coordinators and site managers across eight sites. The recurring theme: everyone knew the data was in the system, but no one could get it out in a form they could actually use for billing.
+
+The source of truth existed. The problem was translation — taking completed visit data and turning it into a reconciled, defensible invoice. That translation step was where errors crept in, where time disappeared, and where disputes originated.
+
+If we could automate the translation — map completed activities directly to budget line items, generate an invoice draft automatically, and surface discrepancies before they became disputes — we could solve the problem at the source.
+
+## Key Decisions
+
+**Activity-to-budget mapping.** Every visit activity in the system is mapped to a budget line item at setup. When a coordinator marks an activity complete, the system knows what it's worth and who to bill.
+
+**Matrix view.** The budget matrix gives finance teams a complete picture — every activity, every visit, completion status, billing status — in a single view. No spreadsheet required.
+
+**Automated invoice drafts.** At the end of a billing cycle, the system generates an invoice draft populated from completed activities. The coordinator reviews, adjusts if needed, and submits. The audit trail is automatic.

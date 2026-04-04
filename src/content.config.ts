@@ -26,6 +26,19 @@ const work = defineCollection({
     password: z.string().optional(),
     role: z.array(z.string()).optional(),
     team: z.array(z.string()).optional(),
+    duration: z.string().optional(),
+    summary: z.string().optional(),
+    solutions: z.array(z.object({
+      title: z.string(),
+      summary: z.string(),
+    })).optional(),
+    impact: z.object({
+      summary: z.string(),
+      metrics: z.array(z.object({
+        value: z.string(),
+        label: z.string(),
+      })),
+    }).optional(),
   }),
 });
 

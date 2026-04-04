@@ -13,66 +13,67 @@ const allWork = (await getCollection("work"))
   <head>
     <BaseHead title="Work — Andre Ortiz" description="Case studies and selected work from 20+ years of product design." />
   </head>
-  <body style="background: #FAFAF8;">
+  <body>
     <Header />
 
     <main class="max-w-6xl mx-auto px-6 py-20">
 
-      <!-- Hero -->
+      <!-- Page header -->
       <div class="mb-16 max-w-2xl">
-        <p class="animate-fade-up text-xs font-semibold uppercase tracking-widest text-[#6B6B64] mb-4">Selected Work</p>
+        <p class="animate-fade-up text-xs font-medium uppercase tracking-widest text-[#6B6B64] m-0 mb-3">Selected Work</p>
         <h1
-          class="animate-fade-up-delay-1 m-0 mb-6"
-          style="font-family: 'Fraunces', serif; font-size: clamp(3rem, 6vw, 5rem); line-height: 1.05; color: #1A1A18;"
+          class="animate-fade-up-delay-1 m-0 mb-5 font-display font-normal text-[#1A1A18]"
+          style="font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1;"
         >
-          Work that ships.
+          Case Studies
         </h1>
-        <p class="animate-fade-up-delay-2 text-lg leading-relaxed text-[#6B6B64] m-0">
-          A collection of projects spanning design systems, brand identity, and product experience. Each one built to solve a real problem with care and craft.
+        <p class="animate-fade-up-delay-2 text-base leading-relaxed text-[#6B6B64] m-0">
+          A selection of projects across product design, design systems, and software. Each one built to solve a real problem.
         </p>
       </div>
 
-      <!-- Case study cards -->
-      <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Case study listing -->
+      <div class="flex flex-col border border-[#E2E0DB]">
         {allWork.map((item, i) => (
-          <article
-            class={`animate-fade-up-delay-${i + 1} group rounded-2xl overflow-hidden transition-all duration-200`}
-            style="background: #FFFFFF; border: 1px solid #E8E6E1;"
-            onmouseover="this.style.transform='translateY(-4px) scale(1.02)'; this.style.boxShadow='0 16px 48px rgba(0,0,0,0.10)'"
-            onmouseout="this.style.transform='none'; this.style.boxShadow='none'"
-          >
+          <article class={`animate-fade-up-delay-${Math.min(i + 1, 4)} group ${i > 0 ? 'border-t border-[#E2E0DB]' : ''}`}>
             <a href={`/work/${item.id}`} class="no-underline block">
-              {item.data.heroImage && (
-                <div class="overflow-hidden relative" style="aspect-ratio: 16/9;">
-                  <img
-                    src={item.data.heroImage}
-                    alt={item.data.title}
-                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                </div>
-              )}
-              <div class="p-6 flex flex-col gap-3">
-                <h2
-                  class="m-0 text-xl"
-                  style="font-family: 'Fraunces', serif; color: #1A1A18;"
-                >
-                  {item.data.title}
-                </h2>
-                <p class="m-0 text-sm leading-relaxed" style="color: #6B6B64;">{item.data.description}</p>
-                {item.data.role && (
-                  <p class="m-0 text-xs font-medium" style="color: #FF5C35;">
-                    {Array.isArray(item.data.role) ? item.data.role[0] : item.data.role}
-                  </p>
-                )}
-                {item.data.tags && (
-                  <div class="flex flex-wrap gap-1.5 mt-1">
-                    {item.data.tags.map((tag: string) => (
-                      <span class="ao-tag">{tag}</span>
-                    ))}
+              <div class="grid md:grid-cols-[auto_1fr] gap-0">
+                {/* Thumbnail */}
+                {item.data.heroImage && (
+                  <div
+                    class="overflow-hidden bg-[#F4F3EF] md:border-r border-[#E2E0DB]"
+                    style="width: 200px; min-height: 130px;"
+                  >
+                    <img
+                      src={item.data.heroImage}
+                      alt={item.data.title}
+                      class="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-80"
+                      style="aspect-ratio: 16/9; object-fit: cover;"
+                      loading="lazy"
+                    />
                   </div>
                 )}
-                <span class="text-sm font-semibold mt-1" style="color: #FF5C35;">View Case Study →</span>
+                {/* Content */}
+                <div class="px-6 py-6 flex flex-col justify-center gap-2 bg-[#FAFAF8] group-hover:bg-[#F4F3EF] transition-colors duration-150">
+                  <div class="flex items-start justify-between gap-4">
+                    <div class="flex flex-col gap-2">
+                      <h2 class="m-0 text-base font-medium font-display text-[#1A1A18] group-hover:underline">
+                        {item.data.title}
+                      </h2>
+                      <p class="m-0 text-sm leading-relaxed text-[#6B6B64] max-w-xl">{item.data.description}</p>
+                      {item.data.tags && (
+                        <div class="flex flex-wrap gap-1.5 mt-1">
+                          {item.data.tags.map((tag: string) => (
+                            <span class="ao-tag">{tag}</span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                    <span class="text-sm font-medium text-[#1A1A18] whitespace-nowrap pt-0.5 hidden sm:block">
+                      View →
+                    </span>
+                  </div>
+                </div>
               </div>
             </a>
           </article>

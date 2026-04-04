@@ -11,11 +11,19 @@ const recentPosts = (await getCollection("blog"))
 
 const selectedWork = (await getCollection("work"))
   .sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf())
-  .slice(0, 3);
+  .slice(0, 4);
 
 function formatDate(date: Date) {
   return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 }
+
+// Discipline labels for each work item slug
+const disciplines: Record<string, string> = {
+  "design-system": "Design Systems",
+  "medical-scheduling": "Healthcare Product",
+  "financial-product": "Financial UX",
+  "ai-product": "AI-Native Design",
+};
 ---
 
 <!doctype html>
@@ -23,150 +31,101 @@ function formatDate(date: Date) {
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body style="background: #FAFAF8;">
+  <body>
     <Header />
 
     <main class="max-w-6xl mx-auto px-6">
 
-      <!-- ===== HERO ===== -->
-      <section class="py-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
-        <div class="flex flex-col gap-6">
-          <span class="animate-fade-up text-xs font-semibold uppercase tracking-widest text-[#6B6B64]">
-            Product Design Leader
-          </span>
-          <h1
-            class="animate-fade-up-delay-1 m-0"
-            style="font-family: 'Fraunces', serif; font-size: clamp(3rem, 6vw, 6rem); line-height: 1.05; color: #1A1A18;"
-          >
-            Design that scales.<br /><em>Teams that ship.</em>
+      <!-- ===== INTRODUCTION ===== -->
+      <section class="pt-20 pb-20 md:pt-32 md:pb-28 grid md:grid-cols-2 gap-12 items-start">
+        <div class="animate-fade-up">
+          <h1 class="m-0 font-display text-[#1A1A18]" style="font-size: clamp(3.5rem, 7vw, 5.5rem); line-height: 1.05; font-weight: 700;">
+            Design.<br />Ship.<br />Profit.
           </h1>
-          <p class="animate-fade-up-delay-2 text-[#6B6B64] text-lg leading-relaxed max-w-md m-0">
-            20+ years leading design at companies that needed more than artifacts — they needed a function that could scale. I build teams, systems, and the operating conditions that help product orgs ship consistently.
-          </p>
-          <div class="animate-fade-up-delay-3 flex flex-wrap gap-3 mt-2">
-            <a
-              href="/work"
-              class="inline-flex items-center gap-1 px-5 py-2.5 rounded-full text-sm font-semibold no-underline transition-all duration-150"
-              style="background: #FF5C35; color: #FFFFFF;"
-              onmouseover="this.style.background='#E54A25'"
-              onmouseout="this.style.background='#FF5C35'"
-            >
-              View my work →
-            </a>
-            <a
-              href="/blog"
-              class="inline-flex items-center gap-1 px-5 py-2.5 rounded-full text-sm font-semibold no-underline transition-all duration-150 border"
-              style="color: #1A1A18; border-color: #E8E6E1; background: transparent;"
-              onmouseover="this.style.borderColor='#1A1A18'"
-              onmouseout="this.style.borderColor='#E8E6E1'"
-            >
-              Read the blog →
-            </a>
-          </div>
         </div>
-
-        <!-- Avatar side -->
-        <div class="animate-fade-up-delay-2 flex justify-center md:justify-end">
-          <div class="relative">
-            <div
-              class="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden"
-              style="border: 3px solid #FF5C35; box-shadow: 8px 8px 0 #FF5C35;"
-            >
-              <img
-                src="/avatar.png"
-                alt="Andre Ortiz"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <!-- Floating badge -->
-            <div
-              class="absolute -bottom-4 -left-4 px-4 py-2 rounded-full text-sm font-semibold shadow-lg"
-              style="background: #FFFFFF; color: #1A1A18; border: 1px solid #E8E6E1; font-family: 'Fraunces', serif;"
-            >
-              20+ years ✦
+        <div class="animate-fade-up-delay-1 flex items-start pt-2">
+          <div>
+            <p class="m-0 !text-[#1A1A18] text-base leading-relaxed mb-6">
+              Good design doesn't make things pretty. It makes things work — for customers, for teams, and for the bottom line. I've spent twenty years building the products and systems behind companies that grew into global platforms used by 95% of an industry.
+            </p>
+            <div class="flex items-center gap-6">
+              <a href="/work" class="ao-link-primary">See the work →</a>
+              <a href="/about" class="ao-link-secondary">About me</a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ===== SELECTED WORK ===== -->
-      <section class="py-16 border-t border-[#E8E6E1]">
-        <div class="animate-fade-up flex items-end justify-between mb-10">
-          <div>
-            <p class="text-xs font-semibold uppercase tracking-widest text-[#6B6B64] m-0 mb-2">Selected Work</p>
-            <h2 class="m-0" style="font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 2.75rem); color: #1A1A18;">
-              Things I've built
-            </h2>
-          </div>
-          <a href="/work" class="text-sm text-[#6B6B64] no-underline hover:text-[#FF5C35] transition-colors hidden sm:block">
-            All work →
-          </a>
+      <!-- ===== WHAT I DO ===== -->
+      <section class="py-16 border-t border-[#E2E0DB]">
+        <div class="animate-fade-up mb-4">
+          <p class="text-xs font-medium uppercase tracking-widest text-[#6B6B64] m-0 mb-3">Selected Work</p>
+          <h2 class="m-0" style="font-family: 'Fraunces', serif; font-size: clamp(1.75rem, 3vw, 2.5rem); color: #1A1A18; font-weight: 400;">
+            What I Do
+          </h2>
         </div>
+        <p class="animate-fade-up-delay-1 text-sm text-[#6B6B64] mb-10 m-0 max-w-xl leading-relaxed">
+          Twenty years of product design across systems, healthcare, finance, and AI — here's the proof.
+        </p>
 
-        <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-6">
-          {selectedWork.map((item, i) => (
-            <article
-              class={`animate-fade-up-delay-${i + 1} group rounded-2xl overflow-hidden transition-all duration-200`}
-              style="background: #FFFFFF; border: 1px solid #E8E6E1; cursor: pointer;"
-              onmouseover="this.style.transform='translateY(-4px) scale(1.02)'; this.style.boxShadow='0 16px 48px rgba(0,0,0,0.10)'"
-              onmouseout="this.style.transform='none'; this.style.boxShadow='none'"
-            >
-              <a href={`/work/${item.id}`} class="no-underline block">
-                {item.data.heroImage && (
-                  <div class="overflow-hidden" style="aspect-ratio: 16/9;">
-                    <img
-                      src={item.data.heroImage}
-                      alt={item.data.title}
-                      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                  </div>
-                )}
-                <div class="p-6 flex flex-col gap-3">
-                  <h3 class="m-0 text-xl" style="font-family: 'Fraunces', serif; color: #1A1A18;">
-                    {item.data.title}
-                  </h3>
-                  <p class="m-0 text-sm leading-relaxed" style="color: #6B6B64;">{item.data.description}</p>
-                  {item.data.tags && (
-                    <div class="flex flex-wrap gap-1.5 mt-1">
-                      {item.data.tags.map((tag: string) => (
-                        <span class="ao-tag">{tag}</span>
-                      ))}
+        <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-px bg-[#E2E0DB]" style="border: 1px solid #E2E0DB;">
+          {selectedWork.map((item, i) => {
+            const discipline = disciplines[item.id] ?? (item.data.tags?.[0] ?? "Product Design");
+            return (
+              <article class={`animate-fade-up-delay-${(i % 3) + 1} group bg-[#FAFAF8]`}>
+                <a href={`/work/${item.id}`} class="no-underline block h-full">
+                  {item.data.heroImage && (
+                    <div class="overflow-hidden" style="aspect-ratio: 16/9; border-bottom: 1px solid #E2E0DB;">
+                      <img
+                        src={item.data.heroImage}
+                        alt={item.data.title}
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
                     </div>
                   )}
-                  <span class="text-sm font-semibold mt-1" style="color: #FF5C35;">Case Study →</span>
-                </div>
-              </a>
-            </article>
-          ))}
+                  <div class="p-6 flex flex-col gap-2">
+                    <span class="text-xs font-medium uppercase tracking-widest text-[#6B6B64]">{discipline}</span>
+                    <h3 class="m-0 text-base font-medium leading-snug" style="font-family: 'Fraunces', serif; color: #1A1A18;">
+                      {item.data.title}
+                    </h3>
+                    <p class="m-0 text-sm leading-relaxed" style="color: #6B6B64;">{item.data.description}</p>
+                    <span class="text-sm font-medium mt-2 text-[#1A1A18] group-hover:underline inline-flex items-center gap-1">
+                      Case Study →
+                    </span>
+                  </div>
+                </a>
+              </article>
+            );
+          })}
         </div>
       </section>
 
-      <!-- ===== RECENT WRITING ===== -->
-      <section class="py-16 border-t border-[#E8E6E1]">
-        <div class="animate-fade-up flex items-end justify-between mb-10">
+      <!-- ===== LAST 3 POSTS ===== -->
+      <section class="py-16 border-t border-[#E2E0DB]">
+        <div class="animate-fade-up flex items-end justify-between mb-4">
           <div>
-            <p class="text-xs font-semibold uppercase tracking-widest text-[#6B6B64] m-0 mb-2">From the Blog</p>
-            <h2 class="m-0" style="font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 2.75rem); color: #1A1A18;">
-              Recent writing
+            <p class="text-xs font-medium uppercase tracking-widest text-[#6B6B64] m-0 mb-3">Writing</p>
+            <h2 class="m-0" style="font-family: 'Fraunces', serif; font-size: clamp(1.75rem, 3vw, 2.5rem); color: #1A1A18; font-weight: 400;">
+              Thinking out loud.
             </h2>
           </div>
-          <a href="/blog" class="text-sm text-[#6B6B64] no-underline hover:text-[#FF5C35] transition-colors hidden sm:block">
+          <a href="/blog" class="text-sm text-[#6B6B64] no-underline hover:text-[#1A1A18] transition-colors hidden sm:block pb-2">
             All posts →
           </a>
         </div>
+        <p class="animate-fade-up-delay-1 text-sm text-[#6B6B64] mb-10 m-0 max-w-xl leading-relaxed">
+          Thoughts on design systems, AI-native workflows, and building products that hold up.
+        </p>
 
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col border border-[#E2E0DB]">
           {recentPosts.map((post, i) => (
             <a
               href={`/blog/${post.id}/`}
-              class={`animate-fade-up-delay-${i + 1} group flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-xl no-underline transition-all duration-150`}
-              style="background: #FFFFFF; border: 1px solid #E8E6E1;"
-              onmouseover="this.style.borderColor='#FF5C35'; this.style.transform='translateX(4px)'"
-              onmouseout="this.style.borderColor='#E8E6E1'; this.style.transform='none'"
+              class={`animate-fade-up-delay-${i + 1} group flex flex-col sm:flex-row sm:items-center justify-between gap-4 px-6 py-5 no-underline transition-colors duration-150 hover:bg-[#F4F3EF] ${i > 0 ? 'border-t border-[#E2E0DB]' : ''}`}
             >
               <div class="flex flex-col gap-1.5">
-                <span class="font-semibold text-[#1A1A18] text-base" style="font-family: 'Fraunces', serif;">
+                <span class="font-medium text-[#1A1A18] text-sm group-hover:underline" style="font-family: 'Fraunces', serif;">
                   {post.data.title}
                 </span>
                 {post.data.tags && (
@@ -177,7 +136,7 @@ function formatDate(date: Date) {
                   </div>
                 )}
               </div>
-              <span class="text-sm text-[#6B6B64] whitespace-nowrap">
+              <span class="text-xs text-[#6B6B64] whitespace-nowrap">
                 {formatDate(post.data.pubDate)}
               </span>
             </a>
@@ -185,9 +144,39 @@ function formatDate(date: Date) {
         </div>
 
         <div class="mt-6 sm:hidden">
-          <a href="/blog" class="text-sm text-[#6B6B64] no-underline hover:text-[#FF5C35] transition-colors">
+          <a href="/blog" class="text-sm text-[#6B6B64] no-underline hover:text-[#1A1A18] transition-colors">
             All posts →
           </a>
+        </div>
+      </section>
+
+      <!-- ===== OUTRO ===== -->
+      <section class="py-24 border-t border-[#E2E0DB]">
+        <div class="max-w-3xl">
+          <p class="animate-fade-up text-xs font-medium uppercase tracking-widest text-[#6B6B64] m-0 mb-6">Let's Work Together</p>
+          <h2
+            class="animate-fade-up-delay-1 m-0 mb-8 font-display font-normal text-[#1A1A18]"
+            style="font-size: clamp(2.25rem, 4.5vw, 3.75rem); line-height: 1.1;"
+          >
+            You need a designer<br class="hidden md:block" /> who ships.
+          </h2>
+          <p class="animate-fade-up-delay-2 text-base leading-relaxed text-[#6B6B64] m-0 mb-4 max-w-xl">
+            Not someone who hands off a Figma file and disappears. I work end-to-end — strategy through implementation — with the technical depth to get it built right the first time.
+          </p>
+          <p class="animate-fade-up-delay-2 text-base leading-relaxed text-[#6B6B64] m-0 mb-10 max-w-xl">
+            If you're a founder building something real, or a team that needs design infrastructure that scales — let's talk.
+          </p>
+          <div class="animate-fade-up-delay-3 flex flex-col sm:flex-row items-start sm:items-center gap-5">
+            <a
+              href="mailto:hello@andreortiz.com"
+              class="ao-link-primary text-base"
+            >
+              Say hello →
+            </a>
+            <a href="/about" class="ao-link-secondary">
+              More about me
+            </a>
+          </div>
         </div>
       </section>
 

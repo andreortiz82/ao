@@ -3,89 +3,118 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
-const skills = [
-  "Design Systems",
-  "UX Strategy",
-  "Team Leadership",
-  "Front-end",
-  "Prototyping",
-  "Product Thinking",
-  "AI/Design",
-  "Brand",
+const experience = [
+  {
+    company: "Wellpath",
+    role: "Senior Product Designer & Design Systems Lead",
+    period: "2021 — Present",
+    description: "Lead design systems strategy and mobile product design for a healthcare company serving correctional facilities across the US. Built the component library, token architecture, and design-to-dev pipeline from scratch. Own end-to-end design across mobile and web.",
+    tags: ["Healthcare", "Design Systems", "Mobile", "React"],
+  },
+  {
+    company: "Freelance & Consulting",
+    role: "Product Designer",
+    period: "2016 — 2021",
+    description: "Designed products and brand systems for startups, agencies, and enterprise clients across automotive, finance, and consumer tech. Embedded with small teams to own UX, UI, and implementation — often serving as sole designer.",
+    tags: ["Startups", "Brand", "UX", "Multi-industry"],
+  },
+  {
+    company: "Various Agencies & Studios",
+    role: "Designer / Art Director",
+    period: "2004 — 2016",
+    description: "Twelve years across agencies large and small. Graduated from print and brand into digital product design as the industry shifted. Led teams, managed clients, and shipped work across every medium that mattered in that era.",
+    tags: ["Agency", "Brand Identity", "Art Direction", "Digital"],
+  },
 ];
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title="About — Andre Ortiz" description="Product designer, team builder, and systems thinker based in Austin, TX." />
+    <BaseHead title="About — Andre Ortiz" description="Twenty years designing software, building systems, and shipping work that moves the needle." />
   </head>
-  <body style="background: #FAFAF8;">
+  <body>
     <Header />
 
     <main class="max-w-6xl mx-auto px-6 py-20">
 
-      <div class="max-w-3xl">
-        <!-- Heading -->
-        <p class="animate-fade-up text-xs font-semibold uppercase tracking-widest text-[#6B6B64] mb-4">About</p>
+      <!-- ===== BIO ===== -->
+      <div class="max-w-3xl mb-24">
+
+        <p class="animate-fade-up text-xs font-medium uppercase tracking-widest text-[#6B6B64] m-0 mb-6">About</p>
+
         <h1
-          class="animate-fade-up-delay-1 m-0 mb-8"
-          style="font-family: 'Fraunces', serif; font-size: clamp(3rem, 6vw, 5rem); line-height: 1.05; color: #1A1A18;"
+          class="animate-fade-up-delay-1 m-0 mb-12"
+          style="font-family: 'Fraunces', serif; font-size: clamp(3rem, 6vw, 5rem); line-height: 1.05; color: #1A1A18; font-weight: 400;"
         >
           Hey, I'm Andre.
         </h1>
 
-        <!-- Bio paragraphs -->
-        <div class="animate-fade-up-delay-2 flex flex-col gap-6 text-lg leading-relaxed text-[#1A1A18]">
+        <div class="animate-fade-up-delay-2 flex flex-col gap-7 text-[1.0625rem] leading-[1.8] text-[#1A1A18]">
           <p class="m-0">
-            I'm a product design leader with 20+ years of experience building the things most companies don't know they need until they're scaling: design systems, cross-functional teams, and the operating conditions that let good work happen consistently. I've worked across early-stage startups and established enterprises — and I've learned that the biggest design problems are rarely about pixels.
+            Twenty years designing software, building systems, and shipping work that moves the needle. I've worked on small teams with big scope — agencies, startups, enterprise — doing whatever was needed to get the job done. I move fast and iterate with purpose.
           </p>
           <p class="m-0">
-            What I actually do is help product organizations get unstuck. That means building systems that engineers can ship with confidence, establishing design ops that scale beyond the founding designer, and creating environments where product, engineering, and design share a language. I've built design systems adopted by hundreds of engineers, shaped design orgs through hypergrowth, and shipped products used by millions of people.
+            The products I've helped build are now global platforms. Some serve entire industries.
           </p>
           <p class="m-0">
-            My design philosophy is pretty simple: <em style="font-family: 'Fraunces', serif;">the best design leaders make themselves redundant.</em> If your team needs you in the room for every decision, you've built dependency — not a function. My job is to instill the taste, the systems, and the confidence that let great teams do great work without a bottleneck in the way.
-          </p>
-          <p class="m-0">
-            When I'm not thinking about component libraries and interaction patterns, I'm in Austin, TX with my wife and daughter, probably arguing about the best tacos or tinkering with whatever side project has my attention this week. If any of this resonates — let's talk.
+            I live in Austin, TX with my family. I enjoy music, food, and spending time in the garden. I live by a clear set of values — and I bring that same intentionality to everything I do.
           </p>
         </div>
 
-        <!-- Skills -->
-        <div class="animate-fade-up-delay-3 mt-14">
-          <p class="text-xs font-semibold uppercase tracking-widest text-[#6B6B64] mb-4">Specialties</p>
-          <div class="flex flex-wrap gap-2">
-            {skills.map(skill => (
-              <span
-                class="px-4 py-2 rounded-full text-sm font-medium transition-all duration-150 cursor-default"
-                style="background: #EEECEA; color: #5A5A54;"
-                onmouseover="this.style.background='#FF5C35'; this.style.color='#FFFFFF'"
-                onmouseout="this.style.background='#EEECEA'; this.style.color='#5A5A54'"
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
+      </div>
+
+      <!-- ===== WORK EXPERIENCE ===== -->
+      <div class="border-t border-[#E2E0DB] pt-16 mb-24">
+
+        <p class="animate-fade-up text-xs font-medium uppercase tracking-widest text-[#6B6B64] m-0 mb-3">Experience</p>
+        <h2
+          class="animate-fade-up-delay-1 m-0 mb-12"
+          style="font-family: 'Fraunces', serif; font-size: clamp(1.75rem, 3vw, 2.5rem); color: #1A1A18; font-weight: 400; line-height: 1.2;"
+        >
+          Where I've been.
+        </h2>
+
+        <div class="flex flex-col gap-0 border border-[#E2E0DB]">
+          {experience.map((job, i) => (
+            <div
+              class={`animate-fade-up-delay-${Math.min(i + 1, 4)} grid md:grid-cols-[1fr_2fr] gap-8 px-8 py-8 bg-[#FAFAF8] ${i > 0 ? 'border-t border-[#E2E0DB]' : ''}`}
+            >
+              <!-- Left: company + period -->
+              <div class="flex flex-col gap-1">
+                <span class="text-base font-semibold text-[#1A1A18]" style="font-family: 'Fraunces', serif;">{job.company}</span>
+                <span class="text-sm text-[#6B6B64] font-medium">{job.role}</span>
+                <span class="text-xs text-[#6B6B64] mt-1 font-mono tracking-wide">{job.period}</span>
+              </div>
+              <!-- Right: description + tags -->
+              <div class="flex flex-col gap-4">
+                <p class="m-0 text-sm leading-relaxed text-[#1A1A18]">{job.description}</p>
+                <div class="flex flex-wrap gap-1.5">
+                  {job.tags.map((tag) => (
+                    <span class="ao-tag">{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
 
-        <!-- CTA -->
-        <div class="animate-fade-up-delay-4 mt-14 p-8 rounded-2xl" style="background: #FFF0EC; border: 1px solid #FFD5C8;">
-          <p class="m-0 text-lg font-semibold mb-2" style="font-family: 'Fraunces', serif; color: #1A1A18;">
-            Let's work together.
-          </p>
-          <p class="m-0 text-[#6B6B64] mb-5">
-            I'm always open to interesting conversations about design, teams, and systems. Drop me a line.
-          </p>
-          <a
-            href="mailto:hello@andreortiz.com"
-            class="inline-flex items-center gap-1 px-5 py-2.5 rounded-full text-sm font-semibold no-underline transition-all duration-150"
-            style="background: #FF5C35; color: #FFFFFF;"
-            onmouseover="this.style.background='#E54A25'"
-            onmouseout="this.style.background='#FF5C35'"
-          >
-            Say hello →
-          </a>
-        </div>
+      </div>
+
+      <!-- ===== CTA ===== -->
+      <div class="animate-fade-up border-t border-[#E2E0DB] pt-16 max-w-xl">
+        <p class="m-0 text-lg mb-3" style="font-family: 'Fraunces', serif; color: #1A1A18; font-weight: 400;">
+          Let's work together.
+        </p>
+        <p class="m-0 text-[#6B6B64] mb-6 text-sm leading-relaxed">
+          I'm open to conversations about product design, design systems, and building great software with small, effective teams.
+        </p>
+        <a
+          href="mailto:hello@andreortiz.com"
+          class="ao-link-primary"
+        >
+          Say hello →
+        </a>
       </div>
 
     </main>
