@@ -19,7 +19,7 @@ function formatDate(date: Date) {
     <BaseHead title={title} description={description} />
   </head>
 
-  <body style="background: #111111;">
+  <body class="bg-background">
     <Header />
     <main class="max-w-6xl mx-auto px-6 py-12">
 
@@ -28,7 +28,7 @@ function formatDate(date: Date) {
         <a
           href="/blog"
           class="inline-flex items-center gap-1 text-sm no-underline transition-colors duration-150 hover:text-accent"
-          style="color: #888888;"
+          
         >
           ← All posts
         </a>
@@ -42,21 +42,19 @@ function formatDate(date: Date) {
             <span class="ao-tag">{tag}</span>
           ))}
           {pubDate && (
-            <span class="text-sm" style="color: #888888;">{formatDate(pubDate)}</span>
+            <span class="text-sm" >{formatDate(pubDate)}</span>
           )}
         </div>
 
         <!-- Title -->
         <h1
-          class="animate-fade-up-delay-1 m-0 mb-4"
-          style="font-family: 'Archivo Black', sans-serif; color: #F0F0F0;"
+          class="animate-fade-up-delay-1 text-4xl md:text-5xl font-serif italic leading-snug mb-4"
         >
           {title}
         </h1>
         {description && (
           <p
-            class="animate-fade-up-delay-2 m-0 mb-8 text-xl leading-relaxed"
-            style="color: #888888;"
+            class="animate-fade-up-delay-2 m-0 mb-8 text-2xl text-secondary-foreground leading-relaxed"
           >
             {description}
           </p>
