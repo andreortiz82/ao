@@ -5,24 +5,28 @@ import BaseHead from "../components/BaseHead.astro";
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead
-      title="Andre Ortiz"
-      description="Product Experience Design"
-    />
+    <BaseHead title="Andre Ortiz" description="Product Experience Design" />
   </head>
   <body>
     <header>
       <button class="avatar-btn" id="avatar-btn" aria-label="About Andre">
-    <img src="/avatar.png" alt="Andre Ortiz" class="avatar" />
-  </button>
+        <img src="/avatar.png" alt="Andre Ortiz" class="avatar" />
+      </button>
       <a href="mailto:hello@andreortiz.com" class="contact">
         hello@andreortiz.com
       </a>
     </header>
 
     <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
-      <div class="modal" role="dialog" aria-modal="true" aria-label="About Andre Ortiz">
-        <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+      <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-label="About Andre Ortiz"
+      >
+        <button class="modal-close" id="modal-close" aria-label="Close"
+          >✕</button
+        >
         <div class="modal-header">
           <img src="/avatar.png" alt="Andre Ortiz" class="modal-avatar" />
           <div>
@@ -31,20 +35,36 @@ import BaseHead from "../components/BaseHead.astro";
           </div>
         </div>
         <p class="modal-intro">
-          I build design practices, not just screens — the systems, the standards, and the mentorship that make a team compound over time.
+          Twenty years building product experiences, executing the vision,
+          owning the systems, shipping the work. My design process is lean,
+          iterative, always clear about intent.
         </p>
         <ul class="modal-list">
-          {[
-            ["Full-stack design fluency", "From brand identity and motion to design tokens and coded prototypes."],
-            ["Engineering credibility", "HTML/CSS/JS, React/TypeScript — enough to build real prototypes and contribute to frontend."],
-            ["Systems thinker", "Design for reuse, consistency, and scale — not one-off screens."],
-            ["AI-native", "Active LLM/AI research experience. Ahead of the curve, not catching up."],
-          ].map(([title, body]) => (
-            <li class="modal-item">
-              <span class="modal-item-title">{title}</span>
-              <span class="modal-item-body">{body}</span>
-            </li>
-          ))}
+          {
+            [
+              [
+                "Full-stack design fluency",
+                "Brand identity, illustration, motion, UI, and print.",
+              ],
+              [
+                "Engineering credibility",
+                "HTML/CSS/JS, React/TypeScript, Ruby, Python, and Pull Requests.",
+              ],
+              [
+                "Systems thinker",
+                "Design systems, component libraries, and scalable processes that grow with teams.",
+              ],
+              [
+                "AI and the future...",
+                "AI-power products, chatbots, agentic workflows, prompt engineering, and custom tool development.",
+              ],
+            ].map(([title, body]) => (
+              <li class="modal-item">
+                <span class="modal-item-title">{title}</span>
+                <span class="modal-item-body">{body}</span>
+              </li>
+            ))
+          }
         </ul>
       </div>
     </div>
@@ -59,13 +79,16 @@ import BaseHead from "../components/BaseHead.astro";
 </html>
 
 <style>
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
 
-  html, body {
+  html,
+  body {
     height: 100%;
   }
 
@@ -270,7 +293,9 @@ import BaseHead from "../components/BaseHead.astro";
   h1 {
     font-family: var(--font-serif);
     font-size: clamp(3rem, 10vw, 8rem);
-    font-variation-settings: 'opsz' 144, 'wght' 350;
+    font-variation-settings:
+      "opsz" 144,
+      "wght" 350;
     line-height: 0.95;
     letter-spacing: -0.035em;
     color: var(--color-ink);
@@ -293,9 +318,12 @@ import BaseHead from "../components/BaseHead.astro";
   });
 
   const labels = [
-    "Product Experience Design",
-    "Systems Thinking",
+    "Product Experience Designer",
+    "Design Systems Thinking",
     "Team Collaborator",
+    "Individual Contributor",
+    "Prototype Developer",
+    "Creative Solutions",
   ];
   let i = 0;
   const el = document.querySelector(".rotating") as HTMLElement;
