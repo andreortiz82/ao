@@ -1,5 +1,13 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
+import {
+  GithubLogoIcon,
+  DribbbleLogoIcon,
+  InstagramLogoIcon,
+  LinkedinLogoIcon,
+  TwitterLogoIcon,
+  YoutubeLogoIcon,
+} from "@phosphor-icons/react";
 ---
 
 <!doctype html>
@@ -9,9 +17,69 @@ import BaseHead from "../components/BaseHead.astro";
   </head>
   <body>
     <header>
-      <button class="avatar-btn" id="avatar-btn" aria-label="About Andre">
-        <img src="/avatar.png" alt="Andre Ortiz" class="avatar" />
-      </button>
+      <section>
+        <button class="avatar-btn" id="avatar-btn" aria-label="About Andre">
+          <img src="/avatar.png" alt="Andre Ortiz" class="avatar" />
+        </button>
+
+        <nav class="social-nav" aria-label="Social links">
+          <a
+            href="https://github.com/andreortiz82"
+            class="social-link"
+            aria-label="GitHub"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GithubLogoIcon size={16} weight="regular" />
+          </a>
+          <a
+            href="https://dribbble.com/andreortiz"
+            class="social-link"
+            aria-label="Dribbble"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <DribbbleLogoIcon size={16} weight="regular" />
+          </a>
+          <a
+            href="https://www.instagram.com/andreortiz"
+            class="social-link"
+            aria-label="Instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <InstagramLogoIcon size={16} weight="regular" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/andreortiz"
+            class="social-link"
+            aria-label="LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <LinkedinLogoIcon size={16} weight="regular" />
+          </a>
+          <a
+            href="https://twitter.com/andreortiz"
+            class="social-link"
+            aria-label="X (Twitter)"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <TwitterLogoIcon size={16} weight="regular" />
+          </a>
+          <a
+            href="https://www.youtube.com/@aomusicandmore"
+            class="social-link"
+            aria-label="YouTube"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <YoutubeLogoIcon size={16} weight="regular" />
+          </a>
+        </nav>
+      </section>
+
       <a href="mailto:hello@andreortiz.com" class="contact">
         hello@andreortiz.com
       </a>
@@ -31,7 +99,7 @@ import BaseHead from "../components/BaseHead.astro";
           <img src="/avatar.png" alt="Andre Ortiz" class="modal-avatar" />
           <div>
             <p class="modal-eyebrow">Andre Ortiz</p>
-            <p class="modal-name">Product Experience Design</p>
+            <p class="modal-name">Product Experience Designer</p>
           </div>
         </div>
         <p class="modal-intro">
@@ -53,6 +121,10 @@ import BaseHead from "../components/BaseHead.astro";
               [
                 "Systems thinker",
                 "Design systems, component libraries, and scalable processes that grow with teams.",
+              ],
+              [
+                "Creative Leadership",
+                "Mentorship, cross-functional collaboration, and building strong partnerships accross teams and disciplines.",
               ],
               [
                 "AI and the future...",
@@ -106,6 +178,31 @@ import BaseHead from "../components/BaseHead.astro";
     align-items: center;
     justify-content: space-between;
     padding: clamp(1.25rem, 3vw, 2rem) clamp(1.25rem, 4vw, 2.5rem);
+  }
+
+  header section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .social-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-ink-3);
+    transition: color 0.15s ease;
+    line-height: 1;
+  }
+
+  .social-link:hover {
+    color: var(--color-ink);
   }
 
   .avatar-btn {
@@ -193,8 +290,8 @@ import BaseHead from "../components/BaseHead.astro";
   }
 
   .modal-avatar {
-    width: 48px;
-    height: 48px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
     object-fit: cover;
     flex-shrink: 0;
@@ -202,7 +299,7 @@ import BaseHead from "../components/BaseHead.astro";
 
   .modal-eyebrow {
     font-family: var(--font-mono);
-    font-size: 10px;
+    font-size: 16px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: #555;
@@ -211,9 +308,9 @@ import BaseHead from "../components/BaseHead.astro";
 
   .modal-name {
     font-family: var(--font-sans);
-    font-size: 13px;
-    font-weight: 500;
-    color: #999;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ccc;
   }
 
   .modal-intro {
@@ -284,8 +381,8 @@ import BaseHead from "../components/BaseHead.astro";
 
   .name {
     font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.12em;
+    font-size: 24px;
+    letter-spacing: 0.13em;
     text-transform: uppercase;
     color: var(--color-ink-3);
   }
@@ -319,11 +416,12 @@ import BaseHead from "../components/BaseHead.astro";
 
   const labels = [
     "Product Experience Designer",
-    "Design Systems Thinking",
+    "Design Systems Thinker",
     "Team Collaborator",
     "Individual Contributor",
-    "Prototype Developer",
-    "Creative Solutions",
+    "Design Engineer",
+    "Business Partner",
+    "Creative Problem Solver",
   ];
   let i = 0;
   const el = document.querySelector(".rotating") as HTMLElement;

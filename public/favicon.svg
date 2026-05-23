@@ -1,4 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="#FF5C35"/>
-  <text x="16" y="22" text-anchor="middle" font-family="serif" font-size="16" font-weight="bold" fill="white">AO</text>
+<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path class="shape" d="M9.01408 8L18.0282 24H0L9.01408 8ZM4.24445 21.5L9.01408 13.0339L13.7837 21.5H4.24445Z"/>
+<path class="shape" d="M32 16C32 20.4183 28.4687 24 24.1127 24C19.7566 24 16.2254 20.4183 16.2254 16C16.2254 11.5817 19.7566 8 24.1127 8C28.4687 8 32 11.5817 32 16ZM29.5385 16C29.5385 19.0345 27.1123 21.5 24.1127 21.5C21.113 21.5 18.6869 19.0345 18.6869 16C18.6869 12.9655 21.113 10.5 24.1127 10.5C27.1123 10.5 29.5385 12.9655 29.5385 16Z"/>
+
+<style>
+    .shape { fill: black; }
+
+    @media (prefers-color-scheme: dark) {
+        .shape { fill: white; }
+    }
+</style>
 </svg>
