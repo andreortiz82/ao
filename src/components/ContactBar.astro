@@ -1,0 +1,85 @@
+---
+import {
+  GithubLogoIcon,
+  DribbbleLogoIcon,
+  InstagramLogoIcon,
+  LinkedinLogoIcon,
+  TwitterLogoIcon,
+  YoutubeLogoIcon,
+} from "@phosphor-icons/react";
+---
+
+<header class="top-0 sticky z-50 w-full py-4 bg-card/20">
+  <section class="flex justify-between items-center mx-auto px-4">
+    <nav class="flex gap-4 items-center" aria-label="Social links">
+      <button id="avatar-btn" aria-label="About Andre">
+        <img
+          src="/avatar.png"
+          alt="Andre Ortiz"
+          class="w-10 h-10 rounded-full"
+        />
+      </button>
+      <a
+        href="https://github.com/andreortiz82"
+        class="social-link"
+        aria-label="GitHub"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <GithubLogoIcon size={16} weight="regular" />
+      </a>
+      <a
+        href="https://dribbble.com/andreortiz"
+        class="social-link"
+        aria-label="Dribbble"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <DribbbleLogoIcon size={16} weight="regular" />
+      </a>
+      <a
+        href="https://www.instagram.com/andreortiz"
+        class="social-link"
+        aria-label="Instagram"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <InstagramLogoIcon size={16} weight="regular" />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/andreortiz"
+        class="social-link"
+        aria-label="LinkedIn"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <LinkedinLogoIcon size={16} weight="regular" />
+      </a>
+      <a
+        href="https://twitter.com/andreortiz"
+        class="social-link"
+        aria-label="X (Twitter)"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <TwitterLogoIcon size={16} weight="regular" />
+      </a>
+      <a
+        href="https://www.youtube.com/@aomusicandmore"
+        class="social-link"
+        aria-label="YouTube"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <YoutubeLogoIcon size={16} weight="regular" />
+      </a>
+    </nav>
+
+    <a
+      href="mailto:hello@andreortiz.com"
+      class="contact text-sm text-secondary-foreground hover:underline"
+    >
+      hello@andreortiz.com
+    </a>
+  </section>
+</header>

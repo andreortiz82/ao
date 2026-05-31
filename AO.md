@@ -22,6 +22,7 @@ See [CLAUDE.md § Maintenance Protocol](CLAUDE.md) for the full rule set. Short 
 
 ## Who I Am
 
+**TO DO: Write this**
 I've spent twenty years building product experiences end to end — shaping the vision, owning the systems, and shipping the work. I lead design the way a creative director would: fast, iterative, and always clear about intent. Small teams with big scope is where I do my best work. I build design practices, not just screens — the systems, the standards, and the mentorship that make a team compound over time. Adaptable, multidisciplined, and comfortable doing whatever the product needs.
 
 ---
@@ -31,7 +32,6 @@ I've spent twenty years building product experiences end to end — shaping the 
 |           |                        |
 | --------- | ---------------------- |
 | Email     | hello@andreortiz.com   |
-| Phone     | (817) 781-2322         |
 | Portfolio | https://andreortiz.com |
 | Location  | Austin, TX             |
 
@@ -172,32 +172,22 @@ The through-line is breadth that deepens over time.
 
 ## Differentiators
 
-1. **Full-stack design fluency.** From brand identity and motion to design tokens and coded prototypes. Most designers stop at Figma; I go further.
-2. **Engineering credibility.** HTML/CSS/JS, React/TypeScript, Ruby on Rails, Python — enough to build real prototypes, contribute to frontend, and work without losing fidelity in handoff.
-3. **Systems thinker.** Design system lead experience means I design for reuse, consistency, and scale — not one-off screens.
-4. **Business-minded.** Ran my own consultancy for 5 years. I understand clients, priorities, tradeoffs, and what "done" means commercially.
-5. **AI-native.** Active LLM/AI research at ReifyHealth via Amazon Bedrock. Ahead of the curve, not catching up.
-6. **Range.** Agency, startup, enterprise, and independent — across B2B, SaaS, and B2C. Most designers have one context; I have all three.
+1. **Full-stack design fluency.** From brand identity to coded prototypes. My range and adaptibilty allow me to deliver a variety of creative solutions.
+2. **Engineering credibility.** HTML/CSS/JS, React/TypeScript, Ruby on Rails, Python — enough to build real prototypes, collaborate with engineering teams.
+3. **Systems thinker.** Finding opportunities to capture creative decisions and deliver consistency at scale.
+4. **Business-minded.** A creative partner that will help customers to love your brand.
+5. **Creative Leadership.** Mentorship, cross-functional collaboration, and building strong partnerships across teams and disciplines.
+6. **Forward thinking.** Understanding where design is today and where it's going. When needed, I leverage the latest tools or trends to get the job done.
 
 ---
 
 ## Messaging by Context
 
-### For enterprise / design system roles
-
-> Design systems lead with 8+ years of enterprise SaaS experience. I own the full lifecycle — component architecture, tokens, documentation, and team planning — and ship coded prototypes to bridge design and engineering.
-
-### For startup / product roles
-
-> Product designer who moves fast and thinks in systems. I've done zero-to-one work as a founder and IC, and I ship real code when the product needs it.
-
-### For agency / consulting
-
-> Senior design consultant with a track record across brand, web, and product. I've run my own studio; I know how to work autonomously, hit deadlines, and make clients confident.
-
-### For AI / emerging tech roles
-
-> Senior designer with active AI/LLM research experience (Amazon Bedrock). I'm not adapting to AI — I've been experimenting with it as a product design tool for years.
+> Design systems lead working with large, multi-brand companies.
+> Owning the full lifecycle — component architecture, tokens, documentation, and team planning.
+> Design engineer building prototypes for quick validation and development speed.
+> A creative problem solver who values quick iterations and results.
+> Senior creative with the discipline to learn a domain, work autonomously, and exceed expectations.
 
 ---
 
@@ -210,40 +200,3 @@ The through-line is breadth that deepens over time.
 - **Work examples plan:** See [WORK.md](WORK.md) for full build plan, interactive demo specs, and status tracker
 
 ---
-
-## Availability
-
-<!-- Open to selective work — Q3 2026.
-Preferred engagement: product design, design systems, or senior IC / lead roles. -->
-
-TBD.
-
----
-
-## Goals
-
-### Portfolio
-
-- [ ] Present as an experienced, capable senior creative lead through a rich, interactive portfolio that shows process and craft — not just output
-- [ ] Every section should demonstrate end-to-end ownership: vision, systems, execution
-- [ ] Replace all placeholder content (name, city, email, client names) with real values
-- [ ] Build all four work example pages — see [WORK.md](WORK.md) for full plan and status
-
-### Audience
-
-- [ ] Appeal to startups looking for a senior creative who will help shape vision, move fast, and own the full product experience
-- [ ] Position as a creative powerhouse — someone who comes in and raises the quality of everything: the product, the practice, the team
-
-### Practice
-
-- [ ] Define what "selective work" means — contract only? FTE? Advisory?
-- [ ] Identify a target company profile: stage, sector, team size
-- [ ] Write a clear point of view on AI in product design
-- [ ] Write 3–5 essays anchored to the 20-year narrative for the Writing section
-
-### Site
-
-- [ ] Add real social/profile URLs to Footer (Read.cv, LinkedIn, Are.na)
-- [ ] Replace client placeholder names in `ScopeWidget.tsx`
-- [ ] Set up blog content collection (`src/content/`)
-- [ ] Write and publish the About page

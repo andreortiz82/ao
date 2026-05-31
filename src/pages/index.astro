@@ -1,13 +1,6 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import {
-  GithubLogoIcon,
-  DribbbleLogoIcon,
-  InstagramLogoIcon,
-  LinkedinLogoIcon,
-  TwitterLogoIcon,
-  YoutubeLogoIcon,
-} from "@phosphor-icons/react";
+import ContactBar from "../components/ContactBar.astro";
 ---
 
 <!doctype html>
@@ -16,75 +9,7 @@ import {
     <BaseHead title="Andre Ortiz" description="Product Experience Design" />
   </head>
   <body>
-    <header>
-      <section>
-        <button class="avatar-btn" id="avatar-btn" aria-label="About Andre">
-          <img src="/avatar.png" alt="Andre Ortiz" class="avatar" />
-        </button>
-
-        <nav class="social-nav" aria-label="Social links">
-          <a
-            href="https://github.com/andreortiz82"
-            class="social-link"
-            aria-label="GitHub"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GithubLogoIcon size={16} weight="regular" />
-          </a>
-          <a
-            href="https://dribbble.com/andreortiz"
-            class="social-link"
-            aria-label="Dribbble"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <DribbbleLogoIcon size={16} weight="regular" />
-          </a>
-          <a
-            href="https://www.instagram.com/andreortiz"
-            class="social-link"
-            aria-label="Instagram"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <InstagramLogoIcon size={16} weight="regular" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/andreortiz"
-            class="social-link"
-            aria-label="LinkedIn"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <LinkedinLogoIcon size={16} weight="regular" />
-          </a>
-          <a
-            href="https://twitter.com/andreortiz"
-            class="social-link"
-            aria-label="X (Twitter)"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <TwitterLogoIcon size={16} weight="regular" />
-          </a>
-          <a
-            href="https://www.youtube.com/@aomusicandmore"
-            class="social-link"
-            aria-label="YouTube"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <YoutubeLogoIcon size={16} weight="regular" />
-          </a>
-        </nav>
-      </section>
-
-      <a href="mailto:hello@andreortiz.com" class="contact">
-        hello@andreortiz.com
-      </a>
-    </header>
-
+    <ContactBar />
     <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
       <div
         class="modal"
@@ -141,11 +66,50 @@ import {
       </div>
     </div>
 
-    <main>
-      <div class="wrap">
+    <main class="flex flex-col gap-20">
+      <div
+        class="min-h-[60vh] grow flex flex-col items-center justify-center gap-2"
+      >
         <p class="name">Andre Ortiz</p>
         <h1 class="rotating">Product Experience Design</h1>
       </div>
+
+      <!-- Work tiles here -->
+      <section class="w-full grid grid-cols-3 gap-4 mt-12 border">
+        {
+          [
+            {
+              title: "Responsive Web Design",
+              description: "Short description of the project.",
+            },
+            {
+              title: "Snyders BBQ Brand Identity",
+              description: "Short description of the project.",
+            },
+            {
+              title: "Design System for Product Suite",
+              description: "Short description of the project.",
+            },
+            {
+              title: "AI-Powered Chatbot Interface",
+              description: "Short description of the project.",
+            },
+            {
+              title: "Mobile App Design for Peter",
+              description: "Short description of the project.",
+            },
+            {
+              title: "Financial Dashboard UX",
+              description: "Short description of the project.",
+            },
+          ].map(({ title, description }) => (
+            <div class="bg-slate-100 w-full h-[400px] flex flex-col justify-center items-center p-4">
+              <h2>{title}</h2>
+              <p>{description}</p>
+            </div>
+          ))
+        }
+      </section>
     </main>
   </body>
 </html>
@@ -167,64 +131,6 @@ import {
   body {
     background: var(--color-background);
     color: var(--color-ink);
-  }
-
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: clamp(1.25rem, 3vw, 2rem) clamp(1.25rem, 4vw, 2.5rem);
-  }
-
-  header section {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .social-nav {
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-  }
-
-  .social-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-ink-3);
-    transition: color 0.15s ease;
-    line-height: 1;
-  }
-
-  .social-link:hover {
-    color: var(--color-ink);
-  }
-
-  .avatar-btn {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    border-radius: 50%;
-    display: block;
-    transition: opacity 0.15s ease;
-  }
-
-  .avatar-btn:hover {
-    opacity: 0.75;
-  }
-
-  .avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
   }
 
   .modal-backdrop {

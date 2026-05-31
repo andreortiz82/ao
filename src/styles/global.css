@@ -86,32 +86,6 @@
 /* ——————————————————————————————————————
    CUSTOM ANIMATIONS
    ————————————————————————————————————— */
-@keyframes pulse-dot {
-  0%,
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.4;
-    transform: scale(0.85);
-  }
-}
-
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(0.5em);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-pulse-dot {
-  animation: pulse-dot 2.4s ease-in-out infinite;
-}
 
 .animate-fade-up {
   opacity: 0;
