@@ -1,5 +1,4 @@
 ---
-import { Tag } from "../../components/AboutKeywords";
 import BaseHead from "../../components/BaseHead.astro";
 import Footer from "../../components/Footer.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
@@ -57,7 +56,7 @@ const { posts } = Astro.props;
               {post.data.tags && (
                 <div class="list-none flex gap-1 flex-wrap">
                   {post.data.tags.map((tag: any) => (
-                    <Tag key={tag} label={tag} size="small" />
+                    <span class="ao-tag">{tag}</span>
                   ))}
                 </div>
               )}

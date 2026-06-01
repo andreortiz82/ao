@@ -10,103 +10,70 @@ import ContactBar from "../components/ContactBar.astro";
   </head>
   <body>
     <ContactBar />
-    <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
-      <div
-        class="modal"
-        role="dialog"
-        aria-modal="true"
-        aria-label="About Andre Ortiz"
-      >
-        <button class="modal-close" id="modal-close" aria-label="Close"
-          >✕</button
-        >
-        <div class="modal-header">
-          <img src="/avatar.png" alt="Andre Ortiz" class="modal-avatar" />
-          <div>
-            <p class="modal-eyebrow">Andre Ortiz</p>
-            <p class="modal-name">Product Experience Designer</p>
-          </div>
-        </div>
-        <p class="modal-intro">
-          Twenty years building product experiences, executing the vision,
-          owning the systems, shipping the work. My design process is lean,
-          iterative, always clear about intent.
-        </p>
-        <ul class="modal-list">
-          {
-            [
-              [
-                "Full-stack design fluency",
-                "Brand identity, illustration, motion, UI, and print.",
-              ],
-              [
-                "Engineering credibility",
-                "HTML/CSS/JS, React/TypeScript, Ruby, Python, and Pull Requests.",
-              ],
-              [
-                "Systems thinker",
-                "Design systems, component libraries, and scalable processes that grow with teams.",
-              ],
-              [
-                "Creative Leadership",
-                "Mentorship, cross-functional collaboration, and building strong partnerships accross teams and disciplines.",
-              ],
-              [
-                "AI and the future...",
-                "AI-power products, chatbots, agentic workflows, prompt engineering, and custom tool development.",
-              ],
-            ].map(([title, body]) => (
-              <li class="modal-item">
-                <span class="modal-item-title">{title}</span>
-                <span class="modal-item-body">{body}</span>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-    </div>
 
-    <main class="flex flex-col gap-20">
-      <div
-        class="min-h-[60vh] grow flex flex-col items-center justify-center gap-2"
-      >
-        <p class="name">Andre Ortiz</p>
-        <h1 class="rotating">Product Experience Design</h1>
+    <main class="flex flex-col">
+      <!-- Hero -->
+      <div class="min-h-[70vh] flex flex-col items-center justify-center gap-2 px-6 text-center border-b border-(--color-line)">
+        <p class="type-name">Andre Ortiz</p>
+        <h1 class="type-hero rotating">Product Experience Design</h1>
       </div>
 
-      <!-- Work tiles here -->
-      <section class="w-full grid grid-cols-3 gap-4 mt-12 border">
+      <!-- Work tiles -->
+      <section class="work-grid">
         {
           [
             {
-              title: "Responsive Web Design",
-              description: "Short description of the project.",
+              slug: "responsive-web-design",
+              title: "Responsive Web Redesign",
+              tags: ["UX Design", "Responsive"],
+              description: "Unified a fragmented multi-platform experience into a single, mobile-first product.",
             },
             {
-              title: "Snyders BBQ Brand Identity",
-              description: "Short description of the project.",
+              slug: "snyders-bbq",
+              title: "Snyder's BBQ Brand Identity",
+              tags: ["Brand Identity", "Print"],
+              description: "Complete visual identity — from logo through menu system, signage, and merch.",
             },
             {
-              title: "Design System for Product Suite",
-              description: "Short description of the project.",
+              slug: "design-system",
+              title: "Design System",
+              tags: ["Design Systems", "Tokens"],
+              description: "A unified component library and token system across four products.",
             },
             {
-              title: "AI-Powered Chatbot Interface",
-              description: "Short description of the project.",
+              slug: "ai-chatbot",
+              title: "AI Chatbot Interface",
+              tags: ["AI/ML", "Enterprise UX"],
+              description: "Conversational UI for an AI assistant embedded in an enterprise SaaS platform.",
             },
             {
-              title: "Mobile App Design for Peter",
-              description: "Short description of the project.",
+              slug: "mobile-app",
+              title: "Mobile App for AI Chat",
+              tags: ["Mobile", "iOS"],
+              description: "Native mobile experience for an AI assistant app, zero to App Store.",
             },
             {
+              slug: "financial-dashboard",
               title: "Financial Dashboard UX",
-              description: "Short description of the project.",
+              tags: ["Data Visualization", "Dashboard"],
+              description: "Redesigned a dense financial reporting tool to cut time-to-insight in half.",
             },
-          ].map(({ title, description }) => (
-            <div class="bg-slate-100 w-full h-[400px] flex flex-col justify-center items-center p-4">
-              <h2>{title}</h2>
-              <p>{description}</p>
-            </div>
+          ].map(({ slug, title, tags, description }) => (
+            <a href={`/work/${slug}`} class="work-tile">
+              <div class="work-tile-image" />
+              <div class="work-tile-body">
+                <div class="work-tile-tags">
+                  {tags.map((tag) => (
+                    <span class="ao-tag">{tag}</span>
+                  ))}
+                </div>
+                <h2 class="type-tile-title">{title}</h2>
+                <p class="work-tile-desc">{description}</p>
+                <span class="work-tile-cta">
+                  View case study <span class="work-tile-arrow">→</span>
+                </span>
+              </div>
+            </a>
           ))
         }
       </section>
@@ -114,212 +81,7 @@ import ContactBar from "../components/ContactBar.astro";
   </body>
 </html>
 
-<style>
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  html,
-  body {
-    height: 100%;
-  }
-
-  body {
-    background: var(--color-background);
-    color: var(--color-ink);
-  }
-
-  .modal-backdrop {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: clamp(1.25rem, 4vw, 2.5rem);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.25s ease;
-    z-index: 100;
-  }
-
-  .modal-backdrop.open {
-    opacity: 1;
-    pointer-events: all;
-  }
-
-  .modal {
-    background: #111;
-    color: #f5f5f5;
-    border-radius: 6px;
-    padding: clamp(2rem, 5vw, 3rem);
-    max-width: 480px;
-    width: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    transform: translateY(12px);
-    transition: transform 0.25s ease;
-  }
-
-  .modal-backdrop.open .modal {
-    transform: translateY(0);
-  }
-
-  .modal-close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    color: #666;
-    font-size: 14px;
-    cursor: pointer;
-    padding: 4px 8px;
-    transition: color 0.15s ease;
-    line-height: 1;
-  }
-
-  .modal-close:hover {
-    color: #f5f5f5;
-  }
-
-  .modal-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .modal-avatar {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    object-fit: cover;
-    flex-shrink: 0;
-  }
-
-  .modal-eyebrow {
-    font-family: var(--font-mono);
-    font-size: 16px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #555;
-    margin-bottom: 0.2rem;
-  }
-
-  .modal-name {
-    font-family: var(--font-sans);
-    font-size: 18px;
-    font-weight: bold;
-    color: #ccc;
-  }
-
-  .modal-intro {
-    font-family: var(--font-sans);
-    font-size: 15px;
-    line-height: 1.65;
-    color: #ccc;
-    padding-top: 0.5rem;
-    border-top: 1px solid #222;
-  }
-
-  .modal-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.875rem;
-  }
-
-  .modal-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-  }
-
-  .modal-item-title {
-    font-family: var(--font-sans);
-    font-size: 13px;
-    font-weight: 600;
-    color: #f0f0f0;
-  }
-
-  .modal-item-body {
-    font-family: var(--font-sans);
-    font-size: 13px;
-    line-height: 1.6;
-    color: #777;
-  }
-
-  .contact {
-    font-family: var(--font-sans);
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--color-ink-3);
-    text-decoration: none;
-    letter-spacing: -0.005em;
-    transition: color 0.15s ease;
-  }
-
-  .contact:hover {
-    color: var(--color-ink);
-  }
-
-  main {
-    min-height: 100dvh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: clamp(2rem, 6vw, 4rem);
-    text-align: center;
-  }
-
-  .wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .name {
-    font-family: var(--font-mono);
-    font-size: 24px;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    color: var(--color-ink-3);
-  }
-
-  h1 {
-    font-family: var(--font-serif);
-    font-size: clamp(3rem, 10vw, 8rem);
-    font-variation-settings:
-      "opsz" 144,
-      "wght" 350;
-    line-height: 0.95;
-    letter-spacing: -0.035em;
-    color: var(--color-ink);
-    transition: opacity 0.3s ease;
-  }
-</style>
-
 <script>
-  const backdrop = document.getElementById("modal-backdrop")!;
-  const btn = document.getElementById("avatar-btn")!;
-  const close = document.getElementById("modal-close")!;
-
-  btn.addEventListener("click", () => backdrop.classList.add("open"));
-  close.addEventListener("click", () => backdrop.classList.remove("open"));
-  backdrop.addEventListener("click", (e) => {
-    if (e.target === backdrop) backdrop.classList.remove("open");
-  });
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") backdrop.classList.remove("open");
-  });
-
   const labels = [
     "Product Experience Designer",
     "Design Systems Thinker",

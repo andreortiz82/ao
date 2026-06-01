@@ -1,0 +1,40 @@
+---
+title: Financial Dashboard UX
+description: Redesigned a dense financial reporting tool used by operations teams — cutting time-to-insight in half and making the data legible without sacrificing depth.
+pubDate: 2024-01-01
+client: Operations SaaS
+role: [Senior UX Designer]
+team: [2 designers, 3 engineers, 2 data analysts, 1 PM]
+timeline: 18 weeks · Q1 2024
+tags: [Data Visualization, Enterprise UX, Dashboard]
+outcome: Time-to-insight reduced by 52% in post-launch measurement
+order: 6
+---
+
+## The Problem
+
+The existing dashboard had been built by engineers to satisfy feature requests over three years. Every stakeholder had gotten what they asked for — and the result was a screen with 14 charts, 3 tables, and 40+ filter options visible simultaneously.
+
+Users weren't overwhelmed because the data was complex. They were overwhelmed because no design decisions had been made. Everything was equally visible, so nothing was actually visible.
+
+## Approach
+
+Ran a two-week discovery focused on one question: what decisions does this data need to support? Not "what do users want to see" — that answer is always "everything." But what does an operations manager actually need to decide in a given week, and what data does that decision require?
+
+Interviewed eight users across three roles. Mapped their actual weekly workflows. Found that 80% of daily use was centered on three views. The remaining 70% of the dashboard surface was either reference material or edge-case investigation.
+
+This became the design principle: **optimize for the common path; make the detail accessible but not default.**
+
+## The Work
+
+**Information hierarchy.** Redesigned the layout around a progressive disclosure model — a summary layer with the three high-signal views front and center, with drill-down paths into the detail. The density didn't decrease; it was organized.
+
+**Chart system.** Audited every visualization type in use and standardized on a small set of chart types with a shared visual language — axis scales, color encoding, tooltip patterns, and empty states. Built as a Storybook component library for the engineering team.
+
+**Filter and time range system.** The original filter UI had grown organically into something unusable. Redesigned it with a persistent filter bar, preset time ranges that covered 90% of cases, and a clear indication of what filters were active at all times.
+
+**Export and sharing.** Designed a report generation flow so users could package specific views and send them without re-explaining context to recipients.
+
+## Results
+
+Time-to-insight dropped 52% in measurement done at 60 days post-launch. User satisfaction scores on the tool increased. The engineering team reported that the component system made subsequent feature additions significantly faster than previous dashboard iterations.

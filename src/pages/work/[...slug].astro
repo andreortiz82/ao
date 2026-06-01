@@ -2,24 +2,49 @@
 import type { CollectionEntry } from "astro:content";
 import { getCollection, render } from "astro:content";
 import BaseHead from "../../components/BaseHead.astro";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
+import ContactBar from "../../components/ContactBar.astro";
 
 export async function getStaticPaths() {
   const workEntries = await getCollection("work");
-  return workEntries.map((entry) => ({
+  const sorted = workEntries.sort(
+    (a, b) => (a.data.order ?? 99) - (b.data.order ?? 99),
+  );
+  return sorted.map((entry, index) => ({
     params: { slug: entry.id },
-    props: { entry },
+    props: {
+      entry,
+      index,
+      total: sorted.length,
+      prev: sorted[index - 1] ?? null,
+      next: sorted[index + 1] ?? null,
+    },
   }));
 }
 
 interface Props {
   entry: CollectionEntry<"work">;
+  index: number;
+  total: number;
+  prev: CollectionEntry<"work"> | null;
+  next: CollectionEntry<"work"> | null;
 }
 
-const { entry } = Astro.props;
+const { entry, index, total, prev, next } = Astro.props;
 const { Content } = await render(entry);
-const { title, description, heroImage, tags } = entry.data;
+const {
+  title,
+  description,
+  heroImage,
+  tags,
+  role,
+  team,
+  timeline,
+  client,
+  outcome,
+} = entry.data;
+
+const indexLabel = String(index + 1).padStart(2, "0");
+const totalLabel = String(total).padStart(2, "0");
 ---
 
 <!doctype html>
@@ -28,55 +53,200 @@ const { title, description, heroImage, tags } = entry.data;
     <BaseHead title={`${title} — Andre Ortiz`} description={description} />
   </head>
   <body>
-    <Header />
-
-    <main class="max-w-6xl mx-auto px-6 py-12">
-
-      <!-- Breadcrumb -->
-      <nav class="animate-fade-up mb-8">
-        <a
-          href="/work"
-          class="inline-flex items-center gap-1 text-sm no-underline transition-colors duration-150 text-text-secondary hover:text-accent"
+    <!-- Site nav -->
+    <!-- <header
+      class="sticky top-0 z-50 flex items-center justify-between px-[clamp(1.5rem,5vw,4rem)] py-4 bg-white/90 backdrop-blur-sm border-b border-(--color-line)"
+    >
+      <a
+        href="/"
+        class="group inline-flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.08em] text-(--color-ink-3) no-underline transition-colors duration-150 hover:text-(--color-ink)"
+      >
+        <span
+          class="inline-block transition-transform duration-200 group-hover:-translate-x-0.75"
+          >←</span
         >
-          ← Back to Work
-        </a>
-      </nav>
+        Andre Ortiz
+      </a>
+      <a
+        href="mailto:hello@andreortiz.com"
+        class="font-sans text-[13px] font-medium text-(--color-ink-3) no-underline transition-colors duration-150 hover:text-(--color-ink)"
+      >
+        hello@andreortiz.com
+      </a>
+    </header> -->
+
+    <ContactBar hasBackButton />
+
+    <main>
+      <!-- Case study header -->
+      <section
+        class="px-[clamp(1.5rem,5vw,4rem)] pt-[clamp(4rem,8vw,8rem)] pb-[clamp(3rem,6vw,5rem)] border-b border-(--color-line)"
+      >
+        <div class="max-w-200">
+          <div class="flex items-center gap-4 mb-6">
+            <span class="section-label">Case Study</span>
+            <span
+              class="font-mono text-[11px] text-(--color-ink-3) tracking-[0.08em]"
+              >{indexLabel} / {totalLabel}</span
+            >
+          </div>
+
+          {
+            tags && tags.length > 0 && (
+              <div class="flex flex-wrap gap-2 mb-7">
+                {tags.map((tag: string) => (
+                  <span class="ao-tag">{tag}</span>
+                ))}
+              </div>
+            )
+          }
+
+          <h1 class="type-cs-title mb-5">{title}</h1>
+          <p
+            class="font-sans text-[clamp(1.05rem,1.8vw,1.25rem)] leading-[1.6] text-(--color-ink-2) max-w-160 mb-10"
+          >
+            {description}
+          </p>
+
+          <!-- Metadata strip -->
+          <div class="cs-meta">
+            {
+              client && (
+                <div class="cs-meta-item">
+                  <span class="cs-meta-label">Client</span>
+                  <span class="cs-meta-value">{client}</span>
+                </div>
+              )
+            }
+            {
+              role && role.length > 0 && (
+                <div class="cs-meta-item">
+                  <span class="cs-meta-label">Role</span>
+                  <span class="cs-meta-value">{role.join(", ")}</span>
+                </div>
+              )
+            }
+            {
+              team && team.length > 0 && (
+                <div class="cs-meta-item">
+                  <span class="cs-meta-label">Team</span>
+                  <span class="cs-meta-value">{team.join(", ")}</span>
+                </div>
+              )
+            }
+            {
+              timeline && (
+                <div class="cs-meta-item">
+                  <span class="cs-meta-label">Timeline</span>
+                  <span class="cs-meta-value">{timeline}</span>
+                </div>
+              )
+            }
+          </div>
+        </div>
+      </section>
 
       <!-- Hero image -->
-      {heroImage && (
-        <div class="animate-fade-up-delay-1 rounded-2xl overflow-hidden mb-10 border border-border-color">
-          <img
-            src={heroImage}
-            alt={title}
-            class="w-full object-cover max-h-125"
-          />
-        </div>
-      )}
-
-      <!-- Title + tags -->
-      <div class="animate-fade-up-delay-2 max-w-3xl mb-10">
-        {tags && (
-          <div class="flex flex-wrap gap-1.5 mb-4">
-            {tags.map((tag: string) => (
-              <span class="ao-tag">{tag}</span>
-            ))}
-          </div>
-        )}
-        <h1 class="m-0 mb-4">
-          {title}
-        </h1>
-        <p class="m-0 text-xl leading-relaxed text-text-secondary">
-          {description}
-        </p>
+      <div class="w-full">
+        {
+          heroImage ? (
+            <img
+              src={heroImage}
+              alt={title}
+              class="w-full max-h-140 object-cover block"
+            />
+          ) : (
+            <div
+              class="cs-hero-placeholder cs-img-placeholder"
+              data-label="Hero Image"
+            />
+          )
+        }
       </div>
 
-      <!-- Content -->
-      <div class="animate-fade-up-delay-3 max-w-3xl ao-md-content-container overflow-x-auto">
+      <!-- Body content -->
+      <article
+        class="ao-md-content-container px-[clamp(1.5rem,5vw,4rem)] py-[clamp(3rem,7vw,6rem)]"
+      >
         <Content />
+      </article>
+
+      <!-- Process images — 2-up equal -->
+      <section class="border-t border-(--color-line)">
+        <div
+          class="px-[clamp(1.5rem,5vw,4rem)] py-5 border-b border-(--color-line)"
+        >
+          <span class="section-label">Process</span>
+        </div>
+        <div class="cs-images-2up border-b border-(--color-line) p-4 gap-4">
+          <div class="cs-img-placeholder" data-label="Wireframes"></div>
+          <div class="cs-img-placeholder" data-label="User Testing"></div>
+        </div>
+      </section>
+
+      <!-- Detail — asymmetric 2:1 -->
+      <div
+        class="cs-images-asymmetric border-b border-(--color-line) p-4 gap-4"
+      >
+        <div class="cs-img-placeholder" data-label="Design Detail"></div>
+        <div class="cs-img-placeholder" data-label="Context"></div>
       </div>
 
-    </main>
+      <!-- Outcome callout -->
+      {
+        outcome && (
+          <div class="border-t border-b border-(--color-line) bg-(--color-paper)">
+            <div class="px-[clamp(1.5rem,5vw,4rem)] py-[clamp(2.5rem,5vw,4rem)] flex flex-col gap-4 max-w-200">
+              <span class="section-label">Outcome</span>
+              <p class="type-outcome">{outcome}</p>
+            </div>
+          </div>
+        )
+      }
 
-    <Footer />
+      <!-- Final screens — 3-up strip -->
+      <section class="border-t border-(--color-line)">
+        <div
+          class="px-[clamp(1.5rem,5vw,4rem)] py-5 border-b border-(--color-line)"
+        >
+          <span class="section-label">Final Screens</span>
+        </div>
+        <div class="cs-images-3up p-4">
+          <div class="cs-img-placeholder" data-label="Screen 01"></div>
+          <div class="cs-img-placeholder" data-label="Screen 02"></div>
+          <div class="cs-img-placeholder" data-label="Screen 03"></div>
+        </div>
+      </section>
+
+      <!-- Case study navigation -->
+      <nav
+        class="flex border-t border-(--color-line)"
+        aria-label="Case study navigation"
+      >
+        {
+          prev ? (
+            <a href={`/work/${prev.id}`} class="cs-nav-link">
+              <span class="cs-nav-direction">← Previous</span>
+              <span class="cs-nav-title">{prev.data.title}</span>
+            </a>
+          ) : (
+            <span class="flex-1" />
+          )
+        }
+        {
+          next ? (
+            <a href={`/work/${next.id}`} class="cs-nav-link text-right">
+              <span class="cs-nav-direction">Next →</span>
+              <span class="cs-nav-title">{next.data.title}</span>
+            </a>
+          ) : (
+            <a href="/" class="cs-nav-link text-right">
+              <span class="cs-nav-direction">Done →</span>
+              <span class="cs-nav-title">Back to portfolio</span>
+            </a>
+          )
+        }
+      </nav>
+    </main>
   </body>
 </html>

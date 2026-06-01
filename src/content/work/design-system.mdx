@@ -1,0 +1,40 @@
+---
+title: Design System for Product Suite
+description: Designed and shipped a unified component library and token system across four products — giving a 20-person product org a shared language for the first time.
+pubDate: 2023-11-01
+client: Internal Platform Team
+role: [Design Systems Lead]
+team: [2 designers, 3 engineers, 1 PM]
+timeline: 16 weeks · Q4 2023
+tags: [Design Systems, Tokens, React, Figma]
+outcome: Reduced new feature design time by ~60% across the org
+order: 3
+---
+
+## The Problem
+
+Four products. Four codebases. Four design libraries. Every team was solving the same problems in different ways — buttons, forms, data tables, empty states — and nothing aligned visually. When you opened any two products side by side, you couldn't tell they came from the same company.
+
+The org was also scaling. Adding designers to a fragmented system meant the fragmentation compounded. Something had to change before it became unmanageable.
+
+## Approach
+
+Spent the first two weeks doing an honest inventory — not planning, cataloging. Every component type across all four products, with screenshots. The goal was to find the real overlap before proposing any solutions.
+
+The finding: roughly 70% of components were doing the same job with different executions. The remaining 30% were genuinely product-specific. This shaped the scope — a universal core, with product-level extension layers.
+
+Ran alignment sessions with each product team's lead designer. The instinct is to design the system in isolation and hand it over — that doesn't work. The people who would use it needed to feel ownership over it.
+
+## The Work
+
+Built the system in two layers:
+
+**Tokens first.** A semantic token architecture covering color, typography, spacing, radius, and shadow — with light/dark mode support baked in from day one. Tokens were defined in Figma and synced to a JSON schema that fed directly into the CSS variables used in production.
+
+**Components second.** Forty-two components covering the full product UI surface. Every component built to four states (default, hover, focus, disabled) with documented variant props. Accessibility audit run on all interactive components before release.
+
+Shipped Figma libraries synced to Storybook, which was synced to the npm package. Three sources of truth became one.
+
+## Results
+
+Within two months of launch, all four product teams had migrated their core component usage. New feature design time dropped significantly — designers were composing with the system instead of rebuilding pieces each sprint. Engineering onboarding improved because new engineers could read a consistent pattern instead of learning four different approaches.

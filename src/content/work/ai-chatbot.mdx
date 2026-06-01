@@ -1,0 +1,38 @@
+---
+title: AI-Powered Chatbot Interface
+description: Designed the conversational UI and surrounding product experience for an AI assistant embedded inside an enterprise SaaS platform — with a focus on trust, transparency, and error recovery.
+pubDate: 2024-06-01
+client: Enterprise SaaS Platform
+role: [Lead UX Designer]
+team: [2 designers, 4 engineers, 1 AI/ML engineer, 1 PM]
+timeline: 12 weeks · Q2 2024
+tags: [AI/ML, Conversational UI, Enterprise UX]
+outcome: 78% task completion rate in first 30 days, well above the 55% target
+order: 4
+---
+
+## The Problem
+
+The platform had integrated an LLM to help users query their data in plain language. The model was capable. The interface was an afterthought — a text box dropped into a sidebar, no guidance, no history, no way to understand why the model gave the answer it did.
+
+Users tried it once, got a confusing response, and never came back. The problem wasn't the AI. It was the design around the AI.
+
+## Approach
+
+The core design challenge with AI interfaces is managing the uncertainty gap — what users expect versus what the model can reliably deliver. Most products handle this badly: they either overpromise and disappoint, or hedge so much the interface feels useless.
+
+Ran discovery sessions with 12 users across three user personas. The clearest finding: people weren't afraid of AI getting things wrong — they were afraid of not knowing when it had. Transparency and recovery mattered more than perfection.
+
+## The Work
+
+**Conversation design.** Built a prompt library to give users starting points — not to limit them, but to show what good questions look like. Designed the response format to distinguish between data the model retrieved (cited, linkable) and reasoning it generated (clearly labeled as interpretation).
+
+**Error states and confidence.** Designed explicit UI patterns for low-confidence responses — the model surfaces its uncertainty rather than confidently stating something wrong. This was a new pattern for the team and required close collaboration with the ML engineer to define the API contract.
+
+**History and context.** Designed a conversation history system so users could pick up where they left off and reference past queries. Simple to describe, surprisingly complex to implement well — spent significant time on the information architecture of the history panel.
+
+**Onboarding.** A lightweight first-use experience that showed users three example exchanges before they typed anything. This single change had the largest impact on return usage.
+
+## Results
+
+Shipped on schedule. Task completion rate hit 78% in the first 30 days against a 55% target. Return usage within a 7-day window increased significantly compared to the original experience. Support tickets related to the AI assistant dropped in the second month.

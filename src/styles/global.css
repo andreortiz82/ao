@@ -10,6 +10,7 @@
 @theme inline {
   --color-background: #ffffff;
   --color-paper: #fafafa;
+  --color-card: #fafafa;
   --color-ink: #0a0a0a;
   --color-ink-2: #404040;
   --color-ink-3: #737373;
@@ -438,7 +439,7 @@
   .ao-tag {
     display: inline-flex;
     align-items: center;
-    padding: 0.25em 0.65em;
+    padding: 0.25em 1em;
     background: var(--color-paper);
     color: var(--color-ink-2);
     border: 1px solid var(--color-line);
@@ -487,10 +488,322 @@
   .nav-link.active {
     color: var(--color-ink);
   }
+
+  /* ——————————————————————————————————————
+     TYPOGRAPHY VARIANTS
+     font-variation-settings can't be expressed in Tailwind
+     ————————————————————————————————————— */
+
+  .type-hero {
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 10vw, 8rem);
+    font-variation-settings:
+      "opsz" 144,
+      "wght" 350;
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    color: var(--color-ink);
+    transition: opacity 0.3s ease;
+  }
+
+  .type-name {
+    font-family: var(--font-mono);
+    font-size: 24px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--color-ink-3);
+  }
+
+  .type-cs-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-variation-settings:
+      "opsz" 72,
+      "wght" 400;
+    line-height: 1;
+    letter-spacing: -0.025em;
+    color: var(--color-ink);
+  }
+
+  .type-outcome {
+    font-family: var(--font-serif);
+    font-size: clamp(1.35rem, 2.8vw, 2rem);
+    font-variation-settings:
+      "opsz" 48,
+      "wght" 350;
+    font-style: italic;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+  }
+  .type-outcome em {
+    color: var(--color-accent);
+    font-style: italic;
+  }
+
+  .type-tile-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+    font-variation-settings:
+      "opsz" 24,
+      "wght" 400;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--color-ink);
+    margin-top: 0.25rem;
+  }
+
+  /* ——————————————————————————————————————
+     WORK GRID
+     ————————————————————————————————————— */
+
+  .work-grid {
+    display: grid;
+    gap: 1.5rem;
+    padding: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 900px) {
+    .work-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 540px) {
+    .work-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .work-tile {
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    border: 1px solid var(--color-line);
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+    transition: background 0.2s ease;
+  }
+  .work-tile:hover {
+    background: var(--color-paper);
+  }
+
+  .work-tile-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: var(--color-paper);
+    background-image: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 12px,
+      var(--color-line-soft) 12px,
+      var(--color-line-soft) 13px
+    );
+    border-bottom: 1px solid var(--color-line);
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .work-tile-image::after {
+    content: "Image";
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-ink-3);
+    opacity: 0.5;
+  }
+
+  .work-tile-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    flex: 1;
+  }
+
+  .work-tile-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+  }
+
+  .work-tile-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-ink-3);
+    margin-top: 0.5rem;
+    transition: color 0.15s ease;
+  }
+  .work-tile:hover .work-tile-cta {
+    color: var(--color-ink);
+  }
+
+  .work-tile-arrow {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+  .work-tile:hover .work-tile-arrow {
+    transform: translateX(3px);
+  }
+
+  /* ——————————————————————————————————————
+     CASE STUDY IMAGE PLACEHOLDERS
+     ————————————————————————————————————— */
+
+  /* Shared base — all cs image placeholders use this */
+  .cs-img-placeholder {
+    background-color: var(--color-paper);
+    background-image: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 16px,
+      var(--color-line-soft) 16px,
+      var(--color-line-soft) 17px
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cs-img-placeholder::after {
+    content: attr(data-label);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-ink-3);
+    opacity: 0.5;
+  }
+
+  /* Hero — full-width, tall */
+  .cs-hero-placeholder {
+    width: 100%;
+    height: clamp(240px, 40vw, 480px);
+  }
+
+  /* 2-up — equal columns, 4:3 each */
+  .cs-images-2up {
+    @apply grid grid-cols-2 gap-4;
+    background: #fff;
+  }
+  .cs-images-2up .cs-img-placeholder {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* Asymmetric — 2:1 ratio, left panel dominant */
+  .cs-images-asymmetric {
+    @apply grid gap-4;
+    grid-template-columns: 2fr 1fr;
+    background: #fff;
+  }
+  .cs-images-asymmetric .cs-img-placeholder {
+    min-height: clamp(220px, 30vw, 400px);
+  }
+
+  /* 3-up strip — three equal columns, 4:3 each */
+  .cs-images-3up {
+    @apply grid grid-cols-3 gap-4;
+    background: #fff;
+  }
+  .cs-images-3up .cs-img-placeholder {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* ——————————————————————————————————————
+     CASE STUDY META STRIP
+     ————————————————————————————————————— */
+
+  .cs-meta {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--color-line);
+    border-left: 1px solid var(--color-line);
+  }
+
+  .cs-meta-item {
+    flex: 1;
+    min-width: 140px;
+    padding: 1rem 1.25rem;
+    border-right: 1px solid var(--color-line);
+    border-bottom: 1px solid var(--color-line);
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+
+  .cs-meta-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-ink-3);
+  }
+
+  .cs-meta-value {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-ink);
+    line-height: 1.4;
+  }
+
+  /* ——————————————————————————————————————
+     CASE STUDY NAVIGATION
+     ————————————————————————————————————— */
+
+  .cs-nav-link {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: clamp(1.5rem, 3vw, 2rem) clamp(1.5rem, 5vw, 4rem);
+    text-decoration: none;
+    transition: background 0.15s ease;
+    border-right: 1px solid var(--color-line);
+  }
+  .cs-nav-link:last-child {
+    border-right: none;
+  }
+  .cs-nav-link:hover {
+    background: var(--color-paper);
+  }
+
+  .cs-nav-direction {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-ink-3);
+    display: block;
+    transition: color 0.15s ease;
+  }
+  .cs-nav-link:hover .cs-nav-direction {
+    color: var(--color-accent);
+  }
+
+  .cs-nav-title {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-ink);
+    display: block;
+    line-height: 1.3;
+  }
 }
 
+/* ——————————————————————————————————————
+   PROSE CONTENT
+   Styles MDX/markdown output — must be unscoped
+   so they reach elements rendered by the content layer.
+   ————————————————————————————————————— */
 .ao-md-content-container {
-  /* Override default max-width for better readability */
   max-width: 700px;
 
   p,
@@ -500,6 +813,28 @@
   ul,
   ol {
     margin-bottom: 1.25em;
+  }
+
+  p,
+  li {
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--color-ink-2);
+  }
+
+  li {
+    margin-bottom: 0.4em;
+  }
+
+  ul,
+  ol {
+    padding-left: 1.25rem;
+  }
+
+  strong {
+    font-weight: 600;
+    color: var(--color-ink);
   }
 
   h2,
@@ -513,8 +848,17 @@
   }
 
   h2 {
-    @apply text-3xl md:text-4xl;
+    font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+    font-variation-settings:
+      "opsz" 36,
+      "wght" 400;
+    letter-spacing: -0.015em;
+    margin-top: 3rem;
   }
+  h2:first-child {
+    margin-top: 0;
+  }
+
   h3 {
     @apply text-2xl md:text-3xl;
   }
