@@ -41,6 +41,7 @@ const {
   timeline,
   client,
   outcome,
+  cover,
 } = entry.data;
 
 const indexLabel = String(index + 1).padStart(2, "0");
@@ -149,9 +150,9 @@ const totalLabel = String(total).padStart(2, "0");
       <!-- Hero image -->
       <div class="w-full">
         {
-          heroImage ? (
+          (heroImage || cover) ? (
             <img
-              src={heroImage}
+              src={heroImage || cover}
               alt={title}
               class="w-full max-h-140 object-cover block"
             />

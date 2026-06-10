@@ -30,6 +30,7 @@ const work = defineCollection({
     timeline: z.string().optional(),
     outcome: z.string().optional(),
     order: z.number().optional(),
+    cover: z.string().optional(),
   }),
 });
 

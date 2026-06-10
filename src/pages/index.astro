@@ -13,7 +13,9 @@ import ContactBar from "../components/ContactBar.astro";
 
     <main class="flex flex-col">
       <!-- Hero -->
-      <div class="min-h-[70vh] flex flex-col items-center justify-center gap-2 px-6 text-center border-b border-(--color-line)">
+      <div
+        class="min-h-[70vh] flex flex-col items-center justify-center gap-2 px-6 text-center border-b border-(--color-line)"
+      >
         <p class="type-name">Andre Ortiz</p>
         <h1 class="type-hero rotating">Product Experience Design</h1>
       </div>
@@ -26,37 +28,43 @@ import ContactBar from "../components/ContactBar.astro";
               slug: "responsive-web-design",
               title: "Responsive Web Redesign",
               tags: ["UX Design", "Responsive"],
-              description: "Unified a fragmented multi-platform experience into a single, mobile-first product.",
+              description:
+                "Unified a fragmented multi-platform experience into a single, mobile-first product.",
             },
             {
               slug: "snyders-bbq",
               title: "Snyder's BBQ Brand Identity",
               tags: ["Brand Identity", "Print"],
-              description: "Complete visual identity — from logo through menu system, signage, and merch.",
+              description:
+                "Complete visual identity — from logo through menu system, signage, and merch.",
             },
             {
               slug: "design-system",
               title: "Design System",
               tags: ["Design Systems", "Tokens"],
-              description: "A unified component library and token system across four products.",
+              description:
+                "A unified component library and token system across four products.",
             },
             {
               slug: "ai-chatbot",
               title: "AI Chatbot Interface",
               tags: ["AI/ML", "Enterprise UX"],
-              description: "Conversational UI for an AI assistant embedded in an enterprise SaaS platform.",
+              description:
+                "Conversational UI for an AI assistant embedded in an enterprise SaaS platform.",
             },
             {
               slug: "mobile-app",
               title: "Mobile App for AI Chat",
               tags: ["Mobile", "iOS"],
-              description: "Native mobile experience for an AI assistant app, zero to App Store.",
+              description:
+                "Native mobile experience for an AI assistant app, zero to App Store.",
             },
             {
               slug: "financial-dashboard",
               title: "Financial Dashboard UX",
               tags: ["Data Visualization", "Dashboard"],
-              description: "Redesigned a dense financial reporting tool to cut time-to-insight in half.",
+              description:
+                "Redesigned a dense financial reporting tool to cut time-to-insight in half.",
             },
           ].map(({ slug, title, tags, description }) => (
             <a href={`/work/${slug}`} class="work-tile">
@@ -90,6 +98,7 @@ import ContactBar from "../components/ContactBar.astro";
     "Design Engineer",
     "Business Partner",
     "Creative Problem Solver",
+    "Neighbor & Friend",
   ];
   let i = 0;
   const el = document.querySelector(".rotating") as HTMLElement;
