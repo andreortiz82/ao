@@ -8,9 +8,12 @@ team: [Solo]
 timeline: 6 weeks · Q3 2023
 tags: [Brand Identity, Illustration, Print]
 outcome: Full identity system in production across all brand touchpoints
-order: 2
+order: 6
 cover: "/snyders-bbq/cover.png"
 ---
+
+import DemoFrame from "../../components/DemoFrame.astro";
+import FoodOrderingDemo from "../../components/demos/FoodOrderingDemo.jsx";
 
 ## The Problem
 
@@ -23,6 +26,14 @@ The risk with BBQ branding is defaulting to the obvious: distressed fonts, longh
 Spent time with the owner first — not to gather a brief, but to understand the obsession. What pitmasters does he respect? What does he think is wrong with how most people approach brisket? The answers to those questions became the brief.
 
 The reference territory I arrived at: mid-century Texas roadside, craft signage, hand-painted lettering traditions. Not nostalgic cosplay — a real connection to the visual culture of the craft.
+
+<DemoFrame
+  label="Interactive"
+  title="Order online"
+  description="Pickup ordering flow — menu, cart, and checkout in the Snyder's brand system."
+>
+  <FoodOrderingDemo client:load />
+</DemoFrame>
 
 ## The Work
 

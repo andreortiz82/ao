@@ -8,9 +8,12 @@ team: [Solo designer, 2 engineers, 1 founder]
 timeline: 14 weeks · Q3 2024
 tags: [Mobile, iOS, Conversational UI, AI]
 outcome: 4.7 App Store rating at launch with 2,000+ downloads in first week
-order: 5
+order: 3
 cover: "/ai-mobile/cover.png"
 ---
+
+import DemoFrame from "../../components/DemoFrame.astro";
+import MobileChatDemo from "../../components/demos/MobileChatDemo.jsx";
 
 ## The Problem
 
@@ -23,6 +26,14 @@ The product's value was in the quality of the AI conversation — the design job
 Started with competitive analysis focused not on AI apps — most of them are bad — but on the best conversation apps generally. Signal. iMessage. Telegram. What makes a message thread feel alive and responsive? What makes input feel low-friction?
 
 Spent the first week on the conversation thread UI exclusively, because everything else — navigation, settings, history — is scaffolding. If the core conversation experience wasn't right, nothing else would matter.
+
+<DemoFrame
+  label="Interactive"
+  title="Mobile conversation simulation"
+  description="Phone-frame preview with grounded responses, citation chips, and gesture-native composer patterns."
+>
+  <MobileChatDemo client:load />
+</DemoFrame>
 
 ## The Work
 

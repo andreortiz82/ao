@@ -8,9 +8,12 @@ team: [1 designer, 2 front-end engineers]
 timeline: 10 weeks · Q1 2024
 tags: [UX Design, Responsive, Web]
 outcome: 41% increase in mobile session depth after launch
-order: 1
+order: 5
 cover: "/responsive-site/cover.png"
 ---
+
+import DemoFrame from "../../components/DemoFrame.astro";
+import ResponsiveResizeDemo from "../../components/demos/ResponsiveResizeDemo.jsx";
 
 ## The Problem
 
@@ -23,6 +26,14 @@ The ask: consolidate it into one coherent responsive experience without losing a
 Started with a full audit. Cataloged every distinct interaction pattern across the three surfaces, then mapped which ones were actually redundant vs. genuinely necessary. Ran a three-day contextual inquiry with eight users across device types to see where the pain was real vs. assumed.
 
 Key finding: mobile users weren't trying to do less — they just couldn't. The desktop layout was being viewport-crushed, not adapted.
+
+<DemoFrame
+  label="Interactive"
+  title="Resize the viewport"
+  description="Drag the handle to see navigation, filters, and data layout reflow across breakpoints."
+>
+  <ResponsiveResizeDemo client:load />
+</DemoFrame>
 
 ## The Work
 

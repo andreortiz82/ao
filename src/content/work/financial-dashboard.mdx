@@ -8,9 +8,12 @@ team: [2 designers, 3 engineers, 2 data analysts, 1 PM]
 timeline: 18 weeks · Q1 2024
 tags: [Data Visualization, Enterprise UX, Dashboard]
 outcome: Time-to-insight reduced by 52% in post-launch measurement
-order: 6
+order: 4
 cover: "/financial-app/cover.png"
 ---
+
+import DemoFrame from "../../components/DemoFrame.astro";
+import FinancialDashboardDemo from "../../components/demos/FinancialDashboardDemo.jsx";
 
 ## The Problem
 
@@ -25,6 +28,14 @@ Ran a two-week discovery focused on one question: what decisions does this data 
 Interviewed eight users across three roles. Mapped their actual weekly workflows. Found that 80% of daily use was centered on three views. The remaining 70% of the dashboard surface was either reference material or edge-case investigation.
 
 This became the design principle: **optimize for the common path; make the detail accessible but not default.**
+
+<DemoFrame
+  label="Interactive"
+  title="Rebalance the dashboard"
+  description="Adjust allocation sliders and budget ceiling — summary metrics update live."
+>
+  <FinancialDashboardDemo client:load />
+</DemoFrame>
 
 ## The Work
 

@@ -8,9 +8,12 @@ team: [2 designers, 4 engineers, 1 AI/ML engineer, 1 PM]
 timeline: 12 weeks · Q2 2024
 tags: [AI/ML, Conversational UI, Enterprise UX]
 outcome: 78% task completion rate in first 30 days, well above the 55% target
-order: 4
+order: 1
 cover: "/ai-chat/cover.png"
 ---
+
+import DemoFrame from "../../components/DemoFrame.astro";
+import ChatbotDemo from "../../components/demos/ChatbotDemo.jsx";
 
 ## The Problem
 
@@ -23,6 +26,14 @@ Users tried it once, got a confusing response, and never came back. The problem 
 The core design challenge with AI interfaces is managing the uncertainty gap — what users expect versus what the model can reliably deliver. Most products handle this badly: they either overpromise and disappoint, or hedge so much the interface feels useless.
 
 Ran discovery sessions with 12 users across three user personas. The clearest finding: people weren't afraid of AI getting things wrong — they were afraid of not knowing when it had. Transparency and recovery mattered more than perfection.
+
+<DemoFrame
+  label="Interactive"
+  title="Experience the assistant"
+  description="Try a scripted conversation — retrieved data, citations, interpretation labels, and a low-confidence response."
+>
+  <ChatbotDemo client:load />
+</DemoFrame>
 
 ## The Work
 

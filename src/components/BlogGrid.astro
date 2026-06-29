@@ -1,0 +1,53 @@
+---
+import type { BlogEntry } from "../lib/blog";
+import { formatBlogDate } from "../lib/blog";
+
+interface Props {
+  posts: BlogEntry[];
+}
+
+const { posts } = Astro.props;
+---
+
+<section class="blog-grid">
+  {
+    posts.map((post) => {
+      const { title, description, tags, pubDate, heroImage } = post.data;
+
+      return (
+        <a href={`/blog/${post.id}`} class="blog-card">
+          {
+            heroImage ? (
+              <div
+                class="blog-card-image blog-card-image--cover"
+                style={`background-image: url(${heroImage})`}
+              />
+            ) : (
+              <div class="blog-card-image" />
+            )
+          }
+          <div class="blog-card-body">
+            {
+              tags && tags.length > 0 && (
+                <div class="blog-card-tags">
+                  {tags.slice(0, 3).map((tag) => (
+                    <span class="ao-tag">{tag}</span>
+                  ))}
+                </div>
+              )
+            }
+            <h2 class="type-tile-title">{title}</h2>
+            {
+              description && (
+                <p class="blog-card-desc">{description}</p>
+              )
+            }
+            <time class="blog-card-date" datetime={pubDate.toISOString()}>
+              {formatBlogDate(pubDate)}
+            </time>
+          </div>
+        </a>
+      );
+    })
+  }
+</section>

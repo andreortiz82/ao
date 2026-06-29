@@ -8,9 +8,12 @@ team: [2 designers, 3 engineers, 1 PM]
 timeline: 16 weeks · Q4 2023
 tags: [Design Systems, Tokens, React, Figma]
 outcome: Reduced new feature design time by ~60% across the org
-order: 3
+order: 2
 cover: "/design-system/cover.png"
 ---
+
+import DemoFrame from "../../components/DemoFrame.astro";
+import DesignSystemDemo from "../../components/demos/DesignSystemDemo.jsx";
 
 ## The Problem
 
@@ -25,6 +28,14 @@ Spent the first two weeks doing an honest inventory — not planning, cataloging
 The finding: roughly 70% of components were doing the same job with different executions. The remaining 30% were genuinely product-specific. This shaped the scope — a universal core, with product-level extension layers.
 
 Ran alignment sessions with each product team's lead designer. The instinct is to design the system in isolation and hand it over — that doesn't work. The people who would use it needed to feel ownership over it.
+
+<DemoFrame
+  label="Interactive"
+  title="Switch brand themes"
+  description="The same component card remapped across Navigator and product-specific token presets — no component rewrites."
+>
+  <DesignSystemDemo client:load />
+</DemoFrame>
 
 ## The Work
 

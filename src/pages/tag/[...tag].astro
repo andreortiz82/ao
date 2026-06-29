@@ -1,70 +1,60 @@
 ---
 import BaseHead from "../../components/BaseHead.astro";
-import Footer from "../../components/Footer.astro";
-import FormattedDate from "../../components/FormattedDate.astro";
-import Header from "../../components/Header.astro";
+import BlogGrid from "../../components/BlogGrid.astro";
+import ContactBar from "../../components/ContactBar.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
-import { getCollection } from "astro:content";
+import { getBlogPosts } from "../../lib/blog";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
+  const posts = await getBlogPosts();
   const uniqueTags = [
-    ...new Set(posts.map((post: any) => post.data.tags).flat()),
+    ...new Set(
+      posts.flatMap((post) => post.data.tags ?? []).filter(Boolean),
+    ),
   ];
 
-  return uniqueTags.map((tag: any) => ({
+  return uniqueTags.map((tag) => ({
     params: { tag },
     props: {
-      posts: posts.filter((post: any) => post.data.tags.includes(tag)),
-      allTags: uniqueTags,
+      tag,
+      posts: posts.filter((post) => post.data.tags?.includes(tag)),
     },
   }));
 }
 
-const { tag } = Astro.params;
-const { posts } = Astro.props;
+const { tag, posts } = Astro.props;
 ---
 
+<!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead
+      title={`${tag} — Blog — ${SITE_TITLE}`}
+      description={SITE_DESCRIPTION}
+    />
   </head>
   <body>
-    <main>
-      <Header title={SITE_TITLE} />
-      <h1 class="mb-5">Ideas tagged with <i class="text-primary">{tag}</i></h1>
-      <section class="grid grid-cols-1 lg:grid-cols-3 gap-4 text-xl leading-8">
-        {
-          posts.map((post: any) => (
-            <article class="rounded p-6 flex flex-col gap-4 transition">
-              <a class="flex flex-col gap-2" href={`/blog/${post.id}/`}>
-                <div>
-                  <img
-                    src={post.data.heroImage}
-                    alt={post.data.title}
-                    class="rounded-lg mb-2 min-h-[100px] bg-black/10"
-                    loading="lazy"
-                    width="100%"
-                    height="auto"
-                  />
-                </div>
-                <h4 class="!m-0">{post.data.title}</h4>
-                <p class="m-0 text-zinc-500 !leading-[28px]">
-                  {post.data.description}
-                </p>
-              </a>
-              {post.data.tags && (
-                <div class="list-none flex gap-1 flex-wrap">
-                  {post.data.tags.map((tag: any) => (
-                    <span class="ao-tag">{tag}</span>
-                  ))}
-                </div>
-              )}
-            </article>
-          ))
-        }
-      </section>
-      <Footer />
+    <ContactBar hasBackButton />
+
+    <main class="flex flex-col">
+      <div
+        class="px-[clamp(1.5rem,5vw,4rem)] pt-[clamp(4rem,8vw,6rem)] pb-[clamp(2rem,5vw,3rem)] border-b border-(--color-line) max-w-200"
+      >
+        <span class="section-label">Tag</span>
+        <h1 class="type-cs-title mt-4 mb-3">{tag}</h1>
+        <p class="font-sans text-[17px] leading-[1.6] text-(--color-ink-2) m-0">
+          {posts.length} post{posts.length === 1 ? "" : "s"} tagged &ldquo;{tag}
+          &rdquo;
+        </p>
+      </div>
+
+      <BlogGrid posts={posts} />
     </main>
   </body>
 </html>
+
+<script>
+  import { initBlogMotion } from "../../scripts/motion";
+
+  initBlogMotion();
+</script>

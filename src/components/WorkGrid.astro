@@ -1,0 +1,43 @@
+---
+import type { WorkEntry } from "../lib/work";
+
+interface Props {
+  entries: WorkEntry[];
+}
+
+const { entries } = Astro.props;
+---
+
+<section class="work-grid">
+  {
+    entries.map((entry) => {
+      const { title, description, tags, cover } = entry.data;
+      const slug = entry.id;
+
+      return (
+        <a href={`/work/${slug}`} class="work-tile">
+          <div
+            class:list={["work-tile-image", cover && "work-tile-image--cover"]}
+            style={cover ? `background-image: url(${cover})` : undefined}
+          />
+          <div class="work-tile-body">
+            {
+              tags && tags.length > 0 && (
+                <div class="work-tile-tags">
+                  {tags.map((tag) => (
+                    <span class="ao-tag">{tag}</span>
+                  ))}
+                </div>
+              )
+            }
+            <h2 class="type-tile-title">{title}</h2>
+            <p class="work-tile-desc">{description}</p>
+            <span class="work-tile-cta">
+              View case study <span class="work-tile-arrow">→</span>
+            </span>
+          </div>
+        </a>
+      );
+    })
+  }
+</section>

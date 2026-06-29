@@ -1,14 +1,12 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import { getCollection, render } from "astro:content";
+import { render } from "astro:content";
 import BaseHead from "../../components/BaseHead.astro";
 import ContactBar from "../../components/ContactBar.astro";
+import { getWorkEntries } from "../../lib/work";
 
 export async function getStaticPaths() {
-  const workEntries = await getCollection("work");
-  const sorted = workEntries.sort(
-    (a, b) => (a.data.order ?? 99) - (b.data.order ?? 99),
-  );
+  const sorted = await getWorkEntries();
   return sorted.map((entry, index) => ({
     params: { slug: entry.id },
     props: {
@@ -54,34 +52,11 @@ const totalLabel = String(total).padStart(2, "0");
     <BaseHead title={`${title} — Andre Ortiz`} description={description} />
   </head>
   <body>
-    <!-- Site nav -->
-    <!-- <header
-      class="sticky top-0 z-50 flex items-center justify-between px-[clamp(1.5rem,5vw,4rem)] py-4 bg-white/90 backdrop-blur-sm border-b border-(--color-line)"
-    >
-      <a
-        href="/"
-        class="group inline-flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.08em] text-(--color-ink-3) no-underline transition-colors duration-150 hover:text-(--color-ink)"
-      >
-        <span
-          class="inline-block transition-transform duration-200 group-hover:-translate-x-0.75"
-          >←</span
-        >
-        Andre Ortiz
-      </a>
-      <a
-        href="mailto:hello@andreortiz.com"
-        class="font-sans text-[13px] font-medium text-(--color-ink-3) no-underline transition-colors duration-150 hover:text-(--color-ink)"
-      >
-        hello@andreortiz.com
-      </a>
-    </header> -->
-
     <ContactBar hasBackButton />
 
     <main>
-      <!-- Case study header -->
       <section
-        class="px-[clamp(1.5rem,5vw,4rem)] pt-[clamp(4rem,8vw,8rem)] pb-[clamp(3rem,6vw,5rem)] border-b border-(--color-line)"
+        class="cs-header px-[clamp(1.5rem,5vw,4rem)] pt-[clamp(4rem,8vw,8rem)] pb-[clamp(3rem,6vw,5rem)] border-b border-(--color-line)"
       >
         <div class="max-w-200">
           <div class="flex items-center gap-4 mb-6">
@@ -147,8 +122,7 @@ const totalLabel = String(total).padStart(2, "0");
         </div>
       </section>
 
-      <!-- Hero image -->
-      <div class="w-full">
+      <div class="w-full cs-hero-media">
         {
           (heroImage || cover) ? (
             <img
@@ -251,3 +225,9 @@ const totalLabel = String(total).padStart(2, "0");
     </main>
   </body>
 </html>
+
+<script>
+  import { initCaseStudyMotion } from "../../scripts/motion";
+
+  initCaseStudyMotion();
+</script>

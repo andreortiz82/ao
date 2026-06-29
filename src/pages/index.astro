@@ -1,6 +1,11 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import ContactBar from "../components/ContactBar.astro";
+import WorkGrid from "../components/WorkGrid.astro";
+import { HERO_DEFAULT_LABEL, HERO_NAME } from "../consts";
+import { getWorkEntries } from "../lib/work";
+
+const work = await getWorkEntries();
 ---
 
 <!doctype html>
@@ -12,103 +17,47 @@ import ContactBar from "../components/ContactBar.astro";
     <ContactBar />
 
     <main class="flex flex-col">
-      <!-- Hero -->
       <div
-        class="min-h-[70vh] flex flex-col items-center justify-center gap-2 px-6 text-center border-b border-(--color-line)"
+        class="home-hero min-h-[70vh] flex flex-col items-center justify-center gap-2 px-6 text-center border-b border-(--color-line)"
       >
-        <p class="type-name">Andre Ortiz</p>
-        <h1 class="type-hero rotating">Product Experience Design</h1>
+        <p class="type-name hero-name">{HERO_NAME}</p>
+        <h1 class="type-hero rotating">{HERO_DEFAULT_LABEL}</h1>
       </div>
 
-      <!-- Work tiles -->
-      <section class="work-grid">
-        {
-          [
-            {
-              slug: "responsive-web-design",
-              title: "Responsive Web Redesign",
-              tags: ["UX Design", "Responsive"],
-              description:
-                "Unified a fragmented multi-platform experience into a single, mobile-first product.",
-            },
-            {
-              slug: "snyders-bbq",
-              title: "Snyder's BBQ Brand Identity",
-              tags: ["Brand Identity", "Print"],
-              description:
-                "Complete visual identity — from logo through menu system, signage, and merch.",
-            },
-            {
-              slug: "design-system",
-              title: "Design System",
-              tags: ["Design Systems", "Tokens"],
-              description:
-                "A unified component library and token system across four products.",
-            },
-            {
-              slug: "ai-chatbot",
-              title: "AI Chatbot Interface",
-              tags: ["AI/ML", "Enterprise UX"],
-              description:
-                "Conversational UI for an AI assistant embedded in an enterprise SaaS platform.",
-            },
-            {
-              slug: "mobile-app",
-              title: "Mobile App for AI Chat",
-              tags: ["Mobile", "iOS"],
-              description:
-                "Native mobile experience for an AI assistant app, zero to App Store.",
-            },
-            {
-              slug: "financial-dashboard",
-              title: "Financial Dashboard UX",
-              tags: ["Data Visualization", "Dashboard"],
-              description:
-                "Redesigned a dense financial reporting tool to cut time-to-insight in half.",
-            },
-          ].map(({ slug, title, tags, description }) => (
-            <a href={`/work/${slug}`} class="work-tile">
-              <div class="work-tile-image" />
-              <div class="work-tile-body">
-                <div class="work-tile-tags">
-                  {tags.map((tag) => (
-                    <span class="ao-tag">{tag}</span>
-                  ))}
-                </div>
-                <h2 class="type-tile-title">{title}</h2>
-                <p class="work-tile-desc">{description}</p>
-                <span class="work-tile-cta">
-                  View case study <span class="work-tile-arrow">→</span>
-                </span>
-              </div>
-            </a>
-          ))
-        }
-      </section>
+      <WorkGrid entries={work} />
     </main>
   </body>
 </html>
 
 <script>
-  const labels = [
-    "Product Experience Designer",
-    "Design Systems Thinker",
-    "Team Collaborator",
-    "Individual Contributor",
-    "Design Engineer",
-    "Business Partner",
-    "Creative Problem Solver",
-    "Neighbor & Friend",
-  ];
-  let i = 0;
-  const el = document.querySelector(".rotating") as HTMLElement;
+  import { initHomeMotion } from "../scripts/motion";
 
-  setInterval(() => {
-    el.style.opacity = "0";
-    setTimeout(() => {
-      i = (i + 1) % labels.length;
-      el.textContent = labels[i];
-      el.style.opacity = "1";
-    }, 300);
-  }, 2800);
+  initHomeMotion();
 </script>
+
+<style>
+  .home-hero {
+    --hero-line-scale: 1;
+    position: relative;
+  }
+
+  .home-hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: min(120px, 20vw);
+    height: 1px;
+    background: var(--color-line);
+    transform: translateX(-50%) scaleX(var(--hero-line-scale));
+    transform-origin: center;
+  }
+
+  .rotating {
+    will-change: transform, opacity;
+  }
+
+  .work-tile {
+    will-change: transform, opacity;
+  }
+</style>

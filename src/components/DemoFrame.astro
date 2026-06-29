@@ -1,0 +1,52 @@
+---
+interface Props {
+  label?: string;
+  title?: string;
+  description?: string;
+}
+
+const {
+  label = "Interactive",
+  title,
+  description,
+} = Astro.props;
+---
+
+<section class="demo-frame border-t border-b border-(--color-line)">
+  <div
+    class="demo-frame-head px-[clamp(1.5rem,5vw,4rem)] py-5 border-b border-(--color-line) flex flex-col gap-2"
+  >
+    <span class="section-label">{label}</span>
+    {
+      title && (
+        <h2 class="font-serif text-[clamp(1.35rem,2.5vw,1.75rem)] leading-[1.2] tracking-[-0.015em] text-(--color-ink) font-[350] [font-variation-settings:'opsz'_36,'wght'_400]">
+          {title}
+        </h2>
+      )
+    }
+    {
+      description && (
+        <p class="font-sans text-[15px] leading-[1.55] text-(--color-ink-2) max-w-160 m-0">
+          {description}
+        </p>
+      )
+    }
+  </div>
+  <div class="demo-frame-stage stage-grid p-[clamp(1rem,3vw,2rem)]">
+    <div class="demo-frame-surface">
+      <slot />
+    </div>
+  </div>
+</section>
+
+<style>
+  .demo-frame-surface {
+    background: var(--color-background);
+    border: 1px solid var(--color-line);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.04),
+      0 12px 40px -16px rgba(0, 0, 0, 0.08);
+  }
+</style>
