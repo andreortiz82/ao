@@ -1,0 +1,8 @@
+---
+import ProjectPage from "../../layouts/ProjectPage.astro";
+import { getProject } from "../../data/projects";
+
+const project = getProject("ai-chatbot");
+---
+
+<ProjectPage project={project} />

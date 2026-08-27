@@ -104,7 +104,11 @@ For implementation details see [CLAUDE.md § Italic + accent emphasis system](CL
 
 **Edge padding:** `clamp(1.25rem, 4vw, 2.5rem)` — fluid, narrows on mobile, wider on large screens. Applied consistently via a CSS custom property pattern (`--edge`). See [CLAUDE.md § Responsive edge padding pattern](CLAUDE.md).
 
-**Vertical rhythm:** `clamp(5rem, 10vw, 9rem)` per section. Large breathing room between sections is intentional — it communicates confidence.
+**Vertical rhythm:** `clamp(5rem, 10vw, 9rem)` per inner-page section. Large breathing room between sections is intentional — it communicates confidence.
+
+**Homepage first viewport:** header overlays a centered hero. The hero stage is `min-height: calc(100dvh - peek)` so the claim line stays large. The four project tiles begin at the bottom of the viewport — only their tops (index, title, start of the line) are visible. Peek is ~10.5rem on desktop, ~8.5–9.5rem on smaller screens. Do not shrink the hero to fully reveal the tiles.
+
+**Project tiles:** paper surface, hairline border, default radius. Index in JetBrains Mono, title in Fraunces, one-line description in Instrument Sans, empty `.stage-grid` below. Hover darkens the border only — no scale, no color-reveal. Four columns desktop, two from 860px, one from 560px.
 
 **Reading measure:** Intro paragraph and card descriptions are constrained to `~32–34ch`. Wider than necessary kills the eye's return line.
 

@@ -1,374 +1,51 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import {
-  GithubLogoIcon,
-  DribbbleLogoIcon,
-  InstagramLogoIcon,
-  LinkedinLogoIcon,
-  TwitterLogoIcon,
-  YoutubeLogoIcon,
-} from "@phosphor-icons/react";
+import Header from "../components/Header.astro";
+import { projects } from "../data/projects";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title="Andre Ortiz" description="Product Experience Design" />
+    <BaseHead
+      title="Andre Ortiz"
+      description="Product Experience Designer. Twenty years building product experiences end to end."
+    />
   </head>
   <body>
-    <header>
-      <section>
-        <button class="avatar-btn" id="avatar-btn" aria-label="About Andre">
-          <img src="/avatar.png" alt="Andre Ortiz" class="avatar" />
-        </button>
-
-        <nav class="social-nav" aria-label="Social links">
-          <a
-            href="https://github.com/andreortiz82"
-            class="social-link"
-            aria-label="GitHub"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GithubLogoIcon size={16} weight="regular" />
-          </a>
-          <a
-            href="https://dribbble.com/andreortiz"
-            class="social-link"
-            aria-label="Dribbble"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <DribbbleLogoIcon size={16} weight="regular" />
-          </a>
-          <a
-            href="https://www.instagram.com/andreortiz"
-            class="social-link"
-            aria-label="Instagram"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <InstagramLogoIcon size={16} weight="regular" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/andreortiz"
-            class="social-link"
-            aria-label="LinkedIn"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <LinkedinLogoIcon size={16} weight="regular" />
-          </a>
-          <a
-            href="https://twitter.com/andreortiz"
-            class="social-link"
-            aria-label="X (Twitter)"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <TwitterLogoIcon size={16} weight="regular" />
-          </a>
-          <a
-            href="https://www.youtube.com/@aomusicandmore"
-            class="social-link"
-            aria-label="YouTube"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <YoutubeLogoIcon size={16} weight="regular" />
-          </a>
-        </nav>
-      </section>
-
-      <a href="mailto:hello@andreortiz.com" class="contact">
-        hello@andreortiz.com
-      </a>
-    </header>
-
-    <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
-      <div
-        class="modal"
-        role="dialog"
-        aria-modal="true"
-        aria-label="About Andre Ortiz"
-      >
-        <button class="modal-close" id="modal-close" aria-label="Close"
-          >✕</button
-        >
-        <div class="modal-header">
-          <img src="/avatar.png" alt="Andre Ortiz" class="modal-avatar" />
-          <div>
-            <p class="modal-eyebrow">Andre Ortiz</p>
-            <p class="modal-name">Product Experience Designer</p>
-          </div>
-        </div>
-        <p class="modal-intro">
-          Twenty years building product experiences, executing the vision,
-          owning the systems, shipping the work. My design process is lean,
-          iterative, always clear about intent.
-        </p>
-        <ul class="modal-list">
-          {
-            [
-              [
-                "Full-stack design fluency",
-                "Brand identity, illustration, motion, UI, and print.",
-              ],
-              [
-                "Engineering credibility",
-                "HTML/CSS/JS, React/TypeScript, Ruby, Python, and Pull Requests.",
-              ],
-              [
-                "Systems thinker",
-                "Design systems, component libraries, and scalable processes that grow with teams.",
-              ],
-              [
-                "Creative Leadership",
-                "Mentorship, cross-functional collaboration, and building strong partnerships accross teams and disciplines.",
-              ],
-              [
-                "AI and the future...",
-                "AI-power products, chatbots, agentic workflows, prompt engineering, and custom tool development.",
-              ],
-            ].map(([title, body]) => (
-              <li class="modal-item">
-                <span class="modal-item-title">{title}</span>
-                <span class="modal-item-body">{body}</span>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-    </div>
+    <Header />
 
     <main>
-      <div class="wrap">
-        <p class="name">Andre Ortiz</p>
-        <h1 class="rotating">Product Experience Design</h1>
-      </div>
+      <section class="hero-stage" aria-label="Introduction">
+        <div class="wrap">
+          <p class="name">Andre Ortiz</p>
+          <h1 class="rotating">Product Experience Designer</h1>
+        </div>
+      </section>
+
+      <section class="projects" aria-label="Selected work">
+        {
+          projects.map((project) => (
+            <a class="project-tile" href={project.href}>
+              <span class="section-label">{project.index}</span>
+              <h2>{project.title}</h2>
+              <p>{project.line}</p>
+              <div class="tile-stage stage-grid" aria-hidden="true" />
+            </a>
+          ))
+        }
+      </section>
     </main>
   </body>
 </html>
 
 <style>
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  html,
-  body {
-    height: 100%;
-  }
-
-  body {
-    background: var(--color-background);
-    color: var(--color-ink);
-  }
-
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: clamp(1.25rem, 3vw, 2rem) clamp(1.25rem, 4vw, 2.5rem);
-  }
-
-  header section {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .social-nav {
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-  }
-
-  .social-link {
+  .hero-stage {
+    min-height: max(22rem, calc(100dvh - 10.5rem));
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-ink-3);
-    transition: color 0.15s ease;
-    line-height: 1;
-  }
-
-  .social-link:hover {
-    color: var(--color-ink);
-  }
-
-  .avatar-btn {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    border-radius: 50%;
-    display: block;
-    transition: opacity 0.15s ease;
-  }
-
-  .avatar-btn:hover {
-    opacity: 0.75;
-  }
-
-  .avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .modal-backdrop {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: clamp(1.25rem, 4vw, 2.5rem);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.25s ease;
-    z-index: 100;
-  }
-
-  .modal-backdrop.open {
-    opacity: 1;
-    pointer-events: all;
-  }
-
-  .modal {
-    background: #111;
-    color: #f5f5f5;
-    border-radius: 6px;
-    padding: clamp(2rem, 5vw, 3rem);
-    max-width: 480px;
-    width: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    transform: translateY(12px);
-    transition: transform 0.25s ease;
-  }
-
-  .modal-backdrop.open .modal {
-    transform: translateY(0);
-  }
-
-  .modal-close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    color: #666;
-    font-size: 14px;
-    cursor: pointer;
-    padding: 4px 8px;
-    transition: color 0.15s ease;
-    line-height: 1;
-  }
-
-  .modal-close:hover {
-    color: #f5f5f5;
-  }
-
-  .modal-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .modal-avatar {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    object-fit: cover;
-    flex-shrink: 0;
-  }
-
-  .modal-eyebrow {
-    font-family: var(--font-mono);
-    font-size: 16px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #555;
-    margin-bottom: 0.2rem;
-  }
-
-  .modal-name {
-    font-family: var(--font-sans);
-    font-size: 18px;
-    font-weight: bold;
-    color: #ccc;
-  }
-
-  .modal-intro {
-    font-family: var(--font-sans);
-    font-size: 15px;
-    line-height: 1.65;
-    color: #ccc;
-    padding-top: 0.5rem;
-    border-top: 1px solid #222;
-  }
-
-  .modal-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.875rem;
-  }
-
-  .modal-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-  }
-
-  .modal-item-title {
-    font-family: var(--font-sans);
-    font-size: 13px;
-    font-weight: 600;
-    color: #f0f0f0;
-  }
-
-  .modal-item-body {
-    font-family: var(--font-sans);
-    font-size: 13px;
-    line-height: 1.6;
-    color: #777;
-  }
-
-  .contact {
-    font-family: var(--font-sans);
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--color-ink-3);
-    text-decoration: none;
-    letter-spacing: -0.005em;
-    transition: color 0.15s ease;
-  }
-
-  .contact:hover {
-    color: var(--color-ink);
-  }
-
-  main {
-    min-height: 100dvh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: clamp(2rem, 6vw, 4rem);
+    padding: 6.5rem clamp(1.25rem, 4vw, 2.5rem) 1.75rem;
     text-align: center;
   }
 
@@ -385,9 +62,10 @@ import {
     letter-spacing: 0.13em;
     text-transform: uppercase;
     color: var(--color-ink-3);
+    margin: 0;
   }
 
-  h1 {
+  h1.rotating {
     font-family: var(--font-serif);
     font-size: clamp(3rem, 10vw, 8rem);
     font-variation-settings:
@@ -397,23 +75,96 @@ import {
     letter-spacing: -0.035em;
     color: var(--color-ink);
     transition: opacity 0.3s ease;
+    margin: 0;
+    max-width: 92vw;
+  }
+
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+    padding: 0 clamp(1.25rem, 4vw, 2.5rem) clamp(2.5rem, 6vw, 4rem);
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .project-tile {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    min-height: 22rem;
+    padding: 1.15rem 1.15rem 0;
+    background: var(--color-paper);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+    color: inherit;
+    text-decoration: none;
+    transition: border-color 0.2s ease;
+  }
+
+  .project-tile:hover {
+    border-color: rgba(0, 0, 0, 0.18);
+  }
+
+  .project-tile h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(1.15rem, 1.6vw, 1.5rem);
+    font-variation-settings:
+      "opsz" 48,
+      "wght" 450;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+    margin: 0;
+  }
+
+  .project-tile p {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--color-ink-2);
+    margin: 0;
+  }
+
+  .tile-stage {
+    flex: 1;
+    min-height: 9rem;
+    margin: 0.85rem -1.15rem 0;
+    border-top: 1px solid var(--color-line-soft);
+    border-radius: 0 0 var(--radius) var(--radius);
+  }
+
+  @media (max-width: 860px) {
+    .hero-stage {
+      min-height: max(20rem, calc(100dvh - 9.5rem));
+    }
+
+    .projects {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 560px) {
+    .hero-stage {
+      min-height: max(18rem, calc(100dvh - 8.5rem));
+      padding-top: 5.5rem;
+    }
+
+    .name {
+      font-size: 16px;
+    }
+
+    .projects {
+      grid-template-columns: 1fr;
+    }
+
+    .project-tile {
+      min-height: 16rem;
+    }
   }
 </style>
 
 <script>
-  const backdrop = document.getElementById("modal-backdrop")!;
-  const btn = document.getElementById("avatar-btn")!;
-  const close = document.getElementById("modal-close")!;
-
-  btn.addEventListener("click", () => backdrop.classList.add("open"));
-  close.addEventListener("click", () => backdrop.classList.remove("open"));
-  backdrop.addEventListener("click", (e) => {
-    if (e.target === backdrop) backdrop.classList.remove("open");
-  });
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") backdrop.classList.remove("open");
-  });
-
   const labels = [
     "Product Experience Designer",
     "Design Systems Thinker",
@@ -424,14 +175,19 @@ import {
     "Creative Problem Solver",
   ];
   let i = 0;
-  const el = document.querySelector(".rotating") as HTMLElement;
+  const el = document.querySelector(".rotating") as HTMLElement | null;
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
 
-  setInterval(() => {
-    el.style.opacity = "0";
-    setTimeout(() => {
-      i = (i + 1) % labels.length;
-      el.textContent = labels[i];
-      el.style.opacity = "1";
-    }, 300);
-  }, 2800);
+  if (el && !reduceMotion) {
+    setInterval(() => {
+      el.style.opacity = "0";
+      setTimeout(() => {
+        i = (i + 1) % labels.length;
+        el.textContent = labels[i];
+        el.style.opacity = "1";
+      }, 300);
+    }, 2800);
+  }
 </script>

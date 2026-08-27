@@ -206,8 +206,8 @@ The through-line is breadth that deepens over time.
 - **URL:** https://andreortiz.com
 - **Tech stack:** See [CLAUDE.md](CLAUDE.md) for full details — Astro 5, Tailwind v4, Shadcn UI, React 19
 - **Visual identity:** See [DESIGN.md](DESIGN.md) — minimalist editorial, white/black/red, Fraunces + Instrument Sans + JetBrains Mono
-- **Sections:** Work · Writing · About · Contact
-- **Work examples plan:** See [WORK.md](WORK.md) for full build plan, interactive demo specs, and status tracker
+- **Homepage frame:** Header (avatar, socials, About modal, Blog, Contact me) · rotating claim · four project tiles (Design Systems, AI Chatbot, Scheduling, Finance)
+- **Work examples plan:** See [WORK.md](WORK.md) — placeholder routes exist; full interactive demos start with Design Systems
 
 ---
 

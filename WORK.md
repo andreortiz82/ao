@@ -87,12 +87,14 @@ New files needed before any individual example is built.
 
 ```
 src/pages/work/
-├── index.astro              # Work landing page — grid of 4 examples
-├── design-systems.astro
+├── index.astro              # Older collection index — not the homepage tile grid
+├── design-systems.astro     # Placeholder (full demo is next)
+├── ai-chatbot.astro
 ├── scheduling.astro
-├── financial.astro
-└── ai-tools.astro
+└── finance.astro
 ```
+
+Homepage tiles link to those four routes. Shared copy lives in `src/data/projects.ts`. Placeholder layout: `src/layouts/ProjectPage.astro`.
 
 ### New layout + components
 
@@ -106,9 +108,9 @@ src/components/
 └── DemoFrame.astro           # Container for React island demos — stage-grid bg, label bar
 ```
 
-### Nav update
+## Nav
 
-Add `Work` link to `Nav.astro` → `href: "/work"`.
+Homepage header: About (modal), Blog (`/blog`), Contact me. Tiles are the work entry points — no separate Work nav item.
 
 ### Work index page
 
@@ -119,7 +121,7 @@ Four cards in a 2×2 grid. Each card: index number, domain name, one-line hook, 
 ## Work Example 1 — Design Systems
 
 **URL:** `/work/design-systems`
-**Status:** Not started
+**Status:** Placeholder page. Full interactive demo is next.
 
 ### Concept
 
@@ -185,7 +187,7 @@ A living, scrollable demonstration of how a design system is architected and mai
 ## Work Example 2 — Advanced Scheduling Workflows
 
 **URL:** `/work/scheduling`
-**Status:** Not started
+**Status:** Placeholder page. Full interactive demo not started.
 
 ### Concept
 
@@ -248,8 +250,8 @@ Scheduling at organizational scale is one of the hardest UX problems — it's co
 
 ## Work Example 3 — Financial Tools
 
-**URL:** `/work/financial`
-**Status:** Not started
+**URL:** `/work/finance`
+**Status:** Placeholder page. Full interactive demo not started.
 
 ### Concept
 
@@ -321,8 +323,8 @@ Financial product UX is about reducing anxiety and creating clarity in high-stak
 
 ## Work Example 4 — AI Tools
 
-**URL:** `/work/ai-tools`
-**Status:** Not started
+**URL:** `/work/ai-chatbot`
+**Status:** Placeholder page. Full interactive demo not started.
 
 ### Concept
 
@@ -399,22 +401,26 @@ The most forward-facing example. Not about AI as a feature — about AI as a pro
 
 ## Build Order
 
-| Phase | Deliverable                                                                                              | Rationale                                                                                               |
-| ----- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| 1     | Shared infrastructure: `WorkLayout`, `WorkHero`, `WorkSection`, `DemoFrame`, work index page, nav update | Must exist before any example                                                                           |
-| 2     | **Design Systems**                                                                                       | Most directly relevant to systems-lead positioning; also most meta (built with the system it describes) |
-| 3     | **AI Tools**                                                                                             | Highest signal for startup audience; most current and differentiating                                   |
-| 4     | **Scheduling**                                                                                           | Demonstrates complex product thinking; good mid-funnel credibility piece                                |
-| 5     | **Financial**                                                                                            | Rounds out domain range; demonstrates data-dense UI competency                                          |
+Homepage frame first — then the four examples, one at a time. The old seven-section treatise per example is the destination, not the current pass.
+
+| Phase | Deliverable | Rationale |
+| ----- | ----------- | --------- |
+| 0 | **Homepage frame** — header, rotating claim, four peeking tiles, About modal, Contact me, `/blog`, four placeholder project routes | Locked 2026-08-26. Done when the wireframe is honest and buildable. |
+| 1 | **Design Systems** full interactive page | Next. Most directly relevant to systems-lead positioning. |
+| 2 | **AI Chatbot** | Highest signal for startup audience |
+| 3 | **Scheduling** | Complex product thinking |
+| 4 | **Finance** | Domain range and data-dense UI |
 
 ---
 
 ## Status Tracker
 
-| Example        | Infrastructure | Hero | Interactive Demos | Copy | Done |
-| -------------- | -------------- | ---- | ----------------- | ---- | ---- |
-| Shared infra   | ✅             | —    | —                 | —    | ✅   |
-| Design Systems | ✅             | ✅   | ✅                | ✅   | ✅   |
-| AI Tools       | ✅             | ✅   | ✅                | ✅   | ✅   |
-| Scheduling     | ✅             | ✅   | ✅                | ✅   | ✅   |
-| Financial      | ✅             | ✅   | ✅                | ✅   | ✅   |
+| Example | Route | Homepage tile | Placeholder page | Full interactive demo |
+| ------- | ----- | ------------- | ---------------- | --------------------- |
+| Homepage frame | `/` | — | — | ✅ |
+| Design Systems | `/work/design-systems` | ✅ | ✅ | Next |
+| AI Chatbot | `/work/ai-chatbot` | ✅ | ✅ | Not started |
+| Scheduling | `/work/scheduling` | ✅ | ✅ | Not started |
+| Finance | `/work/finance` | ✅ | ✅ | Not started |
+
+Demo React islands already exist under `src/components/demos/` from an earlier case-study pass. They are **not** mounted on the homepage tiles or on these four placeholder routes. Do not treat those older MDX case studies (`src/content/work/`) as the homepage destinations.

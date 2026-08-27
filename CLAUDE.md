@@ -51,29 +51,34 @@ npm run preview   # preview the dist build
 src/
 ├── components/
 │   ├── ui/                       # Shadcn primitives (unused for now)
-│   ├── Header.astro              # Sticky nav: logo dot + Blog + Contact links
-│   ├── Footer.astro              # Social icon links + copyright
+│   ├── Header.astro              # Avatar + Phosphor socials; About/Blog; Contact me. About modal lives here
+│   ├── Footer.astro              # Social icon links + copyright (used on blog/work collection pages)
 │   ├── BaseHead.astro            # <head> meta, imports global.css
-│   └── demos/
-│       ├── DesignSystemDemo.jsx  # Fully interactive — token explorer + theme switcher
-│       ├── MedicalSchedulingDemo.jsx # Fully interactive — scheduling workflow
-│       ├── FinanceDemo.jsx       # Visual mockup — invoice / budget / payables tabs
-│       └── AIFileDemo.jsx        # Visual mockup — file tree + AI chat with citations
+│   └── demos/                    # Interactive work examples — not mounted on the homepage frame
+├── data/
+│   └── projects.ts               # The four homepage tile entries + placeholder page copy
+├── layouts/
+│   ├── BlogPost.astro
+│   └── ProjectPage.astro         # Lightweight project placeholder (headline + short body)
 ├── pages/
-│   ├── index.astro               # Homepage (all content: hero → 4 demos → about → contact)
-│   ├── about.astro               # Unused placeholder
+│   ├── index.astro               # Homepage frame: header, rotating claim, four peeking tiles
+│   ├── about.astro               # Unused leftover — About is a modal, not a page
 │   ├── blog/
-│   │   ├── index.astro           # Blog index
-│   │   └── [...slug].astro       # Blog post template
-│   ├── work/                     # Unused — kept for existing content collection
-│   │   ├── index.astro
+│   │   ├── index.astro           # Blog index (real posts only; empty state if none)
 │   │   └── [...slug].astro
-│   └── tag/[...slug].astro       # Tag pages
+│   ├── work/
+│   │   ├── design-systems.astro  # Placeholder project page
+│   │   ├── ai-chatbot.astro
+│   │   ├── scheduling.astro
+│   │   ├── finance.astro
+│   │   ├── index.astro           # Older work collection index (not the homepage tiles)
+│   │   └── [...slug].astro
+│   └── tag/[...slug].astro
 ├── content/
-│   ├── blog/                     # Blog posts (markdown)
-│   └── work/                     # Work entries (unused in homepage)
+│   ├── blog/
+│   └── work/                     # Older MDX case studies — not the four homepage destinations
 └── styles/
-    └── global.css                # ALL tokens, base styles, animations, utility classes
+    └── global.css
 ```
 
 ---
@@ -154,16 +159,15 @@ One `<em>` fragment per headline. See [DESIGN.md § Emphasis System](DESIGN.md) 
 
 ## Homepage layout
 
-All content is on a single long-scroll `/` page. Section pattern for demos:
+Single long-scroll `/` page. First viewport is a locked frame:
 
-```
-Section head: 1fr / 2fr grid
-  [col 1] section-label (index number + category)
-  [col 2] h2 with <em> emphasis + description paragraph
-Demo component (full width below)
-```
+1. **Header** (fixed overlay) — avatar + Phosphor socials on the left; About, Blog, and a **Contact me** button (`mailto:hello@andreortiz.com`) on the right. Avatar and About open the existing about modal (twenty-years intro + capability list). Do not add a standalone `/about` page.
+2. **Hero** — small uppercase `ANDRE ORTIZ` + large rotating claim. First paint is **Product Experience Designer**. Existing carousel strings.
+3. **Four project tiles** peek at the bottom of the viewport (tops visible so you know to scroll). Left to right: Design Systems, AI Chatbot, Scheduling, Finance. Tiles are links, not live widgets.
 
-Collapses to single column below `md` breakpoint (`768px`).
+Hero stage is `min-height: calc(100dvh - peek)` so the claim stays large. Peek is ~10.5rem desktop, slightly less on smaller screens. Do not crush the hero to fit the tiles.
+
+Project destinations are lightweight placeholder pages under `/work/...` — problem headline + short copy. Full interactive demos are a later pass; Design Systems is next. See [WORK.md](WORK.md).
 
 ---
 
@@ -182,5 +186,4 @@ Collapses to single column below `md` breakpoint (`768px`).
 
 | Placeholder | Location |
 | ----------- | -------- |
-| `#github` `#linkedin` `#dribbble` `#youtube` `#instagram` | Footer social links + Contact section icons in `index.astro` |
-| Blog content | `src/content/blog/` — no posts written yet |
+| Blog content | `src/content/blog/` — existing posts are real; empty state is wired if the collection is empty |
