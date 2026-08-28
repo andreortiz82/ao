@@ -5,7 +5,6 @@ import {
   Chapter,
   CopyButton,
   KitBadge,
-  KitField,
   KitToolbar,
   ProductCard,
   Specimen,
