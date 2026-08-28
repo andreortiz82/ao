@@ -1,50 +1,13 @@
 ---
-import {
-  GithubLogoIcon,
-  DribbbleLogoIcon,
-  InstagramLogoIcon,
-  LinkedinLogoIcon,
-  TwitterLogoIcon,
-  YoutubeLogoIcon,
-} from "@phosphor-icons/react";
+import { HouseIcon } from "@phosphor-icons/react";
+import SocialLinks from "./SocialLinks.astro";
 
 const pathname = Astro.url.pathname;
 const isHome = pathname === "/" || pathname === "";
 const isActive = (href: string) =>
   href === "/" ? pathname === "/" : pathname.startsWith(href);
-
-const socials = [
-  {
-    href: "https://github.com/andreortiz82",
-    label: "GitHub",
-    Icon: GithubLogoIcon,
-  },
-  {
-    href: "https://dribbble.com/andreortiz",
-    label: "Dribbble",
-    Icon: DribbbleLogoIcon,
-  },
-  {
-    href: "https://www.instagram.com/andreortiz",
-    label: "Instagram",
-    Icon: InstagramLogoIcon,
-  },
-  {
-    href: "https://www.linkedin.com/in/andreortiz",
-    label: "LinkedIn",
-    Icon: LinkedinLogoIcon,
-  },
-  {
-    href: "https://twitter.com/andreortiz",
-    label: "X (Twitter)",
-    Icon: TwitterLogoIcon,
-  },
-  {
-    href: "https://www.youtube.com/@aomusicandmore",
-    label: "YouTube",
-    Icon: YoutubeLogoIcon,
-  },
-];
+const workHref = "/#work";
+const workActive = pathname.startsWith("/work");
 ---
 
 <header class:list={{ "is-home": isHome }}>
@@ -59,27 +22,20 @@ const socials = [
       <img src="/avatar.png" alt="Andre Ortiz" class="avatar" />
     </button>
 
-    <nav class="social-nav" aria-label="Social links">
-      {
-        socials.map(({ href, label, Icon }) => (
-          <a
-            href={href}
-            class="social-link"
-            aria-label={label}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Icon size={16} weight="regular" />
-          </a>
-        ))
-      }
-    </nav>
+    <SocialLinks />
   </div>
 
   <nav class="header-right" aria-label="Site">
-    <button class="nav-link about-btn" type="button" data-open-about>
-      About
-    </button>
+    <a
+      href="/"
+      class:list={["home-link", { active: isHome }]}
+      aria-label="Home"
+    >
+      <HouseIcon size={18} weight="regular" />
+    </a>
+    <a href={workHref} class:list={["nav-link", { active: workActive }]}>
+      Work
+    </a>
     <a href="/blog" class:list={["nav-link", { active: isActive("/blog") }]}>
       Blog
     </a>
@@ -178,22 +134,17 @@ const socials = [
     gap: 1.25rem;
   }
 
-  .social-nav {
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-  }
-
-  .social-link {
+  .home-link {
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--color-ink-3);
-    transition: color 0.15s ease;
     line-height: 1;
+    transition: color 0.2s ease;
   }
 
-  .social-link:hover {
+  .home-link:hover,
+  .home-link.active {
     color: var(--color-ink);
   }
 
@@ -217,13 +168,6 @@ const socials = [
     border-radius: 50%;
     object-fit: cover;
     display: block;
-  }
-
-  .about-btn {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
   }
 
   .btn-contact {
@@ -373,7 +317,7 @@ const socials = [
   }
 
   @media (max-width: 560px) {
-    .social-nav {
+    .header-left :global(.social-nav) {
       display: none;
     }
 

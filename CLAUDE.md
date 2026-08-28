@@ -51,13 +51,15 @@ npm run preview   # preview the dist build
 src/
 ├── components/
 │   ├── ui/                       # Shadcn primitives (unused for now)
-│   ├── Header.astro              # Avatar + Phosphor socials; About/Blog; Contact me. About modal lives here
-│   ├── Footer.astro              # Social icon links + copyright (used on blog/work collection pages)
+│   ├── Header.astro              # Avatar + Phosphor socials; Home icon, Work, Blog, Contact me. Avatar opens about modal
+│   ├── Footer.astro              # Same Phosphor social set as header + copyright (blog/work collection pages)
+│   ├── SocialLinks.astro         # Shared Phosphor social icons (regular, 16px) for header and footer
 │   ├── BaseHead.astro            # <head> meta, imports global.css
 │   ├── ProjectCard.astro         # Homepage work thumb — Design Studio LayoutCard language
 │   └── demos/                    # Interactive work examples — not mounted on the homepage frame
 ├── data/
-│   └── projects.ts               # The four homepage tile entries + placeholder page copy
+│   ├── projects.ts               # The four homepage tile entries + placeholder page copy
+│   └── socials.ts                # Phosphor social set shared by header and footer
 ├── layouts/
 │   ├── BlogPost.astro
 │   └── ProjectPage.astro         # Lightweight project placeholder (headline + short body)
@@ -163,7 +165,7 @@ One `<em>` fragment per headline. See [DESIGN.md § Emphasis System](DESIGN.md) 
 
 Single long-scroll `/` page. First viewport is a locked frame:
 
-1. **Header** (fixed overlay) — avatar + Phosphor socials on the left; About, Blog, and a **Contact me** button (`mailto:hello@andreortiz.com`) on the right. Avatar and About open the existing about modal (twenty-years intro + capability list). Do not add a standalone `/about` page.
+1. **Header** (fixed overlay) — avatar + Phosphor socials on the left; **Home** (Phosphor house icon → `/`), **Work** (`/#work` — the four homepage tiles), **Blog** (`/blog`), and a **Contact me** button (`mailto:hello@andreortiz.com`) on the right. Avatar opens the existing about modal. No About nav item; no standalone `/about` page.
 2. **Hero** — small uppercase `ANDRE ORTIZ` + large rotating claim. First paint is **Product Experience Designer**. Existing carousel strings.
 3. **Four project tiles** peek at the bottom of the viewport (tops visible so you know to scroll). Left to right: Design Systems, AI Chatbot, Scheduling, Finance. Tiles are links, not live widgets.
 

@@ -1,0 +1,46 @@
+---
+import { socials } from "../data/socials";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<nav class:list={["social-nav", className]} aria-label="Social links">
+  {
+    socials.map(({ href, label, Icon }) => (
+      <a
+        href={href}
+        class="social-link"
+        aria-label={label}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Icon size={16} weight="regular" />
+      </a>
+    ))
+  }
+</nav>
+
+<style>
+  .social-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-ink-3);
+    transition: color 0.15s ease;
+    line-height: 1;
+  }
+
+  .social-link:hover {
+    color: var(--color-ink);
+  }
+</style>

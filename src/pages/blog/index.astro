@@ -4,6 +4,7 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
+import { ArrowLeftIcon } from "@phosphor-icons/react";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -27,6 +28,9 @@ function formatDate(date: Date) {
     <Header />
 
     <main class="max-w-6xl mx-auto px-6 py-20">
+      <a href="/" class="back-home" aria-label="Back to home">
+        <ArrowLeftIcon size={18} weight="regular" />
+      </a>
       <div class="mb-14 max-w-2xl">
         <p class="section-label mb-4">Writing</p>
         <h1 class="m-0">Thinking out loud.</h1>
@@ -85,3 +89,17 @@ function formatDate(date: Date) {
     <Footer />
   </body>
 </html>
+
+<style>
+  .back-home {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-ink-3);
+    margin-bottom: 1.5rem;
+    transition: color 0.15s ease;
+  }
+
+  .back-home:hover {
+    color: var(--color-ink);
+  }
+</style>

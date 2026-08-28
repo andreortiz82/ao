@@ -110,7 +110,7 @@ src/components/
 
 ## Nav
 
-Homepage header: About (modal), Blog (`/blog`), Contact me. Tiles are the work entry points — no separate Work nav item.
+Header: Phosphor house icon → `/`, Work → `/#work` (the four homepage tiles), Blog → `/blog`, Contact me → `mailto:hello@andreortiz.com`. Avatar still opens the about modal. No About nav item. Footer socials share the same Phosphor set and weight as the header.
 
 ### Work index page
 
