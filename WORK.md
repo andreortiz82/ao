@@ -405,7 +405,7 @@ Homepage frame first — then the four examples, one at a time. The old seven-se
 
 | Phase | Deliverable | Rationale |
 | ----- | ----------- | --------- |
-| 0 | **Homepage frame** — header, rotating claim, four peeking tiles, About modal, Contact me, `/blog`, four placeholder project routes | Locked 2026-08-26. Done when the wireframe is honest and buildable. |
+| 0 | **Homepage frame** — header, rotating claim, four peeking Design Studio-style thumbnail cards, About modal, Contact me, `/blog`, four placeholder project routes | Locked 2026-08-26. Thumbs: grey 5/4 stage, abstract mock, title + meta. |
 | 1 | **Design Systems** full interactive page | Next. Most directly relevant to systems-lead positioning. |
 | 2 | **AI Chatbot** | Highest signal for startup audience |
 | 3 | **Scheduling** | Complex product thinking |

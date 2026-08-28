@@ -54,6 +54,7 @@ src/
 │   ├── Header.astro              # Avatar + Phosphor socials; About/Blog; Contact me. About modal lives here
 │   ├── Footer.astro              # Social icon links + copyright (used on blog/work collection pages)
 │   ├── BaseHead.astro            # <head> meta, imports global.css
+│   ├── ProjectCard.astro         # Homepage work thumb — Design Studio LayoutCard language
 │   └── demos/                    # Interactive work examples — not mounted on the homepage frame
 ├── data/
 │   └── projects.ts               # The four homepage tile entries + placeholder page copy
@@ -99,6 +100,7 @@ All tokens live in `src/styles/global.css` under `@theme inline`. This is the si
 | `--color-accent`      | `#dc2626`           | Red — `<em>` in headings, logo dot only  |
 | `--color-accent-soft` | `#fef2f2`           | Accent tint backgrounds                  |
 | `--color-highlight`   | `#fee2e2`           | Text selection background                |
+| `--color-stage`       | `#ececec`           | Borderless grey stage on homepage thumbs |
 | `--font-serif`        | Fraunces, Georgia   | Display headings, hero, section titles   |
 | `--font-sans`         | Instrument Sans     | Body copy, descriptions, CTA labels, UI  |
 | `--font-mono`         | JetBrains Mono      | Section labels, metadata, tags, periods  |

@@ -34,6 +34,7 @@ Tokens are defined in `src/styles/global.css`. See [CLAUDE.md § Design tokens](
 |---|---|---|
 | Page surface | `--color-background` | `#ffffff` |
 | Widget / card surface | `--color-paper` | `#fafafa` |
+| Homepage thumb stage | `--color-stage` | `#ececec` |
 | Primary text | `--color-ink` | `#0a0a0a` |
 | Secondary text | `--color-ink-2` | `#404040` |
 | Tertiary / metadata | `--color-ink-3` | `#737373` |
@@ -106,9 +107,9 @@ For implementation details see [CLAUDE.md § Italic + accent emphasis system](CL
 
 **Vertical rhythm:** `clamp(5rem, 10vw, 9rem)` per inner-page section. Large breathing room between sections is intentional — it communicates confidence.
 
-**Homepage first viewport:** header overlays a centered hero. The hero stage is `min-height: calc(100dvh - peek)` so the claim line stays large. The four project tiles begin at the bottom of the viewport — only their tops (index, title, start of the line) are visible. Peek is ~10.5rem on desktop, ~8.5–9.5rem on smaller screens. Do not shrink the hero to fully reveal the tiles.
+**Homepage first viewport:** header overlays a centered hero. The hero stage is `min-height: calc(100dvh - peek)` so the claim line stays large. Four Design Studio-style thumbnail cards begin at the bottom of the viewport — only the tops of the grey stages (abstract mocks) are visible. Peek is ~10.5rem on desktop, ~8.5–9.5rem on smaller screens. Scroll to see the thumbs in full. Do not shrink the hero to fully reveal the cards.
 
-**Project tiles:** paper surface, hairline border, default radius. Index in JetBrains Mono, title in Fraunces, one-line description in Instrument Sans, empty `.stage-grid` below. Hover darkens the border only — no scale, no color-reveal. Four columns desktop, two from 860px, one from 560px.
+**Project thumbs:** Design Studio LayoutCard language, not bordered paper tiles. Borderless `--color-stage` field at `aspect-ratio: 5 / 4`, centered abstract UI mock (not a photo, not a product screenshot), title + mono meta under the stage. Hover: 4px lift + soft shadow. Four columns desktop, two from 860px, one from 560px. Order: Design Systems, AI Chatbot, Scheduling, Finance.
 
 **Reading measure:** Intro paragraph and card descriptions are constrained to `~32–34ch`. Wider than necessary kills the eye's return line.
 
@@ -130,6 +131,7 @@ Motion is purposeful. No decorative animations. Every transition has a reason.
 | Widget crossfade (IterationWidget) | 180ms | — | Fast enough to feel responsive, slow enough to register |
 | Tab underline (ScopeWidget) | 450ms | `cubic-bezier(0.65, 0, 0.35, 1)` | Ease-in-out with cubic tension — the underline slides, not snaps |
 | CTA arrow hover translate | 250ms | `ease` | 3px translateX — felt before seen |
+| Project thumb hover | 250ms | `ease` | 4px translateY + soft shadow on the grey stage |
 | Nav link underline extend | 350ms | `cubic-bezier(0.65, 0, 0.35, 1)` | Scale origin-left slide |
 | AnatomyWidget panel transition | 300ms | — | Opacity + 8px translateY for panel swap |
 
