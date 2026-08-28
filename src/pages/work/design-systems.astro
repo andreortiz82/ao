@@ -1,8 +1,25 @@
 ---
-import ProjectPage from "../../layouts/ProjectPage.astro";
-import { getProject } from "../../data/projects";
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import DesignSystemsStory from "../../components/demos/design-system/DesignSystemsStory.jsx";
+import "../../styles/design-system-demo.css";
 
-const project = getProject("design-systems");
+const title = "Design Systems — Andre Ortiz";
+const description =
+  "Interactive walkthrough: from one-off Figma colors to tokens, themes, type, icons, multi-brand, atomic design, and governance. A usable mini design-system explorer.";
 ---
 
-<ProjectPage project={project} />
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <DesignSystemsStory client:load />
+    </main>
+    <Footer />
+  </body>
+</html>

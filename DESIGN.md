@@ -142,6 +142,8 @@ Motion is purposeful. No decorative animations. Every transition has a reason.
 
 For CSS class definitions see [CLAUDE.md § Animation utilities](CLAUDE.md).
 
+**Work-sample pages:** `/work/design-systems` uses GSAP (`useGSAP` + ScrollTrigger) for chapter reveals and desktop pin/scrub on specimens. Site chrome motion stays the table above. Reduced motion skips pin/scrub. See [WORK.md](WORK.md).
+
 ---
 
 ## Component Anatomy Decisions

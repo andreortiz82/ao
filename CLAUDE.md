@@ -56,7 +56,9 @@ src/
 │   ├── SocialLinks.astro         # Shared Phosphor social icons (regular, 16px) for header and footer
 │   ├── BaseHead.astro            # <head> meta, imports global.css
 │   ├── ProjectCard.astro         # Homepage work thumb — Design Studio LayoutCard language
-│   └── demos/                    # Interactive work examples — not mounted on the homepage frame
+│   └── demos/
+│       ├── design-system/        # `/work/design-systems` interactive story
+│       └── *.jsx                 # Older case-study islands — not homepage tiles
 ├── data/
 │   ├── projects.ts               # The four homepage tile entries + placeholder page copy
 │   └── socials.ts                # Phosphor social set shared by header and footer
@@ -70,10 +72,10 @@ src/
 │   │   ├── index.astro           # Blog index (real posts only; empty state if none)
 │   │   └── [...slug].astro
 │   ├── work/
-│   │   ├── design-systems.astro  # Placeholder project page
-│   │   ├── ai-chatbot.astro
-│   │   ├── scheduling.astro
-│   │   ├── finance.astro
+│   │   ├── design-systems.astro  # Full interactive design-system story
+│   │   ├── ai-chatbot.astro      # Placeholder
+│   │   ├── scheduling.astro      # Placeholder
+│   │   ├── finance.astro         # Placeholder
 │   │   ├── index.astro           # Older work collection index (not the homepage tiles)
 │   │   └── [...slug].astro
 │   └── tag/[...slug].astro
@@ -81,7 +83,8 @@ src/
 │   ├── blog/
 │   └── work/                     # Older MDX case studies — not the four homepage destinations
 └── styles/
-    └── global.css
+    ├── global.css
+    └── design-system-demo.css    # `/work/design-systems` story only — not site chrome
 ```
 
 ---
@@ -171,7 +174,7 @@ Single long-scroll `/` page. First viewport is a locked frame:
 
 Hero stage is `min-height: calc(100dvh - peek)` so the claim stays large. Peek is ~10.5rem desktop, slightly less on smaller screens. Do not crush the hero to fit the tiles.
 
-Project destinations are lightweight placeholder pages under `/work/...` — problem headline + short copy. Full interactive demos are a later pass; Design Systems is next. See [WORK.md](WORK.md).
+Project destinations: Design Systems is the full interactive story at `/work/design-systems`. Chatbot, Scheduling, and Finance are still placeholders. See [WORK.md](WORK.md).
 
 ---
 
@@ -183,6 +186,8 @@ Project destinations are lightweight placeholder pages under `/work/...` — pro
 | `animate-pulse-dot`| 2.4s loop| `ease-in-out`                   | Logo dot — availability signal |
 | `.nav-link` underline | 0.35s | `cubic-bezier(0.65, 0, 0.35, 1)` | Scale-x from left on hover |
 | `.btn-primary .arrow` | 0.25s | `ease`                          | 3px translateX on hover |
+
+Work-sample motion (GSAP ScrollTrigger on `/work/design-systems`) lives in the demo island, not these utilities. See [WORK.md](WORK.md).
 
 ---
 

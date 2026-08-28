@@ -88,13 +88,13 @@ New files needed before any individual example is built.
 ```
 src/pages/work/
 ├── index.astro              # Older collection index — not the homepage tile grid
-├── design-systems.astro     # Placeholder (full demo is next)
-├── ai-chatbot.astro
-├── scheduling.astro
-└── finance.astro
+├── design-systems.astro     # Full interactive story (not ProjectPage)
+├── ai-chatbot.astro         # Placeholder
+├── scheduling.astro         # Placeholder
+└── finance.astro            # Placeholder
 ```
 
-Homepage tiles link to those four routes. Shared copy lives in `src/data/projects.ts`. Placeholder layout: `src/layouts/ProjectPage.astro`.
+Homepage tiles link to those four routes. Shared copy lives in `src/data/projects.ts`. Placeholder layout for the three unfinished examples: `src/layouts/ProjectPage.astro`.
 
 ### New layout + components
 
@@ -121,66 +121,51 @@ Four cards in a 2×2 grid. Each card: index number, domain name, one-line hook, 
 ## Work Example 1 — Design Systems
 
 **URL:** `/work/design-systems`
-**Status:** Placeholder page. Full interactive demo is next.
+**Status:** Full interactive story. Page is the work sample.
 
 ### Concept
 
-A living, scrollable demonstration of how a design system is architected and maintained for distributed teams. The page itself is built using the system it describes — meta and intentional.
+A scroll story from one-off Figma hexes to a system a small team can ship. Audience: startups, founders, orgs that want a senior maker-leader. Fictional product **Lumen** (plus Harbor and Cinder brand remaps). Light/dark and multi-brand live **inside** the demo — they do not restyle the portfolio chrome.
+
+The older TokenExplorer / ThemeSwitcher / AtomicExplorer / FigmaCodeDiff sketch was a starting map. The shipped page is the ten-beat story below.
 
 ### Hook
 
-> A design system isn't a component library. It's a contract between design and engineering, written in tokens, maintained in code, and felt in every screen.
+> From a few hexes to a system a team can ship.
 
 ### Page structure
 
-| Section                | Format                                                             | Interactive?                                          |
-| ---------------------- | ------------------------------------------------------------------ | ----------------------------------------------------- |
-| Hero                   | Full-width, headline + discipline tags                             | No                                                    |
-| 01 · Tokens            | Token explorer — color, type, spacing, radius                      | Yes — TokenExplorer                                   |
-| 02 · Theming           | Live brand/theme switcher applied to a sample component            | Yes — ThemeSwitcher                                   |
-| 03 · Atomic Design     | Layered diagram: atoms → molecules → organisms → templates         | Yes — AtomicExplorer                                  |
-| 04 · Components        | Annotated component with variant states and props                  | Yes — ComponentAnatomy (extend AnatomyWidget pattern) |
-| 05 · Figma to Code     | Side-by-side: Figma spec vs rendered component + token map         | Yes — FigmaCodeDiff                                   |
-| 06 · Distribution      | NPM package concept — version history, changelog, install snippet  | Static — editorial                                    |
-| 07 · Working with Devs | Handoff documentation fragment — specs, redlines, token references | Static — editorial                                    |
-| Reflection             | 3–4 principles I've learned about running a design system          | Static — editorial                                    |
+| Beat | Section | Interactive |
+| ---- | ------- | ----------- |
+| Hero | Problem frame | No |
+| 01 Origin | Stylized Figma canvas + “why hexes break” / name-it-once | Yes |
+| 02 Tokens | Primitive ramps → semantic jobs. CSS custom properties **and** JS object. Copy + inspect. Mapping table. | Yes |
+| 03 Themes | Light/dark toggle restyles specimens in place. Contrast pairs. | Yes |
+| 04 Type | Roles (display / body / meta) + live scale + mixed specimen | Yes |
+| 05 Icons | Phosphor system set. Size, weight, alignment. Do/don’t | Yes |
+| 06 Brands | Lumen / Harbor / Cinder. Same components, token remap | Yes |
+| 07 Atomic | Click atoms → molecule → organism (toolbar) | Yes |
+| 08 Practice | Do/don’t pairs: contrast, spacing, icons, buttons, token misuse | Yes |
+| 09 Govern | Contribution requests, five-step flow, changelog | Yes |
+| 10 Explorer | Usable mini system: tokens + brand + mode + composed organism | Yes |
 
-### React islands to build
+### Files
 
-**`TokenExplorer.tsx`**
+```
+src/pages/work/design-systems.astro
+src/styles/design-system-demo.css
+src/components/demos/design-system/
+├── DesignSystemsStory.jsx   # KitProvider + GSAP ScrollTrigger
+├── tokens.js                # primitives, brands, CSS/JS serializers
+├── kit.jsx                  # context, Specimen, atoms used in the story
+├── OriginAndTokens.jsx
+├── TypeBrandAtomic.jsx
+└── PracticeAndPayoff.jsx
+```
 
-- Tab or filter bar: Color / Typography / Spacing / Radius
-- Color: swatches grid with token name, hex, and Tailwind class
-- Typography: live type specimens with font, size, weight, tracking values
-- Spacing: visual scale with px and rem values
-- Radius: visual radius scale applied to a box
-- All values pulled from the actual token system in `global.css`
+Motion: GSAP + `useGSAP` + ScrollTrigger. Desktop pin/scrub on token mapping and atomic assembly. `gsap.matchMedia()` skips pin/scrub when `prefers-reduced-motion` or below 768px. No markers.
 
-**`ThemeSwitcher.tsx`**
-
-- A sample card component (header + body + CTA)
-- 2–3 "brand" presets that remap tokens: default (red), a cool blue brand, a warm amber brand
-- Toggle between brands — card updates live
-- Shows how a token-based system enables multi-brand without component changes
-
-**`AtomicExplorer.tsx`**
-
-- Five levels: Atom, Molecule, Organism, Template, Page
-- Click to expand each level — reveals example components that compose upward
-- Visual hierarchy with connecting lines
-- Reinforces that complexity is managed through composition, not customization
-
-**`FigmaCodeDiff.tsx`**
-
-- Two-panel: left = stylized Figma spec (annotation overlay on component), right = rendered React component
-- Hotspot annotations on both sides pointing to the same design decision
-- Toggle to highlight token usage (shows `--color-accent` etc. mapped to both sides)
-
-### Design notes
-
-- TokenExplorer should use `.stage-grid` background
-- ThemeSwitcher is the hero interactive moment — put it early, make it visceral
-- The page is the most meta of the four — lean into that in the narrative copy
+Do not mount the older `src/components/demos/DesignSystemDemo.jsx` on this route. Homepage tiles remain links only.
 
 ---
 
@@ -405,8 +390,8 @@ Homepage frame first — then the four examples, one at a time. The old seven-se
 
 | Phase | Deliverable | Rationale |
 | ----- | ----------- | --------- |
-| 0 | **Homepage frame** — header, rotating claim, four peeking Design Studio-style thumbnail cards, About modal, Contact me, `/blog`, four placeholder project routes | Locked 2026-08-26. Thumbs: grey 5/4 stage, abstract mock, title + meta. |
-| 1 | **Design Systems** full interactive page | Next. Most directly relevant to systems-lead positioning. |
+| 0 | **Homepage frame** — header, rotating claim, four peeking Design Studio-style thumbnail cards, About modal, Contact me, `/blog`, four project routes | Locked 2026-08-26. Thumbs: grey 5/4 stage, abstract mock, title + meta. |
+| 1 | **Design Systems** full interactive page | Shipped on `/work/design-systems`. |
 | 2 | **AI Chatbot** | Highest signal for startup audience |
 | 3 | **Scheduling** | Complex product thinking |
 | 4 | **Finance** | Domain range and data-dense UI |
@@ -418,7 +403,7 @@ Homepage frame first — then the four examples, one at a time. The old seven-se
 | Example | Route | Homepage tile | Placeholder page | Full interactive demo |
 | ------- | ----- | ------------- | ---------------- | --------------------- |
 | Homepage frame | `/` | — | — | ✅ |
-| Design Systems | `/work/design-systems` | ✅ | ✅ | Next |
+| Design Systems | `/work/design-systems` | ✅ | — | ✅ |
 | AI Chatbot | `/work/ai-chatbot` | ✅ | ✅ | Not started |
 | Scheduling | `/work/scheduling` | ✅ | ✅ | Not started |
 | Finance | `/work/finance` | ✅ | ✅ | Not started |
