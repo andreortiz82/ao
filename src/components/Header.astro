@@ -12,27 +12,29 @@ const workActive = pathname.startsWith("/work");
 
 <header class:list={{ "is-home": isHome }}>
   <div class="header-left">
-    <button
-      class="avatar-btn"
-      id="avatar-btn"
-      type="button"
-      data-open-about
-      aria-label="About Andre"
-    >
-      <img src="/avatar.png" alt="Andre Ortiz" class="avatar" />
-    </button>
+    <div class="header-identity">
+      <a
+        href="/"
+        class:list={["home-link", { active: isHome }]}
+        aria-label="Home"
+      >
+        <HouseIcon size={18} weight="regular" />
+      </a>
+      <button
+        class="avatar-btn"
+        id="avatar-btn"
+        type="button"
+        data-open-about
+        aria-label="About Andre"
+      >
+        <img src="/avatar.png" alt="Andre Ortiz" class="avatar" />
+      </button>
+    </div>
 
     <SocialLinks />
   </div>
 
   <nav class="header-right" aria-label="Site">
-    <a
-      href="/"
-      class:list={["home-link", { active: isHome }]}
-      aria-label="Home"
-    >
-      <HouseIcon size={18} weight="regular" />
-    </a>
     <a href={workHref} class:list={["nav-link", { active: workActive }]}>
       Work
     </a>
@@ -128,6 +130,12 @@ const workActive = pathname.startsWith("/work");
 
   .header-left {
     gap: 1rem;
+  }
+
+  .header-identity {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   .header-right {

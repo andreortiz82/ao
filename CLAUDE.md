@@ -51,7 +51,7 @@ npm run preview   # preview the dist build
 src/
 ├── components/
 │   ├── ui/                       # Shadcn primitives (unused for now)
-│   ├── Header.astro              # Avatar + Phosphor socials; Home icon, Work, Blog, Contact me. Avatar opens about modal
+│   ├── Header.astro              # Home icon, avatar, Phosphor socials; Work, Blog, Contact me. Avatar opens about modal
 │   ├── Footer.astro              # Same Phosphor social set as header + copyright (blog/work collection pages)
 │   ├── SocialLinks.astro         # Shared Phosphor social icons (regular, 16px) for header and footer
 │   ├── BaseHead.astro            # <head> meta, imports global.css
@@ -165,7 +165,7 @@ One `<em>` fragment per headline. See [DESIGN.md § Emphasis System](DESIGN.md) 
 
 Single long-scroll `/` page. First viewport is a locked frame:
 
-1. **Header** (fixed overlay) — avatar + Phosphor socials on the left; **Home** (Phosphor house icon → `/`), **Work** (`/#work` — the four homepage tiles), **Blog** (`/blog`), and a **Contact me** button (`mailto:hello@andreortiz.com`) on the right. Avatar opens the existing about modal. No About nav item; no standalone `/about` page.
+1. **Header** (fixed overlay) — **Home** (Phosphor house icon → `/`), then avatar, then Phosphor socials on the left; **Work** (`/#work` — the four homepage tiles), **Blog** (`/blog`), and a **Contact me** button (`mailto:hello@andreortiz.com`) on the right. Avatar opens the existing about modal. No About nav item; no standalone `/about` page.
 2. **Hero** — small uppercase `ANDRE ORTIZ` + large rotating claim. First paint is **Product Experience Designer**. Existing carousel strings.
 3. **Four project tiles** peek at the bottom of the viewport (tops visible so you know to scroll). Left to right: Design Systems, AI Chatbot, Scheduling, Finance. Tiles are links, not live widgets.
 

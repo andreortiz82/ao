@@ -110,7 +110,7 @@ src/components/
 
 ## Nav
 
-Header: Phosphor house icon → `/`, Work → `/#work` (the four homepage tiles), Blog → `/blog`, Contact me → `mailto:hello@andreortiz.com`. Avatar still opens the about modal. No About nav item. Footer socials share the same Phosphor set and weight as the header.
+Header: Phosphor house icon → `/` immediately left of the avatar, then socials. Right: Work → `/#work` (the four homepage tiles), Blog → `/blog`, Contact me → `mailto:hello@andreortiz.com`. Avatar still opens the about modal. No About nav item. Footer socials share the same Phosphor set and weight as the header.
 
 ### Work index page
 
