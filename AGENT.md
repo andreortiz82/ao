@@ -30,7 +30,7 @@ src/
 │   ├── Header.astro
 │   ├── ProjectCard.astro
 │   ├── SocialLinks.astro
-│   └── demos/design-system/
+│   └── demos/design-systems/
 ├── content/blog/
 ├── data/
 │   ├── projects.ts
@@ -46,7 +46,7 @@ src/
 │   └── work/
 └── styles/
     ├── global.css
-    └── design-system-demo.css
+    └── design-systems.css
 ```
 
 ## Route contract

@@ -38,76 +38,47 @@ Homepage tiles use the same order and link directly to these four routes.
 
 **Title:** Design Systems
 
-**Short description:** Tokens, themes, and the contract between design and
-engineering.
+**Short description:** Multiple Brands. Growing Teams. Products Delivered.
 
-**Hook:** From a few hexes to a system a team can ship.
+**Hook:** Design systems are an attempt to capture the uniqueness of your product and brand. 
 
-**Audience signal:** Demonstrates design-system leadership for distributed
-teams: translating visual decisions into reusable foundations, components,
-governance, and a system engineers can actually use.
+are the foundation of product design. They are the shared understanding of the design-system that allows designers, product managers, and engineers to build products faster and with less friction.
+
+**Audience signal:** Demonstrates a design-system for distributed
+teams and multiple brands. Capturing brand and design decisions into reusable foundations, components,
+governance, and tooling for everyone. 
 
 ### Problem
 
-Teams often begin with isolated Figma colors and component decisions. Without
-shared semantic names, type roles, interaction rules, and contribution
-practices, the system fragments across products and brands.
+Your business has a diverse set of products and a growing teams. Delivering consistent product experiences is becoming harder. The designers, product managers, and engineers need a shared understanding of the design-system to build products faster and with less friction.
 
 ### Solution
 
-A scrollable fictional Lumen product story that moves from raw design
-decisions to a usable mini system. The viewer can inspect tokens, switch modes
-and brands, assemble primitives, compare practices, and operate the final
-explorer.
+A design-system that captures brand and design decisions into reusable foundations, components,
+governance, and tooling for everyone. The system should be easy to use for designers, product managers, and engineers. It should leverage AI agents to build skills and reduce friction.
 
 ### Page sections
 
-1. **Hero** — frame the move from one-off decisions to a shippable system.
-2. **01 Origin** — stylized Figma canvas and the reason raw hexes break.
-3. **02 Tokens** — primitive ramps mapped to semantic jobs, shown as CSS and
-   JavaScript representations.
-4. **03 Themes** — light and dark modes restyled in place with contrast pairs.
-5. **04 Type** — display, body, and metadata roles with a live type scale.
-6. **05 Icons** — icon size, weight, alignment, and usage guidance.
-7. **06 Brands** — Lumen, Harbor, and Cinder using the same components with
-   different token mappings.
-8. **07 Atomic** — atoms assembled into a molecule and then a toolbar organism.
-9. **08 Practice** — contrast, spacing, icon, button, and token do/don't pairs.
-10. **09 Govern** — contribution request flow and changelog.
-11. **10 Explorer** — a usable mini system combining tokens, brand, mode, and
-    a composed organism.
+1. **Hero** — Title, hook/problem statement, and audience signal.
+3. **02 Foundations** — Color swatches, color ramps, typography examples, sizing and spacing examples, motion examples, breakpoint examples, and iconography large and small. Talk about accessibility and contrast ratios. 
+4. **03 Tokens** — Semantic values, CSS variables, Shadcn/UI and Tailwind CSS themes.
+5. **04 Components** — Atomic design component patterns: atoms, molecules, organisms, templates, and pages. Components will be affected by the brand and theme switcher.
+6. **05 Examples** — Interactive examples with the ability to change brands, themes, and colors. Include Dos and Don'ts examples.
+7. **06 Governance** — Intelligently manage the design-system with AI agents and human oversight.
+8. **07 Skills & Plugins** — Agentic Design system skills and plugins for designers, product managers, and engineers.
 
-### Topics
+### Visual recommendations
 
-Design tokens, semantic versus primitive values, CSS custom properties,
-JavaScript tokens, themes, contrast, typography roles, iconography, multi-brand
-systems, atomic design, contribution governance, Figma-to-code, and
-design/engineering collaboration.
-
-### Imagery recommendations
-
-Use diagrams and specimens rather than stock photography: Figma-like origin
-panels, token ramps, type specimens, icon grids, brand swatches, and composed
-UI surfaces. Keep imagery inside the demo so it demonstrates the system.
-
-### Interactive components
-
-Origin canvas, token mapping inspector, light/dark switcher, type-scale
-specimen, icon guidance panel, multi-brand remapper, atomic assembly, practice
-comparisons, governance flow, changelog, and final system explorer.
+Instead of images, create real-world examples of the design-system in action. Use a vague and abstracted visual language to demonstrate the design-system in action.
 
 ### Design and content notes
 
-The page should feel like a guided explanation that becomes a tool. Keep the
-portfolio chrome neutral; demo themes belong inside the story. Use concrete
-language about decisions and tradeoffs rather than generic design-system
-claims.
-
-### Current implementation status
-
-Complete interactive story. The route is implemented with the ten sections
-above, including GSAP chapter motion, desktop pin/scrub behavior, reduced-motion
-handling, and the final explorer.
+- Create a real hero section
+- Color and token values should be copyable.
+- Include a brand and theme switcher as floating action buttons. I want the visitor to feal like they can change the design-system on the fly.
+- The page should feel like a guided explanation that becomes a tool. Keep the portfolio chrome neutral; demo themes belong inside the story. Use concrete language about decisions and tradeoffs rather than generic design-system claims.
+- Use hover effects, motion, and interactivity to make this page feel like a guided journey.
+- Don't mention Figma by name. Say things like "design tools" instead.
 
 ---
 

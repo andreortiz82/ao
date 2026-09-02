@@ -2,12 +2,12 @@
 import BaseHead from "../../components/BaseHead.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
-import DesignSystemsStory from "../../components/demos/design-system/DesignSystemsStory.jsx";
-import "../../styles/design-system-demo.css";
+import DesignSystemsPage from "../../components/demos/design-systems/Page.jsx";
+import "../../styles/design-systems.css";
 
 const title = "Design Systems — Andre Ortiz";
 const description =
-  "Interactive walkthrough: from one-off Figma colors to tokens, themes, type, icons, multi-brand, atomic design, and governance. A usable mini design-system explorer.";
+  "Multiple brands, growing teams, products delivered — an interactive walkthrough of foundations, tokens, components, examples, governance, and agentic design-system skills.";
 ---
 
 <!doctype html>
@@ -18,7 +18,7 @@ const description =
   <body>
     <Header />
     <main>
-      <DesignSystemsStory client:load />
+      <DesignSystemsPage client:load />
     </main>
     <Footer />
   </body>
