@@ -34,7 +34,7 @@ npm run preview
 
 ## Canonical routes
 
-- `/` — portfolio homepage with rotating roles and four work tiles
+- `/` — portfolio homepage with a statement hero and four color-block work tiles
 - `/work/design-systems` — completed interactive Design Systems story
 - `/work/ai-chatbot` — placeholder for the AI product example
 - `/work/scheduling` — placeholder for the scheduling example

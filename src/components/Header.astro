@@ -119,7 +119,7 @@ const workActive = pathname.startsWith("/work");
     position: fixed;
     left: 0;
     right: 0;
-    background: transparent;
+    background: var(--color-background);
   }
 
   .header-left,
@@ -182,8 +182,8 @@ const workActive = pathname.startsWith("/work");
     display: inline-flex;
     align-items: center;
     padding: 0.5rem 0.9rem;
-    background: var(--color-ink);
-    color: #ffffff;
+    background: var(--color-cta);
+    color: var(--color-cta-ink);
     font-family: var(--font-sans);
     font-size: 13px;
     font-weight: 500;

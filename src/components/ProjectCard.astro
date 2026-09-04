@@ -8,84 +8,166 @@ interface Props {
 const { project } = Astro.props;
 ---
 
-<a class="project-card" href={project.href}>
+<a class="project-card" href={project.href} data-stage={project.stage}>
   <div class="project-stage" aria-hidden="true">
     {
       project.slug === "design-systems" && (
-        <div class="mock mock-systems">
-          <div class="swatches">
-            <span class="swatch s-ink" />
-            <span class="swatch s-2" />
-            <span class="swatch s-accent" />
-            <span class="swatch s-paper" />
+        <div class="window">
+          <div class="window-bar">
+            <span class="dot" />
+            <span class="dot" />
+            <span class="dot" />
+            <span class="window-title">Studio / Tokens</span>
           </div>
-          <div class="type-row">
-            <span class="specimen">Ag</span>
-            <div class="bars">
-              <i style="width: 100%" />
-              <i style="width: 72%" />
-              <i style="width: 48%" />
+          <div class="sys-body">
+            <aside class="sys-nav">
+              <span class="on">Tokens</span>
+              <span>Foundations</span>
+              <span>Components</span>
+              <span>Governance</span>
+            </aside>
+            <div class="sys-main">
+              <div class="sys-head">
+                <strong>Harbor + North</strong>
+                <em>Light / Dark</em>
+              </div>
+              <div class="swatches">
+                <span>
+                  <i class="sw sw-ink" />
+                  Ink
+                </span>
+                <span>
+                  <i class="sw sw-paper" />
+                  Paper
+                </span>
+                <span>
+                  <i class="sw sw-sage" />
+                  Sage
+                </span>
+                <span>
+                  <i class="sw sw-terra" />
+                  Clay
+                </span>
+              </div>
+              <div class="sys-type">
+                <b>Ag</b>
+                <div>
+                  <small>Instrument Sans / 17</small>
+                  <span class="type-rule" />
+                  <span class="type-rule short" />
+                </div>
+              </div>
+              <div class="sys-actions">
+                <span class="ui-btn">Primary</span>
+                <span class="ui-btn ghost">Ghost</span>
+              </div>
             </div>
-          </div>
-          <div class="comps">
-            <span class="ui-btn" />
-            <span class="ui-input" />
-            <span class="ui-chip" />
           </div>
         </div>
       )
     }
     {
       project.slug === "ai-chatbot" && (
-        <div class="mock mock-chat">
-          <span class="bubble them" />
-          <span class="bubble me" />
-          <span class="bubble them short" />
-          <div class="composer">
-            <span />
-            <i />
+        <div class="phone">
+          <div class="phone-bar">
+            <span>9:41</span>
+            <i class="island" />
+            <span>LTE</span>
           </div>
+          <div class="phone-head">Assistant</div>
+          <div class="msg in">
+            Why did this answer change overnight?
+          </div>
+          <div class="msg out">
+            The protocol file was added to context. I can cite the passage or
+            send it to review.
+            <div class="chips">
+              <span>Cite</span>
+              <span>Review</span>
+            </div>
+          </div>
+          <div class="composer">Ask about this case</div>
         </div>
       )
     }
     {
       project.slug === "scheduling" && (
-        <div class="mock mock-cal">
-          <div class="cal-head">
-            <span class="cal-rule" />
-            <span class="cal-rule thin" />
+        <div class="window cal">
+          <div class="window-bar">
+            <span class="dot" />
+            <span class="dot" />
+            <span class="dot" />
+            <span class="window-title">Week of Mar 9</span>
           </div>
-          <div class="cal-grid">
-            {
-              [
-                0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 2, 1, 0, 0, 1, 0, 1, 1, 0, 0,
-              ].map((cell) => (
-                <span class:list={["cell", { on: cell === 1, now: cell === 2 }]} />
-              ))
-            }
+          <div class="cal-body">
+            <div class="cal-days">
+              {["Mon", "Tue", "Wed", "Thu", "Fri"].map((day) => (
+                <span>{day}</span>
+              ))}
+            </div>
+            <div class="cal-grid">
+              <div class="col">
+                <i class="slot muted">9:00</i>
+                <b class="block">Standup</b>
+                <i class="slot">Open</i>
+              </div>
+              <div class="col">
+                <b class="block tall">Clinic A</b>
+                <i class="slot">Buffer</i>
+              </div>
+              <div class="col">
+                <i class="slot">Open</i>
+                <b class="block selected">Book</b>
+                <i class="slot muted">Hold</i>
+              </div>
+              <div class="col">
+                <b class="block">Review</b>
+                <i class="slot">Open</i>
+                <b class="block dim">1:1</b>
+              </div>
+              <div class="col">
+                <i class="slot muted">Travel</i>
+                <b class="block tall">Clinic B</b>
+              </div>
+            </div>
           </div>
         </div>
       )
     }
     {
       project.slug === "finance" && (
-        <div class="mock mock-fin">
-          <div class="kpi">
-            <span class="kpi-label" />
-            <span class="kpi-num" />
+        <div class="window ledger">
+          <div class="window-bar">
+            <span class="dot" />
+            <span class="dot" />
+            <span class="dot" />
+            <span class="window-title">Ledger / Payables</span>
           </div>
-          <div class="chart">
-            <i style="height: 38%" />
-            <i style="height: 62%" />
-            <i style="height: 46%" />
-            <i style="height: 84%" />
-            <i style="height: 58%" />
-            <i style="height: 72%" />
-          </div>
-          <div class="rows">
-            <span />
-            <span />
-            <span />
+          <div class="fin-body">
+            <div class="kpi">
+              <span>Open exposure</span>
+              <strong>$128,400</strong>
+            </div>
+            <div class="fin-row head">
+              <span>Vendor</span>
+              <span>Amount</span>
+              <span>Status</span>
+            </div>
+            <div class="fin-row">
+              <span>Northwind</span>
+              <span>$12,400</span>
+              <em class="due">Due</em>
+            </div>
+            <div class="fin-row">
+              <span>Helix Labs</span>
+              <span>$8,210</span>
+              <em>Review</em>
+            </div>
+            <div class="fin-row">
+              <span>Harbor Co</span>
+              <span>$4,080</span>
+              <em class="paid">Paid</em>
+            </div>
           </div>
         </div>
       )
@@ -93,7 +175,7 @@ const { project } = Astro.props;
   </div>
   <div class="project-copy">
     <h2>{project.title}</h2>
-    <p>{project.meta}</p>
+    <p>{project.line}</p>
   </div>
 </a>
 
@@ -102,332 +184,475 @@ const { project } = Astro.props;
     display: block;
     color: inherit;
     text-decoration: none;
-    transition: transform 0.25s ease;
+    outline: none;
   }
 
-  .project-card:hover {
-    transform: translateY(-4px);
+  .project-card:focus-visible {
+    outline: 1px solid var(--color-ink);
+    outline-offset: 4px;
   }
 
   .project-stage {
     aspect-ratio: 5 / 4;
-    background: var(--color-stage);
-    border-radius: 0.625rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: box-shadow 0.25s ease;
+    overflow: hidden;
   }
 
-  .project-card:hover .project-stage {
-    box-shadow: 0 14px 32px -14px rgba(0, 0, 0, 0.2);
+  .project-card[data-stage="sage"] .project-stage {
+    background: var(--color-stage-sage);
+  }
+
+  .project-card[data-stage="blue"] .project-stage {
+    background: var(--color-stage-blue);
+  }
+
+  .project-card[data-stage="terracotta"] .project-stage {
+    background: var(--color-stage-terracotta);
+  }
+
+  .project-card[data-stage="brown"] .project-stage {
+    background: var(--color-stage-brown);
   }
 
   .project-copy {
-    padding: 0.85rem 0.15rem 0.15rem;
+    padding: 1rem 0.1rem 0.2rem;
   }
 
   .project-copy h2 {
     font-family: var(--font-sans);
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: -0.01em;
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
     color: var(--color-ink);
-    margin: 0 0 0.2rem;
-    line-height: 1.3;
+    margin: 0 0 0.3rem;
+    line-height: 1.25;
   }
 
   .project-copy p {
-    font-family: var(--font-mono);
-    font-size: 10px;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
     font-weight: 400;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-ink-3);
+    letter-spacing: -0.01em;
+    color: var(--color-ink-2);
     margin: 0;
+    line-height: 1.45;
+    max-width: 34ch;
   }
 
-  .mock {
-    width: 70%;
+  .window,
+  .phone {
     pointer-events: none;
+    user-select: none;
   }
 
-  /* Design systems — tokens, type, components */
-  .mock-systems {
+  .window {
+    width: min(86%, 24rem);
+    background: #f6f2eb;
+    color: #161513;
+    border-radius: 0.35rem;
+    box-shadow: 0 22px 48px -18px rgba(0, 0, 0, 0.38);
+    overflow: hidden;
+  }
+
+  .window-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.32rem;
+    padding: 0.45rem 0.65rem;
+    background: #ece6dc;
+    border-bottom: 1px solid rgba(22, 21, 19, 0.06);
+  }
+
+  .dot {
+    width: 0.38rem;
+    height: 0.38rem;
+    border-radius: 50%;
+    background: rgba(22, 21, 19, 0.2);
+  }
+
+  .window-title {
+    margin-left: 0.4rem;
+    font-family: var(--font-sans);
+    font-size: 0.62rem;
+    letter-spacing: 0.02em;
+    color: rgba(22, 21, 19, 0.55);
+  }
+
+  .sys-body {
+    display: grid;
+    grid-template-columns: 5.4rem 1fr;
+    min-height: 11.5rem;
+  }
+
+  .sys-nav {
     display: flex;
     flex-direction: column;
-    gap: 0.7rem;
-    background: #fff;
-    border-radius: 0.4rem;
-    padding: 0.7rem 0.75rem;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    gap: 0.45rem;
+    padding: 0.75rem 0.65rem;
+    background: #efe8dc;
+    font-family: var(--font-sans);
+    font-size: 0.58rem;
+    color: rgba(22, 21, 19, 0.5);
+  }
+
+  .sys-nav .on {
+    color: #161513;
+    font-weight: 600;
+  }
+
+  .sys-main {
+    padding: 0.75rem 0.8rem 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .sys-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .sys-head strong {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+  }
+
+  .sys-head em {
+    font-family: var(--font-mono);
+    font-size: 0.52rem;
+    font-style: normal;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(22, 21, 19, 0.45);
   }
 
   .swatches {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.35rem;
+  }
+
+  .swatches span {
     display: flex;
-    gap: 0.3rem;
+    flex-direction: column;
+    gap: 0.2rem;
+    font-family: var(--font-mono);
+    font-size: 0.48rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(22, 21, 19, 0.5);
   }
 
-  .swatch {
-    width: 1.15rem;
-    height: 1.15rem;
-    border-radius: 0.2rem;
+  .sw {
+    display: block;
+    height: 1.35rem;
+    border-radius: 0.15rem;
   }
 
-  .s-ink {
-    background: var(--color-ink);
+  .sw-ink {
+    background: #161513;
   }
-  .s-2 {
-    background: var(--color-ink-2);
+  .sw-paper {
+    background: #fff;
+    box-shadow: inset 0 0 0 1px rgba(22, 21, 19, 0.12);
   }
-  .s-accent {
-    background: var(--color-accent);
+  .sw-sage {
+    background: var(--color-stage-sage);
   }
-  .s-paper {
-    background: var(--color-paper);
-    box-shadow: inset 0 0 0 1px var(--color-line);
+  .sw-terra {
+    background: var(--color-stage-terracotta);
   }
 
-  .type-row {
+  .sys-type {
     display: flex;
     align-items: center;
     gap: 0.55rem;
   }
 
-  .specimen {
+  .sys-type b {
     font-family: var(--font-serif);
-    font-size: 1.35rem;
-    font-variation-settings:
-      "opsz" 36,
-      "wght" 450;
+    font-size: 1.45rem;
+    font-weight: 450;
     line-height: 1;
-    color: var(--color-ink);
   }
 
-  .bars {
+  .sys-type div {
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: 0.22rem;
   }
 
-  .bars i {
+  .sys-type small {
+    font-family: var(--font-mono);
+    font-size: 0.5rem;
+    letter-spacing: 0.04em;
+    color: rgba(22, 21, 19, 0.45);
+  }
+
+  .type-rule {
     display: block;
-    height: 0.28rem;
-    background: var(--color-line);
+    height: 0.22rem;
+    background: rgba(22, 21, 19, 0.12);
     border-radius: 99px;
   }
 
-  .comps {
+  .type-rule.short {
+    width: 62%;
+  }
+
+  .sys-actions {
     display: flex;
-    align-items: center;
     gap: 0.35rem;
   }
 
   .ui-btn {
+    font-family: var(--font-sans);
+    font-size: 0.58rem;
+    font-weight: 500;
+    padding: 0.28rem 0.55rem;
+    border-radius: 0.15rem;
+    background: #161513;
+    color: #f6f2eb;
+  }
+
+  .ui-btn.ghost {
+    background: transparent;
+    color: #161513;
+    box-shadow: inset 0 0 0 1px rgba(22, 21, 19, 0.2);
+  }
+
+  .phone {
+    width: min(46%, 12rem);
+    aspect-ratio: 9 / 18.4;
+    background: #f7f3ec;
+    color: #161513;
+    border-radius: 1.45rem;
+    box-shadow: 0 22px 48px -16px rgba(0, 0, 0, 0.4);
+    padding: 0.55rem 0.55rem 0.65rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .phone-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--font-sans);
+    font-size: 0.48rem;
+    font-weight: 600;
+    color: rgba(22, 21, 19, 0.55);
+  }
+
+  .island {
     width: 2.1rem;
-    height: 0.7rem;
-    background: var(--color-ink);
-    border-radius: 0.15rem;
-  }
-
-  .ui-input {
-    flex: 1;
-    height: 0.7rem;
-    border: 1px solid var(--color-line);
-    border-radius: 0.15rem;
-  }
-
-  .ui-chip {
-    width: 1.35rem;
-    height: 0.7rem;
-    border: 1px solid var(--color-line);
+    height: 0.42rem;
+    background: #161513;
     border-radius: 99px;
   }
 
-  /* Chat */
-  .mock-chat {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
+  .phone-head {
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid rgba(22, 21, 19, 0.08);
   }
 
-  .bubble {
-    display: block;
-    height: 1.35rem;
+  .msg {
+    font-family: var(--font-sans);
+    font-size: 0.58rem;
+    line-height: 1.4;
+    padding: 0.45rem 0.5rem;
     border-radius: 0.7rem;
+    max-width: 92%;
   }
 
-  .bubble.them {
-    width: 68%;
+  .msg.in {
+    background: #ece6dc;
     align-self: flex-start;
-    background: #fff;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    border-bottom-left-radius: 0.2rem;
   }
 
-  .bubble.them.short {
-    width: 48%;
-    height: 1.1rem;
-  }
-
-  .bubble.me {
-    width: 54%;
+  .msg.out {
+    background: #161513;
+    color: #f7f3ec;
     align-self: flex-end;
-    background: var(--color-ink);
+    border-bottom-right-radius: 0.2rem;
+  }
+
+  .chips {
+    display: flex;
+    gap: 0.25rem;
+    margin-top: 0.35rem;
+  }
+
+  .chips span {
+    font-size: 0.48rem;
+    padding: 0.12rem 0.35rem;
+    border-radius: 99px;
+    box-shadow: inset 0 0 0 1px rgba(247, 243, 236, 0.28);
   }
 
   .composer {
-    display: flex;
-    align-items: center;
+    margin-top: auto;
+    font-family: var(--font-sans);
+    font-size: 0.55rem;
+    color: rgba(22, 21, 19, 0.4);
+    padding: 0.4rem 0.55rem;
+    border-radius: 99px;
+    box-shadow: inset 0 0 0 1px rgba(22, 21, 19, 0.1);
+  }
+
+  .cal-body,
+  .fin-body {
+    padding: 0.7rem 0.75rem 0.8rem;
+  }
+
+  .cal-days {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     gap: 0.35rem;
-    margin-top: 0.2rem;
-    background: #fff;
-    border-radius: 99px;
-    padding: 0.28rem 0.28rem 0.28rem 0.55rem;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-  }
-
-  .composer span {
-    flex: 1;
-    height: 0.35rem;
-    background: var(--color-line);
-    border-radius: 99px;
-  }
-
-  .composer i {
-    width: 1.05rem;
-    height: 1.05rem;
-    border-radius: 50%;
-    background: var(--color-ink);
-    flex-shrink: 0;
-  }
-
-  /* Calendar */
-  .mock-cal {
-    background: #fff;
-    border-radius: 0.4rem;
-    padding: 0.65rem 0.7rem 0.75rem;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-  }
-
-  .cal-head {
-    display: flex;
-    flex-direction: column;
-    gap: 0.28rem;
-    margin-bottom: 0.65rem;
-  }
-
-  .cal-rule {
-    display: block;
-    width: 42%;
-    height: 0.38rem;
-    background: var(--color-ink);
-    border-radius: 99px;
-  }
-
-  .cal-rule.thin {
-    width: 28%;
-    height: 0.22rem;
-    background: var(--color-line);
+    margin-bottom: 0.45rem;
+    font-family: var(--font-mono);
+    font-size: 0.5rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(22, 21, 19, 0.45);
+    text-align: center;
   }
 
   .cal-grid {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 0.28rem;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.35rem;
+    min-height: 9.5rem;
   }
 
-  .cell {
-    aspect-ratio: 1;
-    border-radius: 0.2rem;
-    background: var(--color-stage);
-  }
-
-  .cell.on {
-    background: var(--color-ink);
-    opacity: 0.22;
-  }
-
-  .cell.now {
-    background: var(--color-accent);
-  }
-
-  /* Finance */
-  .mock-fin {
-    background: #fff;
-    border-radius: 0.4rem;
-    padding: 0.7rem 0.75rem;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  .col {
     display: flex;
     flex-direction: column;
-    gap: 0.65rem;
+    gap: 0.3rem;
   }
 
-  .kpi-label {
-    display: block;
-    width: 2.2rem;
-    height: 0.28rem;
-    background: var(--color-line);
-    border-radius: 99px;
-    margin-bottom: 0.3rem;
-  }
-
-  .kpi-num {
-    display: block;
-    width: 4.2rem;
-    height: 0.7rem;
-    background: var(--color-ink);
-    border-radius: 0.15rem;
-  }
-
-  .chart {
+  .col .block,
+  .col .slot {
     display: flex;
-    align-items: flex-end;
-    gap: 0.28rem;
-    height: 3.1rem;
+    align-items: center;
+    justify-content: center;
+    min-height: 1.7rem;
+    border-radius: 0.18rem;
+    font-family: var(--font-sans);
+    font-size: 0.52rem;
+    font-weight: 500;
+    text-align: center;
   }
 
-  .chart i {
+  .col .block {
+    background: #161513;
+    color: #f6f2eb;
     flex: 1;
-    background: var(--color-ink);
-    opacity: 0.18;
-    border-radius: 0.12rem 0.12rem 0 0;
   }
 
-  .chart i:nth-child(4) {
-    background: var(--color-accent);
-    opacity: 1;
+  .col .block.tall {
+    flex: 1.6;
   }
 
-  .rows {
+  .col .block.dim {
+    background: rgba(22, 21, 19, 0.55);
+  }
+
+  .col .block.selected {
+    background: #3e5c7a;
+  }
+
+  .col .slot {
+    background: rgba(22, 21, 19, 0.06);
+    color: rgba(22, 21, 19, 0.45);
+  }
+
+  .col .slot.muted {
+    color: rgba(22, 21, 19, 0.32);
+  }
+
+  .kpi {
     display: flex;
     flex-direction: column;
-    gap: 0.32rem;
+    gap: 0.2rem;
+    margin-bottom: 0.75rem;
   }
 
-  .rows span {
-    display: block;
-    height: 0.32rem;
-    background: var(--color-line);
+  .kpi span {
+    font-family: var(--font-mono);
+    font-size: 0.52rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(22, 21, 19, 0.45);
+  }
+
+  .kpi strong {
+    font-family: var(--font-serif);
+    font-size: 1.55rem;
+    font-weight: 450;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  .fin-row {
+    display: grid;
+    grid-template-columns: 1.3fr 0.8fr 0.7fr;
+    gap: 0.4rem;
+    align-items: center;
+    padding: 0.42rem 0;
+    border-top: 1px solid rgba(22, 21, 19, 0.08);
+    font-family: var(--font-sans);
+    font-size: 0.62rem;
+  }
+
+  .fin-row.head {
+    border-top: 0;
+    padding-bottom: 0.2rem;
+    font-family: var(--font-mono);
+    font-size: 0.48rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(22, 21, 19, 0.4);
+  }
+
+  .fin-row em {
+    font-style: normal;
+    font-size: 0.52rem;
+    font-weight: 600;
+    justify-self: start;
+    padding: 0.1rem 0.35rem;
     border-radius: 99px;
+    background: rgba(22, 21, 19, 0.08);
   }
 
-  .rows span:nth-child(2) {
-    width: 78%;
-  }
-  .rows span:nth-child(3) {
-    width: 56%;
+  .fin-row em.due {
+    background: #3a1515;
+    color: #f6f2eb;
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    .project-card,
-    .project-card:hover {
-      transform: none;
-      transition: none;
+  .fin-row em.paid {
+    background: #7f8f74;
+    color: #f6f2eb;
+  }
+
+  @media (max-width: 560px) {
+    .window {
+      width: min(90%, 22rem);
     }
 
-    .project-card:hover .project-stage {
-      box-shadow: none;
+    .phone {
+      width: min(52%, 12.5rem);
     }
   }
 </style>

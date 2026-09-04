@@ -19,6 +19,12 @@
   --color-accent-soft: #fef2f2;
   --color-highlight: #fee2e2;
   --color-stage: #ececec;
+  --color-cta: #0a0a0a;
+  --color-cta-ink: #ffffff;
+  --color-stage-sage: #7f8f74;
+  --color-stage-terracotta: #c06b4a;
+  --color-stage-blue: #3e5c7a;
+  --color-stage-brown: #3c2a22;
 
   --font-serif: "Fraunces", Georgia, serif;
   --font-sans: "Instrument Sans", system-ui, sans-serif;
@@ -82,6 +88,35 @@
     color: inherit;
     text-decoration: none;
   }
+}
+
+/* Homepage field — remaps chrome tokens; inner pages stay light */
+.theme-home {
+  --color-background: #050505;
+  --color-paper: #111111;
+  --color-ink: #f3efe8;
+  --color-ink-2: #c8c2b8;
+  --color-ink-3: #8a857c;
+  --color-line: rgba(243, 239, 232, 0.12);
+  --color-line-soft: rgba(243, 239, 232, 0.06);
+  --color-stage: #111111;
+  --color-cta: #f3efe8;
+  --color-cta-ink: #0a0a0a;
+  --color-highlight: #3a1515;
+  --color-foreground: #f3efe8;
+  --color-muted: #111111;
+  --color-muted-foreground: #8a857c;
+  --color-border: rgba(243, 239, 232, 0.12);
+  --color-primary: #f3efe8;
+  --color-primary-foreground: #0a0a0a;
+  --color-secondary: #111111;
+  --color-secondary-foreground: #f3efe8;
+  --color-card: #111111;
+  --color-card-foreground: #f3efe8;
+  color-scheme: dark;
+  background: var(--color-background);
+  color: var(--color-ink);
+  min-height: 100dvh;
 }
 
 /* ——————————————————————————————————————
@@ -513,6 +548,36 @@
   }
   .nav-link.active {
     color: var(--color-ink);
+  }
+}
+
+/* Homepage work tiles — spotlight hover/focus */
+.theme-home .projects .project-card {
+  transition: opacity 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .theme-home .projects:has(.project-card:hover) .project-card {
+    opacity: 0.28;
+  }
+
+  .theme-home .projects:has(.project-card:hover) .project-card:hover {
+    opacity: 1;
+  }
+}
+
+.theme-home .projects:has(.project-card:focus-visible) .project-card {
+  opacity: 0.28;
+}
+
+.theme-home .projects:has(.project-card:focus-visible)
+  .project-card:focus-visible {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-home .projects .project-card {
+    transition: none;
   }
 }
 

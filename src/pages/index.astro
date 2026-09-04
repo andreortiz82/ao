@@ -10,22 +10,30 @@ import { projects } from "../data/projects";
   <head>
     <BaseHead
       title="Andre Ortiz"
-      description="Product Experience Designer. Twenty years building product experiences end to end."
+      description="Senior maker-leader who designs and ships delightful product experience for founders and teams."
     />
   </head>
-  <body>
+  <body class="theme-home">
     <Header />
 
     <main>
       <section class="hero-stage" aria-label="Introduction">
         <div class="wrap">
-          <p class="name">Andre Ortiz</p>
-          <h1 class="rotating">Product Experience Designer</h1>
+          <h1>
+            Andre Ortiz is a senior maker-leader who designs and ships delightful product experience.
+          </h1>
+          <p class="hero-lede">
+            For founders, startups, and orgs that want creative talent and
+            design leadership.
+          </p>
         </div>
       </section>
 
-      <section class="projects" id="work" aria-label="Selected work">
-        {projects.map((project) => <ProjectCard project={project} />)}
+      <section class="work" id="work" aria-label="Selected work">
+        <p class="section-label">Selected work</p>
+        <div class="projects">
+          {projects.map((project) => <ProjectCard project={project} />)}
+        </div>
       </section>
     </main>
   </body>
@@ -33,11 +41,11 @@ import { projects } from "../data/projects";
 
 <style>
   .hero-stage {
-    min-height: max(22rem, calc(100dvh - 10.5rem));
+    min-height: max(22rem, calc(100dvh - 11.5rem));
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 6.5rem clamp(1.25rem, 4vw, 2.5rem) 1.75rem;
+    padding: 6.5rem clamp(1.25rem, 4vw, 2.5rem) 2.25rem;
     text-align: center;
   }
 
@@ -45,40 +53,50 @@ import { projects } from "../data/projects";
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 1.35rem;
+    max-width: 40rem;
   }
 
-  .name {
-    font-family: var(--font-mono);
-    font-size: 24px;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    color: var(--color-ink-3);
-    margin: 0;
-  }
-
-  h1.rotating {
+  h1 {
     font-family: var(--font-serif);
-    font-size: clamp(3rem, 10vw, 8rem);
+    font-size: clamp(2.15rem, 5.4vw, 4.35rem);
     font-variation-settings:
       "opsz" 144,
       "wght" 350;
-    line-height: 0.95;
-    letter-spacing: -0.035em;
+    font-weight: 350;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
     color: var(--color-ink);
-    transition: opacity 0.3s ease;
     margin: 0;
-    max-width: 92vw;
+    max-width: 20ch;
+  }
+
+  .hero-lede {
+    font-family: var(--font-sans);
+    font-size: clamp(0.95rem, 1.4vw, 1.125rem);
+    font-weight: 400;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+    color: var(--color-ink-2);
+    margin: 0;
+    max-width: 28ch;
+  }
+
+  .work {
+    padding: 0 clamp(1.25rem, 4vw, 2.5rem) clamp(3.5rem, 8vw, 6rem);
+    max-width: 1400px;
+    margin: 0 auto;
+    scroll-margin-top: 6rem;
+  }
+
+  .work .section-label {
+    margin: 0 0 1.25rem;
   }
 
   .projects {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1.5rem;
-    padding: 0 clamp(1.25rem, 4vw, 2.5rem) clamp(3rem, 8vw, 5rem);
-    max-width: 1400px;
-    margin: 0 auto;
-    scroll-margin-top: 6rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem 1.35rem;
   }
 
   @media (max-width: 860px) {
@@ -86,8 +104,14 @@ import { projects } from "../data/projects";
       min-height: max(20rem, calc(100dvh - 9.5rem));
     }
 
+    h1 {
+      max-width: 18ch;
+    }
+  }
+
+  @media (max-width: 700px) {
     .projects {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: 1fr;
     }
   }
 
@@ -96,41 +120,6 @@ import { projects } from "../data/projects";
       min-height: max(18rem, calc(100dvh - 8.5rem));
       padding-top: 5.5rem;
     }
-
-    .name {
-      font-size: 16px;
-    }
-
-    .projects {
-      grid-template-columns: 1fr;
-    }
   }
+
 </style>
-
-<script>
-  const labels = [
-    "Product Experience Designer",
-    "Design Systems Thinker",
-    "Team Collaborator",
-    "Individual Contributor",
-    "Design Engineer",
-    "Business Partner",
-    "Creative Problem Solver",
-  ];
-  let i = 0;
-  const el = document.querySelector(".rotating") as HTMLElement | null;
-  const reduceMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)",
-  ).matches;
-
-  if (el && !reduceMotion) {
-    setInterval(() => {
-      el.style.opacity = "0";
-      setTimeout(() => {
-        i = (i + 1) % labels.length;
-        el.textContent = labels[i];
-        el.style.opacity = "1";
-      }, 300);
-    }, 2800);
-  }
-</script>

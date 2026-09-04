@@ -29,6 +29,9 @@ and status.
 | 04 | Finance | `/work/finance` | Placeholder |
 
 Homepage tiles use the same order and link directly to these four routes.
+Each homepage tile is a static color-block product mock with a title and one
+concrete outcome line — not a live demo widget. Stage colors and spotlight
+hover are documented in `DESIGN.md`.
 
 ---
 

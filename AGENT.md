@@ -20,7 +20,8 @@ the live site without Andre's explicit approval.
 Astro owns the document structure and static routes. React is used only for
 interactive islands, currently the Design Systems story. Tailwind v4 is loaded
 through `@tailwindcss/vite`; theme tokens and shared utilities live in
-`src/styles/global.css`.
+`src/styles/global.css`. The homepage applies `theme-home` on `body` to remap
+those tokens to a dark field; do not add a second token file.
 
 ```text
 src/
@@ -72,6 +73,8 @@ index. `/about` is not a route; the About experience is the avatar modal in
 - Use Phosphor icons for site and demo iconography.
 - Respect `prefers-reduced-motion`.
 - Keep interactive work on its project route, not inside homepage cards.
+- Homepage work tiles are static product mocks with spotlight hover. Do not
+  restore a rotating-role carousel on `/`.
 
 ## Documentation ownership
 
