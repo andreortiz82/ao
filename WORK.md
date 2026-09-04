@@ -1,420 +1,318 @@
-# Work Examples — Build Plan
+# Portfolio Work
 
-Interactive portfolio demonstrations. Each page is the proof of knowledge — not a case study describing work, but a working artifact that shows how Andre thinks in that domain.
+This document defines the four interactive portfolio examples. Each project
+should state a meaningful product problem and end in a usable interactive
+solution. The portfolio is the proof; it is not a museum of screenshots.
 
-## Original notes
+Implementation conventions belong in `AGENT.md`. Shared visual rules belong in
+`DESIGN.md`. This file contains project intent, content, interaction, imagery,
+and status.
 
-```markdown
-My work is not public so I will show traditional work samples. Instead, each work example will be an interactive, beautifully designed experience that demostrates my depth of knowledge in that area.
+## Shared portfolio rules
 
-- **Work example 1: Design Systems**
-  - Description
-    - This example should demostate my knowledge of design systems for distributed teams
-  - Topics to cover
-    - Design tokens
-    - Brands and themes
-    - UI Kits and components
-    - Atomic Design principals
-    - NPM packages and distrbution
-    - Working with dev teams
-    - Figma to Code
+- Product examples come before process theater.
+- Each page teaches the viewer something by letting them use the artifact.
+- The writing should be startup-legible: speed, scale, tradeoffs, and outcomes.
+- Placeholder copy is acceptable during implementation, but placeholder pages
+  should not be treated as finished examples.
+- Imagery should explain the product concept, not decorate an empty page.
+- Every interactive element needs a clear state, feedback, and reduced-motion
+  behavior.
 
-- **Work example 2: Advanced Scheduling Workflows**
-  - Description
-    - This example should demonstrate my knowledge and experience with advanced scheduling workflows
-  - Topics to cover
-    - Scheduling for large organizations
-    - Availability management
-    - Scheduling windows
-    - Calculated schedules
-    - Scheduling workflows
-    - Managing status
+## Project index
 
-- **Work example 3: Financial tools**
-  - Description
-    - This example should demonstrate my knowledge and experience with financial products
-  - Topics to cover
-    - Creating budgets
-    - Billing
-    - Invoices
-    - Accounts Payable / Receivable
-    - Vendor management
+| # | Title | Route | Status |
+| --- | --- | --- | --- |
+| 01 | Design Systems | `/work/design-systems` | Full interactive story |
+| 02 | AI Chatbot | `/work/ai-chatbot` | Placeholder |
+| 03 | Scheduling | `/work/scheduling` | Placeholder |
+| 04 | Finance | `/work/finance` | Placeholder |
 
-- **Work example 4: AI tools**
-  - Description
-    - This example should demonstrate my knowledge and experience with AI chatbots
-  - Topics to cover
-    - Chat UIs
-    - Adding context
-    - AI Generated UI tools
-    - Agent builder
-    - Agent task creation (cron jobs)
-```
-
-Cross-reference:
-
-- [AO.md](AO.md) — identity, positioning, goals this work serves
-- [CLAUDE.md](CLAUDE.md) — tech stack, design tokens, component patterns
-- [DESIGN.md](DESIGN.md) — visual language, typography, motion rules
+Homepage tiles use the same order and link directly to these four routes.
+Each homepage tile is a static color-block product mock with a title and one
+concrete outcome line — not a live demo widget. Stage colors and spotlight
+hover are documented in `DESIGN.md`.
 
 ---
 
-## Maintenance Protocol
+## 01 — Design Systems
 
-Update this file when:
+**Route:** `/work/design-systems`
 
-- A work example page is built, revised, or completed — mark status and note decisions made
-- New interactive components are added — document them here and in [CLAUDE.md](CLAUDE.md)
-- The concept or narrative for an example changes
+**Title:** Design Systems
 
----
+**Short description:** Multiple Brands. Growing Teams. Products Delivered.
 
-## Principles
+**Hook:** Design systems are an attempt to capture the uniqueness of your product and brand. 
 
-1. **The page is the demo.** No screenshots of work. The interactive experience IS the work sample.
-2. **Depth over breadth.** Better to show one concept brilliantly than cover every topic shallowly.
-3. **Editorial quality throughout.** Every section gets the same typographic and layout care as the homepage. Use existing tokens, patterns, and motion system from [DESIGN.md](DESIGN.md).
-4. **Teach, don't tell.** Each demo should make the viewer understand the domain better for having used it — not just impress.
-5. **Startup-legible.** The primary audience is startups. Frame problems in terms of speed, scale, and product decisions — not process theater.
+are the foundation of product design. They are the shared understanding of the design-system that allows designers, product managers, and engineers to build products faster and with less friction.
 
----
+**Audience signal:** Demonstrates a design-system for distributed
+teams and multiple brands. Capturing brand and design decisions into reusable foundations, components,
+governance, and tooling for everyone. 
 
-## Shared Infrastructure
+### Problem
 
-New files needed before any individual example is built.
+Your business has a diverse set of products and a growing teams. Delivering consistent product experiences is becoming harder. The designers, product managers, and engineers need a shared understanding of the design-system to build products faster and with less friction.
 
-### New pages
+### Solution
 
-```
-src/pages/work/
-├── index.astro              # Work landing page — grid of 4 examples
-├── design-systems.astro
-├── scheduling.astro
-├── financial.astro
-└── ai-tools.astro
-```
+A design-system that captures brand and design decisions into reusable foundations, components,
+governance, and tooling for everyone. The system should be easy to use for designers, product managers, and engineers. It should leverage AI agents to build skills and reduce friction.
 
-### New layout + components
+### Page sections
 
-```
-src/layouts/
-└── WorkLayout.astro          # Extends Layout.astro — adds work-specific nav context
+1. **Hero** — Title, hook/problem statement, and audience signal.
+3. **02 Foundations** — Color swatches, color ramps, typography examples, sizing and spacing examples, motion examples, breakpoint examples, and iconography large and small. Talk about accessibility and contrast ratios. 
+4. **03 Tokens** — Semantic values, CSS variables, Shadcn/UI and Tailwind CSS themes.
+5. **04 Components** — Atomic design component patterns: atoms, molecules, organisms, templates, and pages. Components will be affected by the brand and theme switcher.
+6. **05 Examples** — Interactive examples with the ability to change brands, themes, and colors. Include Dos and Don'ts examples.
+7. **06 Governance** — Intelligently manage the design-system with AI agents and human oversight.
+8. **07 Skills & Plugins** — Agentic Design system skills and plugins for designers, product managers, and engineers.
 
-src/components/
-├── WorkHero.astro            # Case hero: title, discipline tags, one-line hook
-├── WorkSection.astro         # Narrative section wrapper with consistent padding + SectionHead
-└── DemoFrame.astro           # Container for React island demos — stage-grid bg, label bar
-```
+### Visual recommendations
 
-### Nav update
+Instead of images, create real-world examples of the design-system in action. Use a vague and abstracted visual language to demonstrate the design-system in action.
 
-Add `Work` link to `Nav.astro` → `href: "/work"`.
+### Design and content notes
 
-### Work index page
-
-Four cards in a 2×2 grid. Each card: index number, domain name, one-line hook, discipline tags. Matches the editorial language of the homepage. On mobile: single column.
+- Create a real hero section
+- Color and token values should be copyable.
+- Include a brand and theme switcher as floating action buttons. I want the visitor to feal like they can change the design-system on the fly.
+- The page should feel like a guided explanation that becomes a tool. Keep the portfolio chrome neutral; demo themes belong inside the story. Use concrete language about decisions and tradeoffs rather than generic design-system claims.
+- Use hover effects, motion, and interactivity to make this page feel like a guided journey.
+- Don't mention Figma by name. Say things like "design tools" instead.
 
 ---
 
-## Work Example 1 — Design Systems
+## 02 — AI Chatbot
 
-**URL:** `/work/design-systems`
-**Status:** Not started
+**Route:** `/work/ai-chatbot`
 
-### Concept
+**Title:** AI Chatbot
 
-A living, scrollable demonstration of how a design system is architected and maintained for distributed teams. The page itself is built using the system it describes — meta and intentional.
+**Short description:** Trust, context, and control when the output is not
+predictable.
 
-### Hook
+**Hook:** Designing for AI is not about making chatbots look good. It is about
+trust and control.
 
-> A design system isn't a component library. It's a contract between design and engineering, written in tokens, maintained in code, and felt in every screen.
+**Audience signal:** Demonstrates product thinking for non-deterministic
+interfaces: provenance, context, human oversight, agent configuration, and
+clear recovery from uncertainty.
 
-### Page structure
+### Problem
 
-| Section                | Format                                                             | Interactive?                                          |
-| ---------------------- | ------------------------------------------------------------------ | ----------------------------------------------------- |
-| Hero                   | Full-width, headline + discipline tags                             | No                                                    |
-| 01 · Tokens            | Token explorer — color, type, spacing, radius                      | Yes — TokenExplorer                                   |
-| 02 · Theming           | Live brand/theme switcher applied to a sample component            | Yes — ThemeSwitcher                                   |
-| 03 · Atomic Design     | Layered diagram: atoms → molecules → organisms → templates         | Yes — AtomicExplorer                                  |
-| 04 · Components        | Annotated component with variant states and props                  | Yes — ComponentAnatomy (extend AnatomyWidget pattern) |
-| 05 · Figma to Code     | Side-by-side: Figma spec vs rendered component + token map         | Yes — FigmaCodeDiff                                   |
-| 06 · Distribution      | NPM package concept — version history, changelog, install snippet  | Static — editorial                                    |
-| 07 · Working with Devs | Handoff documentation fragment — specs, redlines, token references | Static — editorial                                    |
-| Reflection             | 3–4 principles I've learned about running a design system          | Static — editorial                                    |
+AI output changes with context and is not guaranteed to be correct. A polished
+chat surface is insufficient if users cannot understand what influenced an
+answer, correct the system, or control what happens next.
 
-### React islands to build
+### Solution
 
-**`TokenExplorer.tsx`**
+A scripted but believable AI workspace where the viewer can use a chat, change
+context, generate interface output, configure an agent, and schedule agent
+tasks. The artifact should make trust and control visible rather than merely
+describing them.
 
-- Tab or filter bar: Color / Typography / Spacing / Radius
-- Color: swatches grid with token name, hex, and Tailwind class
-- Typography: live type specimens with font, size, weight, tracking values
-- Spacing: visual scale with px and rem values
-- Radius: visual radius scale applied to a box
-- All values pulled from the actual token system in `global.css`
+### Page sections
 
-**`ThemeSwitcher.tsx`**
+1. **Hero** — frame AI as an uncertainty, trust, and control problem.
+2. **01 Chat UI** — production-quality conversation with suggested prompts,
+   model selection, history, response actions, and typing state.
+3. **02 Context Management** — add and remove files, instructions, and memory;
+   compare responses with and without context.
+4. **03 AI-Generated UI** — choose a prompt, watch a short generation state,
+   inspect the rendered component, and reveal design reasoning.
+5. **04 Agent Builder** — configure identity, instructions, tools, and persona
+   with a live preview.
+6. **05 Agent Tasks** — create recurring tasks with human-readable schedules,
+   status, and run history.
+7. **Reflection** — principles for trust, transparency, and user control.
 
-- A sample card component (header + body + CTA)
-- 2–3 "brand" presets that remap tokens: default (red), a cool blue brand, a warm amber brand
-- Toggle between brands — card updates live
-- Shows how a token-based system enables multi-brand without component changes
+### Topics
 
-**`AtomicExplorer.tsx`**
+Chat interfaces, context windows, provenance, prompt boundaries, generated UI,
+human-in-the-loop controls, agent configuration, task scheduling, uncertainty,
+failure recovery, and trust-building language.
 
-- Five levels: Atom, Molecule, Organism, Template, Page
-- Click to expand each level — reveals example components that compose upward
-- Visual hierarchy with connecting lines
-- Reinforces that complexity is managed through composition, not customization
+### Imagery recommendations
 
-**`FigmaCodeDiff.tsx`**
+Use interface states as the imagery: message threads, context chips, side-by-
+side response diffs, generated component previews, agent profiles, and task
+logs. Avoid robot illustrations, glowing brains, or generic AI stock imagery.
 
-- Two-panel: left = stylized Figma spec (annotation overlay on component), right = rendered React component
-- Hotspot annotations on both sides pointing to the same design decision
-- Toggle to highlight token usage (shows `--color-accent` etc. mapped to both sides)
+### Interactive components
 
-### Design notes
+`ChatInterface`, `ContextPanel`, `UIGenerator`, `AgentBuilder`, and
+`TaskScheduler`. Outputs can be pre-wired; the experience should feel real
+without requiring an external AI service.
 
-- TokenExplorer should use `.stage-grid` background
-- ThemeSwitcher is the hero interactive moment — put it early, make it visceral
-- The page is the most meta of the four — lean into that in the narrative copy
+### Design and content notes
 
----
+The chat surface can use a subtly darker paper panel to distinguish it from the
+portfolio. Copy should explain uncertainty without making the interface feel
+anxious. The generated UI moment is the visual payoff; agent configuration is
+the credibility payoff.
 
-## Work Example 2 — Advanced Scheduling Workflows
+### Current implementation status
 
-**URL:** `/work/scheduling`
-**Status:** Not started
-
-### Concept
-
-Scheduling at organizational scale is one of the hardest UX problems — it's constrained optimization made human. This page walks through the problem space and demonstrates the design thinking behind it through interactive artifacts.
-
-### Hook
-
-> Scheduling for one person is a calendar. Scheduling for an organization is a product problem — with rules, conflicts, states, and consequences.
-
-### Page structure
-
-| Section                   | Format                                                             | Interactive?               |
-| ------------------------- | ------------------------------------------------------------------ | -------------------------- |
-| Hero                      | Headline + framing of the domain complexity                        | No                         |
-| 01 · The Problem          | Complexity map — why scheduling at scale breaks naive solutions    | Static — annotated diagram |
-| 02 · Availability         | Multi-user availability grid — visual overlap and gap detection    | Yes — AvailabilityGrid     |
-| 03 · Scheduling Windows   | Window configurator — define a rule, see it applied to a timeline  | Yes — WindowConfigurator   |
-| 04 · Calculated Schedules | Input parameters → generated schedule output with conflict flags   | Yes — ScheduleCalculator   |
-| 05 · Workflows & Status   | State machine diagram — a scheduling request through its lifecycle | Yes — WorkflowDiagram      |
-| 06 · Managing at Scale    | Bulk actions UI — filter, select, action pattern for large lists   | Yes — BulkScheduler        |
-| Reflection                | What I've learned about the human side of scheduling systems       | Static — editorial         |
-
-### React islands to build
-
-**`AvailabilityGrid.tsx`**
-
-- Grid of time slots (rows) × people (columns)
-- Click to toggle availability per person per slot
-- Live overlap highlighting: green = all available, yellow = partial, red = conflict
-- Summary bar below: "3/5 available for this window"
-
-**`WindowConfigurator.tsx`**
-
-- Form inputs: start date, end date, excluded days, time range, buffer minutes
-- Live timeline preview that updates as rules are set
-- Shows valid booking slots as highlighted segments on the timeline
-- A "why is this slot unavailable?" tooltip on blocked segments
-
-**`ScheduleCalculator.tsx`**
-
-- Input panel: number of appointments, duration, staff count, operating hours
-- Output: a generated weekly schedule grid
-- Conflict indicator if inputs are impossible (e.g., not enough capacity)
-- Shows how constraints produce a calculated, not manual, schedule
-
-**`WorkflowDiagram.tsx`**
-
-- A status state machine rendered as a connected node diagram
-- States: Draft → Requested → Confirmed → Completed / Cancelled / Rescheduled
-- Click a state to see: allowed actions, who can trigger them, what notifications fire
-- Animated transition arrows on state change
-
-### Design notes
-
-- AvailabilityGrid is the most visceral demo — lead with it in the page flow
-- Use a muted grid aesthetic for the timeline/calendar elements — not colorful, clinical
-- Reinforce that the domain is complex but the UX should feel inevitable, not complicated
+Placeholder page only. The route and basic project copy exist. Interactive
+components and the full page structure are not started.
 
 ---
 
-## Work Example 3 — Financial Tools
+## 03 — Scheduling
 
-**URL:** `/work/financial`
-**Status:** Not started
+**Route:** `/work/scheduling`
 
-### Concept
+**Title:** Scheduling
 
-Financial product UX is about reducing anxiety and creating clarity in high-stakes decisions. Every number needs context; every action needs confidence. This page demonstrates the design thinking behind financial interfaces.
+**Short description:** Organizational scheduling as a product problem, not a
+calendar.
 
-### Hook
+**Hook:** Scheduling for one person is a calendar. For an organization, it is a
+product problem.
 
-> Money is emotional. Financial product design is the work of making complex numbers feel legible, actions feel safe, and decisions feel confident.
+**Audience signal:** Demonstrates how to make constrained optimization legible:
+availability, rules, conflicts, states, and consequences at organizational
+scale.
 
-### Page structure
+### Problem
 
-| Section                | Format                                                                   | Interactive?         |
-| ---------------------- | ------------------------------------------------------------------------ | -------------------- |
-| Hero                   | Headline + framing of financial UX as a clarity problem                  | No                   |
-| 01 · Budget Builder    | Interactive budget with categories, live totals, and variance indicators | Yes — BudgetBuilder  |
-| 02 · Invoice           | A complete invoice with line items, tax, and status states               | Yes — InvoicePreview |
-| 03 · AP / AR Dashboard | Visual summary of payables and receivables with aging buckets            | Yes — ARDashboard    |
-| 04 · Vendor Management | Filterable vendor table — status, terms, outstanding balance             | Yes — VendorTable    |
-| 05 · Billing Flow      | Step-through payment confirmation flow — 3 screens                       | Yes — BillingFlow    |
-| Reflection             | Principles for designing financial interfaces                            | Static — editorial   |
+Naive calendars work for one person but break when many people, resources,
+rules, buffers, and exceptions interact. The user needs to understand not only
+what is available, but why a slot is unavailable and what changing a rule will
+affect.
 
-### React islands to build
+### Solution
 
-**`BudgetBuilder.tsx`**
+A guided scheduling workspace that starts with availability and ends with a
+calculated schedule and an explicit request lifecycle. The interaction should
+make complexity visible while keeping the decisions understandable.
 
-- Category rows with label, planned amount, actual amount
-- Add / remove rows
-- Live variance column: over/under with color coding (green / red)
-- Total row at bottom with a donut chart showing allocation
-- An "alert" state when total exceeds a defined limit
+### Page sections
 
-**`InvoicePreview.tsx`**
+1. **Hero** — frame organizational scheduling as constrained product design.
+2. **01 The Problem** — annotated complexity map showing why simple calendars
+   fail.
+3. **02 Availability** — multi-person time grid with overlap and gap detection.
+4. **03 Scheduling Windows** — configure dates, excluded days, hours, and
+   buffers with a live timeline.
+5. **04 Calculated Schedules** — enter constraints and generate a schedule with
+   conflict flags.
+6. **05 Workflows and Status** — follow a request through draft, requested,
+   confirmed, completed, cancelled, and rescheduled states.
+7. **06 Managing at Scale** — filter, select, and act on many schedules.
+8. **Reflection** — explain the human side of scheduling systems.
 
-- Editable invoice template: line items, quantity, rate, subtotal
-- Auto-calculated tax and total
-- Status badge: Draft / Sent / Paid / Overdue — each with distinct visual treatment
-- "Mark as paid" action with a satisfying state change animation
-- Print/download hint (no actual download needed)
+### Topics
 
-**`ARDashboard.tsx`**
+Availability management, scheduling windows, calculated schedules, constraints,
+conflicts, buffers, state machines, bulk actions, notifications, and
+organizational scale.
 
-- Two-panel: Accounts Payable (what you owe) / Accounts Receivable (what you're owed)
-- Aging buckets: Current / 1–30 days / 31–60 days / 60+ days
-- Visual bar per bucket — wider = more exposure
-- Click a bucket to see a list of the items in it
+### Imagery recommendations
 
-**`VendorTable.tsx`**
+Use muted calendars, timelines, overlap bands, constraint callouts, and state
+diagrams. Avoid colorful consumer-calendar screenshots. The visual language
+should feel clinical and precise without feeling bureaucratic.
 
-- Filterable by status (Active / Inactive / Pending)
-- Sortable columns: vendor name, terms, last payment, outstanding balance
-- Row expansion: shows contact, payment history summary, notes field
-- Bulk action bar appears on multi-select
+### Interactive components
 
-**`BillingFlow.tsx`**
+`AvailabilityGrid`, `WindowConfigurator`, `ScheduleCalculator`,
+`WorkflowDiagram`, and `BulkScheduler`.
 
-- Three-step flow: Review → Confirm → Done
-- Step 1: Order summary with editable quantity
-- Step 2: Payment method selector (card / ACH / wire) with security copy
-- Step 3: Confirmation with transaction ID and next steps
-- Animated step transitions, clear back/forward navigation
+### Design and content notes
 
-### Design notes
+Lead with the Availability Grid because it is the most visceral demonstration.
+Every blocked slot should explain itself. The page should communicate that the
+domain is difficult while the interface feels inevitable.
 
-- Use more structured, data-dense layouts here than other examples — financial contexts expect it
-- Variance indicators (red/green) are the one place where color-coding beyond the accent is justified
-- The BillingFlow should be the most polished piece — it's highest stakes UX
+### Current implementation status
 
----
-
-## Work Example 4 — AI Tools
-
-**URL:** `/work/ai-tools`
-**Status:** Not started
-
-### Concept
-
-The most forward-facing example. Not about AI as a feature — about AI as a product design problem. How do you design for non-deterministic output? How do you give users control over context, agents, and tasks? This page demonstrates the thinking behind AI product UX.
-
-### Hook
-
-> Designing for AI isn't about making chatbots look good. It's about designing for uncertainty, trust, and control — in interfaces where the output is never quite predictable.
-
-### Page structure
-
-| Section                 | Format                                                            | Interactive?        |
-| ----------------------- | ----------------------------------------------------------------- | ------------------- |
-| Hero                    | Headline + framing of AI UX as a trust and control problem        | No                  |
-| 01 · Chat UI            | Fully interactive chat interface with scripted demo responses     | Yes — ChatInterface |
-| 02 · Context Management | Panel showing how context shapes AI behavior                      | Yes — ContextPanel  |
-| 03 · AI-Generated UI    | Prompt input → rendered UI component output                       | Yes — UIGenerator   |
-| 04 · Agent Builder      | Visual agent configuration: name, tools, instructions, persona    | Yes — AgentBuilder  |
-| 05 · Agent Tasks        | Cron-style task scheduler for agent actions                       | Yes — TaskScheduler |
-| Reflection              | How I think about trust, transparency, and control in AI products | Static — editorial  |
-
-### React islands to build
-
-**`ChatInterface.tsx`**
-
-- Full chat UI: message thread, input bar, send button
-- Scripted response tree — user types a message, picks from suggested prompts or freeform, gets pre-written AI responses that feel real
-- Typing indicator (animated dots) before each response
-- Message actions: copy, regenerate, thumbs up/down
-- Conversation history sidebar (collapsible)
-- Model/persona selector in the header
-
-**`ContextPanel.tsx`**
-
-- A split view: left = chat, right = context panel
-- Context panel shows active context items: attached files, system instructions, memory snippets
-- Add/remove context items — chat response preview updates to reflect them
-- Visual diff between "with context" and "without context" response
-
-**`UIGenerator.tsx`**
-
-- Text input: describe a UI component
-- 3–4 pre-wired prompts ("a login form", "a data table with filters", "an empty state")
-- Selecting/submitting shows an animated "generating..." state then renders a polished component
-- "Show the reasoning" toggle — reveals annotated design decisions behind the generated output
-- Not actually calling an API — pre-built outputs that look AI-generated and are annotated
-
-**`AgentBuilder.tsx`**
-
-- Step-by-step agent configuration:
-  1. Identity: name, avatar, description
-  2. Instructions: system prompt editor with token counter
-  3. Tools: toggle on/off (web search, code interpreter, file access, etc.)
-  4. Persona: tone selector (professional / casual / concise)
-- Live preview card that updates as config changes
-- "Deploy" button → shows a satisfying confirmation + code snippet for API call
-
-**`TaskScheduler.tsx`**
-
-- Create recurring agent tasks: name, schedule (cron expression with human-readable translation), trigger condition, action
-- A human-friendly cron builder: "Every Monday at 9am" → `0 9 * * 1`
-- Task list with status (Active / Paused / Last run / Next run)
-- Pause/resume/delete actions
-- Log view for a selected task showing last N runs with output summaries
-
-### Design notes
-
-- ChatInterface should feel production-quality — this is the highest-visibility demo for startup audiences
-- Use a slightly darker surface (e.g., `--color-paper`) for the chat window to distinguish it from the page
-- UIGenerator is the most "wow" moment — invest heavily in the generated components and their annotations
-- AgentBuilder should feel like a real product, not a toy — copy and interaction quality are everything here
+Placeholder page only. The route and basic project copy exist. Interactive
+components and the full page structure are not started.
 
 ---
 
-## Build Order
+## 04 — Finance
 
-| Phase | Deliverable                                                                                              | Rationale                                                                                               |
-| ----- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| 1     | Shared infrastructure: `WorkLayout`, `WorkHero`, `WorkSection`, `DemoFrame`, work index page, nav update | Must exist before any example                                                                           |
-| 2     | **Design Systems**                                                                                       | Most directly relevant to systems-lead positioning; also most meta (built with the system it describes) |
-| 3     | **AI Tools**                                                                                             | Highest signal for startup audience; most current and differentiating                                   |
-| 4     | **Scheduling**                                                                                           | Demonstrates complex product thinking; good mid-funnel credibility piece                                |
-| 5     | **Financial**                                                                                            | Rounds out domain range; demonstrates data-dense UI competency                                          |
+**Route:** `/work/finance`
+
+**Title:** Finance
+
+**Short description:** Making money legible, actions safe, and decisions
+confident.
+
+**Hook:** Money is emotional. Financial product design is a clarity problem.
+
+**Audience signal:** Demonstrates high-stakes information design: context for
+numbers, safe actions, status clarity, and confidence in financial workflows.
+
+### Problem
+
+Financial interfaces often expose numbers without enough context. Users need
+to understand variance, aging, status, and consequences before committing to an
+action.
+
+### Solution
+
+A compact financial workspace that moves from budget planning through invoices,
+exposure summaries, vendor management, and payment confirmation. Each surface
+should pair a number with the context and next action it supports.
+
+### Page sections
+
+1. **Hero** — frame financial UX as the work of reducing anxiety through
+   clarity.
+2. **01 Budget Builder** — plan, compare actuals, and see variance live.
+3. **02 Invoice** — edit line items, calculate tax, and move through payment
+   status states.
+4. **03 AP / AR Dashboard** — compare payables and receivables by aging
+   bucket.
+5. **04 Vendor Management** — filter, sort, expand, and act on vendor records.
+6. **05 Billing Flow** — review, confirm, and complete a payment with clear
+   security and next-step copy.
+7. **Reflection** — principles for designing confident financial interfaces.
+
+### Topics
+
+Budgets, variance, invoices, tax, payment states, accounts payable, accounts
+receivable, aging buckets, vendor management, payment methods, confirmation,
+and high-stakes interaction design.
+
+### Imagery recommendations
+
+Use restrained charts, ledger rows, status badges, aging bars, invoice
+documents, and confirmation states. Avoid stock finance imagery, coins, graphs
+floating in space, or decorative gradients. Numbers should be the visual
+material.
+
+### Interactive components
+
+`BudgetBuilder`, `InvoicePreview`, `ARDashboard`, `VendorTable`, and
+`BillingFlow`.
+
+### Design and content notes
+
+This example can be denser than the others, but hierarchy must remain clear.
+Reserve red/green variance treatment for meaningful financial states. Make
+Billing Flow the most polished sequence because it carries the highest user
+stakes.
+
+### Current implementation status
+
+Placeholder page only. The route and basic project copy exist. Interactive
+components and the full page structure are not started.
 
 ---
 
-## Status Tracker
+## Build order
 
-| Example        | Infrastructure | Hero | Interactive Demos | Copy | Done |
-| -------------- | -------------- | ---- | ----------------- | ---- | ---- |
-| Shared infra   | ✅             | —    | —                 | —    | ✅   |
-| Design Systems | ✅             | ✅   | ✅                | ✅   | ✅   |
-| AI Tools       | ✅             | ✅   | ✅                | ✅   | ✅   |
-| Scheduling     | ✅             | ✅   | ✅                | ✅   | ✅   |
-| Financial      | ✅             | ✅   | ✅                | ✅   | ✅   |
+1. Design Systems — complete
+2. AI Chatbot — next
+3. Scheduling
+4. Finance
+
+Before production approval, all four examples need usable interactive surfaces;
+the three placeholder routes are not finished work.

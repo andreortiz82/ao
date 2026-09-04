@@ -1,0 +1,659 @@
+---
+import type { Project } from "../data/projects";
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<a class="project-card" href={project.href} data-stage={project.stage}>
+  <div class="project-stage" aria-hidden="true">
+    {
+      project.slug === "design-systems" && (
+        <div class="window">
+          <div class="window-bar">
+            <span class="dot" />
+            <span class="dot" />
+            <span class="dot" />
+            <span class="window-title">Studio / Tokens</span>
+          </div>
+          <div class="sys-body">
+            <aside class="sys-nav">
+              <span class="on">Tokens</span>
+              <span>Foundations</span>
+              <span>Components</span>
+              <span>Governance</span>
+            </aside>
+            <div class="sys-main">
+              <div class="sys-head">
+                <strong>Harbor + North</strong>
+                <em>Light / Dark</em>
+              </div>
+              <div class="swatches">
+                <span>
+                  <i class="sw sw-ink" />
+                  Ink
+                </span>
+                <span>
+                  <i class="sw sw-paper" />
+                  Paper
+                </span>
+                <span>
+                  <i class="sw sw-sage" />
+                  Sage
+                </span>
+                <span>
+                  <i class="sw sw-terra" />
+                  Clay
+                </span>
+              </div>
+              <div class="sys-type">
+                <b>Ag</b>
+                <div>
+                  <small>Instrument Sans / 17</small>
+                  <span class="type-rule" />
+                  <span class="type-rule short" />
+                </div>
+              </div>
+              <div class="sys-actions">
+                <span class="ui-btn">Primary</span>
+                <span class="ui-btn ghost">Ghost</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    }
+    {
+      project.slug === "ai-chatbot" && (
+        <div class="phone">
+          <div class="phone-bar">
+            <span>9:41</span>
+            <i class="island" />
+            <span>LTE</span>
+          </div>
+          <div class="phone-head">Assistant</div>
+          <div class="msg in">
+            Why did this answer change overnight?
+          </div>
+          <div class="msg out">
+            The protocol file was added to context. I can cite the passage or
+            send it to review.
+            <div class="chips">
+              <span>Cite</span>
+              <span>Review</span>
+            </div>
+          </div>
+          <div class="composer">Ask about this case</div>
+        </div>
+      )
+    }
+    {
+      project.slug === "scheduling" && (
+        <div class="window cal">
+          <div class="window-bar">
+            <span class="dot" />
+            <span class="dot" />
+            <span class="dot" />
+            <span class="window-title">Week of Mar 9</span>
+          </div>
+          <div class="cal-body">
+            <div class="cal-days">
+              {["Mon", "Tue", "Wed", "Thu", "Fri"].map((day) => (
+                <span>{day}</span>
+              ))}
+            </div>
+            <div class="cal-grid">
+              <div class="col">
+                <i class="slot muted">9:00</i>
+                <b class="block">Standup</b>
+                <i class="slot">Open</i>
+              </div>
+              <div class="col">
+                <b class="block tall">Clinic A</b>
+                <i class="slot">Buffer</i>
+              </div>
+              <div class="col">
+                <i class="slot">Open</i>
+                <b class="block selected">Book</b>
+                <i class="slot muted">Hold</i>
+              </div>
+              <div class="col">
+                <b class="block">Review</b>
+                <i class="slot">Open</i>
+                <b class="block dim">1:1</b>
+              </div>
+              <div class="col">
+                <i class="slot muted">Travel</i>
+                <b class="block tall">Clinic B</b>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    }
+    {
+      project.slug === "finance" && (
+        <div class="window ledger">
+          <div class="window-bar">
+            <span class="dot" />
+            <span class="dot" />
+            <span class="dot" />
+            <span class="window-title">Ledger / Payables</span>
+          </div>
+          <div class="fin-body">
+            <div class="kpi">
+              <span>Open exposure</span>
+              <strong>$128,400</strong>
+            </div>
+            <div class="fin-row head">
+              <span>Vendor</span>
+              <span>Amount</span>
+              <span>Status</span>
+            </div>
+            <div class="fin-row">
+              <span>Northwind</span>
+              <span>$12,400</span>
+              <em class="due">Due</em>
+            </div>
+            <div class="fin-row">
+              <span>Helix Labs</span>
+              <span>$8,210</span>
+              <em>Review</em>
+            </div>
+            <div class="fin-row">
+              <span>Harbor Co</span>
+              <span>$4,080</span>
+              <em class="paid">Paid</em>
+            </div>
+          </div>
+        </div>
+      )
+    }
+  </div>
+  <div class="project-copy">
+    <h2>{project.title}</h2>
+    <p>{project.line}</p>
+  </div>
+</a>
+
+<style>
+  .project-card {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    outline: none;
+  }
+
+  .project-card:focus-visible {
+    outline: 1px solid var(--color-ink);
+    outline-offset: 4px;
+  }
+
+  .project-stage {
+    aspect-ratio: 5 / 4;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+    padding: 10% 6% 0;
+  }
+
+  .project-card[data-stage="sage"] .project-stage {
+    background: var(--color-stage-sage);
+  }
+
+  .project-card[data-stage="blue"] .project-stage {
+    background: var(--color-stage-blue);
+  }
+
+  .project-card[data-stage="terracotta"] .project-stage {
+    background: var(--color-stage-terracotta);
+  }
+
+  .project-card[data-stage="brown"] .project-stage {
+    background: var(--color-stage-brown);
+  }
+
+  .project-copy {
+    padding: 1rem 0.1rem 0.2rem;
+  }
+
+  .project-copy h2 {
+    font-family: var(--font-sans);
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+    margin: 0 0 0.3rem;
+    line-height: 1.25;
+  }
+
+  .project-copy p {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    color: var(--color-ink-2);
+    margin: 0;
+    line-height: 1.45;
+    max-width: 34ch;
+  }
+
+  .window,
+  .phone {
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .window {
+    width: min(86%, 24rem);
+    background: #f6f2eb;
+    color: #161513;
+    border-radius: 0.35rem;
+    box-shadow: 0 22px 48px -18px rgba(0, 0, 0, 0.38);
+    overflow: hidden;
+  }
+
+  .window-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.32rem;
+    padding: 0.45rem 0.65rem;
+    background: #ece6dc;
+    border-bottom: 1px solid rgba(22, 21, 19, 0.06);
+  }
+
+  .dot {
+    width: 0.38rem;
+    height: 0.38rem;
+    border-radius: 50%;
+    background: rgba(22, 21, 19, 0.2);
+  }
+
+  .window-title {
+    margin-left: 0.4rem;
+    font-family: var(--font-sans);
+    font-size: 0.62rem;
+    letter-spacing: 0.02em;
+    color: rgba(22, 21, 19, 0.55);
+  }
+
+  .sys-body {
+    display: grid;
+    grid-template-columns: 5.4rem 1fr;
+    min-height: 11.5rem;
+  }
+
+  .sys-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    padding: 0.75rem 0.65rem;
+    background: #efe8dc;
+    font-family: var(--font-sans);
+    font-size: 0.58rem;
+    color: rgba(22, 21, 19, 0.5);
+  }
+
+  .sys-nav .on {
+    color: #161513;
+    font-weight: 600;
+  }
+
+  .sys-main {
+    padding: 0.75rem 0.8rem 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .sys-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .sys-head strong {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+  }
+
+  .sys-head em {
+    font-family: var(--font-mono);
+    font-size: 0.52rem;
+    font-style: normal;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(22, 21, 19, 0.45);
+  }
+
+  .swatches {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.35rem;
+  }
+
+  .swatches span {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    font-family: var(--font-mono);
+    font-size: 0.48rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(22, 21, 19, 0.5);
+  }
+
+  .sw {
+    display: block;
+    height: 1.35rem;
+    border-radius: 0.15rem;
+  }
+
+  .sw-ink {
+    background: #161513;
+  }
+  .sw-paper {
+    background: #fff;
+    box-shadow: inset 0 0 0 1px rgba(22, 21, 19, 0.12);
+  }
+  .sw-sage {
+    background: var(--color-stage-sage);
+  }
+  .sw-terra {
+    background: var(--color-stage-terracotta);
+  }
+
+  .sys-type {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+  }
+
+  .sys-type b {
+    font-family: var(--font-serif);
+    font-size: 1.45rem;
+    font-weight: 450;
+    line-height: 1;
+  }
+
+  .sys-type div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.22rem;
+  }
+
+  .sys-type small {
+    font-family: var(--font-mono);
+    font-size: 0.5rem;
+    letter-spacing: 0.04em;
+    color: rgba(22, 21, 19, 0.45);
+  }
+
+  .type-rule {
+    display: block;
+    height: 0.22rem;
+    background: rgba(22, 21, 19, 0.12);
+    border-radius: 99px;
+  }
+
+  .type-rule.short {
+    width: 62%;
+  }
+
+  .sys-actions {
+    display: flex;
+    gap: 0.35rem;
+  }
+
+  .ui-btn {
+    font-family: var(--font-sans);
+    font-size: 0.58rem;
+    font-weight: 500;
+    padding: 0.28rem 0.55rem;
+    border-radius: 0.15rem;
+    background: #161513;
+    color: #f6f2eb;
+  }
+
+  .ui-btn.ghost {
+    background: transparent;
+    color: #161513;
+    box-shadow: inset 0 0 0 1px rgba(22, 21, 19, 0.2);
+  }
+
+  .phone {
+    width: min(46%, 12rem);
+    aspect-ratio: 9 / 18.4;
+    background: #f7f3ec;
+    color: #161513;
+    border-radius: 1.45rem;
+    box-shadow: 0 22px 48px -16px rgba(0, 0, 0, 0.4);
+    padding: 0.55rem 0.55rem 0.65rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .phone-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--font-sans);
+    font-size: 0.48rem;
+    font-weight: 600;
+    color: rgba(22, 21, 19, 0.55);
+  }
+
+  .island {
+    width: 2.1rem;
+    height: 0.42rem;
+    background: #161513;
+    border-radius: 99px;
+  }
+
+  .phone-head {
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid rgba(22, 21, 19, 0.08);
+  }
+
+  .msg {
+    font-family: var(--font-sans);
+    font-size: 0.58rem;
+    line-height: 1.4;
+    padding: 0.45rem 0.5rem;
+    border-radius: 0.7rem;
+    max-width: 92%;
+  }
+
+  .msg.in {
+    background: #ece6dc;
+    align-self: flex-start;
+    border-bottom-left-radius: 0.2rem;
+  }
+
+  .msg.out {
+    background: #161513;
+    color: #f7f3ec;
+    align-self: flex-end;
+    border-bottom-right-radius: 0.2rem;
+  }
+
+  .chips {
+    display: flex;
+    gap: 0.25rem;
+    margin-top: 0.35rem;
+  }
+
+  .chips span {
+    font-size: 0.48rem;
+    padding: 0.12rem 0.35rem;
+    border-radius: 99px;
+    box-shadow: inset 0 0 0 1px rgba(247, 243, 236, 0.28);
+  }
+
+  .composer {
+    margin-top: auto;
+    font-family: var(--font-sans);
+    font-size: 0.55rem;
+    color: rgba(22, 21, 19, 0.4);
+    padding: 0.4rem 0.55rem;
+    border-radius: 99px;
+    box-shadow: inset 0 0 0 1px rgba(22, 21, 19, 0.1);
+  }
+
+  .cal-body,
+  .fin-body {
+    padding: 0.7rem 0.75rem 0.8rem;
+  }
+
+  .cal-days {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.35rem;
+    margin-bottom: 0.45rem;
+    font-family: var(--font-mono);
+    font-size: 0.5rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(22, 21, 19, 0.45);
+    text-align: center;
+  }
+
+  .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.35rem;
+    min-height: 9.5rem;
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .col .block,
+  .col .slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 1.7rem;
+    border-radius: 0.18rem;
+    font-family: var(--font-sans);
+    font-size: 0.52rem;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .col .block {
+    background: #161513;
+    color: #f6f2eb;
+    flex: 1;
+  }
+
+  .col .block.tall {
+    flex: 1.6;
+  }
+
+  .col .block.dim {
+    background: rgba(22, 21, 19, 0.55);
+  }
+
+  .col .block.selected {
+    background: #3e5c7a;
+  }
+
+  .col .slot {
+    background: rgba(22, 21, 19, 0.06);
+    color: rgba(22, 21, 19, 0.45);
+  }
+
+  .col .slot.muted {
+    color: rgba(22, 21, 19, 0.32);
+  }
+
+  .kpi {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .kpi span {
+    font-family: var(--font-mono);
+    font-size: 0.52rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(22, 21, 19, 0.45);
+  }
+
+  .kpi strong {
+    font-family: var(--font-serif);
+    font-size: 1.55rem;
+    font-weight: 450;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  .fin-row {
+    display: grid;
+    grid-template-columns: 1.3fr 0.8fr 0.7fr;
+    gap: 0.4rem;
+    align-items: center;
+    padding: 0.42rem 0;
+    border-top: 1px solid rgba(22, 21, 19, 0.08);
+    font-family: var(--font-sans);
+    font-size: 0.62rem;
+  }
+
+  .fin-row.head {
+    border-top: 0;
+    padding-bottom: 0.2rem;
+    font-family: var(--font-mono);
+    font-size: 0.48rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(22, 21, 19, 0.4);
+  }
+
+  .fin-row em {
+    font-style: normal;
+    font-size: 0.52rem;
+    font-weight: 600;
+    justify-self: start;
+    padding: 0.1rem 0.35rem;
+    border-radius: 99px;
+    background: rgba(22, 21, 19, 0.08);
+  }
+
+  .fin-row em.due {
+    background: #3a1515;
+    color: #f6f2eb;
+  }
+
+  .fin-row em.paid {
+    background: #7f8f74;
+    color: #f6f2eb;
+  }
+
+  @media (max-width: 560px) {
+    .window {
+      width: min(90%, 22rem);
+    }
+
+    .phone {
+      width: min(52%, 12.5rem);
+    }
+  }
+</style>

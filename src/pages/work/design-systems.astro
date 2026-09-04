@@ -1,0 +1,25 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import DesignSystemsPage from "../../components/demos/design-systems/Page.jsx";
+import "../../styles/design-systems.css";
+
+const title = "Design Systems — Andre Ortiz";
+const description =
+  "Multiple brands, growing teams, products delivered — an interactive walkthrough of foundations, tokens, components, examples, governance, and agentic design-system skills.";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <DesignSystemsPage client:load />
+    </main>
+    <Footer />
+  </body>
+</html>

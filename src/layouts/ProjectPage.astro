@@ -1,0 +1,74 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import type { Project } from "../data/projects";
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`${project.title} — Andre Ortiz`}
+      description={project.line}
+    />
+  </head>
+  <body>
+    <Header />
+    <main class="project-main">
+      <a href="/" class="back-link">← Home</a>
+      <p class="section-label">{project.index} · {project.title}</p>
+      <h1>{project.headline} <em>{project.emphasis}</em></h1>
+      <p class="project-body">{project.body}</p>
+    </main>
+  </body>
+</html>
+
+<style>
+  .project-main {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: clamp(3rem, 8vw, 6rem) clamp(1.25rem, 4vw, 2.5rem)
+      clamp(5rem, 10vw, 9rem);
+  }
+
+  .back-link {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: var(--color-ink-3);
+    text-decoration: none;
+    margin-bottom: 2.5rem;
+    transition: color 0.15s ease;
+  }
+
+  .back-link:hover {
+    color: var(--color-ink);
+  }
+
+  h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    font-variation-settings:
+      "opsz" 72,
+      "wght" 400;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+    margin: 0.75rem 0 1.25rem;
+  }
+
+  .project-body {
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--color-ink-2);
+    max-width: 36ch;
+    margin: 0;
+  }
+</style>

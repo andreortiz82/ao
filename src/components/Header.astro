@@ -1,117 +1,366 @@
 ---
+import { HouseIcon } from "@phosphor-icons/react";
+import SocialLinks from "./SocialLinks.astro";
+
 const pathname = Astro.url.pathname;
-const isActive = (href: string) => href === '/' ? pathname === '/' : pathname.startsWith(href);
+const isHome = pathname === "/" || pathname === "";
+const isActive = (href: string) =>
+  href === "/" ? pathname === "/" : pathname.startsWith(href);
+const workHref = "/#work";
+const workActive = pathname.startsWith("/work");
 ---
 
-<header
-  id="site-header"
-  style="
+<header class:list={{ "is-home": isHome }}>
+  <div class="header-left">
+    <div class="header-identity">
+      <a
+        href="/"
+        class:list={["home-link", { active: isHome }]}
+        aria-label="Home"
+      >
+        <HouseIcon size={18} weight="regular" />
+      </a>
+      <button
+        class="avatar-btn"
+        id="avatar-btn"
+        type="button"
+        data-open-about
+        aria-label="About Andre"
+      >
+        <img src="/avatar.png" alt="Andre Ortiz" class="avatar" />
+      </button>
+    </div>
+
+    <SocialLinks />
+  </div>
+
+  <nav class="header-right" aria-label="Site">
+    <a href={workHref} class:list={["nav-link", { active: workActive }]}>
+      Work
+    </a>
+    <a href="/blog" class:list={["nav-link", { active: isActive("/blog") }]}>
+      Blog
+    </a>
+    <a href="mailto:hello@andreortiz.com" class="btn-contact">Contact me</a>
+  </nav>
+</header>
+
+<div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
+  <div
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="about-modal-title"
+  >
+    <button class="modal-close" id="modal-close" type="button" aria-label="Close"
+      >✕</button
+    >
+    <div class="modal-header">
+      <img src="/avatar.png" alt="Andre Ortiz" class="modal-avatar" />
+      <div>
+        <p class="modal-eyebrow" id="about-modal-title">Andre Ortiz</p>
+        <p class="modal-name">Product Experience Designer</p>
+      </div>
+    </div>
+    <p class="modal-intro">
+      Twenty years building product experiences, executing the vision, owning
+      the systems, shipping the work. My design process is lean, iterative,
+      always clear about intent.
+    </p>
+    <ul class="modal-list">
+      {
+        [
+          [
+            "Full-stack design fluency",
+            "Brand identity, illustration, motion, UI, and print.",
+          ],
+          [
+            "Engineering credibility",
+            "HTML/CSS/JS, React/TypeScript, Ruby, Python, and Pull Requests.",
+          ],
+          [
+            "Systems thinker",
+            "Design systems, component libraries, and scalable processes that grow with teams.",
+          ],
+          [
+            "Creative Leadership",
+            "Mentorship, cross-functional collaboration, and building strong partnerships accross teams and disciplines.",
+          ],
+          [
+            "AI and the future...",
+            "AI-power products, chatbots, agentic workflows, prompt engineering, and custom tool development.",
+          ],
+        ].map(([title, body]) => (
+          <li class="modal-item">
+            <span class="modal-item-title">{title}</span>
+            <span class="modal-item-body">{body}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<style>
+  header {
     position: sticky;
     top: 0;
     z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 1.5rem;
+    flex-wrap: wrap;
+    padding: clamp(1.25rem, 3vw, 2rem) clamp(1.25rem, 4vw, 2.5rem);
+    background: var(--color-background);
+  }
+
+  header.is-home {
+    position: fixed;
+    left: 0;
+    right: 0;
+    background: var(--color-background);
+  }
+
+  .header-left,
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-left {
+    gap: 1rem;
+  }
+
+  .header-identity {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .header-right {
+    gap: 1.25rem;
+  }
+
+  .home-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-ink-3);
+    line-height: 1;
+    transition: color 0.2s ease;
+  }
+
+  .home-link:hover,
+  .home-link.active {
+    color: var(--color-ink);
+  }
+
+  .avatar-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    display: block;
+    transition: opacity 0.15s ease;
+  }
+
+  .avatar-btn:hover {
+    opacity: 0.75;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .btn-contact {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 0.9rem;
+    background: var(--color-cta);
+    color: var(--color-cta-ink);
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+    white-space: nowrap;
+  }
+
+  .btn-contact:hover {
+    opacity: 0.82;
+  }
+
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(1.25rem, 4vw, 2.5rem);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    z-index: 100;
+  }
+
+  .modal-backdrop.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .modal {
+    background: #111;
+    color: #f5f5f5;
+    border-radius: 6px;
+    padding: clamp(2rem, 5vw, 3rem);
+    max-width: 480px;
     width: 100%;
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--color-line);
-  "
->
-  <div style="max-width: 1200px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem); height: 3.5rem; display: flex; align-items: center; justify-content: space-between;">
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transform: translateY(12px);
+    transition: transform 0.25s ease;
+    max-height: min(40rem, calc(100dvh - 2rem));
+    overflow: auto;
+  }
 
-    <!-- Logo -->
-    <a href="/" style="text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
-      <span
-        class="animate-pulse-dot"
-        style="
-          width: 6px;
-          height: 6px;
-          border-radius: 50%;
-          background: var(--color-accent);
-          display: block;
-          flex-shrink: 0;
-        "
-      ></span>
-      <span style="
-        font-family: var(--font-serif);
-        font-variation-settings: 'opsz' 24, 'wght' 500;
-        font-size: 15px;
-        letter-spacing: -0.01em;
-        color: var(--color-ink);
-      ">Andre Ortiz</span>
-    </a>
+  .modal-backdrop.open .modal {
+    transform: translateY(0);
+  }
 
-    <!-- Desktop nav -->
-    <nav class="hidden md:flex items-center gap-8">
-      <a
-        href="/blog"
-        class:list={["nav-link", { active: isActive('/blog') }]}
-      >Blog</a>
-      <a
-        href="#contact"
-        class="nav-link"
-      >Contact</a>
-    </nav>
+  .modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: color 0.15s ease;
+    line-height: 1;
+  }
 
-    <!-- Mobile hamburger -->
-    <button
-      id="mobile-menu-btn"
-      style="background: none; border: none; padding: 0.5rem; cursor: pointer; color: var(--color-ink-3);"
-      class="md:hidden"
-      aria-label="Toggle menu"
-      aria-expanded="false"
-    >
-      <span id="hamburger-icon">
-        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-          <line x1="3" y1="6" x2="17" y2="6"/>
-          <line x1="3" y1="10" x2="17" y2="10"/>
-          <line x1="3" y1="14" x2="17" y2="14"/>
-        </svg>
-      </span>
-      <span id="close-icon" class="hidden">
-        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-          <line x1="4" y1="4" x2="16" y2="16"/>
-          <line x1="16" y1="4" x2="4" y2="16"/>
-        </svg>
-      </span>
-    </button>
+  .modal-close:hover {
+    color: #f5f5f5;
+  }
 
-  </div>
+  .modal-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
 
-  <!-- Mobile menu -->
-  <div
-    id="mobile-menu"
-    class="hidden md:hidden"
-    style="border-top: 1px solid var(--color-line); background: #fff;"
-  >
-    <nav style="max-width: 1200px; margin: 0 auto; padding: 1rem clamp(1.25rem, 4vw, 2.5rem); display: flex; flex-direction: column; gap: 1rem;">
-      <a
-        href="/blog"
-        class:list={["nav-link", { active: isActive('/blog') }]}
-        style="font-size: 14px;"
-      >Blog</a>
-      <a href="#contact" class="nav-link" style="font-size: 14px;">Contact</a>
-    </nav>
-  </div>
-</header>
+  .modal-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .modal-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 16px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 0.2rem;
+  }
+
+  .modal-name {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    font-weight: bold;
+    color: #ccc;
+  }
+
+  .modal-intro {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.65;
+    color: #ccc;
+    padding-top: 0.5rem;
+    border-top: 1px solid #222;
+  }
+
+  .modal-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .modal-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .modal-item-title {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 600;
+    color: #f0f0f0;
+  }
+
+  .modal-item-body {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    line-height: 1.6;
+    color: #777;
+  }
+
+  @media (max-width: 560px) {
+    .header-left :global(.social-nav) {
+      display: none;
+    }
+
+    .header-right {
+      gap: 0.875rem;
+    }
+  }
+</style>
 
 <script>
-  const btn      = document.getElementById('mobile-menu-btn');
-  const menu     = document.getElementById('mobile-menu');
-  const hamburger = document.getElementById('hamburger-icon');
-  const closeIcon = document.getElementById('close-icon');
+  const backdrop = document.getElementById("modal-backdrop");
+  const closeBtn = document.getElementById("modal-close");
+  const openers = document.querySelectorAll("[data-open-about]");
 
-  btn?.addEventListener('click', () => {
-    const isOpen = !menu?.classList.contains('hidden');
-    if (isOpen) {
-      menu?.classList.add('hidden');
-      hamburger?.classList.remove('hidden');
-      closeIcon?.classList.add('hidden');
-      btn.setAttribute('aria-expanded', 'false');
-    } else {
-      menu?.classList.remove('hidden');
-      hamburger?.classList.add('hidden');
-      closeIcon?.classList.remove('hidden');
-      btn.setAttribute('aria-expanded', 'true');
-    }
+  const openAbout = () => {
+    if (!backdrop) return;
+    backdrop.classList.add("open");
+    backdrop.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    closeBtn?.focus();
+  };
+
+  const closeAbout = () => {
+    if (!backdrop) return;
+    backdrop.classList.remove("open");
+    backdrop.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  };
+
+  openers.forEach((el) => el.addEventListener("click", openAbout));
+  closeBtn?.addEventListener("click", closeAbout);
+  backdrop?.addEventListener("click", (e) => {
+    if (e.target === backdrop) closeAbout();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeAbout();
   });
 </script>
