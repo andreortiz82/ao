@@ -1,7 +1,7 @@
 /**
  * Prefix a site-root path with Astro `base` (`import.meta.env.BASE_URL`).
  * Leaves external, protocol-relative, hash, and mailto/data URLs unchanged.
- * Safe when `base` is `/` (custom-domain cutover).
+ * With `base` `/`, this returns a root-absolute path (`/…`).
  */
 export function withBase(path: string): string {
   if (!path) return path;
