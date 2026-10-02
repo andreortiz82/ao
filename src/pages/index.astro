@@ -1,5 +1,6 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
+import { withBase } from "../lib/withBase";
 import {
   GithubLogoIcon,
   DribbbleLogoIcon,
@@ -19,7 +20,7 @@ import {
     <header>
       <section>
         <button class="avatar-btn" id="avatar-btn" aria-label="About Andre">
-          <img src="/avatar.png" alt="Andre Ortiz" class="avatar" />
+          <img src={withBase("/avatar.png")} alt="Andre Ortiz" class="avatar" />
         </button>
 
         <nav class="social-nav" aria-label="Social links">
@@ -96,7 +97,7 @@ import {
           >✕</button
         >
         <div class="modal-header">
-          <img src="/avatar.png" alt="Andre Ortiz" class="modal-avatar" />
+          <img src={withBase("/avatar.png")} alt="Andre Ortiz" class="modal-avatar" />
           <div>
             <p class="modal-eyebrow">Andre Ortiz</p>
             <p class="modal-name">Product Experience Designer</p>
