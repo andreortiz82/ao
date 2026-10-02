@@ -1,9 +1,11 @@
+import { withBase } from "../lib/withBase";
+
 export const Tag = ({ label, size, key }) => {
   if (size === "small") {
     return (
       <a
         key={key}
-        href={`/tag/${label}`}
+        href={withBase(`/tag/${label}`)}
         className="flex items-center justify-center bg-tag text-tag-label hover:text-tag-label-hover hover:bg-tag-primary hover:text-base px-4 py-1 font-semibold rounded-full text-sm text-nowrap"
       >
         {label}
@@ -13,7 +15,7 @@ export const Tag = ({ label, size, key }) => {
     return (
       <a
         key={key}
-        href={`/tag/${label}`}
+        href={withBase(`/tag/${label}`)}
         className="flex items-center justify-center bg-tag text-tag-label hover:text-tag-label-hover hover:bg-tag-primary hover:text-base px-4 py-2 font-semibold rounded-full text-nowrap"
       >
         {label}

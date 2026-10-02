@@ -4,6 +4,7 @@ import { getCollection, render } from "astro:content";
 import BaseHead from "../../components/BaseHead.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
+import { withBase } from "../../lib/withBase";
 
 export async function getStaticPaths() {
   const workEntries = await getCollection("work");
@@ -35,7 +36,7 @@ const { title, description, heroImage, tags } = entry.data;
       <!-- Breadcrumb -->
       <nav class="animate-fade-up mb-8">
         <a
-          href="/work"
+          href={withBase("/work")}
           class="inline-flex items-center gap-1 text-sm no-underline transition-colors duration-150 text-text-secondary hover:text-accent"
         >
           ← Back to Work
@@ -46,7 +47,7 @@ const { title, description, heroImage, tags } = entry.data;
       {heroImage && (
         <div class="animate-fade-up-delay-1 rounded-2xl overflow-hidden mb-10 border border-border-color">
           <img
-            src={heroImage}
+            src={withBase(heroImage)}
             alt={title}
             class="w-full object-cover max-h-125"
           />

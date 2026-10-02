@@ -7,10 +7,12 @@ export async function GET(context) {
 	return rss({
 		title: SITE_TITLE,
 		description: SITE_DESCRIPTION,
-		site: context.site,
+		// Include `base` so the channel URL is /ao/, not the domain root.
+		// Item links are path-absolute (`/ao/blog/…`) and still resolve correctly.
+		site: new URL(import.meta.env.BASE_URL, context.site),
 		items: posts.map((post) => ({
 			...post.data,
-			link: `/blog/${post.id}/`,
+			link: `${import.meta.env.BASE_URL}blog/${post.id}/`,
 		})),
 	});
 }

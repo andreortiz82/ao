@@ -27,10 +27,12 @@ Owner: **Andre Ortiz** — see [AO.md](AO.md) for full identity, messaging, and 
 ## Commands
 
 ```bash
-npm run dev       # dev server → http://localhost:4321
+npm run dev       # dev server → http://localhost:4321/ao/
 npm run build     # production build → ./dist
 npm run preview   # preview the dist build
 ```
+
+GitHub project Pages serves this site at `/ao/`. `base` is set in `astro.config.mjs`. Internal links and `public/` URLs go through `withBase()` (`src/lib/withBase.ts`) or the markdown rehype plugin in that config. When `andreortiz.com` is the live host, set `base` back to `/`.
 
 ---
 
