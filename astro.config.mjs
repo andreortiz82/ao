@@ -6,15 +6,14 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 
 /**
- * GitHub project Pages is served at https://andreortiz82.github.io/ao/.
- * `site` stays https://andreortiz.com so canonical URLs are ready for the
- * custom domain. When that domain points at this site, set BASE back to "/".
+ * Hosted at the apex domain https://andreortiz.com.
+ * `base` is `/` so built assets and links are root-absolute (`/…`).
  */
-const BASE = "/ao/";
+const BASE = "/";
 
 /**
  * Markdown and MDX keep root-absolute public URLs (`/art/…`, `/blog/…`).
- * Rewrite them with the configured base so they resolve on project Pages.
+ * Rewrite them with Astro `base`. This is a no-op while `base` is `/`.
  * @param {string} base
  */
 function rehypeBasePaths(base) {

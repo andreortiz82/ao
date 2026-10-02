@@ -7,8 +7,8 @@ export async function GET(context) {
 	return rss({
 		title: SITE_TITLE,
 		description: SITE_DESCRIPTION,
-		// Include `base` so the channel URL is /ao/, not the domain root.
-		// Item links are path-absolute (`/ao/blog/…`) and still resolve correctly.
+		// Follow Astro `base` (`import.meta.env.BASE_URL`). With base `/`,
+		// the channel and item links are root-absolute (`/blog/…`).
 		site: new URL(import.meta.env.BASE_URL, context.site),
 		items: posts.map((post) => ({
 			...post.data,
