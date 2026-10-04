@@ -39,19 +39,19 @@ const socials = [
     <nav class="flex flex-wrap items-center gap-x-6 gap-y-3" aria-label="Primary">
       <a
         href="/writing"
-        class:list={["text-sm", (path === "/writing" || path.startsWith("/writing/")) && "underline"]}
+        class:list={["text-meta", (path === "/writing" || path.startsWith("/writing/")) && "underline"]}
         aria-current={path === "/writing" || path.startsWith("/writing/") ? "page" : undefined}
       >
         Writing
       </a>
       <a
         href="/about"
-        class:list={["text-sm", path.startsWith("/about") && "underline"]}
+        class:list={["text-meta", path.startsWith("/about") && "underline"]}
         aria-current={path.startsWith("/about") ? "page" : undefined}
       >
         About
       </a>
-      <a href="mailto:hello@andreortiz.com" class="border border-foreground bg-background px-3 py-1.5 text-sm">
+      <a href="mailto:hello@andreortiz.com" class="border border-foreground bg-background px-3 py-1.5 text-meta">
         hello@andreortiz.com
       </a>
     </nav>

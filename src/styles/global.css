@@ -23,6 +23,15 @@
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
+
+  /* One scale from the body size. Size grows with reading distance:
+     17.5px at a 390px viewport, 21px at 1440px. Below 12px is too small,
+     and desktop body stays above the old 16px benchmark.
+     Meta is one step down, title two steps up, display four steps up (×1.25). */
+  --type-body: clamp(17.5px, 16.2px + 100vw / 300, 21px);
+  --type-meta: calc(var(--type-body) / 1.25);
+  --type-title: calc(var(--type-body) * 1.5625);
+  --type-display: calc(var(--type-body) * 2.44140625);
 }
 
 .dark {
@@ -65,6 +74,14 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --text-meta: var(--type-meta);
+  --text-meta--line-height: 1.4;
+  --text-body: var(--type-body);
+  --text-body--line-height: 1.4;
+  --text-title: var(--type-title);
+  --text-title--line-height: 1.2;
+  --text-display: var(--type-display);
+  --text-display--line-height: 1.15;
 }
 
 /* Light wireframe uses the neutral paper and ink. Dark inverts them. */
@@ -87,8 +104,13 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: ui-sans-serif, system-ui, sans-serif;
-  font-size: 14px;
+  font-size: var(--type-body);
   line-height: 1.4;
+}
+
+/* Reading columns follow the body size. 33em is about 66 letters in this sans, so a wide viewport does not stretch a line into a ribbon. */
+.measure {
+  max-width: 33em;
 }
 
 main {

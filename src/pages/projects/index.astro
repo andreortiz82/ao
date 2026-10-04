@@ -9,9 +9,9 @@ function href(tag: string) {
 
 <Base title="Projects — Andre Ortiz" description="Project index wireframe">
   <div class="mx-auto flex w-full max-w-6xl flex-col px-6 py-14">
-    <h1 class="text-4xl tracking-tight" data-load-title>Projects</h1>
+    <h1 class="text-title tracking-tight" data-load-title>Projects</h1>
     <nav class="mt-8 flex flex-wrap gap-2" aria-label="Tags">
-      <a href="/projects" data-filter="" class="inline-block rounded-full border border-foreground px-3 py-1 text-xs text-foreground">
+      <a href="/projects" data-filter="" class="inline-block rounded-full border border-foreground px-3 py-1 text-meta text-foreground">
         All
       </a>
       {
@@ -19,7 +19,7 @@ function href(tag: string) {
           <a
             href={href(tag)}
             data-filter={tag}
-            class="inline-block rounded-full border border-foreground px-3 py-1 text-xs text-foreground"
+            class="inline-block rounded-full border border-foreground px-3 py-1 text-meta text-foreground"
           >
             {tag}
           </a>
@@ -31,10 +31,10 @@ function href(tag: string) {
         cases.map((item) => (
           <li class="border-b border-foreground" data-project data-tags={item.tags.join("|")}>
             <a href={`/projects/${item.slug}`} class="flex flex-col gap-2 py-5 sm:flex-row sm:gap-6">
-              <span class="text-sm sm:w-24 sm:shrink-0">Date</span>
-              <span class="min-w-0 sm:flex-1">
-                <span class="block">Project {item.slug}</span>
-                <span class="mt-2 block text-sm">Excerpt</span>
+              <span class="text-meta sm:w-24 sm:shrink-0">Date</span>
+              <span class="measure min-w-0 sm:flex-1">
+                <span class="block text-body">Project {item.slug}</span>
+                <span class="mt-2 block text-body">Excerpt</span>
               </span>
             </a>
           </li>

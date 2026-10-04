@@ -21,20 +21,20 @@ const { prev, next } = neighbors(posts, post.slug);
 ---
 
 <Base title="Blog title here — Andre Ortiz" description="Writing post wireframe" header={false}>
-  <article class="mx-auto flex w-full max-w-3xl flex-col px-6 py-14">
-    <p class="mb-6 flex items-center gap-6">
+  <article class="measure mx-auto flex w-full flex-col px-6 py-14">
+    <p class="mb-6 flex items-center gap-6 text-meta">
       <a href="/" class="inline-flex text-foreground" aria-label="Back to home"><Icon name="arrow-left" size={24} /></a>
       <span aria-hidden="true">/</span>
       <a href="/writing" class="text-foreground">Writing</a>
     </p>
-    <h1 class="text-5xl tracking-tight" data-load-title>Blog title here</h1>
-    <p class="mt-6 text-sm">Oct 3 2026</p>
+    <h1 class="text-title tracking-tight" data-load-title>Blog title here</h1>
+    <p class="mt-6 text-meta">Oct 3 2026</p>
     <Tags tags={post.tags} hrefBase="/writing" />
 
     <Placeholder class="mt-10 w-full" media aspectRatio="1 / 1" />
-    <p class="mt-8 text-sm leading-relaxed" data-reveal-copy>{copy}</p>
+    <p class="mt-8 text-body" data-reveal-copy>{copy}</p>
     <Placeholder class="mt-8 w-full" media aspectRatio="1 / 1" />
-    <p class="mt-8 text-sm leading-relaxed" data-reveal-copy>{copy}</p>
+    <p class="mt-8 text-body" data-reveal-copy>{copy}</p>
 
     <Adjacent
       prevHref={`/writing/${prev.slug}`}
