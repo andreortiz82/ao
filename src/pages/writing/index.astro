@@ -1,15 +1,35 @@
 ---
-import { posts } from "../../data/wireframe";
+import { posts, tags } from "../../data/wireframe";
 import Base from "../../layouts/Base.astro";
+
+function href(tag: string) {
+  return `/writing?tag=${encodeURIComponent(tag)}`;
+}
 ---
 
 <Base title="Writing — Andre Ortiz" description="Writing index wireframe">
   <div class="mx-auto flex w-full max-w-6xl flex-col px-6 py-14">
     <h1 class="text-4xl tracking-tight">Writing</h1>
+    <nav class="mt-8 flex flex-wrap gap-2" aria-label="Tags">
+      <a href="/writing" data-filter="" class="inline-block rounded-full border border-black px-3 py-1 text-xs text-black">
+        All
+      </a>
+      {
+        tags.map((tag) => (
+          <a
+            href={href(tag)}
+            data-filter={tag}
+            class="inline-block rounded-full border border-black px-3 py-1 text-xs text-black"
+          >
+            {tag}
+          </a>
+        ))
+      }
+    </nav>
     <ul class="mt-10 w-full border-t border-black">
       {
         posts.map((post) => (
-          <li class="border-b border-black">
+          <li class="border-b border-black" data-post data-tags={post.tags.join("|")}>
             <a href={`/writing/${post.slug}`} class="flex flex-col gap-2 py-5 sm:flex-row sm:gap-6">
               <span class="text-sm sm:w-24 sm:shrink-0">Date</span>
               <span class="min-w-0 sm:flex-1">
@@ -23,3 +43,18 @@ import Base from "../../layouts/Base.astro";
     </ul>
   </div>
 </Base>
+
+<script>
+  const tag = new URLSearchParams(window.location.search).get("tag");
+  document.querySelectorAll<HTMLElement>("[data-post]").forEach((item) => {
+    if (!tag) return;
+    const names = (item.dataset.tags ?? "").split("|");
+    item.hidden = !names.includes(tag);
+  });
+  document.querySelectorAll<HTMLAnchorElement>("[data-filter]").forEach((link) => {
+    const active = (link.dataset.filter ?? "") === (tag ?? "");
+    link.classList.toggle("bg-black", active);
+    link.classList.toggle("text-white", active);
+    if (active) link.setAttribute("aria-current", "page");
+  });
+</script>

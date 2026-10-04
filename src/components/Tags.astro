@@ -1,0 +1,23 @@
+---
+interface Props {
+  tags: string[];
+}
+
+const { tags } = Astro.props;
+
+function href(tag: string) {
+  return `/writing?tag=${encodeURIComponent(tag)}`;
+}
+---
+
+<ul class="mt-4 flex flex-wrap gap-2">
+  {
+    tags.map((tag) => (
+      <li>
+        <a href={href(tag)} class="inline-block rounded-full border border-black px-3 py-1 text-xs text-black">
+          {tag}
+        </a>
+      </li>
+    ))
+  }
+</ul>

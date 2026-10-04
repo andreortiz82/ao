@@ -2,13 +2,12 @@
 import Adjacent from "../../components/Adjacent.astro";
 import Icon from "../../components/Icon.astro";
 import Placeholder from "../../components/Placeholder.astro";
+import Tags from "../../components/Tags.astro";
 import { neighbors, posts } from "../../data/wireframe";
 import Base from "../../layouts/Base.astro";
 
 const copy =
   "This is placeholder copy for the wireframe. It stands in for a short paragraph so the column reads as text. The sentences are fake and only show the length of the block.";
-
-const tags = ["Python", "Video", "Product Teams", "Motion"];
 
 export function getStaticPaths() {
   return posts.map((post) => ({
@@ -30,9 +29,7 @@ const { prev, next } = neighbors(posts, post.slug);
     </p>
     <h1 class="text-5xl tracking-tight">Blog title here</h1>
     <p class="mt-6 text-sm">Oct 3 2026</p>
-    <ul class="mt-4 flex flex-wrap gap-2">
-      {tags.map((tag) => <li class="rounded-full border border-black px-3 py-1 text-xs">{tag}</li>)}
-    </ul>
+    <Tags tags={post.tags} />
 
     <Placeholder class="mt-10 w-full" media aspectRatio="1 / 1" />
     <p class="mt-8 text-sm leading-relaxed">{copy}</p>
