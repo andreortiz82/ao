@@ -27,14 +27,14 @@ const { prev, next } = neighbors(posts, post.slug);
       <span aria-hidden="true">/</span>
       <a href="/writing" class="text-foreground">Writing</a>
     </p>
-    <h1 class="text-5xl tracking-tight">Blog title here</h1>
+    <h1 class="text-5xl tracking-tight" data-load-title>Blog title here</h1>
     <p class="mt-6 text-sm">Oct 3 2026</p>
     <Tags tags={post.tags} hrefBase="/writing" />
 
     <Placeholder class="mt-10 w-full" media aspectRatio="1 / 1" />
-    <p class="mt-8 text-sm leading-relaxed">{copy}</p>
+    <p class="mt-8 text-sm leading-relaxed" data-reveal-copy>{copy}</p>
     <Placeholder class="mt-8 w-full" media aspectRatio="1 / 1" />
-    <p class="mt-8 text-sm leading-relaxed">{copy}</p>
+    <p class="mt-8 text-sm leading-relaxed" data-reveal-copy>{copy}</p>
 
     <Adjacent
       prevHref={`/writing/${prev.slug}`}

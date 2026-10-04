@@ -6,10 +6,12 @@ import Base from "../layouts/Base.astro";
 
 <Base title="Andre Ortiz" description="Home wireframe">
   <div class="mx-auto flex w-full max-w-6xl flex-col items-center px-6 pb-16 pt-14 text-center">
-    <p class="text-sm">Andre Ortiz</p>
+    <p class="text-sm" data-load-title>Andre Ortiz</p>
     <h1 id="home-role" class="mt-4 text-4xl tracking-tight md:text-6xl">Product experience designer</h1>
   </div>
   <script>
+    import gsap from "gsap";
+
     const lines = [
       "Product experience designer",
       "Systems thinker",
@@ -20,13 +22,43 @@ import Base from "../layouts/Base.astro";
       "Human",
     ];
     const heading = document.getElementById("home-role");
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (heading && !reduce) {
-      let index = 0;
-      window.setInterval(() => {
-        index = (index + 1) % lines.length;
-        heading.textContent = lines[index];
-      }, 2000);
+    if (heading) {
+      const motion = gsap.matchMedia();
+      motion.add("(prefers-reduced-motion: no-preference)", () => {
+        let index = 0;
+        let busy = false;
+        const cycle = () => {
+          if (busy) return;
+          busy = true;
+          const next = lines[(index + 1) % lines.length];
+          gsap.to(heading, {
+            opacity: 0,
+            filter: "blur(8px)",
+            duration: 0.32,
+            ease: "power2.in",
+            onComplete: () => {
+              heading.textContent = next;
+              index = (index + 1) % lines.length;
+              gsap.fromTo(
+                heading,
+                { opacity: 0, filter: "blur(8px)" },
+                {
+                  opacity: 1,
+                  filter: "blur(0px)",
+                  duration: 0.45,
+                  ease: "power2.out",
+                  onComplete: () => {
+                    gsap.set(heading, { clearProps: "filter,opacity" });
+                    busy = false;
+                  },
+                },
+              );
+            },
+          });
+        };
+        const timer = window.setInterval(cycle, 2000);
+        return () => window.clearInterval(timer);
+      });
     }
   </script>
 
