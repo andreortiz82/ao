@@ -11,15 +11,15 @@ interface Props {
 const { prevHref, nextHref, prevTitle, nextTitle } = Astro.props;
 ---
 
-<nav class="mt-16 flex w-full items-start justify-between gap-8 border-t border-black pt-8" aria-label="Adjacent">
-  <a href={prevHref} class="flex max-w-sm flex-col gap-2 text-black">
+<nav class="mt-16 flex w-full items-start justify-between gap-8 border-t border-foreground pt-8" aria-label="Adjacent">
+  <a href={prevHref} class="flex max-w-sm flex-col gap-2 text-foreground">
     <span class="flex items-center gap-2 text-sm">
       <Icon name="arrow-left" size={24} />
       Previous
     </span>
     <span class="text-2xl tracking-tight">{prevTitle}</span>
   </a>
-  <a href={nextHref} class="flex max-w-sm flex-col items-end gap-2 text-right text-black">
+  <a href={nextHref} class="flex max-w-sm flex-col items-end gap-2 text-right text-foreground">
     <span class="flex items-center gap-2 text-sm">
       Next
       <Icon name="arrow-right" size={24} />

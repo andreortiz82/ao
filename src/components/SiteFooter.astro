@@ -1,10 +1,14 @@
 ---
 import Icon from "./Icon.astro";
+import { Logo } from "./Logo.jsx";
 ---
 
-<footer class="flex flex-col items-center bg-white px-6 py-12 text-center">
-  <p class="text-sm">2026 - Andre Ortiz. All rights reserved.</p>
-  <a href="/" class="mt-4 inline-flex text-black" aria-label="Home">
-    <Icon name="house" size={16} />
+<footer class="flex flex-col items-center px-6 py-12 text-center gap-1">
+  <a href="/" class="mt-4 inline-flex" aria-label="Home">
+    <Logo alt="Andre Ortiz" />
   </a>
+  <p class="text-sm">2026 - Andre Ortiz. All rights reserved.</p>
+  <p class="text-sm">
+    <a href="mailto:hello@andreortiz.com">hello@andreortiz.com</a>
+  </p>
 </footer>

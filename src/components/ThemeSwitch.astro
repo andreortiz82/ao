@@ -1,0 +1,29 @@
+<button
+  type="button"
+  data-theme-toggle
+  class="fixed bottom-4 left-4 z-20 border border-foreground bg-background px-2 py-1 text-xs text-foreground"
+  aria-label="Theme: System. Switch theme."
+>
+  <span data-theme-label>System</span>
+</button>
+
+<script is:inline>
+  (function () {
+    var button = document.querySelector("[data-theme-toggle]");
+    var label = document.querySelector("[data-theme-label]");
+    var api = window.__aoTheme;
+    if (!button || !label || !api) return;
+    var names = { light: "Light", dark: "Dark", system: "System" };
+    function sync() {
+      var mode = api.read();
+      label.textContent = names[mode] || "System";
+      button.setAttribute("aria-label", "Theme: " + label.textContent + ". Switch theme.");
+    }
+    sync();
+    button.addEventListener("click", function () {
+      api.cycle();
+      sync();
+    });
+    document.addEventListener("themechange", sync);
+  })();
+</script>

@@ -1,8 +1,8 @@
 export const Logo = ({ alt }) => {
-  const style = "fill-white";
+  const style = "fill-zinc-300";
 
   return (
-    <div className="w-[100px]" title={alt}>
+    <div className="w-20 my-10" title={alt}>
       <svg
         className="w-full h-full"
         width="100"

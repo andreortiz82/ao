@@ -24,7 +24,7 @@ const Tag = href ? "a" : "div";
   href={href}
   aria-label={href && !label ? "Project" : undefined}
   class:list={[
-    "block border border-black bg-white text-black",
+    "block border border-foreground bg-background text-foreground",
     label && "p-3",
     media && "wf-media",
     className,

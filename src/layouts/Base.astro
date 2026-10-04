@@ -2,6 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
+import ThemeSwitch from "../components/ThemeSwitch.astro";
 
 interface Props {
   title: string;
@@ -16,12 +17,54 @@ const { title, description, header = true } = Astro.props;
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
+    <script is:inline>
+      (function () {
+        var key = "theme";
+        var root = document.documentElement;
+        function systemDark() {
+          return window.matchMedia("(prefers-color-scheme: dark)").matches;
+        }
+        function read() {
+          try {
+            var stored = localStorage.getItem(key);
+            if (stored === "light" || stored === "dark" || stored === "system") return stored;
+          } catch (e) {}
+          return "system";
+        }
+        function apply(mode) {
+          var dark = mode === "dark" || (mode === "system" && systemDark());
+          root.classList.toggle("dark", dark);
+          root.dataset.theme = mode;
+        }
+        apply(read());
+        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () {
+          if (read() === "system") {
+            apply("system");
+            document.dispatchEvent(new Event("themechange"));
+          }
+        });
+        window.__aoTheme = {
+          read: read,
+          cycle: function () {
+            var order = ["light", "dark", "system"];
+            var next = order[(order.indexOf(read()) + 1) % order.length];
+            try {
+              localStorage.setItem(key, next);
+            } catch (e) {}
+            apply(next);
+            document.dispatchEvent(new Event("themechange"));
+            return next;
+          },
+        };
+      })();
+    </script>
   </head>
-  <body class="flex min-h-screen flex-col bg-white text-black">
+  <body class="flex min-h-screen flex-col bg-background text-foreground">
     {header && <SiteHeader />}
     <main class="flex flex-1 flex-col">
       <slot />
     </main>
     <SiteFooter />
+    <ThemeSwitch />
   </body>
 </html>
