@@ -1,5 +1,17 @@
 ---
-import Article from "../layouts/Article.astro";
+import Placeholder from "../components/Placeholder.astro";
+import Base from "../layouts/Base.astro";
+
+const bio =
+  "I've spent twenty years building product experiences end to end — shaping the vision, owning the systems, and shipping the work. I lead design the way a creative director would: fast, iterative, and always clear about intent. Small teams with big scope is where I do my best work. I build design practices, not just screens — the systems, the standards, and the mentorship that make a team compound over time. Adaptable, multidisciplined, and comfortable doing whatever the product needs.";
 ---
 
-<Article title="About — Andre Ortiz" description="About wireframe" />
+<Base title="About — Andre Ortiz" description={bio}>
+  <article class="mx-auto flex w-full max-w-6xl flex-col px-6 py-14">
+    <div class="flex w-full max-w-2xl flex-col">
+      <h1 class="text-4xl tracking-tight md:text-5xl">About</h1>
+      <p class="mt-8 text-sm leading-relaxed">{bio}</p>
+      <Placeholder class="mt-10 w-full" media aspectRatio="1 / 1" />
+    </div>
+  </article>
+</Base>
