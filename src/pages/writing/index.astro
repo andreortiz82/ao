@@ -53,8 +53,7 @@ function href(tag: string) {
   });
   document.querySelectorAll<HTMLAnchorElement>("[data-filter]").forEach((link) => {
     const active = (link.dataset.filter ?? "") === (tag ?? "");
-    link.classList.toggle("bg-black", active);
-    link.classList.toggle("text-white", active);
+    link.classList.toggle("tag-selected", active);
     if (active) link.setAttribute("aria-current", "page");
   });
 </script>
