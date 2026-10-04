@@ -1,12 +1,13 @@
 ---
 interface Props {
   tags: string[];
+  hrefBase: string;
 }
 
-const { tags } = Astro.props;
+const { tags, hrefBase } = Astro.props;
 
 function href(tag: string) {
-  return `/writing?tag=${encodeURIComponent(tag)}`;
+  return `${hrefBase}?tag=${encodeURIComponent(tag)}`;
 }
 ---
 

@@ -29,7 +29,7 @@ const { prev, next } = neighbors(posts, post.slug);
     </p>
     <h1 class="text-5xl tracking-tight">Blog title here</h1>
     <p class="mt-6 text-sm">Oct 3 2026</p>
-    <Tags tags={post.tags} />
+    <Tags tags={post.tags} hrefBase="/writing" />
 
     <Placeholder class="mt-10 w-full" media aspectRatio="1 / 1" />
     <p class="mt-8 text-sm leading-relaxed">{copy}</p>
