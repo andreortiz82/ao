@@ -30,7 +30,7 @@ function href(tag: string) {
       {
         cases.map((item) => (
           <li class="border-b border-black" data-project data-tags={item.tags.join("|")}>
-            <a href={`/work/${item.slug}`} class="flex flex-col gap-2 py-5 sm:flex-row sm:gap-6">
+            <a href={`/projects/${item.slug}`} class="flex flex-col gap-2 py-5 sm:flex-row sm:gap-6">
               <span class="text-sm sm:w-24 sm:shrink-0">Date</span>
               <span class="min-w-0 sm:flex-1">
                 <span class="block">Project {item.slug}</span>

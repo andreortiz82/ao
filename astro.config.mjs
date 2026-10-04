@@ -11,6 +11,8 @@ export default defineConfig({
   redirects: {
     "/blog": "/writing",
     "/blog/[...slug]": "/writing/[...slug]",
+    "/work": "/projects",
+    "/work/[...slug]": "/projects/[...slug]",
   },
   integrations: [mdx(), sitemap(), react()],
   vite: {
