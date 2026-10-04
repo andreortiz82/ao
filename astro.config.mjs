@@ -8,6 +8,10 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   site: "https://andreortiz.com",
+  redirects: {
+    "/blog": "/writing",
+    "/blog/[...slug]": "/writing/[...slug]",
+  },
   integrations: [mdx(), sitemap(), react()],
   vite: {
     plugins: [tailwindcss()],

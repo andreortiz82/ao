@@ -1,0 +1,48 @@
+---
+import Adjacent from "../../components/Adjacent.astro";
+import Placeholder from "../../components/Placeholder.astro";
+import { neighbors, posts } from "../../data/wireframe";
+import Base from "../../layouts/Base.astro";
+
+const copy =
+  "This is placeholder copy for the wireframe. It stands in for a short paragraph so the column reads as text. The sentences are fake and only show the length of the block.";
+
+const tags = ["Python", "Video", "Product Teams", "Motion"];
+
+export function getStaticPaths() {
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { prev, next } = neighbors(posts, post.slug);
+---
+
+<Base title="Blog title here — Andre Ortiz" description="Writing post wireframe" header={false}>
+  <article class="mx-auto flex w-full max-w-3xl flex-col px-6 py-14">
+    <p class="mb-6 flex items-center gap-6">
+      <a href="/" class="inline-flex text-2xl text-black" aria-label="Back to home">←</a>
+      <span aria-hidden="true">/</span>
+      <a href="/writing" class="text-black">Writing</a>
+    </p>
+    <h1 class="text-5xl tracking-tight">Blog title here</h1>
+    <p class="mt-6 text-sm">Oct 3 2026</p>
+    <ul class="mt-4 flex flex-wrap gap-2">
+      {tags.map((tag) => <li class="rounded-full border border-black px-3 py-1 text-xs">{tag}</li>)}
+    </ul>
+
+    <Placeholder class="mt-10 w-full" media aspectRatio="1 / 1" />
+    <p class="mt-8 text-sm leading-relaxed">{copy}</p>
+    <Placeholder class="mt-8 w-full" media aspectRatio="1 / 1" />
+    <p class="mt-8 text-sm leading-relaxed">{copy}</p>
+
+    <Adjacent
+      prevHref={`/writing/${prev.slug}`}
+      nextHref={`/writing/${next.slug}`}
+      prevTitle="Blog Title"
+      nextTitle="Blog Title"
+    />
+  </article>
+</Base>

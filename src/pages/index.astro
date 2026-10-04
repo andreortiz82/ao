@@ -1,17 +1,44 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
+import Placeholder from "../components/Placeholder.astro";
+import { galleryColumns } from "../data/wireframe";
+import Base from "../layouts/Base.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title="Andre Ortiz" description="Product Experience Design" />
-  </head>
-  <body>
-    <main>
-      <div>
-        <p>Andre Ortiz</p>
-      </div>
-    </main>
-  </body>
-</html>
+<Base title="Andre Ortiz" description="Home wireframe">
+  <div class="mx-auto flex w-full max-w-6xl flex-col items-center px-6 pb-16 pt-14 text-center">
+    <p class="text-sm">Andre Ortiz</p>
+    <h1 id="home-role" class="mt-4 text-4xl tracking-tight md:text-6xl">Product experience designer</h1>
+  </div>
+  <script>
+    const lines = [
+      "Product experience designer",
+      "Systems thinker",
+      "Problem solver",
+      "Collaborator",
+      "Contributor",
+      "Partner",
+      "Human",
+    ];
+    const heading = document.getElementById("home-role");
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (heading && !reduce) {
+      let index = 0;
+      window.setInterval(() => {
+        index = (index + 1) % lines.length;
+        heading.textContent = lines[index];
+      }, 2000);
+    }
+  </script>
+
+  <div id="work" class="mx-auto flex w-full max-w-6xl items-start gap-3 px-6 pb-8 md:gap-4">
+    {
+      galleryColumns.map((column) => (
+        <div class="flex min-w-0 flex-1 flex-col gap-3 md:gap-4">
+          {column.map((aspect) => (
+            <Placeholder href="/work/01" media aspectRatio={aspect} />
+          ))}
+        </div>
+      ))
+    }
+  </div>
+</Base>

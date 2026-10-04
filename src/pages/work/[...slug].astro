@@ -1,82 +1,105 @@
 ---
-import type { CollectionEntry } from "astro:content";
-import { getCollection, render } from "astro:content";
-import BaseHead from "../../components/BaseHead.astro";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
+import Adjacent from "../../components/Adjacent.astro";
+import Placeholder from "../../components/Placeholder.astro";
+import { cases, neighbors } from "../../data/wireframe";
+import Base from "../../layouts/Base.astro";
 
-export async function getStaticPaths() {
-  const workEntries = await getCollection("work");
-  return workEntries.map((entry) => ({
-    params: { slug: entry.id },
-    props: { entry },
+const copy =
+  "This is placeholder copy for the wireframe. It stands in for a short paragraph so the column reads as text. The sentences are fake and only show the length of the block.";
+
+export function getStaticPaths() {
+  return cases.map((item) => ({
+    params: { slug: item.slug },
+    props: { item },
   }));
 }
 
-interface Props {
-  entry: CollectionEntry<"work">;
-}
-
-const { entry } = Astro.props;
-const { Content } = await render(entry);
-const { title, description, heroImage, tags } = entry.data;
+const { item } = Astro.props;
+const { prev, next } = neighbors(cases, item.slug);
+const timeline = [
+  {
+    date: "2024-03",
+    label: "Mar 2024",
+    text: "The brief arrived as a short note. Early sketches stayed rough while the problem was still moving.",
+  },
+  {
+    date: "2024-06",
+    label: "Jun 2024",
+    text: "A clickable prototype replaced the sketches. The team used it to settle the main path.",
+  },
+  {
+    date: "2024-09",
+    label: "Sep 2024",
+    text: "The layout tightened. What remained was a last pass before the work shipped.",
+  },
+];
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={`${title} — Andre Ortiz`} description={description} />
-  </head>
-  <body>
-    <Header />
+<Base title="Project Title Here — Andre Ortiz" description="Case study wireframe" header={false}>
+  <article class="mx-auto flex w-full max-w-6xl flex-col px-6 py-14">
+    <a href="/" class="mb-8 inline-flex text-2xl text-black" aria-label="Back to home">←</a>
+    <h1 class="max-w-4xl text-5xl tracking-tight md:text-7xl">Project Title Here</h1>
 
-    <main class="max-w-6xl mx-auto px-6 py-12">
-
-      <!-- Breadcrumb -->
-      <nav class="animate-fade-up mb-8">
-        <a
-          href="/work"
-          class="inline-flex items-center gap-1 text-sm no-underline transition-colors duration-150 text-text-secondary hover:text-accent"
-        >
-          ← Back to Work
-        </a>
-      </nav>
-
-      <!-- Hero image -->
-      {heroImage && (
-        <div class="animate-fade-up-delay-1 rounded-2xl overflow-hidden mb-10 border border-border-color">
-          <img
-            src={heroImage}
-            alt={title}
-            class="w-full object-cover max-h-125"
-          />
-        </div>
-      )}
-
-      <!-- Title + tags -->
-      <div class="animate-fade-up-delay-2 max-w-3xl mb-10">
-        {tags && (
-          <div class="flex flex-wrap gap-1.5 mb-4">
-            {tags.map((tag: string) => (
-              <span class="ao-tag">{tag}</span>
-            ))}
-          </div>
-        )}
-        <h1 class="m-0 mb-4">
-          {title}
-        </h1>
-        <p class="m-0 text-xl leading-relaxed text-text-secondary">
-          {description}
-        </p>
+    <div class="mt-14 flex flex-col items-start gap-10 md:flex-row">
+      <div class="flex w-full flex-col gap-8 text-sm leading-relaxed md:w-56 md:shrink-0">
+        <section>
+          <h2>Overview</h2>
+          <p class="mt-2">{copy}</p>
+        </section>
+        <section>
+          <h2>Challenges</h2>
+          <p class="mt-2">{copy}</p>
+        </section>
+        <ol class="wf-timeline" aria-label="Timeline">
+          {
+            timeline.map((entry) => (
+              <li>
+                <time class="text-xs" datetime={entry.date}>
+                  {entry.label}
+                </time>
+                <p class="mt-1 leading-relaxed">{entry.text}</p>
+              </li>
+            ))
+          }
+        </ol>
       </div>
-
-      <!-- Content -->
-      <div class="animate-fade-up-delay-3 max-w-3xl ao-md-content-container overflow-x-auto">
-        <Content />
+      <div class="flex w-full min-w-0 flex-1 flex-col gap-4">
+        <Placeholder media aspectRatio="3 / 2" />
+        <Placeholder media aspectRatio="3 / 2" />
+        <Placeholder media aspectRatio="3 / 2" />
       </div>
+    </div>
 
-    </main>
+    <Placeholder class="mt-10" media aspectRatio="2 / 1" />
 
-    <Footer />
-  </body>
-</html>
+    <div class="mt-10 flex flex-col items-center gap-8 md:flex-row">
+      <Placeholder class="w-full md:w-1/2" media aspectRatio="4 / 3" />
+      <section class="w-full md:w-1/2">
+        <h2 class="text-xl">Left Image Section</h2>
+        <p class="mt-3 text-sm leading-relaxed">{copy}</p>
+      </section>
+    </div>
+
+    <div class="mt-10 flex flex-col items-center gap-8 md:flex-row">
+      <section class="w-full md:w-1/2">
+        <h2 class="text-xl">Right Image Section</h2>
+        <p class="mt-3 text-sm leading-relaxed">{copy}</p>
+      </section>
+      <Placeholder class="w-full md:w-1/2" media aspectRatio="4 / 3" />
+    </div>
+
+    <h2 class="mt-16 text-center text-2xl">Conclusion</h2>
+    <div class="mx-auto mt-6 flex w-full max-w-3xl flex-col gap-8 text-sm leading-relaxed md:flex-row">
+      <p class="md:flex-1">{copy}</p>
+      <p class="md:flex-1">{copy}</p>
+    </div>
+    <Placeholder class="mt-8" media aspectRatio="2 / 1" />
+
+    <Adjacent
+      prevHref={`/work/${prev.slug}`}
+      nextHref={`/work/${next.slug}`}
+      prevTitle="Project Title"
+      nextTitle="Project Title"
+    />
+  </article>
+</Base>

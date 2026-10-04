@@ -1,0 +1,35 @@
+---
+interface Props {
+  label?: string;
+  href?: string;
+  media?: boolean;
+  minHeight?: string;
+  aspectRatio?: string;
+  class?: string;
+}
+
+const {
+  label,
+  href,
+  media = false,
+  minHeight,
+  aspectRatio,
+  class: className,
+} = Astro.props;
+
+const Tag = href ? "a" : "div";
+---
+
+<Tag
+  href={href}
+  aria-label={href && !label ? "Project" : undefined}
+  class:list={[
+    "block border border-black bg-white text-black",
+    label && "p-3",
+    media && "wf-media",
+    className,
+  ]}
+  style={{ minHeight, aspectRatio }}
+>
+  {label && <span class="text-sm leading-none">{label}</span>}
+</Tag>

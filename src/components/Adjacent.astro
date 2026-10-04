@@ -1,0 +1,27 @@
+---
+interface Props {
+  prevHref: string;
+  nextHref: string;
+  prevTitle: string;
+  nextTitle: string;
+}
+
+const { prevHref, nextHref, prevTitle, nextTitle } = Astro.props;
+---
+
+<nav class="mt-16 flex w-full items-start justify-between gap-8 border-t border-black pt-8" aria-label="Adjacent">
+  <a href={prevHref} class="flex max-w-sm flex-col gap-2 text-black">
+    <span class="flex items-center gap-2 text-sm">
+      <span aria-hidden="true" class="text-2xl leading-none">←</span>
+      Previous
+    </span>
+    <span class="text-2xl tracking-tight">{prevTitle}</span>
+  </a>
+  <a href={nextHref} class="flex max-w-sm flex-col items-end gap-2 text-right text-black">
+    <span class="flex items-center gap-2 text-sm">
+      Next
+      <span aria-hidden="true" class="text-2xl leading-none">→</span>
+    </span>
+    <span class="text-2xl tracking-tight">{nextTitle}</span>
+  </a>
+</nav>

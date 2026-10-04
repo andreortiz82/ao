@@ -38,7 +38,7 @@ const { posts } = Astro.props;
         {
           posts.map((post: any) => (
             <article class="rounded p-6 flex flex-col gap-4 transition">
-              <a class="flex flex-col gap-2" href={`/blog/${post.id}/`}>
+              <a class="flex flex-col gap-2" href={`/writing/${post.id}/`}>
                 <div>
                   <img
                     src={post.data.heroImage}
