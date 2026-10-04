@@ -1,5 +1,6 @@
 ---
 import Adjacent from "../../components/Adjacent.astro";
+import Icon from "../../components/Icon.astro";
 import Placeholder from "../../components/Placeholder.astro";
 import { neighbors, posts } from "../../data/wireframe";
 import Base from "../../layouts/Base.astro";
@@ -23,7 +24,7 @@ const { prev, next } = neighbors(posts, post.slug);
 <Base title="Blog title here — Andre Ortiz" description="Writing post wireframe" header={false}>
   <article class="mx-auto flex w-full max-w-3xl flex-col px-6 py-14">
     <p class="mb-6 flex items-center gap-6">
-      <a href="/" class="inline-flex text-2xl text-black" aria-label="Back to home">←</a>
+      <a href="/" class="inline-flex text-black" aria-label="Back to home"><Icon name="arrow-left" size={24} /></a>
       <span aria-hidden="true">/</span>
       <a href="/writing" class="text-black">Writing</a>
     </p>

@@ -1,5 +1,6 @@
 ---
 import Adjacent from "../../components/Adjacent.astro";
+import Icon from "../../components/Icon.astro";
 import Placeholder from "../../components/Placeholder.astro";
 import { cases, neighbors } from "../../data/wireframe";
 import Base from "../../layouts/Base.astro";
@@ -37,7 +38,7 @@ const timeline = [
 
 <Base title="Project Title Here — Andre Ortiz" description="Case study wireframe" header={false}>
   <article class="mx-auto flex w-full max-w-6xl flex-col px-6 py-14">
-    <a href="/" class="mb-8 inline-flex text-2xl text-black" aria-label="Back to home">←</a>
+    <a href="/" class="mb-8 inline-flex text-black" aria-label="Back to home"><Icon name="arrow-left" size={24} /></a>
     <h1 class="max-w-4xl text-5xl tracking-tight md:text-7xl">Project Title Here</h1>
 
     <div class="mt-14 flex flex-col items-start gap-10 md:flex-row">

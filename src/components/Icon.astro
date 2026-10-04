@@ -1,0 +1,23 @@
+---
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
+
+interface Props {
+  name: string;
+  size?: number;
+}
+
+const { name, size = 24 } = Astro.props;
+
+if (!/^[a-z0-9-]+$/.test(name)) {
+  throw new Error(`Unknown icon: ${name}`);
+}
+
+const file = resolve("node_modules/@phosphor-icons/core/assets/regular", `${name}.svg`);
+const svg = readFileSync(file, "utf8").replace(
+  "<svg",
+  `<svg width="${size}" height="${size}" aria-hidden="true"`,
+);
+---
+
+<Fragment set:html={svg} />
